@@ -1,0 +1,211 @@
+%  ************************** BRANDISS.STY **************************
+%  Brandeis LaTeX2e dissertation package provides pages set up
+%  according to the formats outlined by the GSAS for acceptable
+%  dissertation format.  If you need to meet the other GSAS
+%  requirements, you may want to consider using the brandiss class.
+%  Be sure to check that the output matches the current
+%  specifications.  The formatting requirements are on-line at:
+%    http://www.brandeis.edu/gsas/students
+%  under ``Dissertation Guidelines.''
+%
+%  This package derived its page formats from the brandeis.sty package
+%  of Pablo Funes (2001), Andy Garland (2000), R.J. Luoma (1994), and
+%  L.F. Brown (1987).  It was written using the guidelines in the
+%  ``LaTeX2e for class and package writers'' document available
+%  on-line at:
+%    http://www.math.smith.edu/Local/latexdocs/html/clsguide/clsguide.html
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{brandiss}[2004/05/05 v1.0 Local LaTeX package]
+
+%**************************** Package Options  ************************
+
+%  online|printed -> online or printed [default] submission.
+%  The online|printed option controls the format of the signature
+%  page.  If you will submit online, use ``printed'' to format the
+%  signature page to bring to your defense, and then use ``online'' to
+%  format the signature page for the submitted dissertation.
+\newif\if@online
+\DeclareOption{online}{\@onlinetrue}
+\DeclareOption{printed}{\@onlinefalse}
+
+%  Default Setup:
+%  Use printed option by default.
+\ExecuteOptions{printed}
+
+% Process the options.
+\ProcessOptions\relax
+
+%********************** Class and Package Loads  *****************
+
+% Load spacing commands.
+\RequirePackage{setspace}
+
+%*********************** Settings and Definitions  ******************
+
+% The global parameters.
+\newcommand{\disstitle}[1]{\gdef\diss@title{#1}}
+\newcommand{\dissauthor}[1]{\gdef\diss@author{#1}}
+\newcommand{\dissdepartment}[1]{\gdef\diss@department{#1}}
+\newcommand{\dissadvisor}[1]{\gdef\diss@advisor{#1}}
+\newcommand{\dissmonth}[1]{\gdef\diss@month{#1}}
+\newcommand{\dissyear}[1]{\gdef\diss@year{#1}}
+\newcommand{\dissdean}[1]{\gdef\diss@dean{#1}}
+
+% This command allows transparent access to the parameters.  It is
+% intended to be also available to the user of the style.
+\newcommand{\thediss}[1]{\csname diss@#1\endcsname}
+
+% GSAS formatting requirements: No page number on title page.
+% The \makedisstitle command produces the title page.
+% Parameters:
+%   \thediss{title}      %% dissertation title,
+%   \thediss{author}     %% author's name,
+%   \thediss{advisor}    %% advisor's name (chair),
+%   \thediss{department} %% department,
+%   \thediss{month},     %% graduation month, and
+%   \thediss{year}.      %% graduation year.
+\newcommand{\makedisstitle}{
+  \cleardoublepage
+  \thispagestyle{empty} %% page number is omitted
+  \begin{center}
+    {\fontsize{\@xivpt}{18}\textbf{\thediss{title}}}
+    \vfil
+    A Dissertation
+    \vfil
+    Presented to\\
+    The Faculty of the Graduate School of Arts and Sciences\\
+    Brandeis University\\
+    Department of \thediss{department}\\
+    \thediss{advisor}, Advisor
+    \vfil
+    In Partial Fulfillment\\
+    of the Requirements for the Degree\\
+    Doctor of Philosophy
+    \vfil
+    by\\
+    \thediss{author}
+    \vfil
+    \thediss{month}, \thediss{year}
+    \vfil
+  \end{center}
+}
+
+% GSAS formatting requirements: No page number on signature page.
+% The \disssignatures environment produces the dissertation signature page.
+% Parameters:
+%   \thediss{author}     %% author's name,
+%   \thediss{advisor}    %% advisor's name (chair),
+%   \thediss{department} %% department, and
+%   \thediss{dean}       %% dean of GSAS.
+% Options: online
+\newenvironment{disssignatures}{%
+  \if@twoside\cleardoublepage\else\clearpage\fi
+  \thispagestyle{empty} %% page number is omitted
+  \begin{flushleft}%
+    \if@online The signed version of this signature page is on file at
+    the Graduate School of Arts and Sciences at Brandeis
+    University.\\[4ex]\fi
+    This dissertation, directed and approved by \thediss{author}'s
+    committee, has been accepted and approved by the Faculty of
+    Brandeis University in partial fulfillment of the requirements for
+    the degree of:\\[5ex]
+    \begin{center}
+      \textbf{DOCTOR OF PHILOSOPHY}\\[4ex]
+    \end{center}
+    \if@online\else\vfil\fi
+    \begin{flushright}
+      \parbox{3.5in}{
+        \if@online\else\rule{3in}{.01in}\\\fi
+        \thediss{dean}, Dean\\Graduate School of Arts and Sciences}\\[2ex]
+    \end{flushright}
+    Dissertation Committee:
+    \committeemember \thediss{advisor}, Dept.~of \thediss{department}, Chair. 
+}{%
+  \end{flushleft}
+}
+
+% The \committeemember command formats a dissertation committee entry.
+% Options: online
+\newcommand{\committeemember}{%
+  \if@online\else\vfil\rule{3in}{.01in}\fi\\
+}
+
+% GSAS formatting requirements: No page number on copyright page.
+% The \disscopyright command formats the dissertation copyright page.
+% Parameters:
+%   \thediss{author}     %% author's name, and
+%   \thediss{year}.      %% graduation year.
+\newcommand{\disscopyright}{
+  \if@twoside\cleardoublepage\else\clearpage\fi
+  \thispagestyle{empty} %% page number is omitted
+  \begin{center}
+    \ \\% Provides top text for the stretch to push against.
+    \vfill
+    \copyright\ Copyright by\\[1ex]
+    \thediss{author}\\[4ex]
+    \thediss{year}
+  \end{center}
+}
+
+% The dissabstract environment formats the abstract page.
+% Parameters:
+%   \thediss{title}      %% dissertation title,
+%   \thediss{author}     %% author's name,
+\newenvironment{dissabstract}{%
+  \begin{dissfrontpage}{Abstract}
+    \begin{center}
+      \textbf{\thediss{title}}\\[1ex]
+      \begin{singlespace}
+        \noindent A dissertation presented to the Faculty of the\\
+        Graduate School of Arts and Sciences of Brandeis\\
+        University, Waltham, Massachusetts\\[1ex]
+      \end{singlespace}
+      by \thediss{author}
+    \end{center}
+    \noindent
+}
+{
+  \end{dissfrontpage}
+}
+
+% The \dissdedication environment formats the dedication page.
+\newenvironment{dissdedication}{%
+  \begin{dissfrontpage}{Dedication}
+}
+{
+  \end{dissfrontpage}
+}
+
+% The \dissacknowledgements environment formats the ackknowledgements page.
+\newenvironment{dissacknowledgments}{%
+  \begin{dissfrontpage}{Acknowledgments}
+}
+{
+  \end{dissfrontpage}
+}
+
+% The \disspreface environment formats the preface page.
+\newenvironment{disspreface}{%
+  \begin{dissfrontpage}{Preface}
+}
+{
+  \end{dissfrontpage}
+}
+
+% The \dissfrontpage environment formats the front pages.
+% Its argument is the name of the page.
+\newenvironment{dissfrontpage}[1]{%
+  \if@twoside\cleardoublepage\else\clearpage\fi
+  \begin{center}
+    {\fontsize{\@xivpt}{18}\textbf{#1}}\\[1ex]
+  \end{center}
+}
+{
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
