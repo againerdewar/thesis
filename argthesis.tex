@@ -300,23 +300,23 @@ We first apply the theory of quotient species to the enumeration of bipartite bl
   A \emph{bicolored graph} is a graph $\Gamma$ each vertex of which has been assigned one of two colors (here, black and white) such that each edge connects vertices of different colors. A \emph{bipartite graph} (sometimes called \emph{bicolorable}) is a graph $\Gamma$ which admits such a coloring.  
 \end{definition}
 
-There is an extensive literature about bicolored and bipartite graphs, including enumerative results for bicolored graphs \cite{har:bicolored}, bipartite graphs both allowing \cite{han:bipartite} and prohibiting \cite{harprins:bipartite} isolated points, and bipartite blocks \cite{harrob:bipblocks}. However, this final enumeration was previously completed only in the labeled case. By considering the problem in light of the theory of species, we develop a more systematic understanding of the structural relationships between these various classes of graphs, which allows us to enumerate all of them in both labeled and unlabeled settings.
+There is an extensive literature about bicolored and bipartite graphs, including enumerative results for bicolored graphs \cite{har:bicolored}, bipartite graphs both allowing \cite{han:bipartite} and prohibiting \cite{harprins:bipartite} isolated points, and bipartite blocks \cite{harrob:bipblocks}. However, this final enumeration was previously completed only in the labeled case. By considering the problem in light of the theory of $\Gamma$-species, we develop a more systematic understanding of the structural relationships between these various classes of graphs, which allows us to enumerate all of them in both labeled and unlabeled settings.
 
 Throughout this chapter, we denote by $\specname{BC}$ the species of bicolored graphs and by $\specname{BP}$ the species of bipartite graphs. The prefix $\specname{C}$ will indicate the connected analogue of such a species.
 
-The first key motivating observation is that each \emph{connected} bipartite graph may be identified with exactly two bicolored graphs which are color-dual; they make up one orbit of connected bicolored graphs under the action of $\mathfrak{S}_{2}$ where the nontrivial element $\tau$ reverses all vertex colors. We will hereafter treat all the various species of bicolored graphs as $\mathfrak{S}_{2}$-species with respect to this action and use the theory of quotient species in \S \ref{s:quot} to pass to bipartite graphs.
+The motivating graph-theoretic observation is that each \emph{connected} bipartite graph may be identified with exactly two bicolored graphs which are color-dual; in other words, a connected bipartite graph is exactly an orbit of connected bicolored graphs under the action of $\mathfrak{S}_{2}$ where the nontrivial element $\tau$ reverses all vertex colors. We will hereafter treat all the various species of bicolored graphs as $\mathfrak{S}_{2}$-species with respect to this action and use the theory developed in \S \ref{s:quot} to pass to bipartite graphs.
 
 Although the theory of multisort species presented in \S \ref{s:mult} is in general well-suited to the study of colored graphs, we will not need it here. The restrictions that vertex colorings place on isomorphisms of bicolored graphs are simple enough that we can deal with them directly.
 
 \section{Bicolored graphs}\label{s:bcgraph}
-We begin our investigation by directly computing the $\mathfrak{S}_{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs. We will then use various methods from the species algebra of \S \ref{c:species} to pass to various other species.
+We begin our investigation by directly computing the $\mathfrak{S}_{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-inverting $\mathfrak{S}_{2}$-action described previously. We will then use various methods from the species algebra of \S \ref{c:species} to pass to various other species.
 
 \subsection{Computing $Z_{\specname{BC}} \pbrac{e}$}\label{ss:ecibc}
 We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\mathfrak{S}_{2}$-action will be $Z_{\specname{BC}} \pbrac{e}$. 
 
-For each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count the number of bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism. We note that the number of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation (\ref{eq:cycinddefpart}).
+For each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism. We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation (\ref{eq:cycinddefpart}).
 
-Fix some $n \geq 0$ and let $\lambda \vdash n$. We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving isomorphism. First, we note that each cycle of the permutation must correspond to a monochromatic subset of the vertices. We may then construct graphs by drawing bicolored edges into a given colored vertex set. If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an isomorphism of the graph. We therefore must consider these edge orbits.
+Fix some $n \geq 0$ and let $\lambda \vdash n$. We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving isomorphism. Each cycle of the permutation must correspond to a monochromatic subset of the vertices, so we may construct graphs by drawing bicolored edges into a given colored vertex set. If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an isomorphism of the graph. Moreover, every bicolored graph for which $\pi$ is an isomorphism may be constructed in this way. We therefore need only consider these edge orbits.
 
 Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its orbit under the permutation is $\lcm \pbrac{m, n}$, so the number of such orbits of edges between these two cycles is $mn / \lcm \pbrac{m, n} = \gcd \pbrac{m, n}$. For an example in the case $m = 4, n = 2$, see Figure \ref{fig:exbcecycle}. The number of orbits for a fixed coloring is then $\sum \gcd \pbrac{m, n}$ where the sum is over the multiset of all cycle lengths $m$ of white cycles and $n$ of black cycles in the permutation $\pi$. We may then construct any possible graph fixed by our permutation by making a choice of a subset of these cycles to fill with edges, so the total number of such graphs is $\prod 2^{\gcd \pbrac{m, n}}$ for a fixed coloring. We then need only count over all possible colorings of the cycles of $\lambda$.
 
@@ -348,8 +348,8 @@ Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its
   \label{fig:exbcecycle}
 \end{figure}
 
-To do this, we break our partition into two subpartitions --- $\lambda = \mu \cup \nu$, where $\cup$ is the multiset union --- and designate $\mu$ to represent the white cycles and $\nu$ the black. Then the total number of graphs fixed by a $\lambda$-permutation is
-\[\sum_{\substack{\mu, \nu \\ \mu \cup \nu = \lambda}} \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}\]
+To do this, we break our partition into two subpartitions --- $\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union --- and designate $\mu$ to represent the white cycles and $\nu$ the black. Then the total number of graphs fixed by a $\lambda$-permutation is
+\[ \fix \pbrac{\lambda} = \sum_{\substack{\mu, \nu \\ \mu \cup \nu = \lambda}} \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}\]
 where the product is over the elements of $\mu$ and $\lambda$ taken as multisets. There are $z_{\mu \cup \nu} / \pbrac{z_{\mu} z_{\nu}}$ ways to decompose $\lambda = \mu \cup \nu$, as is readily seen from the definition of $z_{\lambda}$. Therefore we conclude:
 \begin{theorem}
   \begin{equation}
@@ -357,14 +357,14 @@ where the product is over the elements of $\mu$ and $\lambda$ taken as multisets
   \end{equation}
 \end{theorem}
 
-Recursive formulas for the generating function for unlabeled bicolored graphs were obtained in \cite{har:bicolored} using conventional P\'{o}lya-theoretic methods. The numbers of labeled and unlabeled bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:bc}.
+Recursive formulas for the generating function for unlabeled bicolored graphs were obtained in \cite{har:bicolored} using conventional P\'{o}lya-theoretic methods. The numbers of labeled and unlabeled bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:bc} and agree with those previous results.
 
 \subsection{Calculating $Z_{\specname{BC}} \pbrac{\tau}$}\label{ss:tcibc}
 Recall that the nontrivial element of $\tau \in \mathfrak{S}_{2}$ acts on bicolored graphs by reversing all colors.
 
-We again consider the `cycles' in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \mathfrak{S}_{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping. We then wish to count bicolored graphs on $\sbrac{n}$ for which $\tau \cdot \pi$ is an isomorphism, which is to say that $\pi$ itself is a color-\emph{reversing} isomorphism. We note first that each cycle must thus be color-alternating and thus of even length, so our partition $\lambda$ must have only even parts. Once this condition is satisfied, edges may be drawn either within a single cycle or between two cycles, and as before if we draw in any edge we must draw in its entire orbit under $\pi$ (since $\pi$ is to be an isomorphism of the underlying graph), so it suffices to count such edge orbits.
+We again consider the cycles in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \mathfrak{S}_{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping. We then wish to count bicolored graphs on $\sbrac{n}$ for which $\tau \cdot \pi$ is an isomorphism, which is to say that $\pi$ itself is a color-\emph{reversing} isomorphism. Once again, the number of bicolored graphs for which $\pi$ is a color-reversing isomorphism is in fact dependent only on the cycle type $\lambda$. Each cycle of vertices must be color-alternating and hence of even length, so our partition $\lambda$ must have only even parts. Once this condition is satisfied, edges may be drawn either within a single cycle or between two cycles, and as before if we draw in any edge we must draw in its entire orbit under $\pi$ (since $\pi$ is to be an isomorphism of the underlying graph). Moreover, all graphs for which $\pi$ is a color-reversing isomorphism and with a fixed coloring may be constructed in this way, so it suffices to count such edge orbits and then consider how colorings may be assigned.
 
-Consider an edge connecting two vertices which are $l$ steps apart within a single cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$ and such an edge as having \emph{length} $l$ with respect to the permutation. There are exactly $n^{2}$ possible white-black edges. If $n$ is odd, diametrically opposed vertices have opposite colors, so we can have $l = n$, and in this case the orbit length is exactly $n$ and there is exactly one orbit . See Figure \ref{fig:exbctincycd} for an example of this case. However, if $n$ is odd but $l \neq n$, the orbit length is $2n$, so the number of such orbits is $\frac{n^{2} - n}{2n}$. Hence, the total number of orbits for $n$ odd is $\frac{n^2 + n}{2n} = \ceil{\frac{n}{2}}$. Similarly, if $n$ is even, all orbits are of length $2n$, so the total number of orbits is $\frac{n^{2}}{2n} = \frac{n}{2} = \ceil{\frac{n}{2}}$ also. See Figure \ref{fig:exbctincyce} for an example of both of these cases.
+Consider an edge connecting two vertices which are $l$ steps apart within a single cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$ and such an edge as having \emph{length} $l$ with respect to the permutation. There are exactly $n^{2}$ possible white-black edges in such a cycle. If $n$ is odd, diametrically opposed vertices have opposite colors, so we can have $l = n$, and in such a case the orbit length is exactly $n$ and there is exactly one orbit. See Figure \ref{fig:exbctincycd} for an example of this case. However, if $n$ is odd but $l \neq n$, the orbit length is $2n$, so the number of such orbits is $\frac{n^{2} - n}{2n}$. Hence, the total number of orbits for $n$ odd is $\frac{n^2 + n}{2n} = \ceil{\frac{n}{2}}$. Similarly, if $n$ is even, all orbits are of length $2n$, so the total number of orbits is $\frac{n^{2}}{2n} = \frac{n}{2} = \ceil{\frac{n}{2}}$ also. See Figure \ref{fig:exbctincyce} for an example of each of these cases.
 
 \begin{figure}[htb]
   \centering
@@ -406,7 +406,7 @@ Consider an edge connecting two vertices which are $l$ steps apart within a sing
   \label{fig:exbctincyc}
 \end{figure}
 
-Now consider an edge between two cycles of semilengths $m$ and $n$ respectively. The total number of possible white-black edges is $2mn$, each of which has an orbit length of $\lcm \pbrac{2m, 2n} = 2 \lcm \pbrac{m, n}$. Hence, the total number of orbits is $2mn / \pbrac{2 \lcm \pbrac{m, n}} = \gcd \pbrac{m, n}$.
+Now consider an edge to be drawn between two cycles of semilengths $m$ and $n$ respectively. The total number of possible white-black edges is $2mn$, each of which has an orbit length of $\lcm \pbrac{2m, 2n} = 2 \lcm \pbrac{m, n}$. Hence, the total number of orbits is $2mn / \pbrac{2 \lcm \pbrac{m, n}} = \gcd \pbrac{m, n}$.
 
 \begin{figure}[htb]
   \centering
@@ -435,7 +435,11 @@ Now consider an edge between two cycles of semilengths $m$ and $n$ respectively.
   \label{fig:exbctbtwcyc}
 \end{figure}
 
-All together, then, the number of orbits for a fixed coloring of a permutation of cycle type $2 \lambda$ (denoting the partition obtained by doubling every part of $\lambda$) is $\sum_{i} \ceil{\frac{\lambda_{i}}{2}} + \sum_{i < j} \gcd \pbrac{\lambda_{i}, \lambda_{j}}$. All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving isomorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \S \ref{ss:ecibc}. Thus, the total number of graphs for a fixed coloring is $\prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}$, which we note is independent of the choice of coloring. For a partition $2\lambda$ with $l \pbrac{\lambda}$ cycles, there are then $2^{l \pbrac{\lambda}}$ colorings compatible with our requirement that each cycle is color-alternating, which we multiply by the previous to obtain the total number of graphs for all permutations $\pi$ with cycle type $2 \lambda$. Therefore we conclude:
+All together, then, the number of orbits for a fixed coloring of a permutation of cycle type $2 \lambda$ (denoting the partition obtained by doubling every part of $\lambda$) is $\sum_{i} \ceil{\frac{\lambda_{i}}{2}} + \sum_{i < j} \gcd \pbrac{\lambda_{i}, \lambda_{j}}$. All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving isomorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \S \ref{ss:ecibc}. Thus, the total number of possible graphs for a given vertex coloring is
+\begin{equation*}
+\prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}},
+\end{equation*}
+which we note is independent of the choice of coloring. For a partition $2\lambda$ with $l \pbrac{\lambda}$ cycles, there are then $2^{l \pbrac{\lambda}}$ colorings compatible with our requirement that each cycle is color-alternating, which we multiply by the previous to obtain the total number of graphs for all permutations $\pi$ with cycle type $2 \lambda$. Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     Z_{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n \geq 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}} \label{eq:tcibc}
@@ -446,9 +450,9 @@ All together, then, the number of orbits for a fixed coloring of a permutation o
 As noted in the introduction of this section, we may pass from bicolored to bipartite graphs by taking a quotient under the color-reversing action of $\mathfrak{S}_{2}$ only in the connected case. Thus, we must pass from the species $\specname{BC}$ to the species $\specname{CBC}$ of connected bicolored graphs to continue. It is a standard principle of graph enumeration that a graph may be decomposed uniquely into (and thus species-theoretically identified with) the set of its connected components. We must, of course, require that the set structure is nonempty to ensure well-definedness. This same relationship holds in the case of bicolored graphs. Thus, the species $\specname{BC}$ of bicolored graphs is the composition of the species $\specname{CBC}$ of connected bicolored graphs into the species $\specname{E}^{+} = \specname{E} - 1$ of nonempty sets:
 \begin{equation} \specname{BC} = \specname{E}^{+} \circ \specname{CBC} \label{eq:bcdecomp} \end{equation}
 
-Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\mathfrak{S}_{2}$-species by applying the trivial action, eq.\ (\ref{eq:bcdecomp}) holds in $\mathfrak{S}_{2}$-generality.
+Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\mathfrak{S}_{2}$-species by applying the trivial action, eq.\ (\ref{eq:bcdecomp}) holds in $\mathfrak{S}_{2}$-generality for the color-reversing $\mathfrak{S}_{2}$-action described previously.
 
-To use the decompositions in eq.\ (\ref{eq:bcdecomp}) to derive the $\mathfrak{S}_{2}$-cycle index for $\specname{CBC}$, we must invert the compositions into the species $\specname{E}^{+}$ of nonempty sets. In the context of the theory of virtual species, this is possible; we write $\con := \pbrac{\specname{E} - 1}^{\abrac{-1}}$ to denote this virtual species. We can derive from \cite[\S 2.5, eq.\ (58c)]{bll:species} that its cycle index is
+To use the decomposition in eq.\ (\ref{eq:bcdecomp}) to derive the $\mathfrak{S}_{2}$-cycle index for $\specname{CBC}$, we must invert the $\mathfrak{S}_{2}$-species composition into $\specname{E}^{+}$. In the context of the theory of virtual species, this is possible; we write $\con := \pbrac{\specname{E} - 1}^{\abrac{-1}}$ to denote this virtual species. We can derive from \cite[\S 2.5, eq.\ (58c)]{bll:species} that its cycle index is
 \begin{equation} Z_{\con} = \sum_{k \geq 1} \frac{\mu \pbrac{k}}{k} \log \pbrac{1 + p_{k}} \label{eq:zgamma} \end{equation}
 where $\mu$ is the M\"{o}bius function. We can then rewrite eq.\ (\ref{eq:bcdecomp}) as
 \[\specname{CBC} = \con \circ \specname{BC}\]
@@ -460,15 +464,15 @@ It then follows immediately from theorem \ref{thm:gspeccomp} that
 The numbers of labeled and unlabeled connected bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:cbc}.
 
 \section{Bipartite graphs}\label{s:bp}
-As we previously observed, a connected bipartite graph is exactly an orbit of connected bicolored graphs under the action of $\mathfrak{S}_{2}$. Thus,
+As we previously observed, a connected bipartite graph is exactly an orbit of connected bicolored graphs under the color-reversing action of $\mathfrak{S}_{2}$. Thus,
 \[\specname{CBP} = \faktor{\specname{CBC}}{\mathfrak{S}_{2}}.\]
 By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
 \begin{theorem}
   \begin{equation} Z_{\specname{CBP}} = \frac{1}{2} \pbrac{Z_{\specname{CBC}} \pbrac{e} + Z_{\specname{CBC}} \pbrac{\tau}}. \end{equation}
 \end{theorem}
 
-Finally, to reach a result for the general bipartite case, we return to the graph-species composition relationship previously considered in \S \ref{s:cbc}:
-\[\specname{BP} = \specname{E} \circ \specname{CBP}.\]
+Finally, to reach a result for the general bipartite case, we return to the graph-theoretic composition relationship previously considered in \S \ref{s:cbc}:
+\[\specname{BP} = \specname{E}^{+} \circ \specname{CBP}.\]
 This time, we need not invert the composition, so the cycle-index calculation is simple:
 \begin{theorem}
   \begin{equation} Z_{\specname{BP}} = \exp \pbrac{Z_{\specname{CBP}}}. \end{equation}
