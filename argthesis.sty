@@ -1,1 +1,83 @@
-../shared/argthesis.sty
+\ProvidesPackage{argthesis}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{units,faktor}
+\usepackage{subfig}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage{comment}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[mathscr]{eucal}
+
+\usepackage{tikz}
+\usepackage{tkz-graph,tkz-berge}
+\usetikzlibrary{calc,decorations.markings,shapes,positioning,matrix,arrows}
+
+% Define some useful graph commands
+\newcommand{\cyccwl}[2][.65cm]{\draw[decoration={markings, mark=at position .5 with {\arrowreversed{triangle 90}}}, postaction={decorate}] #2 circle (#1)}
+  
+\newcommand{\cycccwl}[2][.65cm]{\draw[decoration={markings, mark=at position .5 with {\arrow{triangle 90}}}, postaction={decorate}] #2 circle (#1)}
+
+\newcommand{\cyccwr}[2][.65cm]{\draw[decoration={markings, mark=at position 0 with {\arrowreversed{triangle 90}}}, postaction={decorate}] #2 circle (#1)}
+  
+\newcommand{\cycccwr}[2][.65cm]{\draw[decoration={markings, mark=at position 0 with {\arrow{triangle 90}}}, postaction={decorate}] #2 circle (#1)}
+
+\tikzstyle{every picture}+=[
+hnode/.style={fill=black!20,shape=rectangle},
+fnode/.style={fill=white,shape=circle},
+root/.style={shape=diamond},
+blackv/.style={fill=black!50},
+whitev/.style={fill=white},
+cycedge/.style={->,bend right,dotted}
+]
+
+% Generic defines
+\newcommand{\abs}[1]{\ensuremath{\left\vert {#1} \right\vert}} 
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor {#1} \right\rfloor}}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil {#1} \right\rceil}}
+
+\newcommand{\vbrac}[1]{\ensuremath{\left\vert {#1} \right\vert}}
+\newcommand{\abrac}[1]{\ensuremath{\left\langle {#1} \right\rangle}}
+\newcommand{\dabrac}[1]{\ensuremath{\abrac{\abrac{#1}}}}
+\newcommand{\pbrac}[1]{\ensuremath{\left( {#1} \right)}}
+\newcommand{\sbrac}[1]{\ensuremath{\left[ {#1} \right]}}
+\newcommand{\cbrac}[1]{\ensuremath{\left\{ {#1} \right\}}}
+
+\newcommand{\pointed}[2][]{\ensuremath{{#2}^{\bullet #1}}}
+\newcommand{\specname}[1]{\ensuremath{\mathscr{#1}}}
+\newcommand{\foreign}[1]{\emph{#1}}
+
+\DeclareMathOperator{\lcm}{lcm}
+
+\DeclareMathOperator{\cyc}{Cyc}
+\DeclareMathOperator{\lin}{Lin}
+\DeclareMathOperator{\con}{Con}
+
+\DeclareMathOperator{\fix}{fix}
+
+\DeclareMathOperator{\Id}{Id}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{lemma*}{lemma}
+\newtheorem*{proposition*}{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+
+\newtheorem{note}[theorem]{Note}
+\newtheorem*{note*}{Note}
+
+\endinput
