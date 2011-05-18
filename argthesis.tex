@@ -638,14 +638,18 @@ In \cite[\S 4.2]{bll:species}, a theory relating a specified species $B$ of nons
 It is apparent that the class of nonseparable bipartite graphs is itself exactly the class of blocks that occur in block decompositions of connected bipartite graphs; hence, we apply that theory here to study the species $\specname{NBP}$.
 From \cite[eq.\ 4.2(27)]{bll:species} we obtain
 \begin{theorem}
-  \begin{equation}
-    \label{eq:nbpexp}
-    \specname{NBP} = \specname{CBP} \pbrac{\specname{CBP}^{\bullet \abrac{-1}}} + X \cdot \specname{NBP}' - X,
-  \end{equation}
-  where by \cite[4.2.26(a)]{bll:species} we have
-  \begin{equation*}
-    \specname{NBP}' = \con \pbrac{\frac{X}{\specname{CBP}^{\bullet \abrac{-1}}}}.
-  \end{equation*}
+  \begin{subequations}
+    \begin{equation}
+      \label{eq:nbpexpmain}
+      \specname{NBP} = \specname{CBP} \pbrac{\specname{CBP}^{\bullet \abrac{-1}}} + X \cdot \specname{NBP}' - X,
+    \end{equation}
+    where by \cite[4.2.26(a)]{bll:species} we have
+    \begin{equation}
+      \label{eq:nbpexpsub}
+      \specname{NBP}' = \con \pbrac{\frac{X}{\specname{CBP}^{\bullet \abrac{-1}}}}.
+    \end{equation}
+  \end{subequations}
+
 \end{theorem}
 We have already calculated the cycle index for the species $\specname{CBP}$, so the calculation of the cycle index of $\specname{NBP}$ is now simply a matter of algebraic expansion.
 
@@ -1288,11 +1292,19 @@ By application of theorem \ref{thm:dissymco} (in the form of equation \eqref{eq:
 \begin{theorem}[Cycle index for the species of $k$-trees]
   \label{thm:ktreecyc}
   For $Z_{F_{k}}$ as in equation \eqref{eq:ffunc}, $Z_{H_{k}}$ as in equation \eqref{eq:hfunc}, $Z_{\pointed[Y]{\mathfrak{a}}_{O, k}}$ as in equation \eqref{eq:ayfunc}, and $Z_{\pointed[XY]{\mathfrak{a}}_{O, k}}$ as in equation \eqref{eq:axyfunc}:
-  \begin{align}
-    Z_{\mathfrak{a}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\mathfrak{a}_{O, k}} \pbrac{\sigma} \\
-    &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} + Z_{\pointed[X]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}} \\
-    &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} + \pbrac{\frac{1}{k+1} \sum_{j \in \sbrac{k+1}} Z_{\pointed[XY]{\mathfrak{a}}_{O, k}} \pbrac{\sigma, \zeta^{j}}} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}}.
-  \end{align}
+  \begin{subequations}
+    \begin{align}
+      Z_{\mathfrak{a}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\mathfrak{a}_{O, k}} \pbrac{\sigma} \\
+      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} + Z_{\pointed[X]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}} \\
+      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}}
+      \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} +
+        \pbrac{\frac{1}{k+1} \sum_{j \in \sbrac{k+1}}
+          Z_{\pointed[XY]{\mathfrak{a}}_{O, k}} \pbrac{\sigma,
+            \zeta^{j}}} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot
+          Z_{H_{k}} \pbrac{\sigma}}}.
+    \end{align}
+  \end{subequations}
+
 \end{theorem}
 
 The results of some such explicit calculations are presented in the Appendix.
