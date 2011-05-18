@@ -314,7 +314,11 @@ We begin our investigation by directly computing the $\mathfrak{S}_{2}$-cycle in
 \subsection{Computing $Z_{\specname{BC}} \pbrac{e}$}\label{ss:ecibc}
 We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\mathfrak{S}_{2}$-action will be $Z_{\specname{BC}} \pbrac{e}$. 
 
-For each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism. We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation (\ref{eq:cycinddefpart}).
+Recall the formula for the cycle index of a $\Gamma$-species in equation (\ref{eq:gcycinddef}):
+\begin{equation*}
+  Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma}.
+\end{equation*}
+Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism. We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation (\ref{eq:cycinddefpart}) interpreted as a $\Gamma$-power series identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$. We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving isomorphism. Each cycle of the permutation must correspond to a monochromatic subset of the vertices, so we may construct graphs by drawing bicolored edges into a given colored vertex set. If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an isomorphism of the graph. Moreover, every bicolored graph for which $\pi$ is an isomorphism may be constructed in this way. We therefore need only consider these edge orbits.
 
