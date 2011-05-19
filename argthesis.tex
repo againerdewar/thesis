@@ -88,7 +88,7 @@ A full, pedagogical exposition of the theory of species is available in \cite{bl
 
 To begin, we wish to formalize the notion of a `construction' of a structure of some given class from a set of `labels', such as the construction of a graph from its vertex set or or that of a linear order from its elements.
 The language of category theory will allow us capture this behavior succinctly yet with full generality:
-\begin{definition}\label{def:species}
+\begin{definition}\label{def:species} %TODO: Use Joyal's definition (functor to category of general sets with set maps) so that passage to quotient species is a natural transformation?
   Let $\mathbf{B}$ be the category of finite sets with bijections.
   Then a \emph{species} is a functor $F: \mathbf{B} \to \mathbf{B}$.
   For a set $A$ and a species $F$, an element of $F \sbrac{A}$ is an \emph{$F$-structure on $A$}.
