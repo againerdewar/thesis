@@ -198,7 +198,7 @@ We use the disjoint union to avoid the complexities of dealing with cases where 
 \end{theorem}
 
 We note that it is not in general possible to subtract species, as can readily be seen by considering a case of two species $F$ and $G$ where $\abs{F \sbrac{A}} < \abs{G \sbrac{A}}$ for some set $A$.
-However, species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\mathbf{0}: A \mapsto \emptyset$ is an additive identity, so species with addition form an abelian monoid, which can be completed to create the abelian group of \emph{virtual species}.
+However, species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\mathbf{0}: A \mapsto \varnothing$ is an additive identity, so species with addition form an abelian monoid, which can be completed to create the abelian group of \emph{virtual species}.
 We will not delve into the details of virtual species theory here, directing the reader instead to \cite[\S 2.5]{bll:species}.
 
 \begin{definition}\label{thm:specprod}
@@ -218,7 +218,7 @@ Conceptually, the species product can be used to describe species that decompose
 For example, a permutation on a set $A$ decomposes uniquely into a (possibly empty) set of fixed points and a derangement of their complement in $A$.
 Thus, $\specname{S} = \specname{E} \cdot \operatorname{Der}$ for $\specname{S}$ the species of partitions, $\specname{E}$ the species of sets, and $\operatorname{Der}$ the species of derangements.
 
-We note also that species multiplication is commutative (up to species isomorphism) and distributes over addition, so the class of species with addition and multiplication forms a commutative semiring, with the species $\mathbf{1}: \begin{cases} \emptyset \mapsto \cbrac{\emptyset} \\ A \neq \emptyset \mapsto \emptyset \end{cases}$ as a multiplicative identity; if addition is completed as previously described, the class of virtual species with addition and multiplication forms a true commutative ring.
+We note also that species multiplication is commutative (up to species isomorphism) and distributes over addition, so the class of species with addition and multiplication forms a commutative semiring, with the species $\mathbf{1}: \begin{cases} \varnothing \mapsto \cbrac{\varnothing} \\ A \neq \varnothing \mapsto \varnothing \end{cases}$ as a multiplicative identity; if addition is completed as previously described, the class of virtual species with addition and multiplication forms a true commutative ring.
 
 In addition, the question of which species can be decomposed as sums and products without resorting to virtual species is one of great interest; the notions of \emph{molecular} and \emph{atomic} species are directly derived from such decompositions, and represent the beginnings of the systematic study of the structure of the class of species as a whole.
 Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
@@ -230,7 +230,7 @@ Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
 In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, partially motivated by the following result on cycle indices:
 \begin{theorem}
   \label{thm:speccompci}
-  For species $F$ and $G$ with $G \sbrac{\emptyset} = \emptyset$, the cycle index of their plethysm is
+  For species $F$ and $G$ with $G \sbrac{\varnothing} = \varnothing$, the cycle index of their plethysm is
   \begin{equation}
     \label{eq:speccompci}
     Z_{F \circ G} = Z_{F} \circ Z_{G}
@@ -349,7 +349,7 @@ The action of composition, which in ordinary species corresponds to plethysm of 
 This definition of $\Gamma$-power series plethysm is then indeed the correct operation to pair with the composition of $\Gamma$-species:
 \begin{theorem}[Theorem 3.1, \cite{hend:specfield}]
   \label{thm:gspeccomp}
-  If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\emptyset} = \emptyset$, then
+  If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\varnothing} = \varnothing$, then
   \begin{equation}
     \label{eq:gspeccomp}
     Z_{A \circ B} = Z_{A} \circ Z_{B}.
