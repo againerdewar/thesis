@@ -143,9 +143,12 @@ We now associate to the categorical theory of species an enumerative mechanism -
 The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
 TODO: Say more about this connection. (See \cite{gessel:laginvspec}.)
 
-In many cases (although not by any means all), $\fix \pbrac{\sigma}$ will be a class function\footnote{That is, the value of $\fix \pbrac{\sigma}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
-In such a case, we can instead consider all permutations of a given cycle type at once; for a given partition $\lambda \vdash n$, there are $n! / z_{\lambda}$ such permutations, where $z_{\lambda} := \prod_{i} i^{\lambda_{i}} \lambda_{i}!$ for $\lambda = \pbrac{1^{\lambda_{1}}, 2^{\lambda_{2}}, \dots}$.
-Then we can instead write
+In fact, $\fix \pbrac{\sigma}$ is a class function\footnote{That is, the value of $\fix \pbrac{\sigma}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
+Accordingly, we can instead consider all permutations of a given cycle type at once.
+It is a classical theorem that conjugacy classes of permutations in $\mathfrak{S}_{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
+In particular, conjugacy classes are determined by their cycle type, the multiset of the lengths of the cycles, which may clearly be identified bijectively with partitions of $n$.
+For a given partition $\lambda \vdash n$, there are $n! / z_{\lambda}$ permutations of cycle type $\lambda$, where $z_{\lambda} := \prod_{i} i^{\lambda_{i}} \lambda_{i}!$ for $\lambda = \pbrac{1^{\lambda_{1}}, 2^{\lambda_{2}}, \dots}$.
+Thus, we can instead write
 \begin{equation}
   \label{eq:cycinddefpart}
   Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}}
