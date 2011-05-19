@@ -171,10 +171,11 @@ However, as the following theorems show, both labeled and unlabeled enumeration 
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
 In essence, equation \eqref{eq:cycindlab} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while equation \eqref{eq:cycindunlab} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
-In general, it is the unlabeled enumerations of complex combinatorial structures that have stymied researchers; isomorphism is typically much more difficult to characterize than mere labeled construction. Thus, if we can calculate the cycle indices of species, we may produce novel results.
+In cases where the unlabeled enumeration problem is interesting, it is generally more challenging than the labeled enumeration of the same structures, since the characterization of isomorphism in a species may be nontrivial to capture in a generating function.
+If, however, we can calculate the complete cycle index for a species, both labeled and unlabeled enumerations immediately follow.
 
 Of course, it is not always obvious how to calculate the cycle index of a species directly.
-However, the close association between the cycle index of a species and the functorial properties of that species lead to an elegant algebra of cycle indices, explored in the next section.
+However, in cases where we can decompose a species into combinations of simpler ones, we can exploit these relationships algebraically to study the cycle indices, as we will see in the next section.
 
 \section{Algebra of species}\label{s:specalg}
 It is often natural to describe a species in terms of combinations of other, simpler species --- for example, `a permutation is a set of cycles' or `a rooted tree is either a single vertex or a set of rooted trees'.
