@@ -225,9 +225,9 @@ Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
 
 \begin{definition}
   \label{def:speccomp}
-  For two species $F$ and $G$, define their \emph{plethystic composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
+  For two species $F$ and $G$, define their \emph{composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
 \end{definition}
-In other words, the plethystic composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, partially motivated by the following result on cycle indices:
+In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, partially motivated by the following result on cycle indices:
 \begin{theorem}
   \label{thm:speccompci}
   For species $F$ and $G$ with $G \sbrac{\emptyset} = \emptyset$, the cycle index of their plethysm is
@@ -320,7 +320,7 @@ where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_
 
 The operations of addition and multiplication extend to the multisort context naturally.
 To make sense of differentiation and pointing, we need only specify a sort from which to draw the element or label which is marked; we then write $F'^{X}$ and $\pointed[X]{F}$ for the derivative and pointing respectively of $F$ `in the sort $X$', which is to say with its distinguished element drawn from that sort.
-Making sense of the notion of partitional composition in multisort species is highly context-dependent; we note here only that, when $F$ is a $1$-sort species and $G$ a $k$-sort species, the construction of the $k$-sort species $F \circ G$ is natural. 
+Making sense of the notion of composition in multisort species is highly context-dependent; we note here only that, when $F$ is a $1$-sort species and $G$ a $k$-sort species, the construction of the $k$-sort species $F \circ G$ is natural. 
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 Now suppose a species $F$ admits an action under a group $\Gamma$ which is `natural' with respect to the species --- that is, for which transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
@@ -338,7 +338,7 @@ Note that, in particular, the classical (`ordinary') cycle index may be recovere
 
 The algebraic relationships between ordinary species and their cycle indices generally extend without modification to the $\Gamma$-species context, as long as appropriate allowances are made.
 The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case.
-The action of partitional composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended, but it requires an extended definition of the plethysm, here taken from \cite[\S 3]{hend:specfield}:
+The action of composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended, but it requires an extended definition of the plethysm, here taken from \cite[\S 3]{hend:specfield}:
 \begin{definition}\label{def:gpspleth}
   For two $\Gamma$-power series $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-power series defined by
   \begin{equation}
@@ -346,7 +346,7 @@ The action of partitional composition, which in ordinary species corresponds to 
     \label{eq:gpspleth}
   \end{equation}
 \end{definition}
-This definition of $\Gamma$-power series plethysm is then indeed the correct operation to pair with the partitional composition of $\Gamma$-species:
+This definition of $\Gamma$-power series plethysm is then indeed the correct operation to pair with the composition of $\Gamma$-species:
 \begin{theorem}[Theorem 3.1, \cite{hend:specfield}]
   \label{thm:gspeccomp}
   If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\emptyset} = \emptyset$, then
@@ -1230,7 +1230,7 @@ Our cycle-index analogues of equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig
 
 \subsection{Recursive components}\label{ss:ktcycindrec}
 We first consider the $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$ of child fronts and child hedra respectively.
-The action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ffuncorig} is trivial, so the plethystic composition of \cite[\S 3]{hend:specfield} is indeed the correct operation:
+The action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ffuncorig} is trivial, so we need only take the appropriate species composition:
 \begin{equation}
   \label{eq:ffunc}
   Z_{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}'} \circ Z_{H_{k}} \pbrac{\sigma}}.
@@ -1270,7 +1270,7 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
 
 \subsection{Rooted components}\label{ss:ktcycindroot}
 We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\mathfrak{a}}_{O, k}$ of front-rooted coherently-oriented $k$-trees and the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-species $\pointed[XY]{\mathfrak{a}}_{O, k}$ of fronted-hedron-rooted coherently-oriented $k$-trees.
-As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ayfuncorig} is trivial, so plethystic composition is the desired operation:
+As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ayfuncorig} is trivial, so again species composition is the desired operation:
 \begin{equation}
   \label{eq:ayfunc}
   Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
