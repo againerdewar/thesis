@@ -88,13 +88,17 @@ A full, pedagogical exposition of the theory of species is available in \cite{bl
 
 To begin, we wish to formalize the notion of a `construction' of a structure of some given class from a set of `labels', such as the construction of a graph from its vertex set or or that of a linear order from its elements.
 The language of category theory will allow us capture this behavior succinctly yet with full generality:
-\begin{definition}\label{def:species} %TODO: Use Joyal's definition (functor to category of general sets with set maps) so that passage to quotient species is a natural transformation?
-  Let $\mathbf{B}$ be the category of finite sets with bijections.
-  Then a \emph{species} is a functor $F: \mathbf{B} \to \mathbf{B}$.
+\begin{definition}\label{def:species}
+  Let $\mathbf{B}$ be the category of finite sets with bijections and $\mathbf{S}$ be the category of finite sets with set maps.
+  Then a \emph{species} is a functor $F: \mathbf{B} \to \mathbf{S}$.
   For a set $A$ and a species $F$, an element of $F \sbrac{A}$ is an \emph{$F$-structure on $A$}.
   Moreover, for a species $F$ and a bijection $\phi: A \to B$, the bijection $F \sbrac{\phi}: F \sbrac{A} \to F \sbrac{B}$ is the \emph{$F$-transport of $\phi$}.
 \end{definition}
-A species functor $F$ simply associates to each set $A$ another set $F \sbrac{A}$ of its $F$-structures; for example, for $\specname{S}$ the species of permutations, we associate to some set $A$ the set $\specname{S} \sbrac{A} = \operatorname{Bij} \pbrac{A}$ of self-bijections (that is, permutations as maps) of $A$. 
+A species functor $F$ simply associates to each set $A$ another set $F \sbrac{A}$ of its $F$-structures; for example, for $\specname{S}$ the species of permutations, we associate to some set $A$ the set $\specname{S} \sbrac{A} = \operatorname{Bij} \pbrac{A}$ of self-bijections (that is, permutations as maps) of $A$.
+
+This definition is the original from \cite{joy:species}.
+Since the image of a bijection under such a functor is a necessarily itself a bijection, many authors instead simply define a species as a functor $F: \mathbf{B} \to \mathbf{B}$.
+Our motivation for using this definition instead will become clear in \S \ref{s:quot}.
 
 Note that, having defined the species $F$ to be a functor, we have the following properties:
 \begin{itemize}
@@ -323,7 +327,37 @@ Making sense of the notion of composition in multisort species is highly context
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 Now suppose a species $F$ admits an action under a group $\Gamma$ which is `natural' with respect to the species --- that is, for which transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
-We can then define a new species $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of $F$-structures.
+We can then define a new species $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of
+$F$-structures.
+Moreover, for any bijection $\sigma: A \to B$, we then have an associated bijection $\nicefrac{F}{\Gamma} \sbrac{\sigma}: \nicefrac{F}{\Gamma} \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{B}$, and the whole diagram
+\begin{equation*}
+  \begin{tikzpicture}[every node/.style={auto}]
+    \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
+    {
+      A & F \sbrac{A} & \nicefrac{F}{\Gamma} \sbrac{A} \\
+      B & F \sbrac{B}  & \nicefrac{F}{\Gamma} \sbrac{B} \\
+    };
+    \path[->]
+    (m-1-1) edge node[below] {$F$} (m-1-2)
+    edge node {$\sigma$} (m-2-1)
+    (m-1-2) edge node[below] {$\Gamma \curvearrowright$} (m-1-3)
+    edge node {$F \sbrac{\sigma}$} (m-2-2)
+    (m-1-3) edge node {$\nicefrac{F}{\Gamma} \sbrac{\sigma}$} (m-2-3)
+    (m-2-1) edge node {$F$} (m-2-2)
+    (m-2-2) edge node {$\Gamma \curvearrowright$} (m-2-3);
+    
+    \path[->,bend left]
+    (m-1-1) edge node {$\nicefrac{F}{\Gamma}$} (m-1-3);
+
+    \path[->,bend right]
+    (m-2-1) edge node[below] {$\nicefrac{F}{\Gamma}$} (m-2-3);
+    
+\end{tikzpicture}
+\end{equation*}
+commutes.
+Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a natural transformation, given that we have defined the species $F$ as a functor $F: \mathbf{B} \to \mathbf{S}$.
+If instead we adopt the more common definition of a species as a functor $F: \mathbf{B} \to \mathbf{B}$, the maps denoted ``$\Gamma \curvearrowright$'' above are not in the target category $\mathbf{B}$, so passage to the $\Gamma$-quotient is no longer a natural transformation.
+
 A brief exposition of the notion of quotient species may be found in \cite[\S 3.6]{bll:species}, and a more thorough exposition (in French) in \cite{bous:species}.
 Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group; our goal will be to compute the cycle index of the species $\nicefrac{F}{\Gamma}$ in terms of that of $F$ and information about the $\Gamma$-action, so that enumerative data about the quotient species can be extracted.
 
