@@ -60,7 +60,7 @@
 % REQUIRED: The dissertation abstract.
 \begin{dissabstract}
   The theory of quotient species is developed as an intermediary to facilitate study of quotient species even in cases where the group $\Gamma$ is large or has a complicated action or where the full power of the algebra of species is needed.
-  This new approach is then applied to two graph-enumeration problems which were previously unsolved in the unlabeled case --- bipartite blocks and general $k$-trees.
+  This new approach is then applied to two graph-enumeration problems which were previously unsolved in the unlabeled case---bipartite blocks and general $k$-trees.
 \end{dissabstract}
 
 \begin{comment} We don't need a preface, at least for now.
@@ -133,7 +133,7 @@ The appropriate formalization again is most easily framed in categorical languag
 In the case that $F$ and $G$ are isomorphic species, we will often simply write $F = G$, since they are combinatorially equivalent; some authors instead use $F \simeq G$, reserving the notation of equality for the much stricter case that additionally requires that $F \sbrac{A} = G \sbrac{A}$ as sets for all $A$.
 
 \section{Cycle indices and species enumeration}\label{s:cycind}
-We now associate to the categorical theory of species an enumerative mechanism --- a special power series which keeps track of all the automorphism structure of the species:
+We now associate to the categorical theory of species an enumerative mechanism---a special power series which keeps track of all the automorphism structure of the species:
 \begin{definition}
   \label{def:cycind}
   For a species $F$, define its \emph{cycle index series} to be the power series
@@ -182,7 +182,7 @@ Of course, it is not always obvious how to calculate the cycle index of a specie
 However, in cases where we can decompose a species into combinations of simpler ones, we can exploit these relationships algebraically to study the cycle indices, as we will see in the next section.
 
 \section{Algebra of species}\label{s:specalg}
-It is often natural to describe a species in terms of combinations of other, simpler species --- for example, `a permutation is a set of cycles' or `a rooted tree is a single vertex together with a (possibly empty) set of rooted trees'.
+It is often natural to describe a species in terms of combinations of other, simpler species---for example, `a permutation is a set of cycles' or `a rooted tree is a single vertex together with a (possibly empty) set of rooted trees'.
 Several combinatorial operations on species of structures are commonly used to represent these kinds of combinations; that they have direct analogues in the algebra of cycle indices is in some sense the conceptual justification of the theory.
 In particular, for species $F$ and $G$, will define species $F + G$, $F \cdot G$, $F \circ G$, $\pointed{F}$, and $F'$, and we will compute their cycle indices in terms of $Z_{F}$ and $Z_{G}$.
 In what follows, we will not say explicitly what the effects of a given species operation are on bijections when those effects are obvious (as is usually the case).
@@ -327,7 +327,7 @@ Making sense of the notion of composition in multisort species is highly context
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 TODO: Restructure this section to begin with exposition and a definition.
-Now suppose a species $F$ admits an action under a group $\Gamma$ which is `natural' with respect to the species --- that is, for which transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
+Now suppose a species $F$ admits an action under a group $\Gamma$ which is `natural' with respect to the species---that is, for which transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
 We can then define a new species $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of
 $F$-structures.
 Moreover, for any bijection $\sigma: A \to B$, we then have an associated bijection $\nicefrac{F}{\Gamma} \sbrac{\sigma}: \nicefrac{F}{\Gamma} \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{B}$, and the whole diagram
@@ -490,7 +490,7 @@ We then need only count over all possible colorings of the cycles of $\lambda$.
   \label{fig:exbcecycle}
 \end{figure}
 
-To do this, we break our partition into two subpartitions --- $\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union --- and designate $\mu$ to represent the white cycles and $\nu$ the black.
+To do this, we break our partition into two subpartitions---$\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union---and designate $\mu$ to represent the white cycles and $\nu$ the black.
 Then the total number of graphs fixed by a $\lambda$-permutation is
 \begin{equation*}
   \fix \pbrac{\lambda} = \sum_{\substack{\mu, \nu \\ \mu \cup \nu = \lambda}} \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}
@@ -846,7 +846,7 @@ We will break this symmetry by adding additional structure which we can later re
   Then an orientation of a $k$-tree is \emph{coherent} is one such that every pair of adjacent hedra is compatibly-oriented.
 \end{definition}
 See Figure \ref{fig:exco2tree} for an example.
-Note that every $k$-tree admits many coherent orientations --- fixing a root hedron, we obtain one coherent orientation of the $k$-tree for each of the $k!$ orientations of the fronts of that root.
+Note that every $k$-tree admits many coherent orientations---fixing a root hedron, we obtain one coherent orientation of the $k$-tree for each of the $k!$ orientations of the fronts of that root.
 We will denote by $\mathfrak{a}_{O, k}$ the species of coherently-oriented $k$-trees.
 
 By shifting from the general $k$-tree setting to that of coherently-oriented $k$-trees, we break the symmetry described above.
@@ -1217,7 +1217,7 @@ Characterization of these structures is left to the later section on cycle-index
   \label{fig:rhoapp}
 \end{figure}
 
-We also need to consider the action of $\mathfrak{S}_{k}$ on $F_{k}$ --- but this action is locally trivial; changing the cyclic front-orderings on the hedra of a $k$-tree does not change the sets of hedra which are joined together at fronts, but only permutes these sets among the different fronts.
+We also need to consider the action of $\mathfrak{S}_{k}$ on $F_{k}$---but this action is locally trivial; changing the cyclic front-orderings on the hedra of a $k$-tree does not change the sets of hedra which are joined together at fronts, but only permutes these sets among the different fronts.
 Thus, $\sigma \in \mathfrak{S}_{k}$ acts on an $F_{k}$-structure simply by acting independently on each of the $H_{k}$-structures that are its children.
 
 Following the discussion in \S \ref{ss:codecomp}, we need also to define an action on the two classes of rooted coherently-oriented $k$-trees.
