@@ -139,9 +139,10 @@ We now associate to the categorical theory of species an enumerative mechanism--
   For a species $F$, define its \emph{cycle index series} to be the power series
   \begin{equation}
     \label{eq:cycinddef}
-    Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \bigg( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \bigg)
+    Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
   \end{equation}
   where $\fix \pbrac{F \sbrac{\sigma}} := \abs{\cbrac{s \in F \sbrac{A} : F \sbrac{\sigma} \pbrac{s} = s}}$, where $\sigma_{i}$ is the number of $i$-cycles of $\sigma$, and where $p_{i}$ are indeterminates.
+  We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
 \end{definition}
 
 The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
@@ -155,9 +156,10 @@ For a given partition $\lambda \vdash n$, there are $n! / z_{\lambda}$ permutati
 Thus, we can instead write
 \begin{equation}
   \label{eq:cycinddefpart}
-  Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}}
+  Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}} = \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{\lambda}}{z_{\lambda}}
 \end{equation}
 for $\fix F \sbrac{\lambda} := \fix F \sbrac{\sigma}$ for some choice of a permutation $\sigma$ of cycle type $\lambda$.
+Again, we will make extensive use of the notation $p_{\lambda} = p_{\sigma}$ hereafter.
 
 That the cycle index $Z_{F}$ usefully characterizes the enumerative structure of the species $F$ may not be clear.
 However, as the following theorems show, both labeled and unlabeled enumeration are immediately possible once the cycle index is in hand:
