@@ -494,12 +494,17 @@ We then need only count over all possible colorings of the cycles of $\lambda$.
 \end{figure}
 
 To do this, we break our partition into two subpartitions---$\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union---and designate $\mu$ to represent the white cycles and $\nu$ the black.
-Then the total number of graphs fixed by a $\lambda$-permutation is
+Then the total number of graphs fixed by such a decomposition is
 \begin{equation*}
-  \fix \pbrac{\lambda} = \sum_{\substack{\mu, \nu \\ \mu \cup \nu = \lambda}} \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}
+  \fix \pbrac{\mu, \nu} = \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}
 \end{equation*}
 where the product is over the elements of $\mu$ and $\lambda$ taken as multisets.
-There are $z_{\mu \cup \nu} / \pbrac{z_{\mu} z_{\nu}}$ ways to decompose $\lambda = \mu \cup \nu$, as is readily seen from the definition of $z_{\lambda}$.
+However, since $\mu$ and $\nu$ represent white and black cycles respectively, it is important to distinguish \emph{which} cycles of $\lambda$ are taken into each.
+The $\lambda_{i}$ $i$-cycles of $\lambda$ can be distributed into $\mu$ and $\nu$ in $\binom{\lambda_{i}}{\mu_{i}} = \lambda_{i}! / \pbrac{\mu_{i}! \nu_{i}!}$ ways, so in total there are $\prod_{i} \lambda_{i}! / \pbrac{\mu_{i}! \nu_{i}!} = z_{\lambda} / \pbrac{z_{\mu} z_{\nu}}$ decompositions.
+Thus,
+\begin{equation*}
+  \fix \pbrac{\lambda} = \frac{z_{\lambda}}{z_{\mu} z_{\nu}} \fix \pbrac{\mu, \nu} = \sum_{\mu \cup \nu = \lambda} \frac{z_{\lambda}}{z_{\mu} z_{\nu}} \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}.
+\end{equation*}
 Therefore we conclude:
 \begin{theorem}
   \begin{equation}
