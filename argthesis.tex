@@ -501,7 +501,6 @@ If we draw some particular bicolored edge, we must also draw every other edge in
 Moreover, every bicolored graph for which $\pi$ is an isomorphism may be constructed in this way.
 We therefore need only consider these edge orbits.
 
-TODO: Restructure this paragraph so it starts with a cycle, not an edge.
 Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its orbit under the permutation is $\lcm \pbrac{m, n}$, so the number of such orbits of edges between these two cycles is $mn / \lcm \pbrac{m, n} = \gcd \pbrac{m, n}$.
 For an example in the case $m = 4, n = 2$, see Figure \ref{fig:exbcecycle}.
 The number of orbits for a fixed coloring is then $\sum \gcd \pbrac{m, n}$ where the sum is over the multiset of all cycle lengths $m$ of white cycles and $n$ of black cycles in the permutation $\pi$.
@@ -573,9 +572,9 @@ Each cycle of vertices must be color-alternating and hence of even length, so ou
 Once this condition is satisfied, edges may be drawn either within a single cycle or between two cycles, and as before if we draw in any edge we must draw in its entire orbit under $\pi$ (since $\pi$ is to be an isomorphism of the underlying graph).
 Moreover, all graphs for which $\pi$ is a color-reversing isomorphism and with a fixed coloring may be constructed in this way, so it suffices to count such edge orbits and then consider how colorings may be assigned.
 
-Consider an edge connecting two vertices which are $l$ steps apart within a single cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$ and such an edge as having \emph{length} $l$ with respect to the permutation.
+Consider a cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$.
 There are exactly $n^{2}$ possible white-black edges in such a cycle.
-If $n$ is odd, diametrically opposed vertices have opposite colors, so we can have $l = n$, and in such a case the orbit length is exactly $n$ and there is exactly one orbit.
+If $n$ is odd, diametrically opposed vertices have opposite colors, so we can have an edge of length $l = n$ (in the sense of connecting two vertices which are $l$ steps apart in the cycle), and in such a case the orbit length is exactly $n$ and there is exactly one orbit.
 See Figure \ref{fig:exbctincycd} for an example of this case.
 However, if $n$ is odd but $l \neq n$, the orbit length is $2n$, so the number of such orbits is $\frac{n^{2} - n}{2n}$.
 Hence, the total number of orbits for $n$ odd is $\frac{n^2 + n}{2n} = \ceil{\frac{n}{2}}$.
