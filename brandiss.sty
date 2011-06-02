@@ -29,9 +29,17 @@
 \DeclareOption{online}{\@onlinetrue}
 \DeclareOption{printed}{\@onlinefalse}
 
+% boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
+\newif\if@boldmathhdr
+\DeclareOption{boldmathhdr}{\@boldmathhdrtrue}
+\DeclareOption{normalmathhdr}{\@boldmathhdrfalse}
+
 %  Default Setup:
 %  Use printed option by default.
 \ExecuteOptions{printed}
+
+%  Use normal math headings by default.
+\ExecuteOptions{normalmathhdr}
 
 % Process the options.
 \ProcessOptions\relax
@@ -69,7 +77,9 @@
   \cleardoublepage
   \thispagestyle{empty} %% page number is omitted
   \begin{center}
-    {\fontsize{\@xivpt}{18}\textbf{\thediss{title}}}
+    {\fontsize{\@xivpt}{18}\textbf{%
+      \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in title bold.
+      \thediss{title}}}
     \vfil
     A Dissertation
     \vfil
@@ -155,7 +165,9 @@
 \newenvironment{dissabstract}{%
   \begin{dissfrontpage}{Abstract}
     \begin{center}
-      \textbf{\thediss{title}}\\[1ex]
+      \textbf{%
+        \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in title bold.
+        \thediss{title}}\\[1ex]
       \begin{singlespace}
         \noindent A dissertation presented to the Faculty of the\\
         Graduate School of Arts and Sciences of Brandeis\\

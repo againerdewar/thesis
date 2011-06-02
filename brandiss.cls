@@ -38,6 +38,11 @@
 \DeclareOption{singlespace}{\@dodoublespacefalse}
 \DeclareOption{doublespace}{\@dodoublespacetrue}
 
+% boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
+\newif\if@boldmathhdr
+\DeclareOption{boldmathhdr}{\@boldmathhdrtrue}
+\DeclareOption{normalmathhdr}{\@boldmathhdrfalse}
+
 %  online|printed -> online or printed [default] submission.
 %  Pass these options to the brandiss package.
 \DeclareOption{online}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
@@ -55,6 +60,9 @@
 
 % Use double spacing by default.
 \ExecuteOptions{doublespace}
+
+% Use normal math headers by default.
+\ExecuteOptions{normalmathhdr}
 
 % GSAS formatting requirements: 12 point font and one-sided printing.
 % Set up the amsbook class with these default options before option
@@ -152,9 +160,77 @@
   \pagestyle{plain}
 }
 
-% If sectionbreak is true, add a clearpage at the end of each section.
-\let\stdsection\section
-\renewcommand\section{\if@sectionbreak{\ifnum\c@section>0{\clearpage}\fi}\fi\stdsection}
+% We redefine all the section headings but preserve almost everything from AMS-Book.
+% This is clearly not the optimal way to approach the problem of bold mathematics in section headers,
+% but AMS-Book does *not* like to work with helper packages like titlesec.
+
+\def\chapter{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \thispagestyle{plain}\global\@topnum\z@
+  \@afterindenttrue \secdef\@chapter\@schapter}
+\def\@chapter[#1]#2{\refstepcounter{chapter}%
+  \ifnum\c@secnumdepth<\z@ \let\@secnumber\@empty
+  \else \let\@secnumber\thechapter \fi
+  \typeout{\chaptername\space\@secnumber}%
+  \def\@toclevel{0}%
+  \ifx\chaptername\appendixname \@tocwriteb\tocappendix{chapter}{#2}%
+  \else \@tocwriteb\tocchapter{chapter}{#2}\fi
+  \chaptermark{#1}%
+  \addtocontents{lof}{\protect\addvspace{10\p@}}%
+  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \@makechapterhead{#2}\@afterheading}
+\def\@schapter#1{\typeout{#1}%
+  \let\@secnumber\@empty
+  \def\@toclevel{0}%
+  \ifx\chaptername\appendixname \@tocwriteb\tocappendix{chapter}{#1}%
+  \else \@tocwriteb\tocchapter{chapter}{#1}\fi
+  \chaptermark{#1}%
+  \addtocontents{lof}{\protect\addvspace{10\p@}}%
+  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \@makeschapterhead{#1}\@afterheading}
+
+\def\@makechapterhead#1{\global\topskip 7.5pc\relax
+  \begingroup
+  \fontsize{\@xivpt}{18}\bfseries\centering\if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in chapter headings bold.
+    \ifnum\c@secnumdepth>\m@ne
+      \leavevmode \hskip-\leftskip
+      \rlap{\vbox to\z@{\vss
+          \centerline{\normalsize\mdseries
+              \uppercase\@xp{\chaptername}\enspace\thechapter}
+          \vskip 3pc}}\hskip\leftskip\fi
+     #1\par \endgroup
+  \skip@34\p@ \advance\skip@-\normalbaselineskip
+  \vskip\skip@ }
+\def\@makeschapterhead#1{\global\topskip 7.5pc\relax
+  \begingroup
+  \fontsize{\@xivpt}{18}\bfseries\centering\if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in chapter headings bold.
+  #1\par \endgroup
+  \skip@34\p@ \advance\skip@-\normalbaselineskip
+  \vskip\skip@ }
+
+\def\section{\if@sectionbreak{\ifnum\c@section>0{\clearpage}\fi}\fi% %If sectionbreak is true, add a clearpage at the end of each section.
+  \@startsection{section}{1}%
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+  {\normalfont%
+    \bfseries%
+    \centering%
+    \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in section headings bold.
+    }}
+\def\subsection{\@startsection{subsection}{2}%
+  \normalparindent{.5\linespacing\@plus.7\linespacing}{-.5em}%
+  {\normalfont%
+    \bfseries%
+    \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in subsection headings bold.
+  }}
+\def\subsubsection{\@startsection{subsubsection}{3}%
+  \normalparindent\z@{-.5em}%
+  {\normalfont\itshape}}
+\def\paragraph{\@startsection{paragraph}{4}%
+  \normalparindent\z@{-\fontdimen2\font}%
+  \normalfont}
+\def\subparagraph{\@startsection{subparagraph}{5}%
+  \z@\z@{-\fontdimen2\font}%
+  \normalfont}
 
 %%% Local Variables: 
 %%% mode: latex
