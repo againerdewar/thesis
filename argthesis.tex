@@ -328,11 +328,41 @@ To make sense of differentiation and pointing, we need only specify a sort from 
 Making sense of the notion of composition in multisort species is highly context-dependent; we note here only that, when $F$ is a $1$-sort species and $G$ a $k$-sort species, the construction of the $k$-sort species $F \circ G$ is natural. 
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
-TODO: Restructure this section to begin with exposition and a definition.
-Now suppose a species $F$ admits an action under a group $\Gamma$ which is `natural' with respect to the species---that is, for which transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
-We can then define a new species $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of
-$F$-structures.
-Moreover, for any bijection $\sigma: A \to B$, we then have an associated bijection $\nicefrac{F}{\Gamma} \sbrac{\sigma}: \nicefrac{F}{\Gamma} \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{B}$, and the whole diagram
+It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structure under the action of a group.
+If we hope to integrate this concept into the theory of species, we must at least demand that the action of a group $\Gamma$ on a species $F$ be compatible with the transport of structures in the sense that transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
+Informally, this is the requirement that $\Gamma$ acts on $F$-structures in a way that is independent of labelings.
+We incorporate such transport-compatible actions into a new definition:
+\begin{definition}
+  \label{def:gspecies}
+  For $\Gamma$ a group, a $\Gamma$-species $F$ is a species $F$ together with an action of $\Gamma$ on $F$-structures which commutes with transport of structures---that is, for which the whole diagram
+  \begin{equation*}
+    \begin{tikzpicture}[every node/.style={auto}]
+      \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
+      {
+        A & F \sbrac{A} & \gamma \cdot F \sbrac{A} \\
+        B & F \sbrac{B}  & \gamma \cdot F \sbrac{B} \\
+      };
+      \path[->]
+      (m-1-1) edge node[below] {$F$} (m-1-2)
+      edge node {$\sigma$} (m-2-1)
+      (m-1-2) edge node[below] {$\gamma$} (m-1-3)
+      edge node {$F \sbrac{\sigma}$} (m-2-2)
+      (m-1-3) edge node {$F \sbrac{\sigma}$} (m-2-3)
+      (m-2-1) edge node {$F$} (m-2-2)
+      (m-2-2) edge node {$\gamma$} (m-2-3);
+    \end{tikzpicture}
+  \end{equation*}
+  commutes for every $\gamma \in \Gamma$.
+  (Note that commutativity of the left square is required for $F$ to be a species at all.)
+\end{definition}
+
+For such a species, of course, it is then meaningful to pass to the quotient:
+\begin{definition}
+  \label{def:qspecies}
+  For $F$ a $\Gamma$-species, define $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of $F$-structures.
+\end{definition}
+
+Simply because $\nicefrac{F}{\Gamma}$ is a species, we have transport of a bijection $\sigma: A \to B$ to a bijection $\nicefrac{F}{\Gamma} \sbrac{\sigma}: \nicefrac{F}{\Gamma} \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{B}$. However, from the diagram above, we also have that
 \begin{equation*}
   \begin{tikzpicture}[every node/.style={auto}]
     \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
@@ -362,12 +392,19 @@ Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a natural transformation
 If instead we adopt the more common definition of a species as a functor $F: \mathbf{B} \to \mathbf{B}$, the maps denoted $\action{\Gamma}$ above are not in the target category $\mathbf{B}$, so passage to the $\Gamma$-quotient is no longer a natural transformation.
 
 A brief exposition of the notion of quotient species may be found in \cite[\S 3.6]{bll:species}, and a more thorough exposition (in French) in \cite{bous:species}.
-Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group; our goal will be to compute the cycle index of the species $\nicefrac{F}{\Gamma}$ in terms of that of $F$ and information about the $\Gamma$-action, so that enumerative data about the quotient species can be extracted.
+Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group.
+Our goal will be to compute the cycle index of the species $\nicefrac{F}{\Gamma}$ in terms of that of $F$ and information about the $\Gamma$-action, so that enumerative data about the quotient species can be extracted.
 
-As an intermediate step to the computation of the cycle index associated to this quotient species, we term a species $F$ to be a \emph{$\Gamma$-species} if it admits a $\Gamma$-action.
-We then define the $\Gamma$-cycle index of a $\Gamma$-species $F$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
-\begin{equation} Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma} \label{eq:gcycinddef} \end{equation}
-with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
+As an intermediate step to the computation of the cycle index associated to this quotient species, we associate a cycle index to a $\Gamma$-species $F$ that keeps track of the needed data about the $\Gamma$-action.
+\begin{definition}
+  \label{def:gcycind}
+  For a $\Gamma$-species $F$, define the $\Gamma$-cycle index $Z_{F}$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
+  \begin{equation}
+    Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma} \label{eq:gcycinddef}
+  \end{equation}
+  with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
+\end{definition}
+
 We will call such an object (formally a map from $\Gamma$ to the ring $\mathbf{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of rational power series in infinitely many $p$-variables) a \emph{$\Gamma$-power series}, and we will sometimes call $Z_{F} \pbrac{\gamma}$ the `$\gamma$ term of $Z_{F}$' or even `the $\gamma$-cycle index of $Z_{F}$'.
 So the coefficients in the power series count the fixed points of the \emph{combined} action of a permutation and the group element $\gamma$.
 Note that, in particular, the classical (`ordinary') cycle index may be recovered as $Z_{F} = Z_{F} \pbrac{e}$ for any $\Gamma$-species $F$.
@@ -391,14 +428,21 @@ This definition of $\Gamma$-power series plethysm is then indeed the correct ope
     Z_{A \circ B} = Z_{A} \circ Z_{B}.
   \end{equation}
 \end{theorem}
+Thus, $\Gamma$-species admit the same sorts of `nice' correspondences between structural descriptions (in terms of functorial algebra) and enumerative characterizations (in terms of cycle indices) that ordinary species do.
 
-We then apply a generalization of Burnside's Lemma found in \cite[Lemma 5]{gessel:laginvspec}:
+However, to make use of this theory for enumerative purposes, we also need to be able to pass from the $\Gamma$-cycle index of a $\Gamma$-species to the ordinary cycle index of its associated quotient species under the action of $\Gamma$.
+This will allow us to adopt a useful strategy: if we can characterize some difficult-to-enumerate combinatorial structure as quotients of more accessible structures, we will be able to apply the full force of species theory to the enumeration of the prequotient structures, \emph{then} pass to the quotient when it is convenient.
+Exactly this approach will serve as the core of both of the following chapters.
+
+Since we intend to enumerate orbits under a group action, we apply a generalization of Burnside's Lemma found in \cite[Lemma 5]{gessel:laginvspec}:
 \begin{lemma}
   \label{lem:grouporbits}
   If $\Gamma$ and $\Delta$ are finite groups and $S$ a set with a $\pbrac{\Gamma \times \Delta}$-action, for any $\delta \in \Delta$ the number of $\Gamma$-orbits fixed by $\delta$ is $\frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \fix \pbrac{\gamma, \delta}$.
 \end{lemma}
 
-Since to count the fixed points of $\sigma \in \mathfrak{S}_{n}$ in the quotient species $\nicefrac{F}{\Gamma}$ is by definition to count the fixed $\Gamma$-orbits of $\sigma$ in $F$ under commuting actions of $\mathfrak{S}_{n}$ and $\Gamma$ (that is, under an $\pbrac{\mathfrak{S}_{n} \times \Gamma}$-action), Lemma \ref{lem:grouporbits} implies the following:
+Recall from eq.\ \eqref{eq:cycinddef} that, to compute the cycle index of a species, we need to enumerate the fixed points of each $\sigma \in \mathfrak{S}_{n}$.
+However, to do this in the quotient species $\nicefrac{F}{\Gamma}$ is by definition to count the fixed $\Gamma$-orbits of $\sigma$ in $F$ under commuting actions of $\mathfrak{S}_{n}$ and $\Gamma$ (that is, under an $\pbrac{\mathfrak{S}_{n} \times \Gamma}$-action).
+Thus, Lemma \ref{lem:grouporbits} implies the following:
 \begin{theorem}\label{thm:qsci}
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
@@ -408,7 +452,6 @@ Since to count the fixed points of $\sigma \in \mathfrak{S}_{n}$ in the quotient
 \end{theorem}
 Note that this same result on cycle indices is implicit in \cite[\S 2.3]{bous:species}.
 With it, we can compute explicit enumerative data for a quotient species using cycle-index information of the original $\Gamma$-species with respect to the group action, as desired.
-What we have gained by passing through the intermediary of a $\Gamma$-species is the ability to make sense of compositions of quotient species, which we will put to use in the following chapters.
 
 Note also that all of the above extends naturally into the multisort species context.
 We will use this extensively in Chapter \ref{c:ktrees}.
