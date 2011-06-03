@@ -723,13 +723,13 @@ By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle
 
 Finally, to reach a result for the general bipartite case, we return to the graph-theoretic composition relationship previously considered in \S \ref{s:cbc}:
 \begin{equation*}
-  \specname{BP} = \specname{E}^{+} \circ \specname{CBP}.
+  \specname{BP} = \specname{E} \circ \specname{CBP}.
 \end{equation*}
 
 This time, we need not invert the composition, so the cycle-index calculation is simple:
 \begin{theorem}
   \begin{equation}
-    Z_{\specname{BP}} = \exp \pbrac{Z_{\specname{CBP}}}.
+    Z_{\specname{BP}} = Z_{\specname{E}} \circ \pbrac{Z_{\specname{CBP}}}.
   \end{equation}
 \end{theorem}
 
