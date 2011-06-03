@@ -416,21 +416,22 @@ As an intermediate step to the computation of the cycle index associated to this
   with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
 \end{definition}
 
-We will call such an object (formally a map from $\Gamma$ to the ring $\mathbf{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of rational power series in infinitely many $p$-variables) a \emph{$\Gamma$-power series}, and we will sometimes call $Z_{F} \pbrac{\gamma}$ the `$\gamma$ term of $Z_{F}$' or even `the $\gamma$-cycle index of $Z_{F}$'.
+We will call such an object (formally a map from $\Gamma$ to the ring $\mathbf{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $Z_{F} \pbrac{\gamma}$ the `$\gamma$ term of $Z_{F}$'.
 So the coefficients in the power series count the fixed points of the \emph{combined} action of a permutation and the group element $\gamma$.
 Note that, in particular, the classical (`ordinary') cycle index may be recovered as $Z_{F} = Z_{F} \pbrac{e}$ for any $\Gamma$-species $F$.
 
 The algebraic relationships between ordinary species and their cycle indices generally extend without modification to the $\Gamma$-species context, as long as appropriate allowances are made.
 The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case.
 The action of composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended, but it requires an extended definition of the plethysm, here taken from \cite[\S 3]{hend:specfield}:
-\begin{definition}\label{def:gpspleth}
-  For two $\Gamma$-power series $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-power series defined by
+\begin{definition}
+  \label{def:gcipleth}
+  For two $\Gamma$-cycle indices $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-cycle index defined by
   \begin{equation}
     \pbrac{f \circ g} \pbrac{\gamma} = f \pbrac{\gamma} \sbrac{g \pbrac{\gamma} \sbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbrac{\gamma^{2}} \sbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots}.
-    \label{eq:gpspleth}
+    \label{eq:gcipleth}
   \end{equation}
 \end{definition}
-This definition of $\Gamma$-power series plethysm is then indeed the correct operation to pair with the composition of $\Gamma$-species:
+This definition of $\Gamma$-cycle index plethysm is then indeed the correct operation to pair with the composition of $\Gamma$-species:
 \begin{theorem}[Theorem 3.1, \cite{hend:specfield}]
   \label{thm:gspeccomp}
   If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\varnothing} = \varnothing$, then
@@ -503,7 +504,7 @@ Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{
   Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma}.
 \end{equation*}
 Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism.
-We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-power series identity.
+We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$.
 We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving isomorphism.
@@ -1331,7 +1332,7 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
   \begin{equation*}
     Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\sigma^{\abs{c}}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
   \end{equation*}
-  by equation \eqref{eq:gpspleth}.
+  by equation \eqref{eq:gcipleth}.
 
   Any $H_{k}$-structure, regardless of $\sigma$, requires an $X$-label for the root hedron, which contributes a $p_{1} \sbrac{x}$ term to the cycle index.
   The other labels on an $H_{k}$-structure will be divided among a collection of $F_{k}$-structures.
