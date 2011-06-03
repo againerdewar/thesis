@@ -490,7 +490,7 @@ The motivating graph-theoretic observation is that each \emph{connected} biparti
 We will hereafter treat all the various species of bicolored graphs as $\mathfrak{S}_{2}$-species with respect to this action and use the theory developed in \S \ref{s:quot} to pass to bipartite graphs.
 
 Although the theory of multisort species presented in \S \ref{s:mult} is in general well-suited to the study of colored graphs, we will not need it here.
-The restrictions that vertex colorings place on isomorphisms of bicolored graphs are simple enough that we can deal with them directly.
+The restrictions that vertex colorings place on automorphisms of bicolored graphs are simple enough that we can deal with them directly.
 
 \section{Bicolored graphs}\label{s:bcgraph}
 We begin our investigation by directly computing the $\mathfrak{S}_{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-reversing $\mathfrak{S}_{2}$-action described previously.
@@ -503,14 +503,14 @@ Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{
 \begin{equation*}
   Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma}.
 \end{equation*}
-Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving isomorphism.
+Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
 We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$.
-We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving isomorphism.
+We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving automorphism.
 Each cycle of the permutation must correspond to a monochromatic subset of the vertices, so we may construct graphs by drawing bicolored edges into a given colored vertex set.
-If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an isomorphism of the graph.
-Moreover, every bicolored graph for which $\pi$ is an isomorphism may be constructed in this way.
+If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an automorphism of the graph.
+Moreover, every bicolored graph for which $\pi$ is an automorphism may be constructed in this way.
 We therefore need only consider these edge orbits.
 
 Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its orbit under the permutation is $\lcm \pbrac{m, n}$, so the number of such orbits of edges between these two cycles is $mn / \lcm \pbrac{m, n} = \gcd \pbrac{m, n}$.
@@ -543,7 +543,7 @@ We then need only count over all possible colorings of the cycles of $\lambda$.
     \SetUpEdge[style=solid]
     \Edge[label={$e$}](a1)(b1)
   \end{tikzpicture}
-  \caption[Example edge-orbit of a color-preserving isomorphism]{An edge $e$ between two cycles of lengths $4$ and $2$ in a permutation and that edge's orbit}
+  \caption[Example edge-orbit of a color-preserving automorphism]{An edge $e$ between two cycles of lengths $4$ and $2$ in a permutation and that edge's orbit}
   \label{fig:exbcecycle}
 \end{figure}
 
@@ -578,11 +578,11 @@ The numbers of labeled and unlabeled bicolored graphs for $n \leq 10$ as calcula
 Recall that the nontrivial element of $\tau \in \mathfrak{S}_{2}$ acts on bicolored graphs by reversing all colors.
 
 We again consider the cycles in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \mathfrak{S}_{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping.
-We then wish to count bicolored graphs on $\sbrac{n}$ for which $\tau \cdot \pi$ is an isomorphism, which is to say that $\pi$ itself is a color-\emph{reversing} isomorphism.
-Once again, the number of bicolored graphs for which $\pi$ is a color-reversing isomorphism is in fact dependent only on the cycle type $\lambda$.
+We then wish to count bicolored graphs on $\sbrac{n}$ for which $\tau \cdot \pi$ is an automorphism, which is to say that $\pi$ itself is a color-\emph{reversing} automorphism.
+Once again, the number of bicolored graphs for which $\pi$ is a color-reversing automorphism is in fact dependent only on the cycle type $\lambda$.
 Each cycle of vertices must be color-alternating and hence of even length, so our partition $\lambda$ must have only even parts.
-Once this condition is satisfied, edges may be drawn either within a single cycle or between two cycles, and as before if we draw in any edge we must draw in its entire orbit under $\pi$ (since $\pi$ is to be an isomorphism of the underlying graph).
-Moreover, all graphs for which $\pi$ is a color-reversing isomorphism and with a fixed coloring may be constructed in this way, so it suffices to count such edge orbits and then consider how colorings may be assigned.
+Once this condition is satisfied, edges may be drawn either within a single cycle or between two cycles, and as before if we draw in any edge we must draw in its entire orbit under $\pi$ (since $\pi$ is to be an automorphism of the underlying graph).
+Moreover, all graphs for which $\pi$ is a color-reversing automorphism and with a fixed coloring may be constructed in this way, so it suffices to count such edge orbits and then consider how colorings may be assigned.
 
 Consider a cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$.
 There are exactly $n^{2}$ possible white-black edges in such a cycle.
@@ -629,7 +629,7 @@ See Figure \ref{fig:exbctincyce} for an example of each of these cases.
         \Edge[label={$e$}](b0)(b1)
       \end{tikzpicture}
     }}
-  \caption[Two example edge-orbits in a color-reversing isomorphism]{Both types of intra-cycle edges and their orbits on a typical color-alternating $6$-cycle}
+  \caption[Two example edge-orbits in a color-reversing automorphism]{Both types of intra-cycle edges and their orbits on a typical color-alternating $6$-cycle}
   \label{fig:exbctincyc}
 \end{figure}
 
@@ -660,12 +660,12 @@ Hence, the total number of orbits is $2mn / \pbrac{2 \lcm \pbrac{m, n}} = \gcd \
     \SetUpEdge[style=solid]
     \Edge[label={$e$}](a0)(b1)
   \end{tikzpicture}
-  \caption[Another example edge-orbit of a color-reversing isomorphism]{An edge $e$ and its orbit between color-alternating cycles of semilengths $2$ and $1$}
+  \caption[Another example edge-orbit of a color-reversing automorphism]{An edge $e$ and its orbit between color-alternating cycles of semilengths $2$ and $1$}
   \label{fig:exbctbtwcyc}
 \end{figure}
 
 All together, then, the number of orbits for a fixed coloring of a permutation of cycle type $2 \lambda$ (denoting the partition obtained by doubling every part of $\lambda$) is $\sum_{i} \ceil{\frac{\lambda_{i}}{2}} + \sum_{i < j} \gcd \pbrac{\lambda_{i}, \lambda_{j}}$.
-All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving isomorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \S \ref{ss:ecibc}.
+All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving automorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \S \ref{ss:ecibc}.
 Thus, the total number of possible graphs for a given vertex coloring is
 \begin{equation*}
   \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}},
