@@ -510,14 +510,13 @@ Fix some $n \geq 0$ and let $\lambda \vdash n$.
 We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving automorphism.
 Each cycle of the permutation must correspond to a monochromatic subset of the vertices, so we may construct graphs by drawing bicolored edges into a given colored vertex set.
 If we draw some particular bicolored edge, we must also draw every other edge in its orbit under $\pi$ if $\pi$ is to be an automorphism of the graph.
-Moreover, every bicolored graph for which $\pi$ is an automorphism may be constructed in this way.
-We therefore need only consider these edge orbits.
+Moreover, every bicolored graph for which $\pi$ is an automorphism may be constructed in this way
+Therefore, we direct our attention first to counting these edge orbits for a fixed coloring; we will then count colorings with respect to these results to get our total cycle index.
 
 Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its orbit under the permutation is $\lcm \pbrac{m, n}$, so the number of such orbits of edges between these two cycles is $mn / \lcm \pbrac{m, n} = \gcd \pbrac{m, n}$.
 For an example in the case $m = 4, n = 2$, see Figure \ref{fig:exbcecycle}.
 The number of orbits for a fixed coloring is then $\sum \gcd \pbrac{m, n}$ where the sum is over the multiset of all cycle lengths $m$ of white cycles and $n$ of black cycles in the permutation $\pi$.
 We may then construct any possible graph fixed by our permutation by making a choice of a subset of these cycles to fill with edges, so the total number of such graphs is $\prod 2^{\gcd \pbrac{m, n}}$ for a fixed coloring.
-We then need only count over all possible colorings of the cycles of $\lambda$.
 
 \begin{figure}[htb]
   \centering
@@ -547,7 +546,8 @@ We then need only count over all possible colorings of the cycles of $\lambda$.
   \label{fig:exbcecycle}
 \end{figure}
 
-To do this, we break our partition into two subpartitions---$\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union---and designate $\mu$ to represent the white cycles and $\nu$ the black.
+We now turn our attention to the possible colorings of the graph which are compatible with a permutation of specified cycle type $\lambda$.
+We split our partition into two subpartitions, writing $\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union, and designate $\mu$ to represent the white cycles and $\nu$ the black.
 Then the total number of graphs fixed by such a decomposition is
 \begin{equation*}
   \fix \pbrac{\mu, \nu} = \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}
