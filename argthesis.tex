@@ -234,7 +234,17 @@ Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
   \label{def:speccomp}
   For two species $F$ and $G$, define their \emph{composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
 \end{definition}
-In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, partially motivated by the following result on cycle indices:
+In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, motivated by a correspondence with a certain operation on cycle indices:
+\begin{definition}
+  \label{def:cipleth}
+  Let $f$ and $g$ be cycle indices. Then the \emph{plethysm} $f \circ g$ is the cycle index
+  \begin{equation}
+    \label{eq:cipleth}
+    f \circ g = f \sbrac{g \sbrac{p_{1}, p_{2}, p_{3}, \dots}, g \sbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots},
+  \end{equation}
+  where $f \sbrac{a, b, \dots}$ denotes the cycle index $f$ with $a$ substituted for $p_{1}$, $b$ substituted for $p_{2}$, and so on.
+\end{definition}
+This definition is inherited directly from the theory of symmetric functions in infinitely many variables, where our $p_{i}$ are basis elements, as previously discussed. This operation on cycle indices then corresponds exactly to species composition:
 \begin{theorem}
   \label{thm:speccompci}
   For species $F$ and $G$ with $G \sbrac{\varnothing} = \varnothing$, the cycle index of their plethysm is
@@ -242,7 +252,7 @@ In other words, the composition $F \circ G$ produces the species of $F$-structur
     \label{eq:speccompci}
     Z_{F \circ G} = Z_{F} \circ Z_{G}
   \end{equation}
-  where $\circ$ in the right-hand side is the plethysm of formal power series.
+  where $\circ$ in the right-hand side is as in eq. \eqref{eq:cipleth}.
 \end{theorem}
 Many combinatorial structures admit natural descriptions as compositions of species.
 For example, every graph admits a unique decomposition as a (possibly empty) set of (nonempty) connected graphs, so we have the species identity $\specname{G} = \specname{E} \circ \specname{G}^{C}$ for $\specname{G}$ the species of graphs and $\specname{G}^{C}$ the species of nonempty connected graphs.
