@@ -1221,14 +1221,17 @@ It remains, of course, to remove the additional structure we have imposed on hed
 For this, we introduce another group action.
 
 \subsection{Defining a $C_{k+1}$-action}\label{ss:zaction}
-We now define an action on $\pointed[XY]{\mathfrak{a}}_{O, k}$ by the cyclic group $C_{k+1}$ which will rotate the front-designation around the root hedron of an $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure.
-Let $\zeta$ be the generator of $C_{k+1}$, whose action will be to rotate the front-designation by one slot with respect to the cyclic order on the front of the root hedron.
+We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed{\mathfrak{a}}[Y]_{O, k}$, and $\pointed{\mathfrak{a}}[XY]_{O, k}$.
+However, to apply Theorem \ref{thm:dissymco} to study the species $\mathfrak{a}_{O, k}$ itself, need to pass from $\pointed{\mathfrak{a}}[XY]_{O, k}$ to $\pointed{\mathfrak{a}}[X]_{O, k}$.
+We note that a $\pointed{\mathfrak{a}}[X]_{O, k}$-structure (that is, a hedron-rooted coherently-oriented $k$-tree) can be identified naturally with the set of $\pointed{\mathfrak{a}}[XY]_{O, k}$-structures which are obtained by rooting the original $\pointed{\mathfrak{a}}[X]_{O, k}$-structure additionally at each of the fronts of its root hedron.
+We now define an action on $\pointed[XY]{\mathfrak{a}}_{O, k}$ by the cyclic group $C_{k+1}$ which will rotate the choice of root front around the root hedron of an $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure with respect to the orientation; then the sets which we have identified with $\pointed{\mathfrak{a}}[X]_{O, k}$-structures will simply be orbits under this action.
+Let $\zeta$ be the generator of $C_{k+1}$, whose action will be to rotate the designation of the root front by by one position with respect to the cyclic ordering of the root hedron's fronts.
 Explicitly, for group elements $\zeta^{j} \in C_{k+1}$ and $\sigma \in \mathfrak{S}_{k}$, the combined action of $\zeta^{j}$ and $\sigma$ is as described in the following procedure:
 \begin{itemize}
 \item We first convert the cyclic order on the $k+1$ fronts of the hedron to a linear order, letting the root front be first.
-  We apply the permutation $\zeta^{j} \pbrac{\zeta \rho^{j} \pbrac{\sigma} \zeta^{-1}}$ to this linear order; the conjugation by $\zeta$ shifts the $\sigma$ term so that it acts on fronts $2$ through $k+1$.
-  Finally, we convert this linear order back to a cyclic order in the usual way.  
-\item We then allow $\rho^{i - 1} \pbrac{\sigma}$ to act on the hedra attached to front $i$ according to the procedure in \S \ref{ss:saction}.
+\item We apply the permutation $\zeta^{j} \pbrac{\zeta \rho_{j} \pbrac{\sigma} \zeta^{-1}}$ to this linear order; the conjugation by $\zeta$ shifts the $\sigma$-term so that it acts on fronts $2$ through $k+1$.
+\item Finally, we convert this linear order back to a cyclic order in the usual way.  
+\item We then pass $\rho_{i - 1} \pbrac{\sigma}$ down to act on the hedra attached to front $i$ according to the procedure in \S \ref{ss:saction}.
 \end{itemize}
 Orbits of $\pointed[XY]{\mathfrak{a}}_{O, k}$-structures under this action of $C_{k+1}$ are exactly the $\pointed[X]{\mathfrak{a}}_{O, k}$-structures we have sought, so we apply quotient species theory to write
 \begin{equation}
