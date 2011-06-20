@@ -1043,19 +1043,21 @@ With the obstruction of $k$-tree symmetry broken by shifting to coherently-orien
 Dissymmetry theorems are a common feature of studies of tree-like structures, and our study of $k$-trees will be no exception.
 However, we first need to improve our understanding of the recursive nature of their structure.
 
-Consider the construction of a $k$-tree (in its bicolored-tree form) rooted at a black vertex (\foreign{i.e.} a hedron).
-We begin with that root black vertex, which we assign an $X$-label.
-It then takes $k+1$ white vertex children, which we assign $Y$-labels, in a cycle.
-Each of these white vertices has in turn a set (possibly containing only the parent) of black neighbors, \emph{all but one of which} are its children; these children take their own $X$-labels.
-Finally, these black child vertices each have $k$ white vertex children in a linear order, each of which in turn has the same structure as the white children of the root.
-At this point the structure is recursive; each white child has its (possibly empty) set of black children, and each black child has its linear order of $k$ white children.
+TODO: Add some diagrams here.
 
-Similarly, to construct a $k$-tree rooted at a white vertex, we begin with that vertex, which we assign a $Y$-label, and its (possibly empty) set of black children.
-The structures of black and white child vertices are just as before.
-Let $H_{k}$ be the species of such black-child structures and $F_{k}$ the species of white-child structures. Then:
+Consider a coherently-oriented $k$-tree rooted at a black or white vertex (that is, at a hedron or a front).
+Every black vertex then has a cyclically-ordered set of $k+1$ white neighbors.
+However, if the black vertex is not the root, one of those white neighbors is its parent, so this cyclic order is equivalent to a linear order on the white child vertices.
+We will denote by $H_{k}$ the species of such structures; that is, an $H_{k}$-structure is a black vertex with a linearly-ordered set of $k$ white children, each of which may have some set of $H_{k}$-structures as its children.
+
+Similarly, every white vertex has a set of black neighbors, but if the white vertex is not the root, one of those neighbors is the parent, so we can restrict to the set of black children of the white vertex by discarding the parent.
+Note that the set of black children of a white vertex may be empty, while the set of white children of a black vertex \emph{must} be of cardinality $k$.
+We will denote by $F_{k}$ the species of such structures; that is, an $F_{k}$ structure is a white vertex with a (possibly-empty) set of black children, each of which has a linearly-ordered set of $k$ $F_{k}$-structures as its children.
+
+It remains, of course, to consider the root vertex of a coherently-oriented $k$-tree. If it is a black vertex, it has a cyclically-ordered set of $k+1$ white vertices as children, and each of these carries an $F_{k}$-structure. Similarly, if it is a white vertex, it has a (possibly empty) set of black vertices as children, and each of these carries an $H_{k}$-structure. Following our previous conventions, we will denote by $\pointed[X]{\mathfrak{a}}_{O, k}$ the species of coherently-oriented $k$-trees rooted at a black vertex and by $\pointed[Y]{\mathfrak{a}}_{O, k}$ the corresponding white-vertex-rooted species. Then:
 
 \begin{theorem}\label{thm:funcdecompco}
-  For the species $H_{k}$ and $F_{k}$ as above and $\pointed[X]{\mathfrak{a}}_{O, k}$ and $\pointed[Y]{\mathfrak{a}}_{O, k}$ the species of hedron-- and front-rooted coherently-oriented $k$-trees respectively, we have the functional relations
+  For the species $H_{k}$, $F_{k}$, $\pointed[X]{\mathfrak{a}}_{O, k}$, and $\pointed[Y]{\mathfrak{a}}_{O, k}$ as above, we have the functional relations
   \begin{align}
     H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfuncorig} \\
     F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffuncorig} \\
@@ -1064,6 +1066,7 @@ Let $H_{k}$ be the species of such black-child structures and $F_{k}$ the specie
   \end{align}
 \end{theorem}
 
+\begin{comment} The complete proof is now embedded in the exposition.
 \begin{proof}
   It is clear from the exposition above that equations \eqref{eq:axfuncorig} and \eqref{eq:ayfuncorig} must hold for some appropriate species $F_{k}$ and $H_{k}$; a coherently-oriented $k$-tree rooted at a front requires only an $X$-label and a set of attached hedron structures, while one rooted at a hedron requires only a $Y$-label and a $\pbrac{k+1}$-cycle of front structures.
 
@@ -1075,6 +1078,7 @@ Let $H_{k}$ be the species of such black-child structures and $F_{k}$ the specie
   Equation \eqref{eq:ffuncorig} follows similarly, with the additional observation that the hedra attached to a given front have only the structure of a set.
   We also note that $\specname{E}' = \specname{E}$ and that $\specname{C}'_{k+1} = \specname{L}_{k}$ (the species of linear orderings of $k$ elements) to simplify future calculations.
 \end{proof}
+\end{comment}
 
 We can then write a dissymmetry theorem for coherently-oriented $k$-trees, following \cite[\S 3.2, eq.\ (54)]{bll:species}:
 \begin{theorem}
