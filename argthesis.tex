@@ -1094,15 +1094,15 @@ We can then write a dissymmetry theorem for coherently-oriented $k$-trees, follo
 \begin{proof}
   We consider $k$-trees in their bicolored tree form and give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structures to $\pbrac{\mathfrak{a}_{O, k} + F_{k} \cdot H_{k}}$-structures.
   Every bicolored tree has a uniquely-defined \emph{center} which is the midpoint of the longest path; since all the leaves of the tree are the same color (white), the center is necessarily a vertex.
-  An $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some vertex $v$ (which may be black or white).
-  If $v$ is the center of $t$, we map $t$ to itself in $\mathfrak{a}_{O, k}$; this map is a natural bijection from its preimage to $\mathfrak{a}_{O, k}$.
+  An $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structure on the left-hand side of the equation is a coherently-oriented $k$-tree $T$ rooted at some vertex $v$, which may be either black or white.
+  If $v$ is the center of $t$, we map $t$ to itself in $\mathfrak{a}_{O, k}$; this map is a natural bijection from its preimage, the set of coherently-oriented $k$-trees rooted at their centers, to $\mathfrak{a}_{O, k}$.
 
   Now consider a $k$-tree $t$ rooted at a vertex $v$ which is not its center, which we denote $c$.
   Identify the vertex $v'$ which is adjacent to $v$ along the path from $v$ to $c$.
   We then map the $k$-tree $t$ rooted at the black or white vertex $v$ to the same tree $t$ rooted at \emph{both} $v$ and its neighbor $v'$.
   This is exactly a $\pbrac{F_{k} \cdot H_{k}}$-structure.
   Moreover, given a $k$-tree $t$ rooted at adjacent black and white vertices, we can map it to the same tree $t$ rooted at the one of these two which is farther from the center.
-  This map is also a natural bijection.
+  This map is also a natural bijection, in this case from the set of coherently-oriented $k$-trees rooted at vertices which are \emph{not} their centers to $F_{k} \cdot H_{k}$.
 
   When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymco}.
 \end{proof}
