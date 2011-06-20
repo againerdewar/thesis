@@ -1086,13 +1086,13 @@ We can then write a dissymmetry theorem for coherently-oriented $k$-trees, follo
   The species $\pointed[X]{\mathfrak{a}}_{O, k}$ of hedron-rooted coherently-oriented $k$-trees, $\pointed[Y]{\mathfrak{a}}_{O, k}$ of front-rooted coherently-oriented $k$-trees, $F_{k}$ and $H_{k}$ of front-- and hedron-structures in coherently-oriented $k$-trees, and $\mathfrak{a}_{O, k}$ of unrooted coherently-oriented $k$-trees are related by the functional equation
   \begin{equation}
     \label{eq:dissymco}
-    \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} = \mathfrak{a}_{O, k} + \pbrac{F_{k} \cdot H_{k}}
+    \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} = \mathfrak{a}_{O, k} + F_{k} \cdot H_{k}
   \end{equation}
   as an isomorphism of species.
 \end{theorem}
 
 \begin{proof}
-  We consider $k$-trees in their bicolored tree form and give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structures to $\pbrac{\mathfrak{a}_{O, k} + \pbrac{F_{k} \cdot H_{k}}}$-structures.
+  We consider $k$-trees in their bicolored tree form and give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structures to $\pbrac{\mathfrak{a}_{O, k} + F_{k} \cdot H_{k}}$-structures.
   Every bicolored tree has a uniquely-defined \emph{center} which is the midpoint of the longest path; since all the leaves of the tree are the same color (white), the center is necessarily a vertex.
   An $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some vertex $v$ (which may be black or white).
   If $v$ is the center of $t$, we map $t$ to itself in $\mathfrak{a}_{O, k}$; this map is a natural bijection from its preimage to $\mathfrak{a}_{O, k}$.
@@ -1304,7 +1304,7 @@ Theorem \ref{thm:dissymco} then holds in full generality as an identity of $\mat
 We can extract from equation \eqref{eq:dissymco} that
 \begin{equation}
   \label{eq:coskextract}
-  \mathfrak{a}_{O, k} = \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} - \pbrac{F_{k} \cdot H_{k}}
+  \mathfrak{a}_{O, k} = \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} - F_{k} \cdot H_{k}
 \end{equation}
 as an isomorphism of $\mathfrak{S}_{k}$-species.
 The species $\mathfrak{a}_{k}$ of $k$-trees is then merely the quotient of $\mathfrak{a}_{O, k}$ under the action of $\mathfrak{S}_{k}$:
