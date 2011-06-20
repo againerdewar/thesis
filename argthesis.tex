@@ -151,9 +151,6 @@ We now associate to the categorical theory of species an enumerative mechanism--
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
 \end{definition}
 
-The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
-TODO: Say more about this connection. (See \cite{gessel:laginvspec}.)
-
 In fact, $\fix \pbrac{\sigma}$ is a class function\footnote{That is, the value of $\fix \pbrac{\sigma}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
 Accordingly, we can instead consider all permutations of a given cycle type at once.
 It is a classical theorem that conjugacy classes of permutations in $\mathfrak{S}_{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
@@ -185,6 +182,12 @@ Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
 In essence, equation \eqref{eq:cycindlab} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while equation \eqref{eq:cycindunlab} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
 In cases where the unlabeled enumeration problem is interesting, it is generally more challenging than the labeled enumeration of the same structures, since the characterization of isomorphism in a species may be nontrivial to capture in a generating function.
 If, however, we can calculate the complete cycle index for a species, both labeled and unlabeled enumerations immediately follow.
+
+The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
+When the $p_{i}$ are understood as symmetric functions rather than simply indeterminates, additional P\'{o}lya-theoretic enumerative information is exposed.
+In particular, the symmetric function in $x$-variables underlying a cycle index in $p$-variables may be said to count \emph{partially}-labeled structures of a given species, where the coefficient on a monomial $\prod x_{i}^{\alpha_{i}}$ counts structures with $\alpha_{i}$ labels of each sort $i$.
+This serves to explain why the coefficients of powers of $p_{1} = \prod_{i} x_{i}$ counts labeled structures (where the labels must all be distinct) and why the automorphism types of structures are enumerated by $Z_{f} \pbrac{x, x^{2}, x^{3}, \cdots}$, which allows clusters of labels to be the same.
+Another application of the theory of symmetric functions to the cycle indices of species may be found in \cite{gessel:laginvspec}.
 
 Of course, it is not always obvious how to calculate the cycle index of a species directly.
 However, in cases where we can decompose a species into combinations of simpler ones, we can exploit these relationships algebraically to study the cycle indices, as we will see in the next section.
@@ -1212,8 +1215,8 @@ This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ whic
 We also need to consider the associated action of $\mathfrak{S}_{k}$ on $F_{k}$-structures, but this is trivial: to apply a permutation $\sigma$ to a front, simply apply it to each of that front's children directly, treating each of those children as an $H_{k}$ structure and following the procedure above.
 
 Following the discussion in \S \ref{ss:codecomp}, we need also to define an action on the two classes of rooted coherently-oriented $k$-trees.
-The action on front-rooted trees (that is, on the species $\pointed{\mathfrak{a}}[Y]_{O, k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed{\mathfrak{a}}[Y]_{O, k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex
-However, an action on hedron-rooted trees (that is, on the species $\pointed{\mathfrak{a}}[X]_{O, k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
+The action on front-rooted trees (that is, on the species $\pointed[Y]{\mathfrak{a}}_{O, k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed[Y]{\mathfrak{a}}_{O, k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex
+However, an action on hedron-rooted trees (that is, on the species $\pointed[X]{\mathfrak{a}}_{O, k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
 To address this issue, we pass to a new class of structures: $\pointed[XY]{\mathfrak{a}}_{O, k}$, the species of fronted-hedron-rooted $k$-trees (that is, $k$-trees rooted at a hedron with a designated front, or equivalently at an adjacent black-white vertex pair).
 The action of $\mathfrak{S}_{k}$ on a $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure is then simply that which applies $\sigma$ directly to the root black vertex as though it were an $H_{k}$ structure which was a child of the root white vertex.
 
@@ -1221,10 +1224,10 @@ It remains, of course, to remove the additional structure we have imposed on hed
 For this, we introduce another group action.
 
 \subsection{Defining a $C_{k+1}$-action}\label{ss:zaction}
-We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed{\mathfrak{a}}[Y]_{O, k}$, and $\pointed{\mathfrak{a}}[XY]_{O, k}$.
-However, to apply Theorem \ref{thm:dissymco} to study the species $\mathfrak{a}_{O, k}$ itself, need to pass from $\pointed{\mathfrak{a}}[XY]_{O, k}$ to $\pointed{\mathfrak{a}}[X]_{O, k}$.
-We note that a $\pointed{\mathfrak{a}}[X]_{O, k}$-structure (that is, a hedron-rooted coherently-oriented $k$-tree) can be identified naturally with the set of $\pointed{\mathfrak{a}}[XY]_{O, k}$-structures which are obtained by rooting the original $\pointed{\mathfrak{a}}[X]_{O, k}$-structure additionally at each of the fronts of its root hedron.
-We now define an action on $\pointed[XY]{\mathfrak{a}}_{O, k}$ by the cyclic group $C_{k+1}$ which will rotate the choice of root front around the root hedron of an $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure with respect to the orientation; then the sets which we have identified with $\pointed{\mathfrak{a}}[X]_{O, k}$-structures will simply be orbits under this action.
+We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\mathfrak{a}}_{O, k}$, and $\pointed[XY]{\mathfrak{a}}_{O, k}$.
+However, to apply Theorem \ref{thm:dissymco} to study the species $\mathfrak{a}_{O, k}$ itself, need to pass from $\pointed[XY]{\mathfrak{a}}_{O, k}$ to $\pointed[X]{\mathfrak{a}}_{O, k}$.
+We note that a $\pointed[X]{\mathfrak{a}}_{O, k}$-structure (that is, a hedron-rooted coherently-oriented $k$-tree) can be identified naturally with the set of $\pointed[XY]{\mathfrak{a}}_{O, k}$-structures which are obtained by rooting the original $\pointed[X]{\mathfrak{a}}_{O, k}$-structure additionally at each of the fronts of its root hedron.
+We now define an action on $\pointed[XY]{\mathfrak{a}}_{O, k}$ by the cyclic group $C_{k+1}$ which will rotate the choice of root front around the root hedron of an $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure with respect to the orientation; then the sets which we have identified with $\pointed[X]{\mathfrak{a}}_{O, k}$-structures will simply be orbits under this action.
 Let $\zeta$ be the generator of $C_{k+1}$, whose action will be to rotate the designation of the root front by by one position with respect to the cyclic ordering of the root hedron's fronts.
 Explicitly, for group elements $\zeta^{j} \in C_{k+1}$ and $\sigma \in \mathfrak{S}_{k}$, the combined action of $\zeta^{j}$ and $\sigma$ is as described in the following procedure:
 \begin{itemize}
