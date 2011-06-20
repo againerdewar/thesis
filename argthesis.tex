@@ -1133,156 +1133,89 @@ Instead, we will use the additional structure on \emph{rooted} coherently-orient
 As an aside, we also note that the fact that this obstruction occurs only for $k \geq 3$ would suggest that a more straightforward course than ours would be available specifically in the case of $2$-trees.
 Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{is} a well-defined action of $\mathfrak{S}_{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
 
-We begin with the component species $H_{k}$.
-In the recursive construction of a $k$-tree, an $H_{k}$-structure represents a front-ordered hedron (with children) which we attach to an existing $k$-tree on some designated front, hereafter termed the `root' front. We define an action of $\mathfrak{S}_{k}$ on such $H_{k}$-structures.
-For a given $\sigma \in \mathfrak{S}_{k}$:
-\begin{enumerate}
-  \item Convert the cyclic order on the set of the $k+1$ fronts of the hedron to a linear order on $F$ the set of $k$ non-root fronts.
-    Apply $\sigma$ to this order; in other words, if the linear order is a bijection $f: \sbrac{n} \to F$, then the new linear order is the map $\sigma \circ f: i \mapsto f \pbrac{\sigma^{-1} \pbrac{i}}$.
-    Finally, reconstruct a cyclic order on the $k+1$ fronts by placing the root between the last front of the new linear order and the first.
-  \item Recursively perform this procedure on each hedron attached to a non-root front with an appropriate permutation $\rho_{i} \pbrac{\sigma}$ (for $i$ the place of the hedron's attaching front in the new ordering) chosen to retain the coherence of the orderings.
-\end{enumerate}
-It is critical to note that the permutation $\rho_{i} \pbrac{\sigma}$ applied to the hedra attached at the $i$th front does depend on $i$.
-It is, in fact, the permutation which results when the effects of $\sigma$ on the $\specname{C}_{k+1}$-structure of the original hedron with its root front are reinterpreted with the $i$th front as root; we will sometimes say instead that it is $\sigma$ with its root `rotated' by $i$.
+We begin with the species $H_{k}$ as described in Theorem \ref{thm:funcdecompco}.
+Take an $H_{k}$ structure and choose some permutation $\sigma \in \mathfrak{S}_{k}$, then allow $\sigma$ to act in the usual way on the linear ordering on the white children of the black vertex that is the base of the $H_{k}$-structure.
+This will upset the coherence of the orientation of the $H_{k}$-structure.
+To repair it, we must adjust the orientations of all the black descendants of the base black vertex to match the new $\sigma$-permuted orientation.
+We cannot, of course, obtain the correct orientations simply by applying $\sigma$ to each of these descendants; this does not restore coherence.
+However, we have noted previously, there \emph{does} exist a choice of orientation for each of these descendants which \emph{will} create coherence; we need only find it.
+For compatibility with the methods of $\Gamma$-species theory, it will be most convenient to describe this procedure in terms of the \emph{permutation} which must be applied to the orientation of each descendant in some procedural way.
 
+Consider an immediate black descendant of the base black vertex attached along the front which is (prior to the application of $\sigma$) in the $i$th place in the linear order induced by the orientation. Following the application of $\sigma$, the attaching front is in the $\sigma \pbrac{i}$th place in the orientation; its predecessor in the new order is the front which previously was in the $\sigma^{-1} \pbrac{\sigma \pbrac{i} - 1}$th place, and its successor was in the $\sigma^{-1} \pbrac{\sigma \pbrac{i} + 1}$th place, as examples.
+The permutation $\sigma'$ which must be applied to the orientation of the descendant black vertex is precisely that induced by passing over the mirror bijection, applying $\sigma$, and then passing back.
+We can express this map in formula:
 \begin{theorem}
-  The map $\rho_{j}$ which `rotates the root' of a permutation $\sigma \in \mathfrak{S}_{k}$ is given by
+  \label{thm:rhodef}
+  If a permutation $\sigma \in \mathfrak{S}_{k}$ is applied to the orientation of a base black vertex in a $H_{k}$-structure, the permutation which must be applied to a neighbor black vertex attached across a front which was in the $i$th place in the linear ordering induced by the orientation to preserve coherence is $\rho_{i} \pbrac{\sigma}$ where $\rho_{i}$ is the map
   \begin{equation}
     \label{eq:rhodef}
-    \rho_{j} \pbrac{\sigma} : \hat{\sigma}^{-1} \pbrac{i + j} - \hat{\sigma}^{-1} \pbrac{j} \mapsto i
+    \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i} - \sigma \pbrac{i - a}
   \end{equation}
-  where all sums and differences are reduced to their mod-$\pbrac{k+1}$ representatives in $\cbrac{1, 2, \dots, k+1}$, and where $\hat{\sigma}$ is the permutation in $\mathfrak{S}_{k+1}$ which acts as $\sigma$ on $\sbrac{k}$ and which fixes $k+1$.
+  where all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$ and where $\hat{\sigma}$ is the permutation in $\mathfrak{S}_{k+1}$ which acts as $\sigma$ on $\sbrac{k}$ and which fixes $k+1$.
 \end{theorem}
-
 \begin{proof}
-  Consider a linear order in $\lin_{\sbrac{k+1}}$; we will denote it $\pbrac{1, 2, \dots, k+1}$ for notational clarity.
-  After application of $\sigma$ and rotation of the root by $j$, the new root is labeled $\hat{\sigma}^{-1} \pbrac{j}$, the term immediately after it in the cyclic ordering is labeled $\hat{\sigma}^{-1} \pbrac{\abs{j+1}_{k+1}}$, and so on; in general, the $i$th term in the new order is now labeled $\hat{\sigma}^{-1} \pbrac{\abs{j+i}_{k+1}}$.
-  However, to translate this into a permutation of the cyclic order rooted at the $j$th term, we must subtract $\sigma^{-1} \pbrac{j}$ from each of the order-labels.
-  Thus, the resulting permutation $\rho_{j} \pbrac{\sigma}$ sends $\abs{\hat{\sigma}^{-1} \pbrac{\abs{i + j}_{k+1}} - \hat{\sigma}^{-1} \pbrac{j}}_{k+1}$ to $i$.
+  Let $A$ denote the base black vertex and $B$ denote the immediate black descendant we will study, which is attached to $A$ by the white vertex which is $i$th in the linear order induced by the original orientation of $A$.
+  The white child of $B$ which is $a$th in the linear order induced by the original orientation is mirror to the white child of $A$ which is $\pbrac{i-a}$th in the original orientation of $A$.
+  The mirror white vertex is then $\sigma \pbrac{i - a}$th in the new linear order of the children of $A$ induced by $\sigma$, and the attaching vertex is $\sigma \pbrac{i}$th.
+  Thus, the white child of $B$ which was $a$th in the original linear order of the children of $B$ must be $\pbrac{\sigma \pbrac{i} - \sigma \pbrac{i-a}}$th in the new order to preserve coherence.
 \end{proof}
-
 This procedure is depicted in Figure \ref{fig:rhoapp}.
-As described in \S \ref{s:quot}, the $\mathfrak{S}_{k}$-species extension of $H_{k}$ keeps count of $H_{k}$-structures for which each $\sigma \in \mathfrak{S}_{k}$ is an isomorphism.
-Characterization of these structures is left to the later section on cycle-index calculations.
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
-    \tikzset{auto}
-    \node (a) at (0,0) {
-      \begin{tikzpicture}
-        \SetGraphUnit{1.5}
+    \SetGraphUnit{2}
 
-        \Vertex[style=hnode]{A}
-        \cyccwr{(A)};
+    \Vertex[style=hnode]{A}
+    \cyccwr{(A)};
 
-        \SOEA[style=fnode](A){1}
-        \Edge(A)(1)
+    \SOWE[style=fnode,L={$i-a$}](A){1}
+    \Edge(A)(1)
 
-        \SO[style=fnode](A){2}
-        \Edge(A)(2)
+    \NOWE[style=fnode,L={$i$}](A){2}
+    \Edge(A)(2)
 
-        \SOWE[style=fnode](A){3}
-        \Edge(A)(3)
+    \NO[style=hnode](2){B}
+    \cycccwr{(B)};
+    \Edge(B)(2)
 
-        \WE[style=fnode](A){4}
-        \Edge(A)(4)
+    \NOWE[style=fnode,L={$a$}](B){3}
+    \Edge(B)(3)
+    \Edge[style={->},label={$\mu$}](3)(1)
 
-        \NOWE[style=fnode](A){5}
-        \Edge(A)(5)
+    \SOEA[style=fnodewide,L={$\sigma \pbrac{i - a}$}](A){4}
+    \Edge(A)(4)
 
-        \NO[style=fnode](A){6}
-        \Edge(A)(6)
+    \NOEA[style=fnode,L={$\sigma \pbrac{i}$}](A){5}
+    \Edge(A)(5)
 
-        \NOEA[style=fnode](A){7}
-        \Edge(A)(7)
+    \NO[style=hnode](5){B'}
+    \cycccwr{(B')};
+    \Edge(B')(5)
 
-        \node (8) at (barycentric cs:1=1,7=1,A=.5) {$\vdots$};
-        
-      \end{tikzpicture}
-    };
+    \NOEA[style=fnodewide,L={$\sigma \pbrac{i} - \sigma \pbrac{i - a}$}](B'){6}
+    \Edge(B')(6)
+    \Edge[style={->},label={$\mu$}](6)(4)
 
-    \node[below right=of a] (b) {
-      \begin{tikzpicture}
-        \SetGraphUnit{2.5}
+    \Edge[style={->,dashed,bend right},label={$\sigma$}](1)(4)
+    \Edge[style={->,dashed,bend left},label={$\sigma$}](2)(5)
 
-        \Vertex[style=hnode]{A}
-        \cyccwr{(A)};
-
-        \SOEA[style=root,L={$\sigma^{-1} \pbrac{1}$}](A){1}
-        \Edge(A)(1)
-
-        \SO[style=fnode,L={$\sigma^{-1} \pbrac{2}$}](A){2}
-        \Edge(A)(2)
-
-        \SOWE[style=fnode,L={$\sigma^{-1} \pbrac{3}$}](A){3}
-        \Edge(A)(3)
-
-        \WE[style=fnode,L={$\sigma^{-1} \pbrac{4}$}](A){4}
-        \Edge(A)(4)
-
-        \NOWE[style=fnode,L={$\sigma^{-1} \pbrac{5}$}](A){5}
-        \Edge(A)(5)
-
-        \NO[style=fnode,L={$\sigma^{-1} \pbrac{6}$}](A){6}
-        \Edge(A)(6)
-
-        \NOEA[style=fnode,L={$\sigma^{-1} \pbrac{7}$}](A){7}
-        \Edge(A)(7)
-
-        \node (8) at (barycentric cs:1=1,7=1,A=1) {$\vdots$};
-        
-      \end{tikzpicture}
-    };
-
-    \node[below left=of b] (c) {
-      \begin{tikzpicture}
-        \SetGraphUnit{2.5}
-
-        \Vertex[style=hnode]{A}
-        \cyccwr{(A)};
-
-        \SOEA[style=fnode,L={$\sigma^{-1} \pbrac{1}$}](A){1}
-        \Edge(A)(1)
-
-        \SO[style=fnode,L={$\sigma^{-1} \pbrac{2}$}](A){2}
-        \Edge(A)(2)
-
-        \SOWE[style=root,L={$\sigma^{-1} \pbrac{3}$}](A){3}
-        \Edge(A)(3)
-
-        \WE[style=fnode,L={$\sigma^{-1} \pbrac{4}$}](A){4}
-        \Edge(A)(4)
-
-        \NOWE[style=fnode,L={$\sigma^{-1} \pbrac{5}$}](A){5}
-        \Edge(A)(5)
-
-        \NO[style=fnode,L={$\sigma^{-1} \pbrac{6}$}](A){6}
-        \Edge(A)(6)
-
-        \NOEA[style=fnode,L={$\sigma^{-1} \pbrac{7}$}](A){7}
-        \Edge(A)(7)
-
-        \node (8) at (barycentric cs:1=.5,7=1) {$\vdots$};
-        
-      \end{tikzpicture}
-    };
-
-    \draw[->] (a) to node {$\sigma$} (b);
-    \draw[->] (b) to node {$\rho_{2}$} (c);
+    \Edge[style={->,dashed,bend left},label={$\rho_{i} \pbrac{\sigma}$}](3)(6)
   \end{tikzpicture}
-  \caption[Example application of the root-rotating map $\rho_{i}$]{Application of $\rho_{2} \circ \sigma$ to the rooted $\specname{C}_{k+1}$-structure around a hedron, where the root is denoted with a diamond}
+  \caption{Application of a permutation $\sigma$ to an $H_{k}$ structure and its descendant $\rho_{i} \pbrac{\sigma}$ on a child black vertex, preserving coherency of the orientation}
   \label{fig:rhoapp}
 \end{figure}
 
-We also need to consider the action of $\mathfrak{S}_{k}$ on $F_{k}$---but this action is locally trivial; changing the cyclic front-orderings on the hedra of a $k$-tree does not change the sets of hedra which are joined together at fronts, but only permutes these sets among the different fronts.
-Thus, $\sigma \in \mathfrak{S}_{k}$ acts on an $F_{k}$-structure simply by acting independently on each of the $H_{k}$-structures that are its children.
+We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its base black vertex.
+This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is defined in a totally label-independent manner and thus naturally commutes with the $\mathfrak{S}_{n}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
+
+We also need to consider the associated action of $\mathfrak{S}_{k}$ on $F_{k}$-structures, but this is trivial: to apply a permutation $\sigma$ to a front, simply apply it to each of that front's children directly, treating each of those children as an $H_{k}$ structure and following the procedure above.
 
 Following the discussion in \S \ref{ss:codecomp}, we need also to define an action on the two classes of rooted coherently-oriented $k$-trees.
-The action on front-rooted trees is trivial in the same sense as that on $F_{k}$.
-However, an action on hedron-rooted trees does not follow directly from that given above, because the root hedron in a $\pointed[X]{\mathfrak{a}}_{O, k}$-structure does not have a designated front to use to pull apart the cyclic ordering, which is necessary for the action as described so far to be well-defined.
-To address this issue, we pass to a new class of structures: $\pointed[XY]{\mathfrak{a}}_{O, k}$, the species of fronted-hedron-rooted $k$-trees (that is, $k$-trees rooted at a hedron with a designated front).
-The action of $\mathfrak{S}_{k}$ on a $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure is the natural extension of that on a $H_{k}$-structure; we add only that the hedra attached to the designated front are acted on simply by $\sigma$, which we can denote by $\rho_{0} \pbrac{\sigma}$ for notational consistency.
+The action on front-rooted trees (that is, on the species $\pointed{\mathfrak{a}}[Y]_{O, k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed{\mathfrak{a}}[Y]_{O, k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex
+However, an action on hedron-rooted trees (that is, on the species $\pointed{\mathfrak{a}}[X]_{O, k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
+To address this issue, we pass to a new class of structures: $\pointed[XY]{\mathfrak{a}}_{O, k}$, the species of fronted-hedron-rooted $k$-trees (that is, $k$-trees rooted at a hedron with a designated front, or equivalently at an adjacent black-white vertex pair).
+The action of $\mathfrak{S}_{k}$ on a $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure is then simply that which applies $\sigma$ directly to the root black vertex as though it were an $H_{k}$ structure which was a child of the root white vertex.
 
 It remains, of course, to remove the additional structure we have imposed on hedron-rooted $k$-trees.
 For this, we introduce another group action.
