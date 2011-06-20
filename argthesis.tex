@@ -1479,6 +1479,23 @@ With the recursive functional equations for cycle indices of \S \ref{s:ktcycind}
 We have done so here for $k \leq 7$ and $n \leq 12$ using Maple 13 and a few minutes of computation time on a modern desktop computer; the code used is available from the first author on request.
 The resulting values appear in Table \ref{tab:ktrees}.
 
+We note that both unlabeled and hedron-labeled enumerations of $k$-trees stabilize:
+\begin{theorem}
+  \label{thm:ktreestab}
+  For $k \geq n + 2$, the numbers of unlabeled and hedron-labeled $k$-trees are independent of $k$.
+\end{theorem}
+\begin{proof}
+  We show that the species $\mathfrak{a}_{k}$ and $\mathfrak{a}_{k+1}$ have contact up to order $k+2$ by explicitly constructing a natural bijection.
+  We note that in a $\pbrac{k+1}$-tree with no more than $k+2$ hedra, there will exist at least one vertex which is common to \emph{all} hedra.
+  For any $k$-tree with no more than $k+2$ hedra, we can construct a $\pbrac{k+1}$-tree with the same number of hedra by adding a single vertex and connecting it by edges to every existing vertex; we can then pass labels up from the $\pbrac{k+1}$-cliques which are the hedra of the $k$-tree to the $\pbrac{k+2}$-cliques which now sit over them.
+  The resulting graph will be a $\pbrac{k+1}$-tree whose $\pbrac{k+1}$-tree hedra are adjacent exactly when the $k$-tree hedra they came from were adjacent.
+  Therefore, any two distinct $k$-trees will pass to distinct $\pbrac{k+1}$-trees.
+  Similarly, for any $\pbrac{k+1}$-tree with no more than $k+2$ hedra, choose one of the vertices common to all the hedra and remove it, passing the labels of $\pbrac{k+1}$-tree hedra down to the $k$-tree hedra constructed from them; again, adjacency of hedra is preserved.
+  This of course creates a $k$-tree, and for distinct $\pbrac{k+1}$-trees the resulting $k$-trees will be distinct.
+  Moreover, by symmetry the result is independent of the choice of common vertex, in the case there is more than one.
+\end{proof}
+However, thus far we have not identified a simple formula for calculating these stabilization values.
+
 \begin{table}[htb]
   \centering
   \caption{Enumerative data for $k$-trees with $n$ hedra}
