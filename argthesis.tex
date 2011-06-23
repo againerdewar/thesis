@@ -957,14 +957,17 @@ First, however, we describe an encoding procedure which will make future work mo
 \end{figure}
 
 \subsection{Bicolored tree encoding}\label{ss:bctree}
-As $k$ grows large, $k$-trees become unwieldy graphs; indeed, keeping track of labels on fronts and hedra as well as orientation data is messy even for $2$-trees, as seen in Figure \ref{fig:exco2tree}.
-Accordingly, before we proceed, we encode coherently-oriented $k$-trees as more accessible structured bicolored trees in the spirit of the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species} with the following procedure:
+Since we are concerned at this stage only with the fronts and hedra of coherently-oriented $k$-trees, it is convenient to encode them in a surrogate structure which exposes those features more clearly.
+We will use for this purpose structured bicolored trees in the spirit of the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species}.
+To construct a tree encoding a particular coherently-oriented $k$-tree $T$
 \begin{itemize}
-  \item For a given labeled coherently-oriented $k$-tree $T$, we draw for every hedron a black vertex and for every front a white vertex, assigning labels appropriately.
-  \item For every black-white pair, we then draw an edge exactly if the white vertex represents a front of the hedron represented by the black vertex.
-  \item Finally, we enrich the collection of neighbors of each black vertex with a $\specname{C}_{k+1}$-structure (for $\specname{C}$ the species of cyclic orders) which is the cyclic front ordering from the $k$-tree (note that fronts (and thus white vertices) carry only $\specname{E}$-structures, which is the natural structure in a tree).
+  \item For every hedron of $T$ construct a black vertex and for every front a white vertex, assigning labels appropriately.
+  \item For every black-white pair, construct a connecting edge if the white vertex represents a front of the hedron represented by the black vertex.
+  \item Finally, enrich the collection of neighbors of each black vertex with a $\specname{C}_{k+1}$-structure (for $\specname{C}$ the species of cyclic orders) inherited directly from the orientation of the $k$-tree $T$. (Note that fronts (and thus white vertices) carry only $\specname{E}$-structures, which is the natural structure in a tree.)
 \end{itemize}
-We can recover a $k$-tree from any given $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree by following the reverse procedure.
+We will term such an object a `$\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree'.
+
+We can recover a coherently-oriented $k$-tree from any given $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree by following the reverse procedure.
 For an example, see Figure \ref{fig:exbctree}, which encodes the coherently-oriented $2$-tree of Figure \ref{fig:exco2tree}.
 Note that, for clarity, we have rendered the black vertices (corresponding to hedra) with squares.
 
@@ -1039,6 +1042,11 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
 \end{proof}
 
 Because these two species are isomorphic in such a natural way, we will not assign them separate names; we will continue to use only $\mathfrak{a}_{O, k}$ while freely passing from coherently-oriented $k$-trees to $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees and back.
+
+However, as graphs, a coherently-oriented $k$-tree and its corresponding $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree are clearly very different.
+The bicolored tree exposes the attaching structure and the orientation more clearly, but at the cost of information about the underlying graph of the $k$-tree which is not directly related to the hedra and fronts.
+For example, it is not clear even how to recover the vertices of the $k$-tree represented by a given bicolored tree without reconstructing the $k$-tree entirely.
+However, as we will see, the passage to $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees carries enough information about coherently-oriented bicolored trees to facilitate the rest of our inquiry into the species of $k$-trees.
 
 \subsection{Functional decomposition and the dissymmetry theorem for coherently-oriented $k$-trees}\label{ss:codecomp}
 With the obstruction of $k$-tree symmetry broken by shifting to coherently-oriented $k$-trees as in \S \ref{ss:symbreak}, we can now develop an analogue of equation \eqref{eq:rtrees}; the encoding of coherently-oriented $k$-trees into $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees in \S \ref{ss:bctree}, taken along with \cite[\S 3.2]{bll:species}, suggest our method.
