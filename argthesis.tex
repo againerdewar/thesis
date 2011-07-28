@@ -1028,17 +1028,23 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
 \end{figure}
 
 \begin{theorem}\label{thm:bctreeenc}
-  This encoding gives an isomorphism between the species of coherently-oriented $k$-trees and that of $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees.
+  $\beta$ induces an isomorphism of species $\mathfrak{a}_{O, k} \simeq \specname{CT}_{k}$.
 \end{theorem}
 
 \begin{proof}
-  TODO: Fix up this proof: it's a mess!
-  We note that two coherently-oriented $k$-trees are distinct if either the sets of hedron-neighbors of some given labeled front or the cyclic orderings of fronts of some given labeled hedra do not agree; similarly, two $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees are distinct if either the sets of black neighbors of a labeled white vertex or the cyclic orderings of white neighbors of some black vertex do not agree.
-  The encoding specified here preserves these distinctions in both directions.
-  Thus, this encoding is a bijection between the sets of $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees and coherently-oriented $k$-trees.
+  It is clear that $\beta$ sends each coherently-oriented $k$-tree to a unique $k$-coding tree, and that this map commutes with permutations on the label sets (and thus is categorically natural).
+  To show that $\beta$ induces a species isomorphism, then, we need only show that $\beta$ is a surjection onto $\specname{CT}_{k} \sbrac{n}$ for each $n$.
+  
+  First, note that there are exactly $k!$ coherently-oriented $k$-trees with one hedron---one for each cyclic ordering of the $k+1$ front labels.
+  There are also $k!$ coding trees with one black vertex, and the encoding $\beta$ is clearly a natural bijection between these two sets.
+  Thus, the species $\mathfrak{a}_{O,k}$ of coherently-oriented $k$-trees and $\specname{CT}_{k}$ of $k$-coding trees have contact of order $1$.
 
-  Moreover, the encoding and decoding procedures are independent of labels, so they naturally commute with the actions of permutations on the label sets.
-  Thus, the bijection is categorically natural, so it induces a species isomorphism.
+  Now, by way of induction, suppose $\mathfrak{a}_{O, k}$ and $\specname{CT}_{k}$ have contact of order $n$---that is, that the encoding $\beta$ is a natural bijection for up to $n$ hedra and up to $n$ black vertices.
+  Let $C$ be a $k$-coding tree with $n+1$ black vertices and let $C_{1}$ and $C_{2}$ be two distinct subgraphs of $C$, each with $n$ black vertices.
+  Then, by hypothesis, there exist coherently-oriented $k$-trees $T_{1}$ and $T_{2}$ with $n$ hedra such that $\beta \pbrac{T_{1}} = C_{1}$ and $\beta \pbrac{T_{2}} = C_{2}$.
+  Moreover, $\beta \pbrac{T_{1} \cap T_{2}} = \beta \pbrac{T_{1}} \cap \beta \pbrac{T_{2}}$, and this $k$-coding tree has $n-1$ black vertices, so $T_{1} \cap T_{2}$ has $n-1$ hedra.
+  Thus, $T = T_{1} \cup T_{2}$ is a coherently-oriented $k$-tree with $n+1$ black hedra, and $\beta \pbrac{T} = C$ as desired.
+  Thus, $\beta^{-1} \pbrac{\beta \pbrac{T_{1}} \cup \beta \pbrac{T_{2}}} = T_{1} \cup T_{2} = T$, and hence $\mathfrak{a}_{O, k}$ and $\specname{CT}_{k}$ have contact of order $n+1$.
 \end{proof}
 
 Because these two species are isomorphic in such a natural way, we will not assign them separate names; we will continue to use only $\mathfrak{a}_{O, k}$ while freely passing from coherently-oriented $k$-trees to $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored trees and back.
