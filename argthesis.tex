@@ -960,6 +960,10 @@ First, however, we describe an encoding procedure which will make future work mo
 Although $k$-trees are graphs (and hence made up simply of edges and vertices), their structure is more conveniently described in terms of hedra and fronts.
 We thus pass from coherently-oriented $k$-trees to a surrogate structure which exposes those features more clearly---sructured bicolored trees in the spirit of the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species}.
 
+A $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree is a bicolored tree each black vertex of which carries a $\specname{C}_{k+1}$-structure (that is, a cyclic ordering on $k+1$ elements) on its white neighbors.
+(The $\specname{E}$-structure on the black neighbors of each white vertex is already implicit in the bicolored tree itself.)
+For later convenience, we will sometimes call such objects \emph{$k$-coding trees}, and we will denote by $\specname{CT}_{k}$ the species of such $k$-coding trees.
+
 To construct a tree encoding a particular coherently-oriented $k$-tree $T$
 \begin{itemize}
   \item For every hedron of $T$ construct a black vertex and for every front a white vertex, assigning labels appropriately.
