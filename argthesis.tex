@@ -901,10 +901,10 @@ We will break this symmetry by adding additional structure which we can later re
 \end{definition}
 See Figure \ref{fig:exco2tree} for an example.
 Note that every $k$-tree admits many coherent orientations---any one hedron of the $k$-tree may be oriented freely, and a unique orientation of the whole $k$-tree will result from each choice of such an orientation of one hedron.
-We will denote by $\mathfrak{a}_{O, k}$ the species of coherently-oriented $k$-trees.
+We will denote by $\vec{\mathfrak{a}}_{k}$ the species of coherently-oriented $k$-trees.
 
 By shifting from the general $k$-tree setting to that of coherently-oriented $k$-trees, we break the symmetry described above.
-If we can now establish a group action on $\mathfrak{a}_{O, k}$ whose orbits are generic $k$-trees, we can use the theory of quotient species to extract the generic species $\mathfrak{a}_{k}$.
+If we can now establish a group action on $\vec{\mathfrak{a}}_{k}$ whose orbits are generic $k$-trees, we can use the theory of quotient species to extract the generic species $\mathfrak{a}_{k}$.
 First, however, we describe an encoding procedure which will make future work more convenient.
 
 \begin{figure}[htb]
@@ -964,7 +964,7 @@ A $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree is a bicolo
 (The $\specname{E}$-structure on the black neighbors of each white vertex is already implicit in the bicolored tree itself.)
 For later convenience, we will sometimes call such objects \emph{$k$-coding trees}, and we will denote by $\specname{CT}_{k}$ the species of such $k$-coding trees.
 
-We now define a map $\beta: \mathfrak{a}_{O, k} \sbrac{n} \to \specname{CT}_{k} \sbrac{n}$.
+We now define a map $\beta: \vec{\mathfrak{a}}_{k} \sbrac{n} \to \specname{CT}_{k} \sbrac{n}$.
 For a given coherently-oriented $k$-tree $T$ with $n$ hedra:
 \begin{itemize}
   \item For every hedron of $T$ construct a black vertex and for every front a white vertex, assigning labels appropriately.
@@ -1034,7 +1034,7 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
 \end{figure}
 
 \begin{theorem}\label{thm:bctreeenc}
-  $\beta$ induces an isomorphism of species $\mathfrak{a}_{O, k} \simeq \specname{CT}_{k}$.
+  $\beta$ induces an isomorphism of species $\specname{CT}_{k} \simeq \specname{CT}_{k}$.
 \end{theorem}
 
 \begin{proof}
@@ -1045,15 +1045,15 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
   There are also $k!$ coding trees with one black vertex, and the encoding $\beta$ is clearly a natural bijection between these two sets.
   Thus, the species $\mathfrak{a}_{O,k}$ of coherently-oriented $k$-trees and $\specname{CT}_{k}$ of $k$-coding trees have contact of order $1$.
 
-  Now, by way of induction, suppose $\mathfrak{a}_{O, k}$ and $\specname{CT}_{k}$ have contact of order $n$---that is, that the encoding $\beta$ is a natural bijection for up to $n$ hedra and up to $n$ black vertices.
+  Now, by way of induction, suppose $\specname{CT}_{k}$ and $\specname{CT}_{k}$ have contact of order $n$---that is, that the encoding $\beta$ is a natural bijection for up to $n$ hedra and up to $n$ black vertices.
   Let $C$ be a $k$-coding tree with $n+1$ black vertices and let $C_{1}$ and $C_{2}$ be two distinct subgraphs of $C$, each with $n$ black vertices.
   Then, by hypothesis, there exist coherently-oriented $k$-trees $T_{1}$ and $T_{2}$ with $n$ hedra such that $\beta \pbrac{T_{1}} = C_{1}$ and $\beta \pbrac{T_{2}} = C_{2}$.
   Moreover, $\beta \pbrac{T_{1} \cap T_{2}} = \beta \pbrac{T_{1}} \cap \beta \pbrac{T_{2}}$, and this $k$-coding tree has $n-1$ black vertices, so $T_{1} \cap T_{2}$ has $n-1$ hedra.
   Thus, $T = T_{1} \cup T_{2}$ is a coherently-oriented $k$-tree with $n+1$ black hedra, and $\beta \pbrac{T} = C$ as desired.
-  Thus, $\beta^{-1} \pbrac{\beta \pbrac{T_{1}} \cup \beta \pbrac{T_{2}}} = T_{1} \cup T_{2} = T$, and hence $\mathfrak{a}_{O, k}$ and $\specname{CT}_{k}$ have contact of order $n+1$.
+  Thus, $\beta^{-1} \pbrac{\beta \pbrac{T_{1}} \cup \beta \pbrac{T_{2}}} = T_{1} \cup T_{2} = T$, and hence $\specname{CT}_{k}$ and $\specname{CT}_{k}$ have contact of order $n+1$.
 \end{proof}
 
-$\mathfrak{a}_{O, k}$ and $\specname{CT}_{k}$ are isomorphic as species, but $k$-coding trees are much simpler than coherently-oriented $k$-trees as graphs.
+$\specname{CT}_{k}$ and $\specname{CT}_{k}$ are isomorphic as species, but $k$-coding trees are much simpler than coherently-oriented $k$-trees as graphs.
 Moreover, $k$-coding trees are doubly-enriched bicolored trees as in \cite[\S 3.2]{bll:species}, for which the authors of that text develop a system of functional equations which fully characterizes the cycle index of such a species.
 We thus will proceed in the following sections with a study of the species $\specname{CT}_{k}$, anticipating that any results we obtain will be of value to our efforts to enumerate $k$-trees.
 
@@ -1089,7 +1089,7 @@ Following our previous conventions, we will denote by $\pointed[X]{\specname{CT}
 
 Then:
 \begin{theorem}\label{thm:funcdecompco}
-  For the species $H_{k}$, $F_{k}$, $\pointed[X]{\mathfrak{a}}_{O, k}$, and $\pointed[Y]{\mathfrak{a}}_{O, k}$ as above, we have the functional relations
+  For the species $H_{k}$, $F_{k}$, $\pointed[X]{\specname{CT}}_{k}$, and $\pointed[Y]{\specname{CT}}_{k}$ as above, we have the functional relations
   \begin{align}
     H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfuncorig} \\
     F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffuncorig} \\
@@ -1130,7 +1130,7 @@ We can then write a dissymmetry theorem for $k$-coding trees, following \cite[\S
 
 The functional equations of theorem \ref{thm:funcdecompco} and theorem \ref{thm:dissymco} fully characterize the species $\specname{CT}_{k}$.
 Accordingly, if $k$-coding trees and coherently-oriented $k$-trees were the object of interest, these equations would suffice.
-We could use Lagrange inversion or another method to compute explicit cycle indices for all the species described so far in this section, culminating in complete enumerative data for $\specname{CT}_{k} = \mathfrak{a}_{O, k}$.
+We could use Lagrange inversion or another method to compute explicit cycle indices for all the species described so far in this section, culminating in complete enumerative data for $\specname{CT}_{k} = \specname{CT}_{k}$.
 However, we are interested in generic $k$-trees \emph{without} the added structure of coherent orientation; for this, we must turn to quotient species.
 
 \section{Generic $k$-trees}
@@ -1245,10 +1245,10 @@ The action on coding trees rooted at white vertices (that is, on the species $\p
 However, an action on $k$-coding trees rooted at black vertices (that is, on the species $\pointed[X]{\specname{CT}}_{k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
 
 \subsection{Defining a $C_{k+1}$-action}\label{ss:zaction}
-We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\mathfrak{a}}_{O, k}$, and $\pointed[XY]{\mathfrak{a}}_{O, k}$.
-However, to apply Theorem \ref{thm:dissymco} to study the species $\mathfrak{a}_{O, k}$ itself, need to pass from $\pointed[XY]{\mathfrak{a}}_{O, k}$ to $\pointed[X]{\mathfrak{a}}_{O, k}$.
-We note that a $\pointed[X]{\mathfrak{a}}_{O, k}$-structure (that is, a hedron-rooted coherently-oriented $k$-tree) can be identified naturally with the set of $\pointed[XY]{\mathfrak{a}}_{O, k}$-structures which are obtained by rooting the original $\pointed[X]{\mathfrak{a}}_{O, k}$-structure additionally at each of the fronts of its root hedron.
-We now define an action on $\pointed[XY]{\mathfrak{a}}_{O, k}$ by the cyclic group $C_{k+1}$ which will rotate the choice of root front around the root hedron of an $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure with respect to the orientation; then the sets which we have identified with $\pointed[X]{\mathfrak{a}}_{O, k}$-structures will simply be orbits under this action.
+We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$.
+However, to apply Theorem \ref{thm:dissymco} to study the species $\specname{CT}_{k}$ itself, need to pass from $\pointed[XY]{\specname{CT}}_{k}$ to $\pointed[X]{\specname{CT}}_{k}$.
+We note that a $\pointed[X]{\specname{CT}}_{k}$-structure (that is, a hedron-rooted coherently-oriented $k$-tree) can be identified naturally with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting the original $\pointed[X]{\specname{CT}}_{k}$-structure additionally at each of the fronts of its root hedron.
+We now define an action on $\pointed[XY]{\specname{CT}}_{k}$ by the cyclic group $C_{k+1}$ which will rotate the choice of root front around the root hedron of an $\pointed[XY]{\specname{CT}}_{k}$-structure with respect to the orientation; then the sets which we have identified with $\pointed[X]{\specname{CT}}_{k}$-structures will simply be orbits under this action.
 Let $\zeta$ be the generator of $C_{k+1}$, whose action will be to rotate the designation of the root front by by one position with respect to the cyclic ordering of the root hedron's fronts.
 Explicitly, for group elements $\zeta^{j} \in C_{k+1}$ and $\sigma \in \mathfrak{S}_{k}$, the combined action of $\zeta^{j}$ and $\sigma$ is as described in the following procedure:
 \begin{itemize}
@@ -1257,27 +1257,27 @@ Explicitly, for group elements $\zeta^{j} \in C_{k+1}$ and $\sigma \in \mathfrak
 \item Finally, we convert this linear order back to a cyclic order in the usual way.  
 \item We then pass $\rho_{i - 1} \pbrac{\sigma}$ down to act on the hedra attached to front $i$ according to the procedure in \S \ref{ss:saction}.
 \end{itemize}
-Orbits of $\pointed[XY]{\mathfrak{a}}_{O, k}$-structures under this action of $C_{k+1}$ are exactly the $\pointed[X]{\mathfrak{a}}_{O, k}$-structures we have sought, so we apply quotient species theory to write
+Orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures under this action of $C_{k+1}$ are exactly the $\pointed[X]{\specname{CT}}_{k}$-structures we have sought, so we apply quotient species theory to write
 \begin{equation}
   \label{eq:cycquot}
-  \pointed[X]{\mathfrak{a}}_{O, k} = \faktor{\pointed[XY]{\mathfrak{a}}_{O, k}}{C_{k+1}}
+  \pointed[X]{\specname{CT}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{C_{k+1}}
 \end{equation}
 as an isomorphism of $\mathfrak{S}_{k}$-species.
 Theorem \ref{thm:dissymco} then holds in full generality as an identity of $\mathfrak{S}_{k}$-species.
 We can extract from equation \eqref{eq:dissymco} that
 \begin{equation}
   \label{eq:coskextract}
-  \mathfrak{a}_{O, k} = \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} - F_{k} \cdot H_{k}
+  \specname{CT}_{k} = \pointed[X]{\specname{CT}}_{k} + \pointed[Y]{\specname{CT}}_{k} - F_{k} \cdot H_{k}
 \end{equation}
 as an isomorphism of $\mathfrak{S}_{k}$-species.
-The species $\mathfrak{a}_{k}$ of $k$-trees is then merely the quotient of $\mathfrak{a}_{O, k}$ under the action of $\mathfrak{S}_{k}$:
+The species $\mathfrak{a}_{k}$ of $k$-trees is then merely the quotient of $\specname{CT}_{k}$ under the action of $\mathfrak{S}_{k}$:
 \begin{equation}
   \label{eq:ktreesquot}
-  \mathfrak{a}_{k} = \faktor{\mathfrak{a}_{O, k}}{\mathfrak{S}_{k}}.
+  \mathfrak{a}_{k} = \faktor{\specname{CT}_{k}}{\mathfrak{S}_{k}}.
 \end{equation}
 
 \section{Cycle indices}\label{s:ktcycind}
-The cycle index of the ordinary species $\mathfrak{a}_{O, k}$ may be calculated straightforwardly from equation \eqref{eq:dissymco}, which translates directly into a relationship among the cycle indices of its component species, and equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig}, \eqref{eq:axfuncorig}, and \eqref{eq:ayfuncorig}, which translate naturally into recursive plethystic functional equations in the cycle indices of those species, which could then be computed using Lagrange inversion or other methods.
+The cycle index of the ordinary species $\specname{CT}_{k}$ may be calculated straightforwardly from equation \eqref{eq:dissymco}, which translates directly into a relationship among the cycle indices of its component species, and equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig}, \eqref{eq:axfuncorig}, and \eqref{eq:ayfuncorig}, which translate naturally into recursive plethystic functional equations in the cycle indices of those species, which could then be computed using Lagrange inversion or other methods.
 However, although we have a notion of composition of $\Gamma$-species and the associated $\Gamma$-plethysm of their cycle indices from \cite[\S 3]{hend:specfield}, it is not the correct operation here, because our action of $\sigma \in \mathfrak{S}_{k}$ is not the same for every hedron in a given $k$-tree.
 Our cycle-index analogues of equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig}, \eqref{eq:axfuncorig}, and \eqref{eq:ayfuncorig} will therefore be more complex than we might have hoped, but they still can be explicitly calculated.
 
@@ -1308,10 +1308,10 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
   \end{equation*}
   by equation \eqref{eq:gcipleth}, since $Z_{L_{k+1}} \pbrac{\sigma} = p^{\sigma} \sbrac{x}$.
 
-  Any $H_{k}$-structure, regardless of $\sigma$, requires an $X$-label for the root hedron, which contributes a $p_{1} \sbrac{x}$ term to the cycle index.
+  Any $H_{k}$-structure, regardless of $\sigma$, requires an $X$-label for the root black vertex, which contributes a $p_{1} \sbrac{x}$ term to the cycle index.
   The other labels on an $H_{k}$-structure will be divided among a collection of $F_{k}$-structures.
-  For each cycle $c$ of $\sigma$, every front $\sigma \pbrac{i}$ along $c$ clearly must have an $F_{k}$-structure which is the image of the structure on its cycle-predecessor, front $i$, under the map $\rho_{i} \pbrac{\sigma}$.
-  Thus, once the $F_{k}$-structure at any one front along $c$ is determined, all the others are determined as well.
+  For each cycle $c$ of $\sigma$, every white vertex $\sigma \pbrac{i}$ along $c$ clearly must have an $F_{k}$-structure which is the image of the structure on its cycle-predecessor, white vertex $i$, under the map $\rho_{i} \pbrac{\sigma}$.
+  Thus, once the $F_{k}$-structure at any one white vertex along $c$ is determined, all the others are determined as well.
   Additionally, this one front must be invariant under the combined actions of all the $\rho_{i} \pbrac{\sigma}$'s.
   Thus, each cycle $c$ must carry a $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$-invariant $F_{k}$-structure, of which there are a total of $\abs{c}$ copies; the contribution (as a multiplicative factor) of this cycle to the $\sigma$-cycle index of $H_{k}$ is then
   \begin{equation*}
@@ -1322,21 +1322,21 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
 \end{proof}
 
 \subsection{Rooted components}\label{ss:ktcycindroot}
-We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\mathfrak{a}}_{O, k}$ of front-rooted coherently-oriented $k$-trees and the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-species $\pointed[XY]{\mathfrak{a}}_{O, k}$ of fronted-hedron-rooted coherently-oriented $k$-trees.
+We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-species $\pointed[XY]{\specname{CT}}_{O, k}$ of $k$-coding trees rooted at edges.
 As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ayfuncorig} is trivial, so again species composition is the desired operation:
 \begin{equation}
   \label{eq:ayfunc}
-  Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
+  Z_{\pointed[Y]{\specname{CT}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
-However, the situation for the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index of $\pointed[XY]{\mathfrak{a}}_{O, k}$ requires careful study.
+However, the situation for the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index of $\pointed[XY]{\specname{CT}}_{O, k}$ requires careful study.
 \begin{theorem}
   \label{thm:axyfunc}
   For a given $\sigma \in \mathfrak{S}_{k}$ and $\zeta^{j} \in C_{k+1}$, let $\gamma = \zeta^{j} \pbrac{\zeta \rho^{j} \pbrac{\sigma} \zeta^{-1}}$.
-  Then the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\mathfrak{a}}_{O, k}$ is given by
+  Then the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
   \begin{multline}
     \label{eq:axyfunc}
-    Z_{\pointed[XY]{\mathfrak{a}}_{O, k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
+    Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
     \cdot \prod_{c \in C \pbrac{\gamma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as theorem \ref{thm:hfunc}.
@@ -1351,17 +1351,12 @@ By application of theorem \ref{thm:dissymco} (in the form of equation \eqref{eq:
 
 \begin{theorem}[Cycle index for the species of $k$-trees]
   \label{thm:ktreecyc}
-  For $Z_{F_{k}}$ as in equation \eqref{eq:ffunc}, $Z_{H_{k}}$ as in equation \eqref{eq:hfunc}, $Z_{\pointed[Y]{\mathfrak{a}}_{O, k}}$ as in equation \eqref{eq:ayfunc}, and $Z_{\pointed[XY]{\mathfrak{a}}_{O, k}}$ as in equation \eqref{eq:axyfunc}:
+  For $Z_{F_{k}}$ as in equation \eqref{eq:ffunc}, $Z_{H_{k}}$ as in equation \eqref{eq:hfunc}, $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ayfunc}, and $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:axyfunc}:
   \begin{subequations}
     \begin{align}
-      Z_{\mathfrak{a}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\mathfrak{a}_{O, k}} \pbrac{\sigma} \\
-      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} + Z_{\pointed[X]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}} \\
-      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}}
-      \pbrac{Z_{\pointed[Y]{\mathfrak{a}}_{O, k}} \pbrac{\sigma} +
-        \pbrac{\frac{1}{k+1} \sum_{j \in \sbrac{k+1}}
-          Z_{\pointed[XY]{\mathfrak{a}}_{O, k}} \pbrac{\sigma,
-            \zeta^{j}}} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot
-          Z_{H_{k}} \pbrac{\sigma}}}.
+      Z_{\mathfrak{a}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\specname{CT}_{k}} \pbrac{\sigma} \\
+      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} + Z_{\pointed[X]{\specname{CT}}_{k}} \pbrac{\sigma} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}} \\
+      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} + \pbrac{\frac{1}{k+1} \sum_{j \in \sbrac{k+1}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}}} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}}.
     \end{align}
   \end{subequations}
 
