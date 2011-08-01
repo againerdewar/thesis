@@ -1071,64 +1071,59 @@ However, we first need to improve our understanding of the recursive nature of t
 
 TODO: Add some diagrams here.
 
-Consider a coherently-oriented $k$-tree rooted at a black or white vertex (that is, at a hedron or a front).
+Consider a $k$-coding tree rooted at a black or white vertex.
 Every black vertex then has a cyclically-ordered set of $k+1$ white neighbors.
 However, if the black vertex is not the root, one of those white neighbors is its parent, so this cyclic order is equivalent to a linear order on the white child vertices.
-We will denote by $H_{k}$ the species of such structures; that is, an $H_{k}$-structure is a black vertex with a linearly-ordered set of $k$ white children, each of which may have some set of $H_{k}$-structures as its children.
+We will denote by $H_{k}$ the species of the structures that form around such non-root black vertices.
+Explicitly, an $H_{k}$-structure is a black vertex with a linearly-ordered set of $k$ white vertices, each of which may have its own set of black children and so on.
 
-Similarly, every white vertex has a set of black neighbors, but if the white vertex is not the root, one of those neighbors is the parent, so we can restrict to the set of black children of the white vertex by discarding the parent.
-Note that the set of black children of a white vertex may be empty, while the set of white children of a black vertex \emph{must} be of cardinality $k$.
-We will denote by $F_{k}$ the species of such structures; that is, an $F_{k}$ structure is a white vertex with a (possibly-empty) set of black children, each of which has a linearly-ordered set of $k$ $F_{k}$-structures as its children.
+Similarly, every white vertex has a set of black neighbors, but if the white vertex is not the root, one of those neighbors is the parent, so we can restrict to the set of black children of the white vertex.
+Note that the set of black children of a white vertex may be empty.
+We will denote by $F_{k}$ the species of structures that form around such non-root white vertices.
+Explicitly, an $F_{k}$ structure is a white vertex with a (possibly empty) set of black children, each of which has a linearly-ordered set of $k$ $F_{k}$-structures as its children and so on.
 
-It remains, of course, to consider the root vertex of a coherently-oriented $k$-tree. If it is a black vertex, it has a cyclically-ordered set of $k+1$ white vertices as children, and each of these carries an $F_{k}$-structure. Similarly, if it is a white vertex, it has a (possibly empty) set of black vertices as children, and each of these carries an $H_{k}$-structure. Following our previous conventions, we will denote by $\pointed[X]{\mathfrak{a}}_{O, k}$ the species of coherently-oriented $k$-trees rooted at a black vertex and by $\pointed[Y]{\mathfrak{a}}_{O, k}$ the corresponding white-vertex-rooted species. Then:
+It remains, of course, to consider the root vertex of a $k$-coding tree.
+If it is a black vertex, it has a cyclically-ordered set of $k+1$ white vertices as children, and each of these is the root of an $F_{k}$-structure.
+Similarly, if it is a white vertex, it has a (possibly empty) set of black vertices as children, and each of these carries an $H_{k}$-structure.
+Following our previous conventions, we will denote by $\pointed[X]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at a black vertex and by $\pointed[Y]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at a white vertex.
 
+Then:
 \begin{theorem}\label{thm:funcdecompco}
   For the species $H_{k}$, $F_{k}$, $\pointed[X]{\mathfrak{a}}_{O, k}$, and $\pointed[Y]{\mathfrak{a}}_{O, k}$ as above, we have the functional relations
   \begin{align}
     H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfuncorig} \\
     F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffuncorig} \\
-    \pointed[X]{\mathfrak{a}}_{O, k} &= X \cdot \specname{C}_{k+1} \pbrac{F_{k}} \label{eq:axfuncorig} \\
-    \pointed[Y]{\mathfrak{a}}_{O, k} &= Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ayfuncorig}.
+    \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{F_{k}} \label{eq:axfuncorig} \\
+    \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ayfuncorig}.
   \end{align}
 \end{theorem}
 
-\begin{comment} The complete proof is now embedded in the exposition.
-\begin{proof}
-  It is clear from the exposition above that equations \eqref{eq:axfuncorig} and \eqref{eq:ayfuncorig} must hold for some appropriate species $F_{k}$ and $H_{k}$; a coherently-oriented $k$-tree rooted at a front requires only an $X$-label and a set of attached hedron structures, while one rooted at a hedron requires only a $Y$-label and a $\pbrac{k+1}$-cycle of front structures.
-
-  Consider now the species $H_{k}$ of hedron structures adjoined to an existing front.
-  The hedron itself needs an $X$-label, and in addition it requires a cyclically-ordered collection of fronts ($F_{k}$-structures).
-  However, the front to which the hedron is attached is already labeled; thus, the collection of fronts \emph{not} already labeled has a $\specname{C}'_{k+1}$-structure, where the $'$ denotes the species derivative as in \cite[\S 1.4]{bll:species}.
-  Accordingly, we obtain equation \eqref{eq:hfuncorig}.
-
-  Equation \eqref{eq:ffuncorig} follows similarly, with the additional observation that the hedra attached to a given front have only the structure of a set.
-  We also note that $\specname{E}' = \specname{E}$ and that $\specname{C}'_{k+1} = \specname{L}_{k}$ (the species of linear orderings of $k$ elements) to simplify future calculations.
-\end{proof}
-\end{comment}
-
-We can then write a dissymmetry theorem for coherently-oriented $k$-trees, following \cite[\S 3.2, eq.\ (54)]{bll:species}:
+We can then write a dissymmetry theorem for $k$-coding trees, following \cite[\S 3.2, eq.\ (54)]{bll:species}:
 \begin{theorem}
   \label{thm:dissymco}
-  The species $\pointed[X]{\mathfrak{a}}_{O, k}$ of hedron-rooted coherently-oriented $k$-trees, $\pointed[Y]{\mathfrak{a}}_{O, k}$ of front-rooted coherently-oriented $k$-trees, $F_{k}$ and $H_{k}$ of front-- and hedron-structures in coherently-oriented $k$-trees, and $\mathfrak{a}_{O, k}$ of unrooted coherently-oriented $k$-trees are related by the functional equation
+  The species $\pointed[X]{\specname{CT}}_{k}$ and $\pointed[Y]{\specname{CT}}_{k}$ of rooted $k$-coding trees, $F_{k}$ and $H_{k}$ of child structures, and $\specname{CT}_{k}$ of unrooted $k$-coding trees are related by the functional equation
   \begin{equation}
     \label{eq:dissymco}
-    \pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k} = \mathfrak{a}_{O, k} + F_{k} \cdot H_{k}
+    \pointed[X]{\specname{CT}}_{k} + \pointed[Y]{\specname{CT}}_{k} = \specname{CT}_{k} + F_{k} \cdot H_{k}
   \end{equation}
   as an isomorphism of species.
 \end{theorem}
 
 \begin{proof}
-  We consider $k$-trees in their bicolored tree form and give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structures to $\pbrac{\mathfrak{a}_{O, k} + F_{k} \cdot H_{k}}$-structures.
-  Every bicolored tree has a uniquely-defined \emph{center} which is the midpoint of the longest path; since all the leaves of the tree are the same color (white), the center is necessarily a vertex.
-  An $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} + \pointed[Y]{\mathfrak{a}}_{O, k}}$-structure on the left-hand side of the equation is a coherently-oriented $k$-tree $T$ rooted at some vertex $v$, which may be either black or white.
-  If $v$ is the center of $t$, we map $t$ to itself in $\mathfrak{a}_{O, k}$; this map is a natural bijection from its preimage, the set of coherently-oriented $k$-trees rooted at their centers, to $\mathfrak{a}_{O, k}$.
+  We give a bijective, natural map from $\pbrac{\pointed[X]{\specname{CT}}_{k} + \pointed[Y]{\specname{CT}}_{k}}$-structures on the left side to $\pbrac{\specname{CT}_{k} + F_{k} \cdot H_{k}}$-structures on the right side.
+  It is a classical theorem of graph theory that a tree has a uniquely-defined \emph{center} which is the midpoint of every longest path and which is either an edge or a vertex.
+  Since all the leaves of the tree are the same color (white), it is easily verified that the center is necessarily a vertex.
+  
+  An $\pbrac{\pointed[X]{\specname{CT}}_{k} + \pointed[Y]{\specname{CT}}_{k}}$-structure on the left-hand side of the equation is a $k$-coding tree $C$ rooted at some vertex $v$, which may be either black or white.
+  If $v$ is the center of $C$, we map $C$ to its unrooted equivalent in $\specname{CT}_{k}$ on the right-hand side.
+  This map is a natural bijection from its preimage, the set of $k$-coding trees rooted at their centers, to $\specname{CT}_{k}$.
 
-  Now consider a $k$-tree $t$ rooted at a vertex $v$ which is not its center, which we denote $c$.
+  Now consider a $k$-coding tree $C$ rooted at a vertex $v$ which is not its center, which we denote $c$.
   Identify the vertex $v'$ which is adjacent to $v$ along the path from $v$ to $c$.
-  We then map the $k$-tree $t$ rooted at the black or white vertex $v$ to the same tree $t$ rooted at \emph{both} $v$ and its neighbor $v'$.
-  This is exactly a $\pbrac{F_{k} \cdot H_{k}}$-structure.
-  Moreover, given a $k$-tree $t$ rooted at adjacent black and white vertices, we can map it to the same tree $t$ rooted at the one of these two which is farther from the center.
-  This map is also a natural bijection, in this case from the set of coherently-oriented $k$-trees rooted at vertices which are \emph{not} their centers to $F_{k} \cdot H_{k}$.
+  We then map the $k$-coding tree $C$ rooted at the black or white vertex $v$ to the same tree $C$ rooted at \emph{both} $v$ and its neighbor $v'$.
+  There is an $F_{k}$ structure descendant from the white vertex of the pair $v, v'$ and an $H_{k}$ structure descendant from the black vertex.
+  We thus map $C$ to the $\pbrac{F_{k} \cdot H_{k}}$-structure on the right-hand side which is simply the union of the same $F_{k}$ and $H_{k}$ structures.
+  This map is also a natural bijection, in this case from the set of $k$-coding trees rooted at vertices which are \emph{not} their centers to $F_{k} \cdot H_{k}$.
 
   When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymco}.
 \end{proof}
