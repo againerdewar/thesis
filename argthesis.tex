@@ -964,16 +964,17 @@ A $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree is a bicolo
 (The $\specname{E}$-structure on the black neighbors of each white vertex is already implicit in the bicolored tree itself.)
 For later convenience, we will sometimes call such objects \emph{$k$-coding trees}, and we will denote by $\specname{CT}_{k}$ the species of such $k$-coding trees.
 
-To construct a tree encoding a particular coherently-oriented $k$-tree $T$
+We now define a map $\beta: \mathfrak{a}_{O, k} \sbrac{n} \to \specname{CT}_{k} \sbrac{n}$.
+For a given coherently-oriented $k$-tree $T$ with $n$ hedra:
 \begin{itemize}
   \item For every hedron of $T$ construct a black vertex and for every front a white vertex, assigning labels appropriately.
-  \item For every black-white pair, construct a connecting edge if the white vertex represents a front of the hedron represented by the black vertex.
-  \item Finally, enrich the collection of neighbors of each black vertex with a $\specname{C}_{k+1}$-structure (for $\specname{C}$ the species of cyclic orders) inherited directly from the orientation of the $k$-tree $T$. (Note that fronts (and thus white vertices) carry only $\specname{E}$-structures, which is the natural structure in a tree.)
+  \item For every black-white vertex pair, construct a connecting edge if the white vertex represents a front of the hedron represented by the black vertex.
+  \item Finally, enrich the collection of neighbors of each black vertex with a $\specname{C}_{k+1}$-structure inherited directly from the orientation of the $k$-tree $T$.
 \end{itemize}
-We will term such an object a `$\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree'.
+The resulting object $\beta \pbrac{T}$ is clearly a $k$-coding tree with $n$ black vertices.
 
-We can recover a coherently-oriented $k$-tree from any given $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree by following the reverse procedure.
-For an example, see Figure \ref{fig:exbctree}, which encodes the coherently-oriented $2$-tree of Figure \ref{fig:exco2tree}.
+We can recover a $T$ from $\beta \pbrac{T}$ by following the reverse procedure.
+For an example, see Figure \ref{fig:exbctree}, which shows the $2$-coding tree associated to the coherently-oriented $2$-tree of Figure \ref{fig:exco2tree}.
 Note that, for clarity, we have rendered the black vertices (corresponding to hedra) with squares.
 
 \begin{figure}[htb]
