@@ -1128,19 +1128,20 @@ We can then write a dissymmetry theorem for $k$-coding trees, following \cite[\S
   When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymco}.
 \end{proof}
 
-If coherently-oriented $k$-trees were the object of interest, these equations would suffice.
-We could use Lagrange inversion or another method to compute explicit cycle indices for all the species described so far in this section, culminating in complete enumerative data for $\mathfrak{a}_{O, k}$.
+The functional equations of theorem \ref{thm:funcdecompco} and theorem \ref{thm:dissymco} fully characterize the species $\specname{CT}_{k}$.
+Accordingly, if $k$-coding trees and coherently-oriented $k$-trees were the object of interest, these equations would suffice.
+We could use Lagrange inversion or another method to compute explicit cycle indices for all the species described so far in this section, culminating in complete enumerative data for $\specname{CT}_{k} = \mathfrak{a}_{O, k}$.
 However, we are interested in generic $k$-trees \emph{without} the added structure of coherent orientation; for this, we must turn to quotient species.
 
 \section{Generic $k$-trees}
 \subsection{Defining an $\mathfrak{S}_{k}$-action}\label{ss:saction}
 To remove the coherent orientation structure we have attached to our $k$-trees, we now apply the theory of quotient species.
 We first need to develop a group action under which ordinary $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees.
-A given labeled $k$-tree may be given exactly $k!$ coherent orientations (which may be indexed by cyclic orderings of the fronts of some chosen root hedron), which suggests that we should look for an action of $\mathfrak{S}_{k}$. Unfortunately:
-
+A given labeled $k$-tree may be given exactly $k!$ coherent orientations (which may be indexed by cyclic orderings of the fronts of some chosen root hedron), which suggests that we should look for an action of $\mathfrak{S}_{k}$.
+Unfortunately:
 \begin{lemma}
   \label{lem:notransac}
-  For $k \geq 3$, no transitive action of $\mathfrak{S}_{k}$ on the set $\cyc_{\sbrac{k+1}}$ of cyclic orders on $\sbrac{k+1}$ commutes with the action of $\mathfrak{S}_{k+1}$ that permutes labels.
+  For $k \geq 3$, no transitive action of $\mathfrak{S}_{k}$ on the set $\cyc_{\sbrac{k+1}}$ of cyclic orders on $\sbrac{k+1}$ commutes the orwith the action of $\mathfrak{S}_{k+1}$ that permutes labels.
 \end{lemma}
 \begin{proof}
   TODO: Make this proof work.
@@ -1154,17 +1155,20 @@ Instead, we will use the additional structure on \emph{rooted} coherently-orient
 As an aside, we also note that the fact that this obstruction occurs only for $k \geq 3$ would suggest that a more straightforward course than ours would be available specifically in the case of $2$-trees.
 Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{is} a well-defined action of $\mathfrak{S}_{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
 
-We begin with the species $H_{k}$ as described in Theorem \ref{thm:funcdecompco}.
-Take an $H_{k}$ structure and choose some permutation $\sigma \in \mathfrak{S}_{k}$, then allow $\sigma$ to act in the usual way on the linear ordering on the white children of the black vertex that is the base of the $H_{k}$-structure.
-This will upset the coherence of the orientation of the $H_{k}$-structure.
-To repair it, we must adjust the orientations of all the black descendants of the base black vertex to match the new $\sigma$-permuted orientation.
-We cannot, of course, obtain the correct orientations simply by applying $\sigma$ to each of these descendants; this does not restore coherence.
-However, we have noted previously, there \emph{does} exist a choice of orientation for each of these descendants which \emph{will} create coherence; we need only find it.
-For compatibility with the methods of $\Gamma$-species theory, it will be most convenient to describe this procedure in terms of the \emph{permutation} which must be applied to the orientation of each descendant in some procedural way.
+We have noted previously that every labeled $k$-tree admits exactly $k!$ coherent orientations.
+Thus, there are $k!$ distinct $k$-coding trees associated to each labeled $k$-tree, which differ only in the $\specname{C}_{k+1}$-structures on their black vertices.
+Consider some non-root black vertex of a rooted $k$-coding tree.
+It is the root of an $H_{k}$-structure, and there is a linear order on its $k$ white children.
+There is a natural label-independent action of $\mathfrak{S}_{k}$ on the set of these linear orders under which, for example, $\sigma = \pbrac{1 2}$ switches the first and second places in an ordering.
+If we simply apply some $\sigma \in \mathfrak{S}_{k}$ in this manner to the root of an $H_{k}$-structure, however, the resulting $H_{k}$-structure will \emph{not} correspond to a different coherent orientation of the same underlying $k$-tree; the coherence of the ordering of the white neighbors of the root black vertex with the orderings of the descendant $H_{k}$ structures will be disturbed.
+However, as we have noted previously, there \emph{does} exist a choice of orientation for each of these descendants which is coherent with the new orientation of the root.
+We thus will need to apply some permutation to each of the descendant $H_{k}$-structures as well.
 
-Consider an immediate black descendant of the base black vertex attached along the front which is (prior to the application of $\sigma$) in the $i$th place in the linear order induced by the orientation. Following the application of $\sigma$, the attaching front is in the $\sigma \pbrac{i}$th place in the orientation; its predecessor in the new order is the front which previously was in the $\sigma^{-1} \pbrac{\sigma \pbrac{i} - 1}$th place, and its successor was in the $\sigma^{-1} \pbrac{\sigma \pbrac{i} + 1}$th place, as examples.
+Fix some $H_{k}$ structure and let its root black vertex be $v$.
+Consider some black vertex $v$' which is an immediate descendant of $v$ and suppose that the white vertex that joins them is $i$th in the linear order induced by the orientation at $v$.
+If we then apply $\sigma$ to the orientation at $v$, the white vertex between $v$ and $v'$ will thereafter be in the $\sigma \pbrac{i}$th place in the new orientation at $v$.
 The permutation $\sigma'$ which must be applied to the orientation of the descendant black vertex is precisely that induced by passing over the mirror bijection, applying $\sigma$, and then passing back.
-We can express this map in formula:
+We can express this procedure in formulaic terms:
 \begin{theorem}
   \label{thm:rhodef}
   If a permutation $\sigma \in \mathfrak{S}_{k}$ is applied to the orientation of a base black vertex in a $H_{k}$-structure, the permutation which must be applied to a neighbor black vertex attached across a front which was in the $i$th place in the linear ordering induced by the orientation to preserve coherence is $\rho_{i} \pbrac{\sigma}$ where $\rho_{i}$ is the map
@@ -1227,19 +1231,18 @@ This procedure is depicted in Figure \ref{fig:rhoapp}.
   \label{fig:rhoapp}
 \end{figure}
 
-We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its base black vertex.
-This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is defined in a totally label-independent manner and thus naturally commutes with the $\mathfrak{S}_{n}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
+We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its root black vertex.
+This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\mathfrak{S}_{n} \times \mathfrak{S}_{nk+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
+Moreover, the orbits of this $\mathfrak{S}_{k}$-action are exactly the sets of $H_{k}$-structures which are different coherent orientations of the same underlying $k$-tree structure.
+TODO: justify this claim?
 
-We also need to consider the associated action of $\mathfrak{S}_{k}$ on $F_{k}$-structures, but this is trivial: to apply a permutation $\sigma$ to a front, simply apply it to each of that front's children directly, treating each of those children as an $H_{k}$ structure and following the procedure above.
+We also need to consider the associated action of $\mathfrak{S}_{k}$ on $F_{k}$-structures, but there is nothing new to be done.
+Simply applying the $\mathfrak{S}_{k}$-action defined previously to each of the $H_{k}$-structures that are immediate children of the root white vertex of an $F_{k}$-structure suffices to preserve coherence.
+Moreover, again, the orbits of this $\mathfrak{S}_{k}$-action are the sets of $F_{k}$-structures corresponding to the different coherent orientations of the same underlying $k$-tree structure.
 
-Following the discussion in \S \ref{ss:codecomp}, we need also to define an action on the two classes of rooted coherently-oriented $k$-trees.
-The action on front-rooted trees (that is, on the species $\pointed[Y]{\mathfrak{a}}_{O, k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed[Y]{\mathfrak{a}}_{O, k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex
-However, an action on hedron-rooted trees (that is, on the species $\pointed[X]{\mathfrak{a}}_{O, k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
-To address this issue, we pass to a new class of structures: $\pointed[XY]{\mathfrak{a}}_{O, k}$, the species of fronted-hedron-rooted $k$-trees (that is, $k$-trees rooted at a hedron with a designated front, or equivalently at an adjacent black-white vertex pair).
-The action of $\mathfrak{S}_{k}$ on a $\pointed[XY]{\mathfrak{a}}_{O, k}$-structure is then simply that which applies $\sigma$ directly to the root black vertex as though it were an $H_{k}$ structure which was a child of the root white vertex.
-
-It remains, of course, to remove the additional structure we have imposed on hedron-rooted $k$-trees.
-For this, we introduce another group action.
+It remains to extend this action of $\mathfrak{S}_{k}$ to the root of a rooted $k$-coding tree.
+The action on coding trees rooted at white vertices (that is, on the species $\pointed[Y]{\specname{CT}}_{k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed[Y]{\specname{CT}}_{k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex and proceed recursively.
+However, an action on $k$-coding trees rooted at black vertices (that is, on the species $\pointed[X]{\specname{CT}}_{k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
 
 \subsection{Defining a $C_{k+1}$-action}\label{ss:zaction}
 We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\mathfrak{a}}_{O, k}$, and $\pointed[XY]{\mathfrak{a}}_{O, k}$.
