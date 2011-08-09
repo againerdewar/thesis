@@ -1136,12 +1136,12 @@ Then:
   \begin{subequations}
     \label{eq:ctfunc}
     \begin{align}
-      H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfuncorig} \\
-      F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffuncorig} \\
-      \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{F_{k}} \label{eq:ctxfuncorig} \\
-      \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ctyfuncorig} \\
+      H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfunc} \\
+      F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffunc} \\
+      \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{F_{k}} \label{eq:ctxfunc} \\
+      \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ctyfunc} \\
       \pointed[XY]{\specname{CT}}_{k} &= F_{k} \cdot
-      H_{k}. \label{eq:ctxyfuncorig}
+      H_{k}. \label{eq:ctxyfunc}
     \end{align}
   \end{subequations}
 
@@ -1273,7 +1273,7 @@ We can then conclude that:
 \end{theorem}
 
 Similarly, we may extend this $\mathfrak{S}_{k}$-action to the species $\pointed[XY]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees.
-By equation \eqref{eq:ctxyfuncorig}, we can decompose a $\pointed[XY]{\specname{CT}}_{k}$-structure into an $F_{k}$-structure and an $H_{k}$-structure, each of which has a well-defined $\mathfrak{S}_{k}$-action, which we simply pass back up to $\pointed[XY]{\specname{CT}}_{k}$.
+By equation \eqref{eq:ctxyfunc}, we can decompose a $\pointed[XY]{\specname{CT}}_{k}$-structure into an $F_{k}$-structure and an $H_{k}$-structure, each of which has a well-defined $\mathfrak{S}_{k}$-action, which we simply pass back up to $\pointed[XY]{\specname{CT}}_{k}$.
 By a similar argument to that above, it is clear that orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures are in natural bijection with $\pointed[XY]{\mathfrak{a}}_{k}$-structures, so:
 \begin{theorem}
   \label{thm:axyquot}
@@ -1349,7 +1349,7 @@ We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, 
 
 We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
 More specifically, an $F_{k}$-structure which is invariant under some $\sigma \in \mathfrak{S}_{k}$ is in fact still just a $Y$-label and a set of $H_{k}$-structures which are invariant under that same $\sigma$.
-Thus, equation \eqref{eq:ffuncorig} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
+Thus, equation \eqref{eq:ffunc} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
 \begin{equation}
   \label{eq:ffuncci}
   Z_{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}'} \circ Z_{H_{k}} \pbrac{\sigma}}.
@@ -1357,10 +1357,10 @@ Thus, equation \eqref{eq:ffuncorig} holds in $\mathfrak{S}_{k}$-generality, and 
 
 However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more complex, as a direct consequence of the complexity of the operation expressed in equation \eqref{eq:rhodef}:
 \begin{theorem}
-  \label{thm:hfunc}
+  \label{thm:hfuncci}
   The $\mathfrak{S}_{k}$-cycle index for the species $H_{k}$ is given by
   \begin{multline}
-    \label{eq:hfunc}
+    \label{eq:hfuncci}
     Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
     \times \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
@@ -1368,7 +1368,7 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
 \end{theorem}
 
 \begin{proof}
-  Note first that, if \eqref{eq:hfuncorig} held as an identity of $\mathfrak{S}_{k}$-species, we would instead have
+  Note first that, if \eqref{eq:hfunc} held as an identity of $\mathfrak{S}_{k}$-species, we would instead have
   \begin{equation*}
     Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\sigma^{\abs{c}}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
   \end{equation*}
@@ -1389,19 +1389,19 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
 
 \subsection{Rooted components}\label{ss:ktcycindroot}
 We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-species $\pointed[XY]{\specname{CT}}_{O, k}$ of $k$-coding trees rooted at edges.
-As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfuncorig} is trivial, so again species composition is the desired operation:
+As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
 \begin{equation}
-  \label{eq:ayfunc}
+  \label{eq:ayfuncci}
   Z_{\pointed[Y]{\specname{CT}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
 However, the situation for the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index of $\pointed[XY]{\specname{CT}}_{O, k}$ requires careful study.
 \begin{theorem}
-  \label{thm:axyfunc}
+  \label{thm:axyfuncci}
   For a given $\sigma \in \mathfrak{S}_{k}$ and $\zeta^{j} \in C_{k+1}$, let $\gamma = \zeta^{j} \pbrac{\zeta \rho^{j} \pbrac{\sigma} \zeta^{-1}}$.
   Then the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
   \begin{multline}
-    \label{eq:axyfunc}
+    \label{eq:axyfuncci}
     Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
     \cdot \prod_{c \in C \pbrac{\gamma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
