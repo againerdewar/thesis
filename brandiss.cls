@@ -93,9 +93,6 @@
 % Package fancyhdr allows us to set headers and footers.
 \RequirePackage{fancyhdr}
 
-% Package hyperref allows links in our PDFs. The 'pdfpagelabels' option gets page labels right in the PDF as well.
-\usepackage[pdfpagelabels]{hyperref}
-
 %*********************** Settings and Definitions  ******************
 
 % GSAS formatting requirements: If a PDF document is produced, it

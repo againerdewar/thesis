@@ -49,6 +49,9 @@
 % Load spacing commands.
 \RequirePackage{setspace}
 
+% Package hyperref allows links in our PDFs.
+\usepackage{hyperref}
+
 %*********************** Settings and Definitions  ******************
 
 % The global parameters.
@@ -63,6 +66,10 @@
 % This command allows transparent access to the parameters.  It is
 % intended to be also available to the user of the style.
 \newcommand{\thediss}[1]{\csname diss@#1\endcsname}
+
+% Add title and author information to the PDF when we build it.
+% The 'pdfpagelabels' option gets page labels right in the PDF as well.
+\hypersetup{pdfauthor=\thediss{author},pdftitle=\thediss{title},pdfpagelabels}
 
 % GSAS formatting requirements: No page number on title page.
 % The \makedisstitle command produces the title page.
