@@ -1150,7 +1150,7 @@ Then:
 However, a recursive characterization of the various ordinary species of $k$-coding trees is insufficient to characterize the species of $k$-trees itself, since $k$-coding trees represent $k$-trees with coherent orientations.
 It remains, then, to apply the theory of quotient species to pass back from $k$-coding trees to generic $k$-trees.
 
-\section{Generic $k$-trees}
+\section{Generic $k$-trees}\label{s:genkt}
 \subsection{Quotients for $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$}\label{ss:saction}
 To remove the coherent orientation structure we have attached to our $k$-trees, we now apply the theory of quotient species.
 We first need to develop a group action under which ordinary $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees.
@@ -1296,7 +1296,7 @@ Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree)
 However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\mathfrak{S}_{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
 If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\mathfrak{S}_{k}$-action on the latter set whose orbits are $\pointed[XY]{\mathfrak{a}}_{k}$-structures.
 Moreover, if we write $C_{k+1}$ for the cyclic group with $k+1$ elements, there is a natural $C_{k+1}$-action on $\pointed[XY]{\specname{CT}}_{k}$-structures which rotates the choice of root white vertex around the root black vertex with respect to the cyclic order on those white neighbors.
-We will write $C_{k+1} = \abrac{\nu}$ where the action of $\nu$ is to rotate the choice of root white vertex one position forward with respect to the cyclic order on the white neighbors of the black root of an edge-rooted $k$-coding tree.
+We will write $C_{k+1} = \abrac{\zeta}$ where the action of $\zeta$ is to rotate the choice of root white vertex one position forward with respect to the cyclic order on the white neighbors of the black root of an edge-rooted $k$-coding tree.
 Then orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures under the \emph{combined} action of $\mathfrak{S}_{k+1}$ and $C_{k+1}$ are naturally identified with $\pointed[X]{\mathfrak{a}}_{k}$-structures, so:
 \begin{theorem}
   \label{thm:axquot}
@@ -1311,20 +1311,40 @@ Then orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures under the \emph{comb
 These actions of $\mathfrak{S}_{k+1}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[XY]{\specname{CT}}_{k}$ is not their direct product.
 It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \mathfrak{S}_{k+1}$.
 However, we will not need to use the algebraic structure, so we leave aside the details of the multiplication.
-We note, however, that the set of elements of $C_{k+1} \rtimes \mathfrak{S}_{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \nu^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
+TODO: THIS IS TOTALLY FALSE! DEAL WITH THIS!
+We note, however, that the set of elements of $C_{k+1} \rtimes \mathfrak{S}_{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
 
 We now have all the pieces of the original dissymmetry theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[XY]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
 To compute the cycle indices of these components (and thus the cycle index of $\mathfrak{a}_{k}$ itself), we need only compute the cycle indices of the various rooted $\specname{CT}_{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
 
 \section{Automorphisms and cycle indices}\label{s:ktcycind}
-In our work so far, we have 
-Tracing 
-The cycle index of the ordinary species $\specname{CT}_{k}$ may be calculated straightforwardly from equation \eqref{eq:dissymco}, which translates directly into a relationship among the cycle indices of its component species, and equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig}, \eqref{eq:axfuncorig}, and \eqref{eq:ayfuncorig}, which translate naturally into recursive plethystic functional equations in the cycle indices of those species, which could then be computed using Lagrange inversion or other methods.
-However, although we have a notion of composition of $\Gamma$-species and the associated $\Gamma$-plethysm of their cycle indices from \cite[\S 3]{hend:specfield}, it is not the correct operation here, because our action of $\sigma \in \mathfrak{S}_{k}$ is not the same for every hedron in a given $k$-tree.
-Our cycle-index analogues of equations \eqref{eq:hfuncorig}, \eqref{eq:ffuncorig}, \eqref{eq:axfuncorig}, and \eqref{eq:ayfuncorig} will therefore be more complex than we might have hoped, but they still can be explicitly calculated.
+Corollary \ref{cor:dissymkreform} has a direct analogue in terms of cycle indices:
+\begin{theorem}
+  \label{thm:dissymkci}
+  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk}, we have
+  \begin{equation}
+    \label{eq:dissymkci}
+    Z_{\mathfrak{a}_{k}} = Z_{\pointed[X]{\mathfrak{a}}_{k}} + Z_{\pointed[Y]{\mathfrak{a}}_{k}} - Z_{\pointed[XY]{\mathfrak{a}}_{k}}.
+  \end{equation}
+\end{theorem}
+Thus, we need to calculate the cycle indices of the three rooted forms of $\mathfrak{a}_{k}$.
+From theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obtain:
+\begin{theorem}
+  \label{thm:aquotci}
+  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk} and the various $\mathfrak{S}_{k}$-species and $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species forms of $\specname{CT}_{k}$ as in \S \ref{s:genkt}, we have
+  \begin{subequations}
+    \label{eq:aquotci}
+    \begin{align}
+      Z_{\pointed[Y]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
+      Z_{\pointed[XY]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:axyquotci} \\
+      Z_{\pointed[X]{\mathfrak{a}}_{k}} &= \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
+    \end{align}
+  \end{subequations}
+\end{theorem}
+
+We thus need only calculate the various $\Gamma$-cycle indices for the three rooted forms of the species $\specname{CT}_{k}$ to complete our enumeration of general $k$-trees.
 
 \subsection{Recursive components}\label{ss:ktcycindrec}
-We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \ref{ss:codecomp}.
 The action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ffuncorig} is trivial, so we need only take the appropriate species composition:
 \begin{equation}
   \label{eq:ffunc}
@@ -1365,7 +1385,7 @@ However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more
 
 \subsection{Rooted components}\label{ss:ktcycindroot}
 We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-species $\pointed[XY]{\specname{CT}}_{O, k}$ of $k$-coding trees rooted at edges.
-As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ayfuncorig} is trivial, so again species composition is the desired operation:
+As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfuncorig} is trivial, so again species composition is the desired operation:
 \begin{equation}
   \label{eq:ayfunc}
   Z_{\pointed[Y]{\specname{CT}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
