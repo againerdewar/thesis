@@ -1131,7 +1131,7 @@ Deleting the root edge (leaving the vertices) breaks the tree into two pieces, o
 Moreover, the original $k$-coding tree can be reconstructed from such pieces by simply attaching the root black and white vertices by an edge.
 
 Then:
-\begin{theorem}\label{thm:funcdecompco}
+\begin{theorem}\label{thm:funcdecompct}
   For the species $H_{k}$, $F_{k}$, $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$ as above, we have the functional relations
   \begin{subequations}
     \label{eq:ctfunc}
@@ -1345,9 +1345,13 @@ From theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obta
 We thus need only calculate the various $\Gamma$-cycle indices for the three rooted forms of the species $\specname{CT}_{k}$ to complete our enumeration of general $k$-trees.
 
 \subsection{Recursive components}\label{ss:ktcycindrec}
-The action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ffuncorig} is trivial, so we need only take the appropriate species composition:
+We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
+
+We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
+More specifically, an $F_{k}$-structure which is invariant under some $\sigma \in \mathfrak{S}_{k}$ is in fact still just a $Y$-label and a set of $H_{k}$-structures which are invariant under that same $\sigma$.
+Thus, equation \eqref{eq:ffuncorig} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
 \begin{equation}
-  \label{eq:ffunc}
+  \label{eq:ffuncci}
   Z_{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}'} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
