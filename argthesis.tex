@@ -1348,43 +1348,64 @@ We thus need only calculate the various $\Gamma$-cycle indices for the three roo
 We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
 
 We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
-More specifically, an $F_{k}$-structure which is invariant under some $\sigma \in \mathfrak{S}_{k}$ is in fact still just a $Y$-label and a set of $H_{k}$-structures which are invariant under that same $\sigma$.
+More specifically, an $F_{k}$-structure for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism in fact still just a $Y$-label and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
 Thus, equation \eqref{eq:ffunc} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
 \begin{equation}
   \label{eq:ffuncci}
   Z_{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}'} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
-However, the situation for the $\mathfrak{S}_{k}$-cycle index of $H_{k}$ is more complex, as a direct consequence of the complexity of the operation expressed in equation \eqref{eq:rhodef}:
+In Theorem \ref{thm:funcdecompct}, we also have that $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$ as ordinary species.
+However, this does \emph{not} hold as an identity of $S_{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
+\begin{lemma}
+  \label{lem:fkinvar}
+  Let $H$ be a structure of the species $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$.
+  Let $F \pbrac{i}$ be the $F_{k}$-structure in the $i$th position in the linear order.
+  Then some $\sigma \in \mathfrak{S}_{k}$ acts as an automorphism of $H$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$.
+\end{lemma}
+
+\begin{proof}
+  The $X$-label on the black root of $H$ is not affected by the application of $\sigma$, so it imposes no conditions.
+  However, the $\specname{L}_{k+1}$-structure on the white children of the root is permuted by $\sigma$, and we apply to each of the $F \pbrac{i}$'s the action of $\rho_{i} \pbrac{\sigma}$.
+  Thus, $\sigma$ is an automorphism of $H$ if and only if the combination of applying $\sigma$ to the linear order and $\rho_{i} \pbrac{\sigma}$ to each $F_{i}$ is an automorphism.
+  Since $\sigma$ `carries' each $F_{i}$ onto $F_{\sigma \pbrac{i}}$, we must have that $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$, as desired.
+  That this suffices is clear.
+\end{proof}
+
+With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$:
 \begin{theorem}
   \label{thm:hfuncci}
   The $\mathfrak{S}_{k}$-cycle index for the species $H_{k}$ is given by
   \begin{multline}
     \label{eq:hfuncci}
     Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \times \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$, \emph{including} fixed points as $1$-cycles and where the inner product is taken over the elements $i$ of the cycle $c$ in an order determined by fixing a basepoint (arbitrarily) and linearizing.
+  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and where the inner product is taken over the elements $i$ of the cycle $c$ in an order determined by fixing a basepoint (arbitrarily) and linearizing.
 \end{theorem}
 
 \begin{proof}
-  Note first that, if \eqref{eq:hfunc} held as an identity of $\mathfrak{S}_{k}$-species, we would instead have
-  \begin{equation*}
-    Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\sigma^{\abs{c}}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
-  \end{equation*}
-  by equation \eqref{eq:gcipleth}, since $Z_{L_{k+1}} \pbrac{\sigma} = p^{\sigma} \sbrac{x}$.
+  By an obvious multisort extension of definition \ref{def:gcycind}, for each $\sigma \in \mathfrak{S}_{k}$ and $\gamma \in \mathfrak{S}_{n} \times \mathfrak{S}_{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
+  For any given $\sigma \in \mathfrak{S}_{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \mathfrak{S}_{k} \times \mathfrak{S}_{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
+  Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
+  Define $\fix_{\sigma} \sbrac{n}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
+  We then wish to calculate $\fix_{\sigma} \sbrac{n} p_{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
 
-  Any $H_{k}$-structure, regardless of $\sigma$, requires an $X$-label for the root black vertex, which contributes a $p_{1} \sbrac{x}$ term to the cycle index.
-  The other labels on an $H_{k}$-structure will be divided among a collection of $F_{k}$-structures.
-  For each cycle $c$ of $\sigma$, every white vertex $\sigma \pbrac{i}$ along $c$ clearly must have an $F_{k}$-structure which is the image of the structure on its cycle-predecessor, white vertex $i$, under the map $\rho_{i} \pbrac{\sigma}$.
-  Thus, once the $F_{k}$-structure at any one white vertex along $c$ is determined, all the others are determined as well.
-  Additionally, this one front must be invariant under the combined actions of all the $\rho_{i} \pbrac{\sigma}$'s.
-  Thus, each cycle $c$ must carry a $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$-invariant $F_{k}$-structure, of which there are a total of $\abs{c}$ copies; the contribution (as a multiplicative factor) of this cycle to the $\sigma$-cycle index of $H_{k}$ is then
-  \begin{equation*}
-    Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
-  \end{equation*}
+  As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ term in the result.
+  From lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
+  Let $c = \pbrac{c_{1} c_{2} \dots c_{l}}$ be such a cycle (that is, $\sigma \pbrac{c_{i}} = c_{i+1}$, allowing that $l+1 = 1$ cyclically).
+  Let the $F_{k}$-structure at position $c_{1}$ be denoted $F$.
+  Then the $F_{k}$-structure at position $c_{2}$ must be isomorphic to $\rho_{c_{1}} \pbrac{\sigma} F$, that at position $c_{3}$ must be isomorphic to $\rho_{c_{2}} \pbrac{\sigma} \pbrac{\rho_{c_{1}} \pbrac{\sigma} F} = \pbrac{\rho_{c_{2}} \cdot \rho_{c_{1}}} \pbrac{\sigma} F$, and so on.
+  Thus, up to permutations of their labels, all the $F_{k}$ structures along $c$ are determined by $F$.
+  Moreover, since $c$ is a cycle, $F$ must come back to itself after $l$ iterations of $\sigma$.
 
-  Every cycle of $\sigma$ makes a similar contribution, so the result is as stated in equation \eqref{eq:hfunc}.
+  Let $\psi = \prod_{i = 1}^{l} \rho_{c_{i}} \pbrac{\sigma}$; then $\varsigma$ must induce an automorphism of $F$.
+  By lemma \ref{lem:fkinvar}, this requirement suffices.
+  Therefore, with respect to the cycle $c$, we have $\fix_{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
+  The contribution to the cycle index is then $\fix_{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
+    Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
+  \end{equation*}
+  in equation \eqref{eq:hfuncci}.
 \end{proof}
 
 \subsection{Rooted components}\label{ss:ktcycindroot}
