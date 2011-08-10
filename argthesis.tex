@@ -1423,16 +1423,16 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
 We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species $\pointed[XY]{\specname{CT}}_{k}$ of $k$-coding trees rooted at edges.
 As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
 \begin{equation}
-  \label{eq:ayfuncci}
-  Z_{\pointed[Y]{\specname{CT}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
+  \label{eq:ctyfuncci}
+  Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
 However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in theorem \ref{thm:hfuncci}) return, with slight modifications:
 \begin{theorem}
-  \label{thm:axyfuncci}
+  \label{thm:ctxyfuncci}
   The $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
   \begin{multline}
-    \label{eq:axyfuncci}
+    \label{eq:ctxyfuncci}
     Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
     \cdot \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
@@ -1444,31 +1444,27 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
 \end{proof}
 
 \subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
-With these explicit (albeit recursively-defined) formulas for the $\mathfrak{S}_{k}$-cycle indices of the various species in equation \eqref{eq:dissymco}, and ultimately by passing to the quotient species $\mathfrak{a}_{k}$ as in equation \eqref{eq:ktreesquot}, we can perform explicit enumerative calculations.
-By application of theorem \ref{thm:dissymco} (in the form of equation \eqref{eq:coskextract}), we then obtain the following:
-
+We now have all the pieces in hand to apply theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
+We substitute the results of the previous two sections into equation \eqref{eq:dissymkci} to obtain:
 \begin{theorem}[Cycle index for the species of $k$-trees]
+  For $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $Z_{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $Z_{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
   \label{thm:ktreecyc}
-  For $Z_{F_{k}}$ as in equation \eqref{eq:ffunc}, $Z_{H_{k}}$ as in equation \eqref{eq:hfunc}, $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ayfunc}, and $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:axyfunc}:
-  \begin{subequations}
-    \label{eq:akcycind}
-    \begin{align}
-      Z_{\mathfrak{a}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\specname{CT}_{k}} \pbrac{\sigma} \\
-      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} + Z_{\pointed[X]{\specname{CT}}_{k}} \pbrac{\sigma} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}} \\
-      &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} + \pbrac{\frac{1}{k+1} \sum_{j \in \sbrac{k+1}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}}} - \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}}.
-    \end{align}
-  \end{subequations}
-
+  \begin{multline}
+    Z_{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
+    + \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}.
+  \end{multline}
 \end{theorem}
 
-The results of some such explicit calculations are presented in the Appendix.
+Since the formulas for $Z_{F_{k}}$ and $Z_{H_{k}}$ depend on each other, this result in fact represents a recursive system of functional equations.
+Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
+The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
 
 \section{Asymptotics}
 TODO: Write this!
 
 \appendix
 \chapter{Computation in species theory}\label{c:comp}
-\section{Cycle indices of recursively-defined species}\label{c:comprecurs}
+\section{Cycle indices of recursively-defined species}\label{s:comprecurs}
 TODO: Write this!
 
 \section{Cycle indices of compositional inverse species}\label{s:compinv}
