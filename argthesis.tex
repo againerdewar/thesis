@@ -1355,7 +1355,7 @@ From theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obta
 
 We thus need only calculate the various $\Gamma$-cycle indices for the three rooted forms of the species $\specname{CT}_{k}$ to complete our enumeration of general $k$-trees.
 
-\subsection{Recursive components}\label{ss:ktcycindrec}
+\subsection{Recursive components: $H_{k}$ and $F_{k}$}\label{ss:ktcycindrec}
 We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
 
 We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
@@ -1419,7 +1419,7 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
   in equation \eqref{eq:hfuncci}.
 \end{proof}
 
-\subsection{Rooted components}\label{ss:ktcycindroot}
+\subsection{Rooted components: $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[XY]{\specname{CT}}_{k}$}\label{ss:ktcycindroot}
 We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species $\pointed[XY]{\specname{CT}}_{k}$ of $k$-coding trees rooted at edges.
 As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
 \begin{equation}
@@ -1443,6 +1443,7 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
   Proof is essentially identical to that of theorem \ref{thm:hfuncci}.
 \end{proof}
 
+\subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
 With these explicit (albeit recursively-defined) formulas for the $\mathfrak{S}_{k}$-cycle indices of the various species in equation \eqref{eq:dissymco}, and ultimately by passing to the quotient species $\mathfrak{a}_{k}$ as in equation \eqref{eq:ktreesquot}, we can perform explicit enumerative calculations.
 By application of theorem \ref{thm:dissymco} (in the form of equation \eqref{eq:coskextract}), we then obtain the following:
 
