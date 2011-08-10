@@ -1151,7 +1151,7 @@ However, a recursive characterization of the various ordinary species of $k$-cod
 It remains, then, to apply the theory of quotient species to pass back from $k$-coding trees to generic $k$-trees.
 
 \section{Generic $k$-trees}\label{s:genkt}
-\subsection{Quotients for $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$}\label{ss:saction}
+\subsection{Quotients for $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$}\label{ss:ayact}
 To remove the coherent orientation structure we have attached to our $k$-trees, we now apply the theory of quotient species.
 We first need to develop a group action under which ordinary $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees.
 A given labeled $k$-tree may be given exactly $k!$ coherent orientations (which may be indexed by cyclic orderings of the fronts of some chosen root hedron), which suggests that we should look for an action of $\mathfrak{S}_{k}$.
@@ -1287,7 +1287,7 @@ By a similar argument to that above, it is clear that orbits of $\pointed[XY]{\s
 
 However, an action on $k$-coding trees rooted at black vertices (that is, on the species $\pointed[X]{\specname{CT}}_{k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
 
-\subsection{Quotients for $\pointed[X]{\mathfrak{a}}_{k}$}\label{ss:zaction}
+\subsection{Quotients for $\pointed[X]{\mathfrak{a}}_{k}$}\label{ss:axact}
 We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$, and used these to characterize the species $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$.
 However, to apply Theorem \ref{thm:dissymk} to study the species $\mathfrak{a}_{k}$ itself, we need to characterize the species $\pointed[X]{\mathfrak{a}}_{k}$ as well.
 To do this, we need a result analogous to theorems \ref{thm:ayquot} and \ref{thm:axyquot}.
@@ -1427,21 +1427,20 @@ As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $
   Z_{\pointed[Y]{\specname{CT}}_{O, k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
-However, the situation for the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index of $\pointed[XY]{\specname{CT}}_{O, k}$ requires careful study.
+However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in theorem \ref{thm:hfuncci}) return, with slight modifications:
 \begin{theorem}
   \label{thm:axyfuncci}
-  For a given $\sigma \in \mathfrak{S}_{k}$ and $\zeta^{j} \in C_{k+1}$, let $\gamma = \zeta^{j} \pbrac{\zeta \rho^{j} \pbrac{\sigma} \zeta^{-1}}$.
-  Then the $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
+  The $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
   \begin{multline}
     \label{eq:axyfuncci}
     Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
-    \cdot \prod_{c \in C \pbrac{\gamma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \cdot \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  under the same conditions as theorem \ref{thm:hfunc}.
+  under the same conditions as theorem \ref{thm:hfuncci}.
 \end{theorem}
 
 \begin{proof}
-  Proof is essentially identical to that of theorem \ref{thm:hfunc}.
+  Proof is essentially identical to that of theorem \ref{thm:hfuncci}.
 \end{proof}
 
 With these explicit (albeit recursively-defined) formulas for the $\mathfrak{S}_{k}$-cycle indices of the various species in equation \eqref{eq:dissymco}, and ultimately by passing to the quotient species $\mathfrak{a}_{k}$ as in equation \eqref{eq:ktreesquot}, we can perform explicit enumerative calculations.
