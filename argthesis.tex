@@ -145,7 +145,7 @@ We now associate to the categorical theory of species an enumerative mechanism--
   For a species $F$, define its \emph{cycle index series} to be the power series
   \begin{equation}
     \label{eq:cycinddef}
-    Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
+    Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
   \end{equation}
   where $\fix \pbrac{F \sbrac{\sigma}} := \abs{\cbrac{s \in F \sbrac{A} : F \sbrac{\sigma} \pbrac{s} = s}}$, where $\sigma_{i}$ is the number of $i$-cycles of $\sigma$, and where $p_{i}$ are indeterminates.
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
@@ -422,7 +422,7 @@ As an intermediate step to the computation of the cycle index associated to this
   \label{def:gcycind}
   For a $\Gamma$-species $F$, define the $\Gamma$-cycle index $Z_{F}$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
   \begin{equation}
-    Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma} \label{eq:gcycinddef}
+    Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
   \end{equation}
   with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
 \end{definition}
