@@ -1297,22 +1297,33 @@ However, as noted in the previous section, there is no apparent way to give this
 If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\mathfrak{S}_{k}$-action on the latter set whose orbits are $\pointed[XY]{\mathfrak{a}}_{k}$-structures.
 Moreover, if we write $C_{k+1}$ for the cyclic group with $k+1$ elements, there is a natural $C_{k+1}$-action on $\pointed[XY]{\specname{CT}}_{k}$-structures which rotates the choice of root white vertex around the root black vertex with respect to the cyclic order on those white neighbors.
 We will write $C_{k+1} = \abrac{\zeta}$ where the action of $\zeta$ is to rotate the choice of root white vertex one position forward with respect to the cyclic order on the white neighbors of the black root of an edge-rooted $k$-coding tree.
-Then orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures under the \emph{combined} action of $\mathfrak{S}_{k+1}$ and $C_{k+1}$ are naturally identified with $\pointed[X]{\mathfrak{a}}_{k}$-structures, so:
+
+These actions of $\mathfrak{S}_{k}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[XY]{\specname{CT}}_{k}$ is not their direct product.
+It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \mathfrak{S}_{k}$.
+However, we will not need to use the algebraic structure, so we leave aside the details of the multiplication.
+We note, however, that the set of elements of $C_{k+1} \rtimes \mathfrak{S}_{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
+
+If we treat the $\specname{C}_{k+1}$-structure on the white neighbors of the black root of a $\pointed[XY]{\specname{CT}}_{k}$-structure as an $\specname{L}_{k+1}$-structure (rather than the usual $\specname{L}_{k}$) by appending the white root to the \emph{end} of the linear order, there is a natural $\mathfrak{S}_{k+1}$-action on this linear order by permutations.
+Let $i_{1}: \mathfrak{S}_{k} \hookrightarrow \mathfrak{S}_{k+1}$ be the map sending each $\sigma \in \mathfrak{S}_{k}$ to the permutation in $\mathfrak{S}_{k+1}$ which acts as $\sigma$ on $\cbrac{1, \dots, k}$ and fixes $k+1$; we will usually simply denote this permutation $i_{1} \pbrac{\sigma}$ by $\sigma$ again.
+Similarly, let $i_{2}: C_{k+1} \hookrightarrow \mathfrak{S}_{k+1}$ be the map sending the generator $\zeta$ to the cyclic element $\pbrac{1\ 2\ \dots\ k+1}$; we will usually denote this permutation $i_{2} \pbrac{\zeta}$ by $\zeta$ as well.
+These maps are monomorphisms, and furthermore they respect the actions of $\mathfrak{S}_{k}$ and $C_{k+1}$ on $\specname{L}_{k+1}$; an element from $\mathfrak{S}_{k}$ still permutes the linear order on the non-root white neighbors of the root black vertex, while an element from $C_{k+1}$ still preserves the underlying cyclic order on the white vertices but changes which one is root.
+Thus, the pair $\zeta^{i} \in C_{k+1}$ and $\sigma \in \mathfrak{S}_{k}$ act on an $\specname{L}_{k+1}$-structure exactly as their image $\sigma \zeta^{i} \in \mathfrak{S}_{k+1}$ does.
+
+Once some pair $\pbrac{\zeta^{i}, \sigma}$ is allowed to act on the $\specname{L}_{k+1}$-structure at the root of a $\pointed[XY]{\specname{CT}}_{k}$-structure, however, we must adjust the orderings of the white children of non-root black vertices to preserve the coherence of the orientation of the associated $k$-tree.
+Permutations of the form $\rho_{j} \pbrac{\sigma}$ applied to each of the $F_{k}$-structures attached to the root black vertex will suffice once again, but now the $F_{k}$-structure which begins in position $j$ must undergo the action of $\rho_{\zeta^{i} \pbrac{j}} \pbrac{\sigma}$, since after the application of $\zeta^{i}$ it is in position $\zeta^{i} \pbrac{j}$.
+This will preserve coherence as desired.
+
+With the interaction of the actions of $C_{k+1}$ and $\mathfrak{S}_{k}$ on $\pointed[XY]{\specname{CT}}_{k}$-structures so defined, it is clear that each orbit of the combined action $C_{k+1} \rtimes \mathfrak{S}_{k}$ corresponds to the set of all the ways to take a given hedron-rooted $k$-tree, select a front of the root hedron, and coherently orient the result.
+Thus:
 \begin{theorem}
   \label{thm:axquot}
   For $\pointed[X]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at hedra and $\pointed[XY]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at edges, we have
   \begin{equation}
     \label{eq:axquot}
-    \pointed[X]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}}.
+    \pointed[X]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}}
   \end{equation}
-  for the $\mathfrak{S}_{k}$-action described above.
+  for the action of $C_{k+1} \rtimes \mathfrak{S}_{k}$ described above.
 \end{theorem}
-
-These actions of $\mathfrak{S}_{k+1}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[XY]{\specname{CT}}_{k}$ is not their direct product.
-It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \mathfrak{S}_{k+1}$.
-However, we will not need to use the algebraic structure, so we leave aside the details of the multiplication.
-TODO: THIS IS TOTALLY FALSE! DEAL WITH THIS!
-We note, however, that the set of elements of $C_{k+1} \rtimes \mathfrak{S}_{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
 
 We now have all the pieces of the original dissymmetry theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[XY]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
 To compute the cycle indices of these components (and thus the cycle index of $\mathfrak{a}_{k}$ itself), we need only compute the cycle indices of the various rooted $\specname{CT}_{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
@@ -1399,7 +1410,7 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
   Thus, up to permutations of their labels, all the $F_{k}$ structures along $c$ are determined by $F$.
   Moreover, since $c$ is a cycle, $F$ must come back to itself after $l$ iterations of $\sigma$.
 
-  Let $\psi = \prod_{i = 1}^{l} \rho_{c_{i}} \pbrac{\sigma}$; then $\varsigma$ must induce an automorphism of $F$.
+  Let $\psi = \prod_{i = 1}^{l} \rho_{c_{i}} \pbrac{\sigma}$; then $\psi$ must induce an automorphism of $F$.
   By lemma \ref{lem:fkinvar}, this requirement suffices.
   Therefore, with respect to the cycle $c$, we have $\fix_{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
   The contribution to the cycle index is then $\fix_{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
