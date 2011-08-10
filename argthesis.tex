@@ -1190,65 +1190,58 @@ We can express this procedure in formulaic terms:
   If a permutation $\sigma \in \mathfrak{S}_{k}$ is applied to the orientation of a base black vertex in a $H_{k}$-structure, the permutation which must be applied to a neighbor black vertex attached across a front which was in the $i$th place in the linear ordering induced by the orientation to preserve coherence is $\rho_{i} \pbrac{\sigma}$ where $\rho_{i}$ is the map
   \begin{equation}
     \label{eq:rhodef}
-    \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i} - \sigma \pbrac{i - a}
+    \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i + a} - \sigma \pbrac{i}
   \end{equation}
-  where all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$ and where $\hat{\sigma}$ is the permutation in $\mathfrak{S}_{k+1}$ which acts as $\sigma$ on $\sbrac{k}$ and which fixes $k+1$.
+  where all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$.
 \end{theorem}
 \begin{proof}
-  Let $A$ denote the base black vertex and $B$ denote the immediate black descendant we will study, which is attached to $A$ by the white vertex which is $i$th in the linear order induced by the original orientation of $A$.
-  The white child of $B$ which is $a$th in the linear order induced by the original orientation is mirror to the white child of $A$ which is $\pbrac{i-a}$th in the original orientation of $A$.
-  The mirror white vertex is then $\sigma \pbrac{i - a}$th in the new linear order of the children of $A$ induced by $\sigma$, and the attaching vertex is $\sigma \pbrac{i}$th.
-  Thus, the white child of $B$ which was $a$th in the original linear order of the children of $B$ must be $\pbrac{\sigma \pbrac{i} - \sigma \pbrac{i-a}}$th in the new order to preserve coherence.
+  Let $A$ denote the base black vertex and $B$ denote an immediate black descendant, which is attached to $A$ by the white vertex $1$, which we suppose to be in position $i$ in the linear order induced by the original orientation of $A$.
+  Let $2$ denote the white child of $B$ which is $a$th in the linear order induced by the original orientation around $B$.
+  It is mirror to the white child $3$ of $A$ which is $\pbrac{i+a}$th in the linear order induced by the original orientation around $A$.
+  After the action of $\sigma$ is applied, vertex $3$ is $\sigma \pbrac{i+a}$th in the new linear order around $A$.
+  We require that $2$ is still mirror to $3$, so we must move it to position $\sigma \pbrac{i + a} - \sigma \pbrac{i}$ when we create a new linear order around $B$.
+  This completes the proof.
 \end{proof}
 This procedure is depicted in Figure \ref{fig:rhoapp}.
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
-    \SetGraphUnit{2}
+    \SetGraphUnit{3.5}
 
     \Vertex[style=hnode]{A}
-    \cyccwr{(A)};
+    \cycccwr{(A)};
 
-    \SOWE[style=fnode,L={$i-a$}](A){1}
-    \Edge(A)(1)
+    \EA[style=fnode](A){3}
+    \path (A) edge [bend right=45, thick] node [below](a3d){$i+a$} (3);
+    \path (A) edge [bend left=45, thick] node [above](a3u){$\sigma \pbrac{i+a}$} (3);
+    \path (a3d) edge [->, dashed, thick] node [auto]{$\sigma$} (a3u);
 
-    \NOWE[style=fnode,L={$i$}](A){2}
-    \Edge(A)(2)
+    \WE[style=fnode](A){1}
+    \path (A) edge [bend left=45, thick] node [below](a1d){$i$} (1);
+    \path (A) edge [bend right=45, thick] node [above](a1u){$\sigma \pbrac{i}$} (1);
+    \path (a1d) edge [->, dashed, thick] node [auto]{$\sigma$} (a1u);
+    
+    \WE[style=hnode](1){B}
+    \cyccwr{(B)};
+    \path (B) edge [thick] node [auto](b1){$0$} (1);
 
-    \NO[style=hnode](2){B}
-    \cycccwr{(B)};
-    \Edge(B)(2)
+    \WE[style=fnode](B){2}
+    \path (B) edge [bend left=45, thick] node [below](b2d){$a$} (2);
+    \path (B) edge [bend right=45, thick] node [above](b2u){$\sigma \pbrac{i+a} - \sigma \pbrac{i}$} (2);
+    \path (b2d) edge [->, dashed, thick] node [auto]{$\rho_{i} \pbrac{\sigma}$} (b2u);
 
-    \NOWE[style=fnode,L={$a$}](B){3}
-    \Edge(B)(3)
-    \Edge[style={->},label={$\mu$}](3)(1)
-
-    \SOEA[style=fnodewide,L={$\sigma \pbrac{i - a}$}](A){4}
-    \Edge(A)(4)
-
-    \NOEA[style=fnode,L={$\sigma \pbrac{i}$}](A){5}
-    \Edge(A)(5)
-
-    \NO[style=hnode](5){B'}
-    \cycccwr{(B')};
-    \Edge(B')(5)
-
-    \NOEA[style=fnodewide,L={$\sigma \pbrac{i} - \sigma \pbrac{i - a}$}](B'){6}
-    \Edge(B')(6)
-    \Edge[style={->},label={$\mu$}](6)(4)
-
-    \Edge[style={->,dashed,bend right},label={$\sigma$}](1)(4)
-    \Edge[style={->,dashed,bend left},label={$\sigma$}](2)(5)
-
-    \Edge[style={->,dashed,bend left},label={$\rho_{i} \pbrac{\sigma}$}](3)(6)
+    \path (b2d) edge [->, dotted, thick, bend right=15] node [auto]{$\mu$} (a3d);
+    \path (b2u) edge [->, dotted, thick, bend left=15] node [auto]{$\mu$} (a3u);
   \end{tikzpicture}
-  \caption{Application of a permutation $\sigma$ to an $H_{k}$ structure and its descendant $\rho_{i} \pbrac{\sigma}$ on a child black vertex, preserving coherency of the orientation}
+  \caption[The permutation-modifying map $\rho$]{Application of a permutation $\sigma$ to an $H_{k}$-structure rooted at the black vertex $A$.
+    The vertices $2$ and $3$ are mirror in the original orientation (lower set of edges), so we must preserve this mirror relation when we apply $\sigma$.
+    $\sigma$ moves $3$ from the $\pbrac{i+a}$th place to the $\sigma \pbrac{i+a}$th, so $\rho_{i} \pbrac{\sigma}$ must carry $2$ from the $a$th place to the $\pbrac{\sigma \pbrac{i+a} - \sigma \pbrac{i}}$th.}
   \label{fig:rhoapp}
 \end{figure}
 
 We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its root black vertex.
-This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\mathfrak{S}_{n} \times \mathfrak{S}_{nk+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
+This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\mathfrak{S}_{n} \times \mathfrak{S}_{kn+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
 Moreover, the orbits of this $\mathfrak{S}_{k}$-action are exactly the sets of $H_{k}$-structures which are different coherent orientations of the same underlying $k$-tree structure.
 TODO: justify this claim?
 
