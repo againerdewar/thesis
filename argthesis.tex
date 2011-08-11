@@ -1092,15 +1092,17 @@ TODO: Make sure that $\vec{\mathfrak{a}}_{k}$ is even defined somewhere.
 \end{theorem}
 
 \begin{proof}
+  TODO: This is not totally clear.
   It is clear that $\beta$ sends each coherently-oriented $k$-tree to a unique $k$-coding tree, and that this map commutes with permutations on the label sets (and thus is categorically natural).
   To show that $\beta$ induces a species isomorphism, then, we need only show that $\beta$ is a surjection onto $\specname{CT}_{k} \sbrac{n}$ for each $n$.
   
   First, note that there are exactly $k!$ coherently-oriented $k$-trees with one hedron---one for each cyclic ordering of the $k+1$ front labels.
   There are also $k!$ coding trees with one black vertex, and the encoding $\beta$ is clearly a natural bijection between these two sets.
-  Thus, the species $\mathfrak{a}_{O,k}$ of coherently-oriented $k$-trees and $\specname{CT}_{k}$ of $k$-coding trees have contact of order $1$.
+  Thus, the species $\vec{\mathfrak{a}}_{k}$ of coherently-oriented $k$-trees and $\specname{CT}_{k}$ of $k$-coding trees have contact of order $1$.
 
-  Now, by way of induction, suppose $\specname{CT}_{k}$ and $\specname{CT}_{k}$ have contact of order $n$---that is, that the encoding $\beta$ is a natural bijection for up to $n$ hedra and up to $n$ black vertices.
-  Let $C$ be a $k$-coding tree with $n+1$ black vertices and let $C_{1}$ and $C_{2}$ be two distinct subgraphs of $C$, each with $n$ black vertices.
+  Now, by way of induction, suppose $\specname{CT}_{k}$ and $\specname{CT}_{k}$ have contact of order $n \geq 1$; that is, that the encoding $\beta$ is a natural bijection for up to $n$ hedra and up to $n$ black vertices.
+  Let $C$ be a $k$-coding tree with $n+1$ black vertices.
+  Then let $C_{1}$ and $C_{2}$ be two distinct sub--$k$-coding trees of $C$, each obtained from $C$ by removing one black node which has only one white neighbor which is not a leaf.
   Then, by hypothesis, there exist coherently-oriented $k$-trees $T_{1}$ and $T_{2}$ with $n$ hedra such that $\beta \pbrac{T_{1}} = C_{1}$ and $\beta \pbrac{T_{2}} = C_{2}$.
   Moreover, $\beta \pbrac{T_{1} \cap T_{2}} = \beta \pbrac{T_{1}} \cap \beta \pbrac{T_{2}}$, and this $k$-coding tree has $n-1$ black vertices, so $T_{1} \cap T_{2}$ has $n-1$ hedra.
   Thus, $T = T_{1} \cup T_{2}$ is a coherently-oriented $k$-tree with $n+1$ black hedra, and $\beta \pbrac{T} = C$ as desired.
@@ -1240,7 +1242,7 @@ This procedure is depicted in Figure \ref{fig:rhoapp}.
     \path (b2u) edge [->, dotted, thick, bend left=15] node [auto]{$\mu$} (a3u);
   \end{tikzpicture}
   \caption[The permutation-modifying map $\rho$]{Application of a permutation $\sigma$ to an $H_{k}$-structure rooted at the black vertex $A$.
-    The vertices $2$ and $3$ are mirror in the original orientation (lower set of edges), so we must preserve this mirror relation when we apply $\sigma$.
+    The vertices $2$ and $3$ are mirror in the original orientation (lower set of edges), as shown by the arrows $\mu$, so we must preserve this mirror relation when we apply $\sigma$.
     $\sigma$ moves $3$ from the $\pbrac{i+a}$th place to the $\sigma \pbrac{i+a}$th, so $\rho_{i} \pbrac{\sigma}$ must carry $2$ from the $a$th place to the $\pbrac{\sigma \pbrac{i+a} - \sigma \pbrac{i}}$th.}
   \label{fig:rhoapp}
 \end{figure}
@@ -1257,7 +1259,7 @@ Moreover, again, the orbits of this $\mathfrak{S}_{k}$-action are the sets of $F
 It remains to extend this action of $\mathfrak{S}_{k}$ to the root of a rooted $k$-coding tree.
 The action on coding trees rooted at white vertices (that is, on the species $\pointed[Y]{\specname{CT}}_{k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to an $\pointed[Y]{\specname{CT}}_{k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex and proceed recursively.
 This gives an $\mathfrak{S}_{k}$-action on $\pointed[Y]{\specname{CT}}_{k}$-structures which commutes with permutations of labels, so we can take quotients.
-Moreover, we can easily pass this action to the species $\pointed[Y]{\mathfrak{a}}_{O, k}$ of coherently-oriented $k$-trees rooted at fronts, and its orbits are clearly the underlying unoriented front-rooted $k$-trees of $\pointed[Y]{\mathfrak{a}}_{k}$.
+Moreover, we can easily pass this action to the species $\pointed[Y]{\vec{\mathfrak{a}}}_{k}$ of coherently-oriented $k$-trees rooted at fronts, and its orbits are clearly the underlying unoriented front-rooted $k$-trees of $\pointed[Y]{\mathfrak{a}}_{k}$.
 We can then conclude that:
 \begin{theorem}
   \label{thm:ayquot}
@@ -1289,7 +1291,7 @@ We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{
 However, to apply Theorem \ref{thm:dissymk} to study the species $\mathfrak{a}_{k}$ itself, we need to characterize the species $\pointed[X]{\mathfrak{a}}_{k}$ as well.
 To do this, we need a result analogous to theorems \ref{thm:ayquot} and \ref{thm:axyquot}.
 
-Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree) $T$ is naturally identified with the set of $\pbrac{\pointed[X]{\mathfrak{a}}_{O, k} = \pointed[X]{\specname{CT}}_{k}}$-structures that are the coherent orientations of $T$.
+Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree) $T$ is naturally identified with the set of $\pbrac{\pointed[X]{\vec{\mathfrak{a}}}_{k} = \pointed[X]{\specname{CT}}_{k}}$-structures that are the coherent orientations of $T$.
 However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\mathfrak{S}_{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
 If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\mathfrak{S}_{k}$-action on the latter set whose orbits are $\pointed[XY]{\mathfrak{a}}_{k}$-structures.
 Moreover, if we write $C_{k+1}$ for the cyclic group with $k+1$ elements, there is a natural $C_{k+1}$-action on $\pointed[XY]{\specname{CT}}_{k}$-structures which rotates the choice of root white vertex around the root black vertex with respect to the cyclic order on those white neighbors.
@@ -1389,7 +1391,7 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
     Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
     \times \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and where the inner product is taken over the elements $i$ of the cycle $c$ in an order determined by fixing a basepoint (arbitrarily) and linearizing.
+  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and where the inner product is taken over the elements $i$ of the cycle $c$ in the cyclic order starting from any element.
 \end{theorem}
 
 \begin{proof}
@@ -1431,7 +1433,7 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
   \begin{multline}
     \label{eq:ctxyfuncci}
     Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
-    \cdot \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \times \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as theorem \ref{thm:hfuncci}.
 \end{theorem}
@@ -1447,8 +1449,8 @@ We substitute the results of the previous two sections into equation \eqref{eq:d
   For $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $Z_{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $Z_{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
   \label{thm:ktreecyc}
   \begin{multline}
-    Z_{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
-    + \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}.
+    \quad Z_{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
+    + \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}. \quad
   \end{multline}
 \end{theorem}
 
