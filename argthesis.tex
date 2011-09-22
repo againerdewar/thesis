@@ -1367,7 +1367,7 @@ We thus need only calculate the various $\Gamma$-cycle indices for the three roo
 We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
 
 We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
-More specifically, an $F_{k}$-structure for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism in fact still just a $Y$-label and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
+More specifically, an $F_{k}$-structure for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is in fact still just a $Y$-labeled root and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
 Thus, equation \eqref{eq:ffunc} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
 \begin{equation}
   \label{eq:ffuncci}
@@ -1375,7 +1375,7 @@ Thus, equation \eqref{eq:ffunc} holds in $\mathfrak{S}_{k}$-generality, and we c
 \end{equation}
 
 In Theorem \ref{thm:funcdecompct}, we also have that $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$ as ordinary species.
-However, this does \emph{not} hold as an identity of $S_{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
+However, this does \emph{not} hold as an identity of $\mathfrak{S}_{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
 \begin{lemma}
   \label{lem:fkinvar}
   Let $H$ be a structure of the species $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$.
@@ -1408,7 +1408,7 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
   For any given $\sigma \in \mathfrak{S}_{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \mathfrak{S}_{k} \times \mathfrak{S}_{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
   Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
   Define $\fix H_{k} \sbrac{\sigma}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
-  We then wish to calculate $\fix H_{k} \sbrac{\sigma} p_{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
+  We then wish to calculate $\fix H_{k} \sbrac{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
 
   As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ term in the result.
   From Lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
@@ -1448,7 +1448,7 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
 \end{theorem}
 
 \begin{proof}
-  Proof is essentially identical to that of Theorem \ref{thm:hfuncci}.
+  The proof is essentially identical to that of Theorem \ref{thm:hfuncci}.
 \end{proof}
 
 \subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
