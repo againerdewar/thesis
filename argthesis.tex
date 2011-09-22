@@ -718,7 +718,7 @@ We can derive from \cite[\S 2.5, eq.~(58c)]{bll:species} that its cycle index is
 where $\mu$ is the M\"{o}bius function.
 We can then rewrite equation \eqref{eq:bcdecomp} as
 \[\specname{CBC} = \con \circ \specname{BC}\]
-It then follows immediately from theorem \ref{thm:gspeccomp} that
+It then follows immediately from Theorem \ref{thm:gspeccomp} that
 \begin{theorem}
   \begin{equation} Z_{\specname{CBC}} = Z_{\con} \circ Z_{\specname{BC}} \label{eq:zcbcdecomp} \end{equation}
 \end{theorem}
@@ -1298,7 +1298,7 @@ However, an action on $k$-coding trees rooted at black vertices (that is, on the
 \subsection{Quotients for $\pointed[X]{\mathfrak{a}}_{k}$}\label{ss:axact}
 We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$, and used these to characterize the species $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$.
 However, to apply Theorem \ref{thm:dissymk} to study the species $\mathfrak{a}_{k}$ itself, we need to characterize the species $\pointed[X]{\mathfrak{a}}_{k}$ as well.
-To do this, we need a result analogous to theorems \ref{thm:ayquot} and \ref{thm:axyquot}.
+To do this, we need a result analogous to Theorem \ref{thm:ayquot} and Theorem \ref{thm:axyquot}.
 
 Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree) $T$ is naturally identified with the set of $\pbrac{\pointed[X]{\vec{\mathfrak{a}}}_{k} = \pointed[X]{\specname{CT}}_{k}}$-structures that are the coherent orientations of $T$.
 However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\mathfrak{S}_{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
@@ -1333,7 +1333,7 @@ Thus:
   for the action of $C_{k+1} \rtimes \mathfrak{S}_{k}$ described above.
 \end{theorem}
 
-We now have all the pieces of the original dissymmetry theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[XY]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
+We now have all the pieces of the original dissymmetry Theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[XY]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
 To compute the cycle indices of these components (and thus the cycle index of $\mathfrak{a}_{k}$ itself), we need only compute the cycle indices of the various rooted $\specname{CT}_{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
 
 \section{Automorphisms and cycle indices}\label{s:ktcycind}
@@ -1347,7 +1347,7 @@ Corollary \ref{cor:dissymkreform} has a direct analogue in terms of cycle indice
   \end{equation}
 \end{theorem}
 Thus, we need to calculate the cycle indices of the three rooted forms of $\mathfrak{a}_{k}$.
-From theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obtain:
+From Theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obtain:
 \begin{theorem}
   \label{thm:aquotci}
   For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk} and the various $\mathfrak{S}_{k}$-species and $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species forms of $\specname{CT}_{k}$ as in \S \ref{s:genkt}, we have
@@ -1404,14 +1404,14 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
 \end{theorem}
 
 \begin{proof}
-  By an obvious multisort extension of definition \ref{def:gcycind}, for each $\sigma \in \mathfrak{S}_{k}$ and $\gamma \in \mathfrak{S}_{n} \times \mathfrak{S}_{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
+  By an obvious multisort extension of Definition \ref{def:gcycind}, for each $\sigma \in \mathfrak{S}_{k}$ and $\gamma \in \mathfrak{S}_{n} \times \mathfrak{S}_{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
   For any given $\sigma \in \mathfrak{S}_{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \mathfrak{S}_{k} \times \mathfrak{S}_{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
   Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
   Define $\fix H_{k} \sbrac{\sigma}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
   We then wish to calculate $\fix H_{k} \sbrac{\sigma} p_{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
 
   As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ term in the result.
-  From lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
+  From Lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
   Let $c = \pbrac{c_{1} c_{2} \dots c_{l}}$ be such a cycle (that is, $\sigma \pbrac{c_{i}} = c_{i+1}$, allowing that $l+1 = 1$ cyclically).
   Let the $F_{k}$-structure at position $c_{1}$ be denoted $F$.
   Then the $F_{k}$-structure at position $c_{2}$ must be isomorphic to $\rho_{c_{1}} \pbrac{\sigma} F$, that at position $c_{3}$ must be isomorphic to $\rho_{c_{2}} \pbrac{\sigma} \pbrac{\rho_{c_{1}} \pbrac{\sigma} F} = \pbrac{\rho_{c_{2}} \cdot \rho_{c_{1}}} \pbrac{\sigma} F$, and so on.
@@ -1435,7 +1435,7 @@ As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $
   Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
-However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in theorem \ref{thm:hfuncci}) return, with slight modifications:
+However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in Theorem \ref{thm:hfuncci}) return, with slight modifications:
 \begin{theorem}
   \label{thm:ctxyfuncci}
   The $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
@@ -1444,15 +1444,15 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
     Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
     \times \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  under the same conditions as theorem \ref{thm:hfuncci}.
+  under the same conditions as Theorem \ref{thm:hfuncci}.
 \end{theorem}
 
 \begin{proof}
-  Proof is essentially identical to that of theorem \ref{thm:hfuncci}.
+  Proof is essentially identical to that of Theorem \ref{thm:hfuncci}.
 \end{proof}
 
 \subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
-We now have all the pieces in hand to apply theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
+We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
 We substitute the results of the previous two sections into equation \eqref{eq:dissymkci} to obtain:
 \begin{theorem}[Cycle index for the species of $k$-trees]
   For $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $Z_{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $Z_{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
