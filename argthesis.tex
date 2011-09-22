@@ -156,7 +156,7 @@ We now associate to the categorical theory of species an enumerative mechanism--
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
 \end{definition}
 
-In fact, $\fix \pbrac{\sigma}$ is a class function\footnote{That is, the value of $\fix \pbrac{\sigma}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
+In fact, $\fix \pbrac{F \sbrac{\sigma}}$ is a class function\footnote{That is, the value of $\fix \pbrac{F \sbrac{\sigma}}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
 Accordingly, we can instead consider all permutations of a given cycle type at once.
 It is a classical theorem that conjugacy classes of permutations in $\mathfrak{S}_{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
 In particular, conjugacy classes are determined by their cycle type, the multiset of the lengths of the cycles, which may clearly be identified bijectively with partitions of $n$.
@@ -346,7 +346,7 @@ In natural analogy to Definition \ref{def:cycind}, the formula for the cycle ind
 \begin{multline}
   \label{eq:multcycinddef}
   Z_{F} \pbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
-  \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \mathfrak{S}_{a_{1}, a_{2}, \dots, a_{k}}} \fix F \sbrac{\sigma} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
+  \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \mathfrak{S}_{a_{1}, a_{2}, \dots, a_{k}}} \fix \pbrac{F \sbrac{\sigma}} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
 \end{multline}
 where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_{j} \sbrac{i}}^{\pbrac{\sigma_{i}}_{j}}$ where $\pbrac{\sigma_{i}}_{j}$ is the number of $j$-cycles of $\sigma_{i}$.
 
@@ -475,7 +475,7 @@ Thus, Lemma \ref{lem:grouporbits} implies the following:
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
     \label{eq:quotcycind}
-    Z_{F / \Gamma} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} Z_{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \mathfrak{S}_{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma}.
+    Z_{F / \Gamma} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} Z_{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \mathfrak{S}_{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
   \end{equation}
 \end{theorem}
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
@@ -518,7 +518,7 @@ We construct the cycle index for the species $\specname{BC}$ of bicolored graphs
 
 Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{eq:gcycinddef}:
 \begin{equation*}
-  Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \pbrac{\fix_{\sigma \circ \gamma} \sbrac{n}} p_{\sigma}.
+  Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
 \end{equation*}
 Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
 We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
@@ -565,7 +565,7 @@ We may then construct any possible graph fixed by our permutation by making a ch
 
 We now turn our attention to the possible colorings of the graph which are compatible with a permutation of specified cycle type $\lambda$.
 We split our partition into two subpartitions, writing $\lambda = \mu \cup \nu$, where partitions are treated as multisets and $\cup$ is the multiset union, and designate $\mu$ to represent the white cycles and $\nu$ the black.
-Then the total number of graphs fixed by such a decomposition is
+Then the total number of graphs fixed by such a permutation with a specified decomposition is
 \begin{equation*}
   \fix \pbrac{\mu, \nu} = \prod_{\substack{i \in \mu \\ j \in \nu}} 2^{\gcd \pbrac{i, j}}
 \end{equation*}
@@ -1407,8 +1407,8 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
   By an obvious multisort extension of definition \ref{def:gcycind}, for each $\sigma \in \mathfrak{S}_{k}$ and $\gamma \in \mathfrak{S}_{n} \times \mathfrak{S}_{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
   For any given $\sigma \in \mathfrak{S}_{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \mathfrak{S}_{k} \times \mathfrak{S}_{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
   Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
-  Define $\fix_{\sigma} \sbrac{n}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
-  We then wish to calculate $\fix_{\sigma} \sbrac{n} p_{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
+  Define $\fix H_{k} \sbrac{\sigma}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
+  We then wish to calculate $\fix H_{k} \sbrac{\sigma} p_{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
 
   As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ term in the result.
   From lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
@@ -1420,8 +1420,8 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
 
   Let $\psi = \prod_{i = 1}^{l} \rho_{c_{i}} \pbrac{\sigma}$; then $\psi$ must induce an automorphism of $F$.
   By lemma \ref{lem:fkinvar}, this requirement suffices.
-  Therefore, with respect to the cycle $c$, we have $\fix_{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
-  The contribution to the cycle index is then $\fix_{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
+  Therefore, with respect to the cycle $c$, we have $\fix H_{k} \sbrac{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
+  The contribution to the cycle index is then $\fix H_{k} \sbrac{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
     Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
   \end{equation*}
   in equation \eqref{eq:hfuncci}.
