@@ -47,9 +47,14 @@
 \newcommand{\sbrac}[1]{\ensuremath{\left[ {#1} \right]}}
 \newcommand{\cbrac}[1]{\ensuremath{\left\{ {#1} \right\}}}
 
-\newcommand{\pointed}[2][]{\ensuremath{{#2}^{\bullet #1}}}
 \newcommand{\specname}[1]{\ensuremath{\mathscr{#1}}}
 \newcommand{\foreign}[1]{\emph{#1}}
+
+\newcommand{\ci}[2][]{ \ensuremath{ Z_{#2}^{#1} } }
+\newcommand{\gci}[3][]{ \ci[{#2} {#1}]{#3} }
+\newcommand{\pointed}[1]{ \ensuremath{ {#1}^{\bullet} } }
+
+\newcommand{\symgp}[1]{ \ensuremath{ \mathfrak{S}_{#1} } }
 
 \DeclareMathOperator{\lcm}{lcm}
 

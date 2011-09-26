@@ -117,8 +117,8 @@ Note that, having defined the species $F$ to be a functor, we have the following
 \item for any set $A$, we have $F \sbrac{\Id_{A}} = \Id_{F \sbrac{A}}$.
 \end{itemize}
 Accordingly, we (generally) need not concern ourselves with the details of the set $A$ of labels we consider, so we will often restrict our attention to a canonical label set $\sbrac{n} := \cbrac{1, 2, \dots, n}$ for each cardinality $n$.
-Moreover, the permutation group $\mathfrak{S}_{A}$ on any given set $A$ acts by self-bijections of $A$ and induces \emph{automorphisms} of $F$-structures for a given species $F$.
-The orbits of $F$-structures on $A$ under the induced action of $\mathfrak{S}_{A}$ are then exactly the `unlabeled' structures of the class $F$, such as unlabeled graphs.
+Moreover, the permutation group $\symgp{A}$ on any given set $A$ acts by self-bijections of $A$ and induces \emph{automorphisms} of $F$-structures for a given species $F$.
+The orbits of $F$-structures on $A$ under the induced action of $\symgp{A}$ are then exactly the `unlabeled' structures of the class $F$, such as unlabeled graphs.
 
 Finally, we note that it is sometimes natural to say that two \emph{species} are in fact `the same'.
 It is not sufficient, of course, for the classes of $F$- and $G$-structures on each set $A$ to have the same cardinality; two such species could still have very different combinatorial structure.
@@ -150,26 +150,26 @@ We now associate to the categorical theory of species an enumerative mechanism--
   For a species $F$, define its \emph{cycle index series} to be the power series
   \begin{equation}
     \label{eq:cycinddef}
-    Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
+    \ci{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
   \end{equation}
   where $\fix \pbrac{F \sbrac{\sigma}} := \abs{\cbrac{s \in F \sbrac{A} : F \sbrac{\sigma} \pbrac{s} = s}}$, where $\sigma_{i}$ is the number of $i$-cycles of $\sigma$, and where $p_{i}$ are indeterminates.
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
 \end{definition}
 
-In fact, $\fix \pbrac{F \sbrac{\sigma}}$ is a class function\footnote{That is, the value of $\fix \pbrac{F \sbrac{\sigma}}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \mathfrak{S}_{n}$.
+In fact, $\fix \pbrac{F \sbrac{\sigma}}$ is a class function\footnote{That is, the value of $\fix \pbrac{F \sbrac{\sigma}}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \symgp{n}$.
 Accordingly, we can instead consider all permutations of a given cycle type at once.
-It is a classical theorem that conjugacy classes of permutations in $\mathfrak{S}_{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
+It is a classical theorem that conjugacy classes of permutations in $\symgp{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
 In particular, conjugacy classes are determined by their cycle type, the multiset of the lengths of the cycles, which may clearly be identified bijectively with partitions of $n$.
 For a given partition $\lambda \vdash n$, there are $n! / z_{\lambda}$ permutations of cycle type $\lambda$, where $z_{\lambda} := \prod_{i} i^{\lambda_{i}} \lambda_{i}!$ for $\lambda = \pbrac{1^{\lambda_{1}}, 2^{\lambda_{2}}, \dots}$.
 Thus, we can instead write
 \begin{equation}
   \label{eq:cycinddefpart}
-  Z_{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}} = \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{\lambda}}{z_{\lambda}}
+  \ci{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}} = \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{\lambda}}{z_{\lambda}}
 \end{equation}
 for $\fix F \sbrac{\lambda} := \fix F \sbrac{\sigma}$ for some choice of a permutation $\sigma$ of cycle type $\lambda$.
 Again, we will make extensive use of the notation $p_{\lambda} = p_{\sigma}$ hereafter.
 
-That the cycle index $Z_{F}$ usefully characterizes the enumerative structure of the species $F$ may not be clear.
+That the cycle index $\ci{F}$ usefully characterizes the enumerative structure of the species $F$ may not be clear.
 However, as the following theorems show, both labeled and unlabeled enumeration are immediately possible once the cycle index is in hand.
 Recall that, for a given sequence $a = \pbrac{a_{1}, a_{2}, \dots}$, the \emph{ordinary generating function} of $a$ is the function $\tilde{A} \pbrac{x} = \sum_{i = 1}^{\infty} a_{i} x^{i}$ and the \emph{exponential generating function}  is the function $A \pbrac{x} = \sum_{i = 1}^{\infty} \frac{1}{i!} a_{i} x^{i}$.
 The scaling factor of $\frac{1}{n!}$ in the exponential generating function is convenient in many contexts; for example, it makes differentiation of the generating function a combinatorially-significant operation.
@@ -177,13 +177,13 @@ The cycle index of a species is then directly related to two important generatin
 \begin{theorem}\label{thm:cycindlab}
   The exponential generating function $F \pbrac{x}$ of labeled $F$-structures is given by
   \begin{equation}\label{eq:cycindlab}
-    F \pbrac{x} = Z_{f} \pbrac{x, 0, 0, \dots}.
+    F \pbrac{x} = \ci{f} \pbrac{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
 \begin{theorem}\label{thm:cycindunlab}
   The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures is given by
   \begin{equation}\label{eq:cycindunlab}
-    \tilde{F} \pbrac{x} = Z_{F} \pbrac{x, x^{2}, x^{3}, \dots}.
+    \tilde{F} \pbrac{x} = \ci{F} \pbrac{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
@@ -194,7 +194,7 @@ If, however, we can calculate the complete cycle index for a species, both label
 The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
 When the $p_{i}$ are understood as symmetric functions rather than simply indeterminates, additional P\'{o}lya-theoretic enumerative information is exposed.
 In particular, the symmetric function in $x$-variables underlying a cycle index in $p$-variables may be said to count \emph{partially}-labeled structures of a given species, where the coefficient on a monomial $\prod x_{i}^{\alpha_{i}}$ counts structures with $\alpha_{i}$ labels of each sort $i$.
-This serves to explain why the coefficients of powers of $p_{1} = \prod_{i} x_{i}$ counts labeled structures (where the labels must all be distinct) and why the automorphism types of structures are enumerated by $Z_{f} \pbrac{x, x^{2}, x^{3}, \cdots}$, which allows clusters of labels to be the same.
+This serves to explain why the coefficients of powers of $p_{1} = \prod_{i} x_{i}$ counts labeled structures (where the labels must all be distinct) and why the automorphism types of structures are enumerated by $\ci{f} \pbrac{x, x^{2}, x^{3}, \cdots}$, which allows clusters of labels to be the same.
 Another application of the theory of symmetric functions to the cycle indices of species may be found in \cite{gessel:laginvspec}.
 
 Of course, it is not always obvious how to calculate the cycle index of a species directly.
@@ -203,7 +203,7 @@ However, in cases where we can decompose a species as some combination of simple
 \section{Algebra of species}\label{s:specalg}
 It is often natural to describe a species in terms of combinations of other, simpler species---for example, `a permutation is a set of cycles' or `a rooted tree is a single vertex together with a (possibly empty) set of rooted trees'.
 Several combinatorial operations on species of structures are commonly used to represent these kinds of combinations; that they have direct analogues in the algebra of cycle indices is in some sense the conceptual justification of the theory.
-In particular, for species $F$ and $G$, will define species $F + G$, $F \cdot G$, $F \circ G$, $\pointed{F}$, and $F'$, and we will compute their cycle indices in terms of $Z_{F}$ and $Z_{G}$.
+In particular, for species $F$ and $G$, will define species $F + G$, $F \cdot G$, $F \circ G$, $\pointed{F}$, and $F'$, and we will compute their cycle indices in terms of $\ci{F}$ and $\ci{G}$.
 In what follows, we will not say explicitly what the effects of a given species operation are on bijections when those effects are obvious (as is usually the case).
 
 \begin{definition}\label{def:specsum}
@@ -215,8 +215,8 @@ We use the disjoint union to avoid the complexities of dealing with cases where 
 \begin{theorem}\label{thm:specsumci}
   For species $F$ and $G$, the cycle index of their sum is
   \begin{equation}
-    \label{eq:specsumci}
-    Z_{F + G} = Z_{F} + Z_{G}.
+    % \label{eq:specsumci}
+    % \ci{F + G} = \ci{F} + \ci{G}.
   \end{equation}
 \end{theorem}
 
@@ -233,7 +233,7 @@ This definition is partially motivated by the following result on cycle indices:
   For species $F$ and $G$, the cycle index of their product is
   \begin{equation}
     \label{eq:specprodci}
-    Z_{F \cdot G} = Z_{F} \cdot Z_{G}.
+    \ci{F \cdot G} = \ci{F} \cdot \ci{G}.
   \end{equation}
 \end{theorem}
 
@@ -266,7 +266,7 @@ This definition is inherited directly from the theory of symmetric functions in 
   For species $F$ and $G$ with $G \sbrac{\varnothing} = \varnothing$, the cycle index of their plethysm is
   \begin{equation}
     \label{eq:speccompci}
-    Z_{F \circ G} = Z_{F} \circ Z_{G}
+    \ci{F \circ G} = \ci{F} \circ \ci{G}
   \end{equation}
   where $\circ$ in the right-hand side is as in equation \eqref{eq:cipleth}.
 \end{theorem}
@@ -290,10 +290,10 @@ Terming this operation `differentiation' is justified by its effect on cycle ind
   For a species $F$, the cycle index of its derivative is given by
   \begin{equation}
     \label{eq:specderivci}
-    Z_{F'} \pbrac{p_{1}, p_{2}, \dots} = \pbrac{\frac{\partial}{\partial p_{1}} Z_{F}} \pbrac{p_{1}, p_{2}, \dots}.
+    \ci{F'} \pbrac{p_{1}, p_{2}, \dots} = \pbrac{\frac{\partial}{\partial p_{1}} \ci{F}} \pbrac{p_{1}, p_{2}, \dots}.
   \end{equation}
 \end{theorem}
-We note that we cannot in general recover $Z_{F}$ from $Z_{F'}$, since there may be terms in $Z_{F}$ which have no $p_{1}$-component (corresponding to $F$-structures which have no automorphisms with fixed points).
+We note that we cannot in general recover $\ci{F}$ from $\ci{F'}$, since there may be terms in $\ci{F}$ which have no $p_{1}$-component (corresponding to $F$-structures which have no automorphisms with fixed points).
 
 Finally, we introduce a variant of the species derivative which allows us to \emph{label} the distinguished element $*$:
 \begin{definition}
@@ -309,10 +309,10 @@ Equation \eqref{eq:specderivci} leads directly to the following:
   For a species $F$, the cycle index of its corresponding pointed species is given by
   \begin{equation}
     \label{eq:specpointci}
-    Z_{\pointed{F}} = Z_{X} \cdot Z_{F'}.
+    \ci{\pointed{F}} = \ci{X} \cdot \ci{F'}.
   \end{equation}
 \end{theorem}
-Note that, again, we cannot in general recover $Z_{F}$ from $Z_{\pointed{F}}$, for the same reasons as in the case of $Z_{F'}$.
+Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{F'}$.
 
 \section{Multisort species}\label{s:mult}
 A species $F$ as defined in \ref{def:species} is a functor $F: \mathbf{B} \to \mathbf{S}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
@@ -327,7 +327,7 @@ We thus incorporate the notion of sorts directly into a new definition:
   Say that a $k$-multiset is \emph{finite} if each component set is finite; in that case, its \emph{$k$-multicardinality} is the ordered tuple of its components' set cardinalities.
   Further, define a \emph{$k$-multifunction} to be an ordered $k$-tuple of set functions which acts componentwise on $k$-multisets.
   For two $k$-multisets $U$ and $V$, a $k$-multifunction $\sigma$ is a \emph{$k$-multibijection} if each component is a set bijection.
-  For $k$-multisets of multicardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\mathfrak{S}_{c_{1}, c_{2}, \dots, c_{k}} = \mathfrak{S}_{c_{1}} \times \mathfrak{S}_{c_{2}} \times \dots \times \mathfrak{S}_{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-multibijections from a $k$-multiset to itself.
+  For $k$-multisets of multicardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\symgp{c_{1}, c_{2}, \dots, c_{k}} = \symgp{c_{1}} \times \symgp{c_{2}} \times \dots \times \symgp{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-multibijections from a $k$-multiset to itself.
   Finally, denote by $\mathbf{B}^{k}$ the category of finite $k$-multisets with $k$-multibijections.
 \end{definition}
 
@@ -345,8 +345,8 @@ In some contexts with small $k$, we will denote our sorts with letters (saying, 
 In natural analogy to Definition \ref{def:cycind}, the formula for the cycle index of a $k$-sort species $F$ is given by
 \begin{multline}
   \label{eq:multcycinddef}
-  Z_{F} \pbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
-  \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \mathfrak{S}_{a_{1}, a_{2}, \dots, a_{k}}} \fix \pbrac{F \sbrac{\sigma}} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
+  \ci{F} \pbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
+  \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \symgp{a_{1}, a_{2}, \dots, a_{k}}} \fix \pbrac{F \sbrac{\sigma}} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
 \end{multline}
 where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_{j} \sbrac{i}}^{\pbrac{\sigma_{i}}_{j}}$ where $\pbrac{\sigma_{i}}_{j}$ is the number of $j$-cycles of $\sigma_{i}$.
 
@@ -356,7 +356,7 @@ Making sense of the notion of composition in multisort species is highly context
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structure under the action of a group.
-If we hope to integrate this concept into the theory of species, we must at least demand that the action of a group $\Gamma$ on a species $F$ be compatible with the transport of structures in the sense that transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\mathfrak{S}_{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
+If we hope to integrate this concept into the theory of species, we must at least demand that the action of a group $\Gamma$ on a species $F$ be compatible with the transport of structures in the sense that transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\symgp{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
 Informally, this is the requirement that $\Gamma$ acts on $F$-structures in a way that is independent of labelings.
 We incorporate such transport-compatible actions into a new definition:
 \begin{definition}
@@ -425,16 +425,16 @@ Our goal will be to compute the cycle index of the species $\nicefrac{F}{\Gamma}
 As an intermediate step to the computation of the cycle index associated to this quotient species, we associate a cycle index to a $\Gamma$-species $F$ that keeps track of the needed data about the $\Gamma$-action.
 \begin{definition}
   \label{def:gcycind}
-  For a $\Gamma$-species $F$, define the $\Gamma$-cycle index $Z_{F}$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
+  For a $\Gamma$-species $F$, define the $\Gamma$-cycle index $\gci{\Gamma}{F}$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
   \begin{equation}
-    Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
+    \gci{\Gamma}{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
   \end{equation}
   with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
 \end{definition}
 
-We will call such an object (formally a map from $\Gamma$ to the ring $\mathbf{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $Z_{F} \pbrac{\gamma}$ the `$\gamma$ term of $Z_{F}$'.
+We will call such an object (formally a map from $\Gamma$ to the ring $\mathbf{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $\gci{\Gamma}{F} \pbrac{\gamma}$ the `$\gamma$ term of $\gci{\Gamma}{F}$'.
 So the coefficients in the power series count the fixed points of the \emph{combined} action of a permutation and the group element $\gamma$.
-Note that, in particular, the classical (`ordinary') cycle index may be recovered as $Z_{F} = Z_{F} \pbrac{e}$ for any $\Gamma$-species $F$.
+Note that, in particular, the classical (`ordinary') cycle index may be recovered as $\ci{F} = \gci{\Gamma}{F} \pbrac{e}$ for any $\Gamma$-species $F$.
 
 The algebraic relationships between ordinary species and their cycle indices generally extend without modification to the $\Gamma$-species context, as long as appropriate allowances are made.
 The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case.
@@ -453,7 +453,7 @@ This definition of $\Gamma$-cycle index plethysm is then indeed the correct oper
   If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\varnothing} = \varnothing$, then
   \begin{equation}
     \label{eq:gspeccomp}
-    Z_{A \circ B} = Z_{A} \circ Z_{B}.
+    \gci{\Gamma}{A \circ B} = \gci{\Gamma}{A} \circ \gci{\Gamma}{B}.
   \end{equation}
 \end{theorem}
 Thus, $\Gamma$-species admit the same sorts of `nice' correspondences between structural descriptions (in terms of functorial algebra) and enumerative characterizations (in terms of cycle indices) that ordinary species do.
@@ -468,14 +468,14 @@ Since we intend to enumerate orbits under a group action, we apply a generalizat
   If $\Gamma$ and $\Delta$ are finite groups and $S$ a set with a $\pbrac{\Gamma \times \Delta}$-action, for any $\delta \in \Delta$ the number of $\Gamma$-orbits fixed by $\delta$ is $\frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \fix \pbrac{\gamma, \delta}$.
 \end{lemma}
 
-Recall from equation \eqref{eq:cycinddef} that, to compute the cycle index of a species, we need to enumerate the fixed points of each $\sigma \in \mathfrak{S}_{n}$.
-However, to do this in the quotient species $\nicefrac{F}{\Gamma}$ is by definition to count the fixed $\Gamma$-orbits of $\sigma$ in $F$ under commuting actions of $\mathfrak{S}_{n}$ and $\Gamma$ (that is, under an $\pbrac{\mathfrak{S}_{n} \times \Gamma}$-action).
+Recall from equation \eqref{eq:cycinddef} that, to compute the cycle index of a species, we need to enumerate the fixed points of each $\sigma \in \symgp{n}$.
+However, to do this in the quotient species $\nicefrac{F}{\Gamma}$ is by definition to count the fixed $\Gamma$-orbits of $\sigma$ in $F$ under commuting actions of $\symgp{n}$ and $\Gamma$ (that is, under an $\pbrac{\symgp{n} \times \Gamma}$-action).
 Thus, Lemma \ref{lem:grouporbits} implies the following:
 \begin{theorem}\label{thm:qsci}
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
     \label{eq:quotcycind}
-    Z_{F / \Gamma} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} Z_{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \mathfrak{S}_{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
+    \ci{F / \Gamma} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \symgp{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
   \end{equation}
 \end{theorem}
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
@@ -502,25 +502,25 @@ By considering the problem in light of the theory of $\Gamma$-species, we develo
 Throughout this chapter, we denote by $\specname{BC}$ the species of bicolored graphs and by $\specname{BP}$ the species of bipartite graphs.
 The prefix $\specname{C}$ will indicate the connected analogue of such a species.
 
-The motivating graph-theoretic observation is that each \emph{connected} bipartite graph may be identified with exactly two bicolored graphs which are color-dual; in other words, a connected bipartite graph is (by definition or by easy exercise, depending on your approach) an orbit of connected bicolored graphs under the action of $\mathfrak{S}_{2}$ where the nontrivial element $\tau$ reverses all vertex colors.
-We will hereafter treat all the various species of bicolored graphs as $\mathfrak{S}_{2}$-species with respect to this action and use the theory developed in \S \ref{s:quot} to pass to bipartite graphs.
+The motivating graph-theoretic observation is that each \emph{connected} bipartite graph may be identified with exactly two bicolored graphs which are color-dual; in other words, a connected bipartite graph is (by definition or by easy exercise, depending on your approach) an orbit of connected bicolored graphs under the action of $\symgp{2}$ where the nontrivial element $\tau$ reverses all vertex colors.
+We will hereafter treat all the various species of bicolored graphs as $\symgp{2}$-species with respect to this action and use the theory developed in \S \ref{s:quot} to pass to bipartite graphs.
 
 Although the theory of multisort species presented in \S \ref{s:mult} is in general well-suited to the study of colored graphs, we will not need it here.
 The restrictions that vertex colorings place on automorphisms of bicolored graphs are simple enough that we can deal with them directly.
 
 \section{Bicolored graphs}\label{s:bcgraph}
 TODO: Say more about importance and nuance of $F_{0}$ either here or in chapter 1.
-We begin our investigation by directly computing the $\mathfrak{S}_{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-reversing $\mathfrak{S}_{2}$-action described previously.
+We begin our investigation by directly computing the $\symgp{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-reversing $\symgp{2}$-action described previously.
 We will then use various methods from the species algebra of \S \ref{c:species} to pass to various other species.
 
-\subsection{Computing $Z_{\specname{BC}} \pbrac{e}$}\label{ss:ecibc}
-We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\mathfrak{S}_{2}$-action will be $Z_{\specname{BC}} \pbrac{e}$. 
+\subsection{Computing $\gci{\symgp{2}}{\specname{BC}} \pbrac{e}$}\label{ss:ecibc}
+We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\symgp{2}$-action will give $\gci{\symgp{2}}{\specname{BC}} \pbrac{e}$. 
 
 Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{eq:gcycinddef}:
 \begin{equation*}
-  Z_{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \mathfrak{S}_{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
+  \gci{\Gamma}{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
 \end{equation*}
-Thus, for each $n > 0$ and each permutation $\pi \in \mathfrak{S}_{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
+Thus, for each $n > 0$ and each permutation $\pi \in \symgp{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
 We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$.
@@ -580,7 +580,7 @@ Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     \label{eq:ecibc}
-    Z_{\specname{BC}} \pbrac{e} = \sum_{n > 0} \sum_{\substack{\mu, \nu \\ \mu \cup \nu \vdash n}} \frac{p_{\mu \cup \nu}}{z_{\mu} z_{\nu}} \prod_{i, j} 2^{\gcd \pbrac{\mu_{i}, \nu_{j}}}
+    \gci{\symgp{2}}{\specname{BC}} \pbrac{e} = \sum_{n > 0} \sum_{\substack{\mu, \nu \\ \mu \cup \nu \vdash n}} \frac{p_{\mu \cup \nu}}{z_{\mu} z_{\nu}} \prod_{i, j} 2^{\gcd \pbrac{\mu_{i}, \nu_{j}}}
   \end{equation}
 \end{theorem}
 
@@ -591,10 +591,10 @@ He then enumerates orbits of edges under these groups using the P\'{o}lya enumer
 This is clearly analogous to our procedure, which enumerates the orbits of edges under each specific permutation of vertices.
 The numbers of labeled and unlabeled bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:bc} and agree with those previous results.
 
-\subsection{Calculating $Z_{\specname{BC}} \pbrac{\tau}$}\label{ss:tcibc}
-Recall that the nontrivial element of $\tau \in \mathfrak{S}_{2}$ acts on bicolored graphs by reversing all colors.
+\subsection{Calculating $\gci{\symgp{2}}{\specname{BC}} \pbrac{\tau}$}\label{ss:tcibc}
+Recall that the nontrivial element of $\tau \in \symgp{2}$ acts on bicolored graphs by reversing all colors.
 
-We again consider the cycles in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \mathfrak{S}_{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping.
+We again consider the cycles in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \symgp{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping.
 We then wish to count bicolored graphs on $\sbrac{n}$ for which $\tau \cdot \pi$ is an automorphism, which is to say that $\pi$ itself is a color-\emph{reversing} automorphism.
 Once again, the number of bicolored graphs for which $\pi$ is a color-reversing automorphism is in fact dependent only on the cycle type $\lambda$.
 Each cycle of vertices must be color-alternating and hence of even length, so our partition $\lambda$ must have only even parts.
@@ -693,12 +693,12 @@ Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     \label{eq:tcibc}
-    Z_{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n \geq 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
+    \gci{\symgp{2}}{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n \geq 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
   \end{equation}
 \end{theorem}
 
 \section{Connected bicolored graphs}\label{s:cbc}
-As noted in the introduction of this section, we may pass from bicolored to bipartite graphs by taking a quotient under the color-reversing action of $\mathfrak{S}_{2}$ only in the connected case.
+As noted in the introduction of this section, we may pass from bicolored to bipartite graphs by taking a quotient under the color-reversing action of $\symgp{2}$ only in the connected case.
 Thus, we must pass from the species $\specname{BC}$ to the species $\specname{CBC}$ of connected bicolored graphs to continue.
 It is a standard principle of graph enumeration that a graph may be decomposed uniquely into (and thus species-theoretically identified with) the set of its connected components.
 We must, of course, require that the set structure is nonempty to ensure well-definedness.
@@ -706,35 +706,35 @@ This same relationship holds in the case of bicolored graphs.
 Thus, the species $\specname{BC}$ of bicolored graphs is the composition of the species $\specname{CBC}$ of connected bicolored graphs into the species $\specname{E}^{+} = \specname{E} - 1$ of nonempty sets:
 \begin{equation} \specname{BC} = \specname{E}^{+} \circ \specname{CBC} \label{eq:bcdecomp} \end{equation}
 
-Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\mathfrak{S}_{2}$-species by applying the trivial action, equation \eqref{eq:bcdecomp} holds as an identity of $\mathfrak{S}_{2}$-species for the color-reversing $\mathfrak{S}_{2}$-action described previously.
+Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\symgp{2}$-species by applying the trivial action, equation \eqref{eq:bcdecomp} holds as an identity of $\symgp{2}$-species for the color-reversing $\symgp{2}$-action described previously.
 
-To use the decomposition in equation \eqref{eq:bcdecomp} to derive the $\mathfrak{S}_{2}$-cycle index for $\specname{CBC}$, we must invert the $\mathfrak{S}_{2}$-species composition into $\specname{E}^{+}$.
+To use the decomposition in equation \eqref{eq:bcdecomp} to derive the $\symgp{2}$-cycle index for $\specname{CBC}$, we must invert the $\symgp{2}$-species composition into $\specname{E}^{+}$.
 In the context of the theory of virtual species, this is possible; we write $\con := \pbrac{\specname{E} - 1}^{\abrac{-1}}$ to denote this virtual species.
 We can derive from \cite[\S 2.5, eq.~(58c)]{bll:species} that its cycle index is
 \begin{equation}
   \label{eq:zgamma}
-  Z_{\con} = \sum_{k \geq 1} \frac{\mu \pbrac{k}}{k} \log \pbrac{1 + p_{k}}
+  \ci{\con} = \sum_{k \geq 1} \frac{\mu \pbrac{k}}{k} \log \pbrac{1 + p_{k}}
 \end{equation}
 where $\mu$ is the M\"{o}bius function.
 We can then rewrite equation \eqref{eq:bcdecomp} as
 \[\specname{CBC} = \con \circ \specname{BC}\]
 It then follows immediately from Theorem \ref{thm:gspeccomp} that
 \begin{theorem}
-  \begin{equation} Z_{\specname{CBC}} = Z_{\con} \circ Z_{\specname{BC}} \label{eq:zcbcdecomp} \end{equation}
+  \begin{equation} \gci{\symgp{2}}{\specname{CBC}} = \ci{\con} \circ \gci{\symgp{2}}{\specname{BC}} \label{eq:zcbcdecomp} \end{equation}
 \end{theorem}
 
 The numbers of labeled and unlabeled connected bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:cbc}.
 
 \section{Bipartite graphs}\label{s:bp}
-As we previously observed, connected bipartite graphs are naturally identified with orbits of connected bicolored graphs under the color-reversing action of $\mathfrak{S}_{2}$.
+As we previously observed, connected bipartite graphs are naturally identified with orbits of connected bicolored graphs under the color-reversing action of $\symgp{2}$.
 Thus,
 \begin{equation*}
-  \specname{CBP} = \faktor{\specname{CBC}}{\mathfrak{S}_{2}}.
+  \specname{CBP} = \faktor{\specname{CBC}}{\symgp{2}}.
 \end{equation*}
 By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
 \begin{theorem}
   \begin{equation}
-    Z_{\specname{CBP}} = \frac{1}{2} \pbrac{Z_{\specname{CBC}} \pbrac{e} + Z_{\specname{CBC}} \pbrac{\tau}}.
+    \ci{\specname{CBP}} = \frac{1}{2} \pbrac{\gci{\symgp{2}}{\specname{CBC}} \pbrac{e} + \gci{\symgp{2}}{\specname{CBC}} \pbrac{\tau}}.
   \end{equation}
 \end{theorem}
 
@@ -746,7 +746,7 @@ Finally, to reach a result for the general bipartite case, we return to the grap
 This time, we need not invert the composition, so the cycle-index calculation is simple:
 \begin{theorem}
   \begin{equation}
-    Z_{\specname{BP}} = Z_{\specname{E}} \circ \pbrac{Z_{\specname{CBP}}}.
+    \ci{\specname{BP}} = \ci{\specname{E}} \circ \ci{\specname{CBP}}.
   \end{equation}
 \end{theorem}
 
@@ -1167,10 +1167,10 @@ We first need to develop a group action under which ordinary $k$-trees are natur
 Unfortunately:
 \begin{lemma}
   \label{lem:notransac}
-  For $k \geq 3$, no transitive action of any group on the set $\cyc_{\sbrac{k+1}}$ of cyclic orders on $\sbrac{k+1}$ commutes with the action of $\mathfrak{S}_{k+1}$ that permutes labels.
+  For $k \geq 3$, no transitive action of any group on the set $\cyc_{\sbrac{k+1}}$ of cyclic orders on $\sbrac{k+1}$ commutes with the action of $\symgp{k+1}$ that permutes labels.
 \end{lemma}
 \begin{proof}
-  We represent the elements of $\cyc_{\sbrac{k+1}}$ as cyclic permutations on the alphabet $\sbrac{k+1}$; then the action of $\mathfrak{S}_{k+1}$ that permutes labels is exactly the conjugation action on these permutations.
+  We represent the elements of $\cyc_{\sbrac{k+1}}$ as cyclic permutations on the alphabet $\sbrac{k+1}$; then the action of $\symgp{k+1}$ that permutes labels is exactly the conjugation action on these permutations.
   Consider an action of a group $G$ on $\cyc_{\sbrac{k+1}}$ that commutes with this conjugation action.
   Then, for any $g \in G$ and any $c \in \cyc_{\sbrac{k+1}}$, we have that
   \begin{equation}
@@ -1183,16 +1183,16 @@ Unfortunately:
 \end{proof}
 
 We thus cannot hope to attack the coherent orientations of $k$-trees by acting directly on the cyclic orderings of fronts.
-Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees to linearize these $\pbrac{k+1}$-cyclic orders into $k$-linear orders, for which there is a natural action of $\mathfrak{S}_{k}$.
+Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees to linearize these $\pbrac{k+1}$-cyclic orders into $k$-linear orders, for which there is a natural action of $\symgp{k}$.
 As an aside, we also note that the fact that this obstruction occurs only for $k \geq 3$ would suggest that a more straightforward course than ours would be available specifically in the case of $2$-trees.
-Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{is} a well-defined action of $\mathfrak{S}_{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
+Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{is} a well-defined action of $\symgp{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
 
 We have noted previously that every labeled $k$-tree admits exactly $k!$ coherent orientations.
 Thus, there are $k!$ distinct $k$-coding trees associated to each labeled $k$-tree, which differ only in the $\specname{C}_{k+1}$-structures on their black vertices.
 Consider some non-root black vertex of a rooted $k$-coding tree.
 It is the root of an $H_{k}$-structure, and there is a linear order on its $k$ white children.
-There is a natural label-independent action of $\mathfrak{S}_{k}$ on the set of these linear orders under which, for example, $\sigma = \pbrac{1 2}$ switches the first and second places in an ordering.
-If we simply apply some $\sigma \in \mathfrak{S}_{k}$ in this manner to the root of an $H_{k}$-structure, however, the resulting $H_{k}$-structure will \emph{not} correspond to a different coherent orientation of the same underlying $k$-tree; the coherence of the ordering of the white neighbors of the root black vertex with the orderings of the descendant $H_{k}$ structures will be disturbed.
+There is a natural label-independent action of $\symgp{k}$ on the set of these linear orders under which, for example, $\sigma = \pbrac{1 2}$ switches the first and second places in an ordering.
+If we simply apply some $\sigma \in \symgp{k}$ in this manner to the root of an $H_{k}$-structure, however, the resulting $H_{k}$-structure will \emph{not} correspond to a different coherent orientation of the same underlying $k$-tree; the coherence of the ordering of the white neighbors of the root black vertex with the orderings of the descendant $H_{k}$ structures will be disturbed.
 However, as we have noted previously, there \emph{does} exist a choice of orientation for each of these descendants which is coherent with the new orientation of the root.
 We thus will need to apply some permutation to each of the descendant $H_{k}$-structures as well.
 
@@ -1203,7 +1203,7 @@ The permutation $\sigma'$ which must be applied to the orientation of the descen
 We can express this procedure in formulaic terms:
 \begin{theorem}
   \label{thm:rhodef}
-  If a permutation $\sigma \in \mathfrak{S}_{k}$ is applied to the orientation of the root black vertex in an $H_{k}$-structure, the permutation which must be applied to a child black vertex which was attached to the $i$th white vertex (with respect to the linear ordering induced by the orientation) to preserve coherence is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map
+  If a permutation $\sigma \in \symgp{k}$ is applied to the orientation of the root black vertex in an $H_{k}$-structure, the permutation which must be applied to a child black vertex which was attached to the $i$th white vertex (with respect to the linear ordering induced by the orientation) to preserve coherence is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map
   \begin{equation}
     \label{eq:rhodef}
     \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i + a} - \sigma \pbrac{i}
@@ -1257,17 +1257,17 @@ This procedure is depicted in Figure \ref{fig:rhoapp}.
 \end{figure}
 
 We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its root black vertex.
-This yields a well-defined $\mathfrak{S}_{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\mathfrak{S}_{n} \times \mathfrak{S}_{kn+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
-Moreover, the orbits of this $\mathfrak{S}_{k}$-action are exactly the sets of $H_{k}$-structures which are different coherent orientations of the same underlying $k$-tree structure.
+This yields a well-defined $\symgp{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\symgp{n} \times \symgp{kn+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
+Moreover, the orbits of this $\symgp{k}$-action are exactly the sets of $H_{k}$-structures which are different coherent orientations of the same underlying $k$-tree structure.
 TODO: justify this claim?
 
-We also need to consider the associated action of $\mathfrak{S}_{k}$ on $F_{k}$-structures, but there is nothing new to be done.
-Simply applying the $\mathfrak{S}_{k}$-action defined previously to each of the $H_{k}$-structures that are immediate children of the root white vertex of an $F_{k}$-structure suffices to preserve coherence.
-Moreover, again, the orbits of this $\mathfrak{S}_{k}$-action are the sets of $F_{k}$-structures corresponding to the different coherent orientations of the same underlying $k$-tree structure.
+We also need to consider the associated action of $\symgp{k}$ on $F_{k}$-structures, but there is nothing new to be done.
+Simply applying the $\symgp{k}$-action defined previously to each of the $H_{k}$-structures that are immediate children of the root white vertex of an $F_{k}$-structure suffices to preserve coherence.
+Moreover, again, the orbits of this $\symgp{k}$-action are the sets of $F_{k}$-structures corresponding to the different coherent orientations of the same underlying $k$-tree structure.
 
-It remains to extend this action of $\mathfrak{S}_{k}$ to the root of a rooted $k$-coding tree.
+It remains to extend this action of $\symgp{k}$ to the root of a rooted $k$-coding tree.
 The action on coding trees rooted at white vertices (that is, on the species $\pointed[Y]{\specname{CT}}_{k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to a $\pointed[Y]{\specname{CT}}_{k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex and proceed recursively.
-This gives an $\mathfrak{S}_{k}$-action on $\pointed[Y]{\specname{CT}}_{k}$-structures which commutes with permutations of labels, so we can take quotients.
+This gives an $\symgp{k}$-action on $\pointed[Y]{\specname{CT}}_{k}$-structures which commutes with permutations of labels, so we can take quotients.
 Moreover, we can easily pass this action to the species $\pointed[Y]{\vec{\mathfrak{a}}}_{k}$ of coherently-oriented $k$-trees rooted at fronts, and its orbits are clearly the underlying unoriented front-rooted $k$-trees of $\pointed[Y]{\mathfrak{a}}_{k}$.
 We can then conclude that:
 \begin{theorem}
@@ -1275,62 +1275,62 @@ We can then conclude that:
   For $\pointed[Y]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at fronts and $\pointed[Y]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at white vertices, we have
   \begin{equation}
     \label{eq:ayquot}
-    \pointed[Y]{\mathfrak{a}}_{k} = \faktor{\pointed[Y]{\specname{CT}}_{k}}{\mathfrak{S}_{k}}
+    \pointed[Y]{\mathfrak{a}}_{k} = \faktor{\pointed[Y]{\specname{CT}}_{k}}{\symgp{k}}
   \end{equation}
-  for the $\mathfrak{S}_{k}$-action described above.
+  for the $\symgp{k}$-action described above.
 \end{theorem}
 
-Similarly, we may extend this $\mathfrak{S}_{k}$-action to the species $\pointed[XY]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees.
-By equation \eqref{eq:ctxyfunc}, we can decompose a $\pointed[XY]{\specname{CT}}_{k}$-structure into an $F_{k}$-structure and an $H_{k}$-structure, each of which has a well-defined $\mathfrak{S}_{k}$-action, which we simply pass back up to $\pointed[XY]{\specname{CT}}_{k}$.
+Similarly, we may extend this $\symgp{k}$-action to the species $\pointed[XY]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees.
+By equation \eqref{eq:ctxyfunc}, we can decompose a $\pointed[XY]{\specname{CT}}_{k}$-structure into an $F_{k}$-structure and an $H_{k}$-structure, each of which has a well-defined $\symgp{k}$-action, which we simply pass back up to $\pointed[XY]{\specname{CT}}_{k}$.
 By a similar argument to that above, it is clear that orbits of $\pointed[XY]{\specname{CT}}_{k}$-structures are in natural bijection with $\pointed[XY]{\mathfrak{a}}_{k}$-structures, so:
 \begin{theorem}
   \label{thm:axyquot}
   For $\pointed[XY]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at hedra with designated fronts, $\pointed[XY]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at edges, and $H_{k}$ and $F_{k}$ the component species of black- and white-vertex-rooted $k$-coding tree components, we have
   \begin{equation}
     \label{eq:axyquot}
-    \pointed[XY]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\mathfrak{S}_{k}}  = \pbrac{\faktor{H_{k}}{\mathfrak{S}_{k}}} \cdot \pbrac{\faktor{F_{k}}{\mathfrak{S}_{k}}}.
+    \pointed[XY]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\symgp{k}}  = \pbrac{\faktor{H_{k}}{\symgp{k}}} \cdot \pbrac{\faktor{F_{k}}{\symgp{k}}}.
   \end{equation}
-  for the $\mathfrak{S}_{k}$-action described above.
+  for the $\symgp{k}$-action described above.
 \end{theorem}
 
 However, an action on $k$-coding trees rooted at black vertices (that is, on the species $\pointed[X]{\specname{CT}}_{k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
 
 \subsection{Quotients for $\pointed[X]{\mathfrak{a}}_{k}$}\label{ss:axact}
-We have thus far defined $\mathfrak{S}_{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$, and used these to characterize the species $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$.
+We have thus far defined $\symgp{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[XY]{\specname{CT}}_{k}$, and used these to characterize the species $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[XY]{\mathfrak{a}}_{k}$.
 However, to apply Theorem \ref{thm:dissymk} to study the species $\mathfrak{a}_{k}$ itself, we need to characterize the species $\pointed[X]{\mathfrak{a}}_{k}$ as well.
 To do this, we need a result analogous to Theorem \ref{thm:ayquot} and Theorem \ref{thm:axyquot}.
 
 Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree) $T$ is naturally identified with the set of $\pbrac{\pointed[X]{\vec{\mathfrak{a}}}_{k} = \pointed[X]{\specname{CT}}_{k}}$-structures that are the coherent orientations of $T$.
-However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\mathfrak{S}_{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
-If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\mathfrak{S}_{k}$-action on the latter set whose orbits are $\pointed[XY]{\mathfrak{a}}_{k}$-structures.
+However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\symgp{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
+If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[XY]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\symgp{k}$-action on the latter set whose orbits are $\pointed[XY]{\mathfrak{a}}_{k}$-structures.
 Moreover, if we write $C_{k+1}$ for the cyclic group with $k+1$ elements, there is a natural $C_{k+1}$-action on $\pointed[XY]{\specname{CT}}_{k}$-structures which rotates the choice of root white vertex around the root black vertex with respect to the cyclic order on those white neighbors.
 We will write $C_{k+1} = \abrac{\zeta}$ where the action of $\zeta$ is to rotate the choice of root white vertex one position forward with respect to the cyclic order on the white neighbors of the black root of an edge-rooted $k$-coding tree.
 
-These actions of $\mathfrak{S}_{k}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[XY]{\specname{CT}}_{k}$ is not their direct product.
-It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \mathfrak{S}_{k}$.
+These actions of $\symgp{k}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[XY]{\specname{CT}}_{k}$ is not their direct product.
+It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \symgp{k}$.
 However, we will not need to use the algebraic structure, so we leave aside the details of the multiplication.
-We note, however, that the set of elements of $C_{k+1} \rtimes \mathfrak{S}_{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
+We note, however, that the set of elements of $C_{k+1} \rtimes \symgp{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
 
-If we treat the $\specname{C}_{k+1}$-structure on the white neighbors of the black root of a $\pointed[XY]{\specname{CT}}_{k}$-structure as an $\specname{L}_{k+1}$-structure (rather than the usual $\specname{L}_{k}$) by appending the white root to the \emph{end} of the linear order, there is a natural $\mathfrak{S}_{k+1}$-action on this linear order by permutations.
-Let $i_{1}: \mathfrak{S}_{k} \hookrightarrow \mathfrak{S}_{k+1}$ be the map sending each $\sigma \in \mathfrak{S}_{k}$ to the permutation in $\mathfrak{S}_{k+1}$ which acts as $\sigma$ on $\cbrac{1, \dots, k}$ and fixes $k+1$; we will usually simply denote this permutation $i_{1} \pbrac{\sigma}$ by $\sigma$ again.
-Similarly, let $i_{2}: C_{k+1} \hookrightarrow \mathfrak{S}_{k+1}$ be the map sending the generator $\zeta$ to the cyclic element $\pbrac{1\ 2\ \dots\ k+1}$; we will usually denote this permutation $i_{2} \pbrac{\zeta}$ by $\zeta$ as well.
-These maps are monomorphisms, and furthermore they respect the actions of $\mathfrak{S}_{k}$ and $C_{k+1}$ on $\specname{L}_{k+1}$; an element from $\mathfrak{S}_{k}$ still permutes the linear order on the non-root white neighbors of the root black vertex, while an element from $C_{k+1}$ still preserves the underlying cyclic order on the white vertices but changes which one is root.
-Thus, the pair $\zeta^{i} \in C_{k+1}$ and $\sigma \in \mathfrak{S}_{k}$ act on an $\specname{L}_{k+1}$-structure exactly as their image $\sigma \zeta^{i} \in \mathfrak{S}_{k+1}$ does.
+If we treat the $\specname{C}_{k+1}$-structure on the white neighbors of the black root of a $\pointed[XY]{\specname{CT}}_{k}$-structure as an $\specname{L}_{k+1}$-structure (rather than the usual $\specname{L}_{k}$) by appending the white root to the \emph{end} of the linear order, there is a natural $\symgp{k+1}$-action on this linear order by permutations.
+Let $i_{1}: \symgp{k} \hookrightarrow \symgp{k+1}$ be the map sending each $\sigma \in \symgp{k}$ to the permutation in $\symgp{k+1}$ which acts as $\sigma$ on $\cbrac{1, \dots, k}$ and fixes $k+1$; we will usually simply denote this permutation $i_{1} \pbrac{\sigma}$ by $\sigma$ again.
+Similarly, let $i_{2}: C_{k+1} \hookrightarrow \symgp{k+1}$ be the map sending the generator $\zeta$ to the cyclic element $\pbrac{1\ 2\ \dots\ k+1}$; we will usually denote this permutation $i_{2} \pbrac{\zeta}$ by $\zeta$ as well.
+These maps are monomorphisms, and furthermore they respect the actions of $\symgp{k}$ and $C_{k+1}$ on $\specname{L}_{k+1}$; an element from $\symgp{k}$ still permutes the linear order on the non-root white neighbors of the root black vertex, while an element from $C_{k+1}$ still preserves the underlying cyclic order on the white vertices but changes which one is root.
+Thus, the pair $\zeta^{i} \in C_{k+1}$ and $\sigma \in \symgp{k}$ act on an $\specname{L}_{k+1}$-structure exactly as their image $\sigma \zeta^{i} \in \symgp{k+1}$ does.
 
 Once some pair $\pbrac{\zeta^{i}, \sigma}$ is allowed to act on the $\specname{L}_{k+1}$-structure at the root of a $\pointed[XY]{\specname{CT}}_{k}$-structure, however, we must adjust the orderings of the white children of non-root black vertices to preserve the coherence of the orientation of the associated $k$-tree.
 Permutations of the form $\rho_{j} \pbrac{\sigma}$ applied to each of the $F_{k}$-structures attached to the root black vertex will suffice once again, but now the $F_{k}$-structure which begins in position $j$ must undergo the action of $\rho_{\zeta^{i} \pbrac{j}} \pbrac{\sigma}$, since after the application of $\zeta^{i}$ it is in position $\zeta^{i} \pbrac{j}$.
 This will preserve coherence as desired.
 
-With the interaction of the actions of $C_{k+1}$ and $\mathfrak{S}_{k}$ on $\pointed[XY]{\specname{CT}}_{k}$-structures so defined, it is clear that each orbit of the combined action $C_{k+1} \rtimes \mathfrak{S}_{k}$ corresponds to the set of all the ways to take a given hedron-rooted $k$-tree, select a front of the root hedron, and coherently orient the result.
+With the interaction of the actions of $C_{k+1}$ and $\symgp{k}$ on $\pointed[XY]{\specname{CT}}_{k}$-structures so defined, it is clear that each orbit of the combined action $C_{k+1} \rtimes \symgp{k}$ corresponds to the set of all the ways to take a given hedron-rooted $k$-tree, select a front of the root hedron, and coherently orient the result.
 Thus:
 \begin{theorem}
   \label{thm:axquot}
   For $\pointed[X]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at hedra and $\pointed[XY]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at edges, we have
   \begin{equation}
     \label{eq:axquot}
-    \pointed[X]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}}
+    \pointed[X]{\mathfrak{a}}_{k} = \faktor{\pointed[XY]{\specname{CT}}_{k}}{\pbrac{C_{k+1} \rtimes \symgp{k}}}
   \end{equation}
-  for the action of $C_{k+1} \rtimes \mathfrak{S}_{k}$ described above.
+  for the action of $C_{k+1} \rtimes \symgp{k}$ described above.
 \end{theorem}
 
 We now have all the pieces of the original dissymmetry Theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[XY]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
@@ -1343,20 +1343,20 @@ Corollary \ref{cor:dissymkreform} has a direct analogue in terms of cycle indice
   For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk}, we have
   \begin{equation}
     \label{eq:dissymkci}
-    Z_{\mathfrak{a}_{k}} = Z_{\pointed[X]{\mathfrak{a}}_{k}} + Z_{\pointed[Y]{\mathfrak{a}}_{k}} - Z_{\pointed[XY]{\mathfrak{a}}_{k}}.
+    \gci{\symgp{k}}{\mathfrak{a}_{k}} = \gci{\symgp{k}}{\pointed[X]{\mathfrak{a}}_{k}} + \gci{\symgp{k}}{\pointed[Y]{\mathfrak{a}}_{k}} - \gci{\symgp{k}}{\pointed[XY]{\mathfrak{a}}_{k}}.
   \end{equation}
 \end{theorem}
 Thus, we need to calculate the cycle indices of the three rooted forms of $\mathfrak{a}_{k}$.
 From Theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obtain:
 \begin{theorem}
   \label{thm:aquotci}
-  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk} and the various $\mathfrak{S}_{k}$-species and $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species forms of $\specname{CT}_{k}$ as in \S \ref{s:genkt}, we have
+  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk} and the various $\symgp{k}$-species and $\pbrac{C_{k+1} \rtimes \symgp{k}}$-species forms of $\specname{CT}_{k}$ as in \S \ref{s:genkt}, we have
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
-      Z_{\pointed[Y]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
-      Z_{\pointed[XY]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma} = \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}} \label{eq:axyquotci} \\
-      Z_{\pointed[X]{\mathfrak{a}}_{k}} &= \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
+      \gci{\symgp{k}}{\pointed[Y]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
+      \gci{\symgp{k}}{\pointed[XY]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}} \label{eq:axyquotci} \\
+      \gci{\symgp{k}}{\pointed[X]{\mathfrak{a}}_{k}} &= \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
     \end{align}
   \end{subequations}
 \end{theorem}
@@ -1364,23 +1364,23 @@ From Theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obta
 We thus need only calculate the various $\Gamma$-cycle indices for the three rooted forms of the species $\specname{CT}_{k}$ to complete our enumeration of general $k$-trees.
 
 \subsection{Recursive components: $H_{k}$ and $F_{k}$}\label{ss:ktcycindrec}
-We first consider the component $\mathfrak{S}_{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
+We first consider the component $\symgp{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
 
 We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
-More specifically, an $F_{k}$-structure for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is in fact still just a $Y$-labeled root and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
-Thus, equation \eqref{eq:ffunc} holds in $\mathfrak{S}_{k}$-generality, and we conclude:
+More specifically, an $F_{k}$-structure for which some $\sigma \in \symgp{k}$ is an automorphism is in fact still just a $Y$-labeled root and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
+Thus, equation \eqref{eq:ffunc} holds in $\symgp{k}$-generality, and we conclude:
 \begin{equation}
   \label{eq:ffuncci}
-  Z_{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}'} \circ Z_{H_{k}} \pbrac{\sigma}}.
+  \gci{\symgp{k}}{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{\ci{\specname{E}'} \circ \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
 In Theorem \ref{thm:funcdecompct}, we also have that $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$ as ordinary species.
-However, this does \emph{not} hold as an identity of $\mathfrak{S}_{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \mathfrak{S}_{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
+However, this does \emph{not} hold as an identity of $\symgp{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \symgp{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
 \begin{lemma}
   \label{lem:fkinvar}
   Let $H$ be a structure of the species $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$.
   Let $F \pbrac{i}$ be the $F_{k}$-structure in the $i$th position in the linear order.
-  Then some $\sigma \in \mathfrak{S}_{k}$ acts as an automorphism of $H$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$.
+  Then some $\sigma \in \symgp{k}$ acts as an automorphism of $H$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$.
 \end{lemma}
 
 \begin{proof}
@@ -1391,24 +1391,24 @@ However, this does \emph{not} hold as an identity of $\mathfrak{S}_{k}$-species;
   That this suffices is clear.
 \end{proof}
 
-With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$:
+With this result, we can calculate the $\symgp{k}$-cycle index of $H_{k}$:
 \begin{theorem}
   \label{thm:hfuncci}
-  The $\mathfrak{S}_{k}$-cycle index for the species $H_{k}$ is given by
+  The $\symgp{k}$-cycle index for the species $H_{k}$ is given by
   \begin{multline}
     \label{eq:hfuncci}
-    Z_{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \gci{\symgp{k}}{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
+    \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and where the inner product is taken over the elements $i$ of the cycle $c$ in the cyclic order starting from any element.
 \end{theorem}
 
 \begin{proof}
-  By an obvious multisort extension of Definition \ref{def:gcycind}, for each $\sigma \in \mathfrak{S}_{k}$ and $\gamma \in \mathfrak{S}_{n} \times \mathfrak{S}_{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
-  For any given $\sigma \in \mathfrak{S}_{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \mathfrak{S}_{k} \times \mathfrak{S}_{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
+  By an obvious multisort extension of Definition \ref{def:gcycind}, for each $\sigma \in \symgp{k}$ and $\gamma \in \symgp{n} \times \symgp{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
+  For any given $\sigma \in \symgp{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \symgp{k} \times \symgp{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
   Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
   Define $\fix H_{k} \sbrac{\sigma}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
-  We then wish to calculate $\fix H_{k} \sbrac{\sigma}$ for each $\sigma \in \mathfrak{S}_{k}$.
+  We then wish to calculate $\fix H_{k} \sbrac{\sigma}$ for each $\sigma \in \symgp{k}$.
 
   As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ term in the result.
   From Lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
@@ -1422,27 +1422,27 @@ With this result, we can calculate the $\mathfrak{S}_{k}$-cycle index of $H_{k}$
   By lemma \ref{lem:fkinvar}, this requirement suffices.
   Therefore, with respect to the cycle $c$, we have $\fix H_{k} \sbrac{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
   The contribution to the cycle index is then $\fix H_{k} \sbrac{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
-    Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
+    \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
   \end{equation*}
   in equation \eqref{eq:hfuncci}.
 \end{proof}
 
 \subsection{Rooted components: $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[XY]{\specname{CT}}_{k}$}\label{ss:ktcycindroot}
-We now consider the $\mathfrak{S}_{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{C_{k+1} \rtimes \mathfrak{S}_{k}}$-species $\pointed[XY]{\specname{CT}}_{k}$ of $k$-coding trees rooted at edges.
-As in the previous section, the action of $\sigma \in \mathfrak{S}_{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
+We now consider the $\symgp{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{C_{k+1} \rtimes \symgp{k}}$-species $\pointed[XY]{\specname{CT}}_{k}$ of $k$-coding trees rooted at edges.
+As in the previous section, the action of $\sigma \in \symgp{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
 \begin{equation}
   \label{eq:ctyfuncci}
-  Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{Z_{\specname{E}} \circ Z_{H_{k}} \pbrac{\sigma}}.
+  \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{\ci{\specname{E}} \circ \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}.
 \end{equation}
 
 However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in Theorem \ref{thm:hfuncci}) return, with slight modifications:
 \begin{theorem}
   \label{thm:ctxyfuncci}
-  The $\pbrac{\mathfrak{S}_{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
+  The $\pbrac{\symgp{k} \times C_{k+1}}$-cycle index for the species $\pointed[XY]{\specname{CT}}_{k}$ is given by
   \begin{multline}
     \label{eq:ctxyfuncci}
-    Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma \zeta^{j}}} Z_{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \gci{\symgp{k} \rtimes C_{k+1}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
+    \times \prod_{c \in C \pbrac{\sigma \zeta^{j}}} \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as Theorem \ref{thm:hfuncci}.
 \end{theorem}
@@ -1455,15 +1455,15 @@ However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (
 We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
 We substitute the results of the previous two sections into equation \eqref{eq:dissymkci} to obtain:
 \begin{theorem}[Cycle index for the species of $k$-trees]
-  For $Z_{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $Z_{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $Z_{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $Z_{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
+  For $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $\gci{\symgp{k} \rtimes C_{k+1}}{\pointed[XY]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $\gci{\symgp{k}}{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $\gci{\symgp{k}}{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
   \label{thm:ktreecyc}
   \begin{multline}
-    \quad Z_{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \mathfrak{S}_{k} \\ i \in \cbrac{0, 1, \dots, k}}} Z_{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
-    + \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} Z_{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \mathfrak{S}_{k}} \pbrac{Z_{F_{k}} \pbrac{\sigma} \cdot Z_{H_{k}} \pbrac{\sigma}}. \quad
+    \quad \gci{\symgp{k}}{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k} \rtimes C_{k+1}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
+    + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}. \quad
   \end{multline}
 \end{theorem}
 
-Since the formulas for $Z_{F_{k}}$ and $Z_{H_{k}}$ depend on each other, this result in fact represents a recursive system of functional equations.
+Since the formulas for $\gci{\symgp{k}}{F_{k}}$ and $\gci{\symgp{k}}{H_{k}}$ depend on each other, this result in fact represents a recursive system of functional equations.
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
 The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
 
@@ -1491,11 +1491,11 @@ also. Thus
   \Phi = X - \Psi_{2} \pbrac{\Phi} - \Psi_{3} \pbrac{\Phi} - \dots.
 \end{equation}
 This recursive equation is the key to our computational method.
-To compute the cycle index of $\Phi$ to degree $2$, we begin with the approximation $\Phi \approx X$ and then substitute it into the first two terms of equation \eqref{eq:compinv}: $\Phi \approx X - \Psi_{2} \pbrac{X}$ and thus $Z_{\Phi} \approx Z_{X} - Z_{\Psi_{2}} \circ Z_{X}$.
+To compute the cycle index of $\Phi$ to degree $2$, we begin with the approximation $\Phi \approx X$ and then substitute it into the first two terms of equation \eqref{eq:compinv}: $\Phi \approx X - \Psi_{2} \pbrac{X}$ and thus $\ci{\Phi} \approx \ci{X} - \ci{\Psi_{2}} \circ \ci{X}$.
 All terms of degree up to two in this approximation will be correct.
 To compute the cycle index of $\Phi$ to degree $3$, we then take this new approximation $\Phi \approx X - \Psi_{2} \pbrac{X}$ and substitute it into the first three terms of equation \eqref{eq:compinv}.
 This process can be iterated as many times as are needed; to determine all terms of degree up to $n$ correctly, we need only iterate $n$ times.
-With appropriate optimizations (in particular, truncations), this method can run very quickly on a personal computer to reasonably high degrees; we were able to compute $Z_{\specname{CBP}^{\bullet \abrac{-1}}}$ to degree sixteen in thirteen seconds.
+With appropriate optimizations (in particular, truncations), this method can run very quickly on a personal computer to reasonably high degrees; we were able to compute $\ci{\specname{CBP}^{\bullet \abrac{-1}}}$ to degree sixteen in thirteen seconds.
 
 \chapter{Enumerative tables}\label{c:enum}
 \section{Bicolored and bipartite graphs}\label{s:bpenum}
