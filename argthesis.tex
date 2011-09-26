@@ -475,8 +475,9 @@ Thus, Lemma \ref{lem:grouporbits} implies the following:
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
     \label{eq:quotcycind}
-    \ci{F / \Gamma} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \symgp{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
+    \ci{F / \Gamma} = \qgci{\Gamma}{F} \defeq \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \symgp{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
   \end{equation}
+  where we define $\qgci{\Gamma}{F} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma}$ for future convenience.
 \end{theorem}
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
 With it, we can compute explicit enumerative data for a quotient species using cycle-index information of the original $\Gamma$-species with respect to the group action, as desired.
@@ -734,7 +735,7 @@ Thus,
 By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
 \begin{theorem}
   \begin{equation}
-    \ci{\specname{CBP}} = \frac{1}{2} \pbrac{\gci{\symgp{2}}{\specname{CBC}} \pbrac{e} + \gci{\symgp{2}}{\specname{CBC}} \pbrac{\tau}}.
+    \ci{\specname{CBP}} = \qgci{\symgp{2}}{\specname{CBC}} = \frac{1}{2} \pbrac{\gci{\symgp{2}}{\specname{CBC}} \pbrac{e} + \gci{\symgp{2}}{\specname{CBC}} \pbrac{\tau}}.
   \end{equation}
 \end{theorem}
 
@@ -1354,9 +1355,9 @@ From Theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obta
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
-      \gci{\symgp{k}}{\pointed[Y]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
-      \gci{\symgp{k}}{\pointed[XY]{\mathfrak{a}}_{k}} &= \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}} \label{eq:axyquotci} \\
-      \gci{\symgp{k}}{\pointed[X]{\mathfrak{a}}_{k}} &= \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
+      \ci{\pointed[Y]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
+      \ci{\pointed[XY]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[XY]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}} \label{eq:axyquotci} \\
+      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k} \rtimes C_{k+1}}{\pointed[XY]{\specname{CT}_{k}}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k}}{\pointed[XY]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
     \end{align}
   \end{subequations}
 \end{theorem}
@@ -1462,6 +1463,7 @@ We substitute the results of the previous two sections into equation \eqref{eq:d
     + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}. \quad
   \end{multline}
 \end{theorem}
+TODO: Rewrite with bar notation?
 
 Since the formulas for $\gci{\symgp{k}}{F_{k}}$ and $\gci{\symgp{k}}{H_{k}}$ depend on each other, this result in fact represents a recursive system of functional equations.
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
