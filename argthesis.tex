@@ -100,15 +100,15 @@ A full, pedagogical exposition of the theory of species is available in \cite{bl
 To begin, we wish to formalize the notion of a `construction' of a structure of some given class from a set of `labels', such as the construction of a graph from its vertex set or or that of a linear order from its elements.
 The language of category theory will allow us capture this behavior succinctly yet with full generality:
 \begin{definition}\label{def:species}
-  Let $\mathbf{B}$ be the category of finite sets with bijections and $\mathbf{S}$ be the category of finite sets with set maps.
-  Then a \emph{species} is a functor $F: \mathbf{B} \to \mathbf{S}$.
+  Let $\catname{Bij}$ be the category of finite sets with bijections and $\catname{Set}$ be the category of finite sets with set maps.
+  Then a \emph{species} is a functor $F: \catname{Bij} \to \catname{Set}$.
   For a set $A$ and a species $F$, an element of $F \sbrac{A}$ is an \emph{$F$-structure on $A$}.
   Moreover, for a species $F$ and a bijection $\phi: A \to B$, the bijection $F \sbrac{\phi}: F \sbrac{A} \to F \sbrac{B}$ is the \emph{$F$-transport of $\phi$}.
 \end{definition}
 A species functor $F$ simply associates to each set $A$ another set $F \sbrac{A}$ of its $F$-structures; for example, for $\specname{S}$ the species of permutations, we associate to some set $A$ the set $\specname{S} \sbrac{A} = \operatorname{Bij} \pbrac{A}$ of self-bijections (that is, permutations as maps) of $A$.
 
 This definition is the original from \cite{joy:species}.
-Since the image of a bijection under such a functor is a necessarily itself a bijection, many authors instead simply define a species as a functor $F: \mathbf{B} \to \mathbf{B}$.
+Since the image of a bijection under such a functor is a necessarily itself a bijection, many authors instead simply define a species as a functor $F: \catname{Bij} \to \catname{Bij}$.
 Our motivation for using this definition instead will become clear in \S \ref{s:quot}.
 
 Note that, having defined the species $F$ to be a functor, we have the following properties:
@@ -315,7 +315,7 @@ Equation \eqref{eq:specderivci} leads directly to the following:
 Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{F'}$.
 
 \section{Multisort species}\label{s:mult}
-A species $F$ as defined in \ref{def:species} is a functor $F: \mathbf{B} \to \mathbf{S}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
+A species $F$ as defined in \ref{def:species} is a functor $F: \catname{Bij} \to \catname{Set}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
 The tool-set so produced is adequate to describe many classes of combinatorial structures.
 However, there is one particular structure type which it cannot effectively capture: the notion of distinct \emph{sorts} of elements within a structure.
 Perhaps the most natural example of this is the case of $k$-colored graphs, where every vertex has one of $k$ colors with the requirement that no pair of adjacent vertices shares a color.
@@ -328,13 +328,13 @@ We thus incorporate the notion of sorts directly into a new definition:
   Further, define a \emph{$k$-multifunction} to be an ordered $k$-tuple of set functions which acts componentwise on $k$-multisets.
   For two $k$-multisets $U$ and $V$, a $k$-multifunction $\sigma$ is a \emph{$k$-multibijection} if each component is a set bijection.
   For $k$-multisets of multicardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\symgp{c_{1}, c_{2}, \dots, c_{k}} = \symgp{c_{1}} \times \symgp{c_{2}} \times \dots \times \symgp{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-multibijections from a $k$-multiset to itself.
-  Finally, denote by $\mathbf{B}^{k}$ the category of finite $k$-multisets with $k$-multibijections.
+  Finally, denote by $\catname{Bij}^{k}$ the category of finite $k$-multisets with $k$-multibijections.
 \end{definition}
 
 We can then define an extension of species to the context of multisets:
 \begin{definition}
   \label{def:multisort}
-  A \emph{$k$-sort species} $F$ is a functor $F: \mathbf{B}^{k} \to \mathbf{B}$ which associates to each $k$-multiset $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each bijective $k$-multifunction $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
+  A \emph{$k$-sort species} $F$ is a functor $F: \catname{Bij}^{k} \to \catname{Bij}$ which associates to each $k$-multiset $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each bijective $k$-multifunction $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
 \end{definition}
 Functorality once again imposes naturality conditions on these associations.
 
@@ -415,8 +415,8 @@ Simply because $\nicefrac{F}{\Gamma}$ is a species, we have transport of a bijec
 \end{tikzpicture}
 \end{equation*}
 commutes.
-Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a natural transformation, given that we have defined the species $F$ as a functor $F: \mathbf{B} \to \mathbf{S}$.
-If instead we adopt the more common definition of a species as a functor $F: \mathbf{B} \to \mathbf{B}$, the maps denoted $\action{\Gamma}$ above are not in the target category $\mathbf{B}$, so passage to the $\Gamma$-quotient is no longer a natural transformation.
+Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a natural transformation, given that we have defined the species $F$ as a functor $F: \catname{Bij} \to \catname{Set}$.
+If instead we adopt the more common definition of a species as a functor $F: \catname{Bij} \to \catname{Bij}$, the maps denoted $\action{\Gamma}$ above are not in the target category $\catname{Bij}$, so passage to the $\Gamma$-quotient is no longer a natural transformation.
 
 A brief exposition of the notion of quotient species may be found in \cite[\S 3.6]{bll:species}, and a more thorough exposition (in French) in \cite{bous:species}.
 Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group.
