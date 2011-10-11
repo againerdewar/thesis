@@ -23,7 +23,7 @@
 \begin{document}
 
 % GSAS formatting requirements: Front page order is title, signature,
-% copyright, dedication, acknowledgements, abstract, preface, table of
+% copyright, dedication, acknowledgements, abstact, preface, table of
 % contents, list of figures, list of tables.
 
 % REQUIRED: The start of roman-numbered plain pages.
@@ -279,29 +279,29 @@ However, we do introduce two unary operations: $\pointed{F}$ and $F'$.
 
 \begin{definition}
   \label{def:specderiv}
-  For a species $F$, define its \emph{species derivative} to be the species $F'$ given by $F' \sbrac{A} = F \sbrac{A \cup \cbrac{*}}$ for $*$ an element chosen not in $A$ (say, the set $A$ itself).
+  For a species $F$, define its \emph{species derivative} to be the species $\deriv{F}$ given by $\deriv{F} \sbrac{A} = F \sbrac{A \cup \cbrac{*}}$ for $*$ an element chosen not in $A$ (say, the set $A$ itself).
 \end{definition}
-It is important to note that the label $*$ of an $F'$-structure is \emph{distinguished} from the other labels; the automorphisms of the species $F'$ cannot interchange $*$ with another label.
+It is important to note that the label $*$ of an $\deriv{F}$-structure is \emph{distinguished} from the other labels; the automorphisms of the species $\deriv{F}$ cannot interchange $*$ with another label.
 Thus, species differentiation is appropriate for cases where we want to remove one `position' in a structure.
-For example, for $\specname{L}$ the species of linear orders and $\specname{C}$ the species of cyclic orders, we have $\specname{L} = \specname{C}'$; a cyclic order on the set $A \cup \cbrac{*}$ is naturally associated with the linear order on the set $A$ produced by removing $*$.
+For example, for $\specname{L}$ the species of linear orders and $\specname{C}$ the species of cyclic orders, we have $\specname{L} = \deriv{\specname{C}}$; a cyclic order on the set $A \cup \cbrac{*}$ is naturally associated with the linear order on the set $A$ produced by removing $*$.
 Terming this operation `differentiation' is justified by its effect on cycle indices:
 \begin{theorem}
   \label{thm:specderivci}
   For a species $F$, the cycle index of its derivative is given by
   \begin{equation}
     \label{eq:specderivci}
-    \ci{F'} \pbrac{p_{1}, p_{2}, \dots} = \pbrac{\frac{\partial}{\partial p_{1}} \ci{F}} \pbrac{p_{1}, p_{2}, \dots}.
+    \ci{\deriv{F}} \pbrac{p_{1}, p_{2}, \dots} = \pbrac{\frac{\partial}{\partial p_{1}} \ci{F}} \pbrac{p_{1}, p_{2}, \dots}.
   \end{equation}
 \end{theorem}
-We note that we cannot in general recover $\ci{F}$ from $\ci{F'}$, since there may be terms in $\ci{F}$ which have no $p_{1}$-component (corresponding to $F$-structures which have no automorphisms with fixed points).
+We note that we cannot in general recover $\ci{F}$ from $\ci{\deriv{F}}$, since there may be terms in $\ci{F}$ which have no $p_{1}$-component (corresponding to $F$-structures which have no automorphisms with fixed points).
 
 Finally, we introduce a variant of the species derivative which allows us to \emph{label} the distinguished element $*$:
 \begin{definition}
   \label{def:specpoint}
   For a species $F$, define its \emph{pointed species} to be the species $\pointed{F}$ given by $\pointed{F} \sbrac{A} = F \sbrac{A} \times A$ (that is, pairs of the form $\pbrac{f, a}$ where $f$ is an $F$-structure on $A$ and $a \in A$) with transport $\pointed{F} \sbrac{\sigma} \pbrac{f, a} = \pbrac{F \sbrac{\sigma} \pbrac{f}, \sigma \pbrac{a}}$.
-  We can also write $\pointed{F} \sbrac{A} = X \cdot F'$ for $X$ the species of singletons.
+  We can also write $\pointed{F} \sbrac{A} = X \cdot \deriv{F}$ for $X$ the species of singletons.
 \end{definition}
-In other words, an $\pointed{F} \sbrac{A}$-structure is an $F \sbrac{A}$-structure with a distinguished element taken from the set $A$ (as opposed to $F'$, where the distinguished element is new).
+In other words, an $\pointed{F} \sbrac{A}$-structure is an $F \sbrac{A}$-structure with a distinguished element taken from the set $A$ (as opposed to $\deriv{F}$, where the distinguished element is new).
 Thus, species pointing is appropriate for cases such as those of rooted trees: for $\mathfrak{a}$ the species of trees and $\specname{A}$ the species of rooted trees, we have $\specname{A} = \pointed{\mathfrak{a}}$.
 Equation \eqref{eq:specderivci} leads directly to the following:
 \begin{theorem}
@@ -309,10 +309,10 @@ Equation \eqref{eq:specderivci} leads directly to the following:
   For a species $F$, the cycle index of its corresponding pointed species is given by
   \begin{equation}
     \label{eq:specpointci}
-    \ci{\pointed{F}} = \ci{X} \cdot \ci{F'}.
+    \ci{\pointed{F}} = \ci{X} \cdot \ci{\deriv{F}}.
   \end{equation}
 \end{theorem}
-Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{F'}$.
+Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{\deriv{F}}$.
 
 \section{Multisort species}\label{s:mult}
 A species $F$ as defined in \ref{def:species} is a functor $F: \catname{Bij} \to \catname{Set}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
@@ -351,7 +351,7 @@ In natural analogy to Definition \ref{def:cycind}, the formula for the cycle ind
 where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_{j} \sbrac{i}}^{\pbrac{\sigma_{i}}_{j}}$ where $\pbrac{\sigma_{i}}_{j}$ is the number of $j$-cycles of $\sigma_{i}$.
 
 The operations of addition and multiplication extend to the multisort context naturally.
-To make sense of differentiation and pointing, we need only specify a sort from which to draw the element or label which is marked; we then write $F'^{X}$ and $\pointed[X]{F}$ for the derivative and pointing respectively of $F$ `in the sort $X$', which is to say with its distinguished element drawn from that sort.
+To make sense of differentiation and pointing, we need only specify a sort from which to draw the element or label which is marked; we then write $\deriv[X]{F}$ and $\pointed[X]{F}$ for the derivative and pointing respectively of $F$ `in the sort $X$', which is to say with its distinguished element drawn from that sort.
 Making sense of the notion of composition in multisort species is highly context-dependent; we note here only that, when $F$ is a $1$-sort species and $G$ a $k$-sort species, the construction of the $k$-sort species $F \circ G$ is natural. 
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
@@ -437,8 +437,27 @@ So the coefficients in the power series count the fixed points of the \emph{comb
 Note that, in particular, the classical (`ordinary') cycle index may be recovered as $\ci{F} = \gci{\Gamma}{F} \pbrac{e}$ for any $\Gamma$-species $F$.
 
 The algebraic relationships between ordinary species and their cycle indices generally extend without modification to the $\Gamma$-species context, as long as appropriate allowances are made.
-The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case.
-The action of composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended, but it requires an extended definition of the plethysm, here taken from \cite[\S 3]{hend:specfield}:
+The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case considered componentwise:
+\begin{definition}
+  \label{def:gspecsumprod}
+  For two $\Gamma$-species $F$ and $G$, the $\Gamma$-cycle index of their sum $F + G$ is given by
+  \begin{equation}
+    \label{eq:gspecsum}
+    \gci{\Gamma}{F + G} \pbrac{\gamma} = \gci{\Gamma}{F} \pbrac{\gamma} + \gci{\Gamma}{G} \pbrac{\gamma}
+  \end{equation}
+  and the $\Gamma$-cycle index of their product $F \cdot G$ is given by
+  \begin{equation}
+    \label{eq:gspecprod}
+    \gci{\Gamma}{F \cdot G} \pbrac{\gamma} = \gci{\Gamma}{F} \pbrac{\gamma} \cdot \gci{\Gamma}{G} \pbrac{\gamma}
+  \end{equation}
+\end{definition}
+The action of composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended:
+\begin{definition}
+  \label{def:gspeccomp}
+  For two $\Gamma$-species $F$ and $G$, define their \emph{composition} to be the $\Gamma$-species $F \circ G$ with structures given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$ and where $\gamma \in \Gamma$ acts on a $\pbrac{F \circ G}$-structure by acting on the $F$-structure and the $G$-structures independently.
+\end{definition}
+The requirement in Definition \ref{def:gspecies} that the action of $\Gamma$ commutes with transport implies that this is well-defined.
+A formula similar to that Theorem \ref{thm:speccompci} requires a definition of the plethysm of $\Gamma$-symmetric functions, here taken from \cite[\S 3]{hend:specfield}:
 \begin{definition}
   \label{def:gcipleth}
   For two $\Gamma$-cycle indices $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-cycle index defined by
@@ -449,10 +468,10 @@ The action of composition, which in ordinary species corresponds to plethysm of 
 \end{definition}
 This definition of $\Gamma$-cycle index plethysm is then indeed the correct operation to pair with the composition of $\Gamma$-species:
 \begin{theorem}[Theorem 3.1, \cite{hend:specfield}]
-  \label{thm:gspeccomp}
+  \label{thm:gspeccompci}
   If $A$ and $B$ are $\Gamma$-species and $B \pbrac{\varnothing} = \varnothing$, then
   \begin{equation}
-    \label{eq:gspeccomp}
+    \label{eq:gspeccompci}
     \gci{\Gamma}{A \circ B} = \gci{\Gamma}{A} \circ \gci{\Gamma}{B}.
   \end{equation}
 \end{theorem}
@@ -721,7 +740,7 @@ We can derive from \cite[\S 2.5, eq.~(58c)]{bll:species} that its cycle index is
 where $\mu$ is the M\"{o}bius function.
 We can then rewrite equation \eqref{eq:bcdecomp} as
 \[\specname{CBC} = \con \circ \specname{BC}\]
-It then follows immediately from Theorem \ref{thm:gspeccomp} that
+It then follows immediately from Theorem \ref{thm:gspeccompci} that
 \begin{theorem}
   \begin{equation} \gci{\symgp{2}}{\specname{CBC}} = \ci{\con} \circ \gci{\symgp{2}}{\specname{BC}} \label{eq:zcbcdecomp} \end{equation}
 \end{theorem}
@@ -770,12 +789,12 @@ From \cite[eq.~4.2.27]{bll:species} we obtain
     \label{eq:nbpexp}
     \begin{equation}
       \label{eq:nbpexpmain}
-      \specname{NBP} = \specname{CBP} \pbrac{\specname{CBP}^{\bullet \abrac{-1}}} + X \cdot \specname{NBP}' - X,
+      \specname{NBP} = \specname{CBP} \pbrac{\specname{CBP}^{\bullet \abrac{-1}}} + X \cdot \deriv{\specname{NBP}} - X,
     \end{equation}
     where by \cite[4.2.26(a)]{bll:species} we have
     \begin{equation}
       \label{eq:nbpexpsub}
-      \specname{NBP}' = \con \pbrac{\frac{X}{\specname{CBP}^{\bullet \abrac{-1}}}}.
+      \deriv{\specname{NBP}} = \con \pbrac{\frac{X}{\specname{CBP}^{\bullet \abrac{-1}}}}.
     \end{equation}
   \end{subequations}
 
@@ -878,6 +897,59 @@ Throughout, we will treat the species $\mathfrak{a}_{k}$ of $k$-trees as a two-s
   \label{fig:exlab2tree}
 \end{figure}
 
+\section{The dissymmetry theorem for $k$-trees}\label{s:dissymk}
+Studies of tree-like structures---especially those explicitly informed by the theory of species---often feature decompositions based on \emph{dissymmetry}, which allow enumerations of unrooted structures to be recharacterized in terms of rooted structures.
+For example, as seen in \cite[\S 4.1]{bll:species}, the species $\mathfrak{a}$ of trees and $\specname{A} = \pointed{\mathfrak{a}}$ of rooted trees are related by the equation
+\begin{equation*}
+  \specname{A} + \specname{E}_{2} \pbrac{\specname{A}} = \mathfrak{a} + \specname{A}^{2}
+\end{equation*}
+where the proof hinges on a recursive structural decomposition of trees.
+In this case, the species $\specname{A}$ is relatively easy to characterize explicitly, so this equation serves to characterize the species $\mathfrak{a}$, which would be difficult to do directly.
+
+A similar theorem holds for $k$-trees.
+\begin{theorem}
+  \label{thm:dissymk}
+  The species $\pointed[X]{\mathfrak{a}}_{k}$ and $\pointed[Y]{\mathfrak{a}}_{k}$ of $k$-trees rooted at hedra and fronts respectively, $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at a hedron with a designated front, and $\mathfrak{a}_{k}$ of unrooted $k$-trees are related by the equation
+  \begin{equation}
+    \label{eq:dissymk}
+    \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} = \mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}
+  \end{equation}
+  as an isomorphism of species.
+\end{theorem}
+
+\begin{proof}
+  We give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structures on the left side to $\pbrac{\mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}}$-structures on the right side.
+  Define a \emph{$k$-path} in a $k$-tree to be a non-returning sequence of consecutively adjacent hedra and fronts, and define the \emph{length} of a $k$-path to be the total number of hedra and fronts along it.
+  Note that the ends of every maximal $k$-path in a $k$-tree are fronts.
+  It is easily verified, as in \cite{kob:ktlogspace}, that every $k$-tree has a unique \emph{center} clique (either a hedron or a front) which is the midpoint of every longest $k$-path (or, equivalently, has the greatest $k$-eccentricity, defined appropriately).
+  
+  An $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some clique $c$, which is either a hedron or a front.
+  Suppose that $c$ is the center of $T$.
+  We then map $T$ to its unrooted equivalent in $\mathfrak{a}_{k}$ on the right-hand side.
+  This map is a natural bijection from its preimage, the set of $k$-trees rooted at their centers, to $\mathfrak{a}_{k}$, the set of unrooted $k$-trees.
+
+  Now suppose that the root clique $c$ of the $k$-tree $T$ is \emph{not} the center, which we denote $C$.
+  Identify the clique $c'$ which is adjacent to $c$ along the $k$-path from $c$ to $C$.
+  We then map the $k$-tree $T$ rooted at the clique $c$ to the same tree $T$ rooted at \emph{both} $c$ and its neighbor $c'$.
+  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
+
+  When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymk}.
+\end{proof}
+
+In general we will reformulate the dissymmetry theorem as follows:
+\begin{corollary}
+  \label{cor:dissymkreform}
+  For the various forms of the species $\mathfrak{a}_{k}$ as above, we have
+  \begin{equation}
+    \label{eq:dissymkreform}
+    \mathfrak{a}_{k} = \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} - \pointed[\overline{XY}]{\mathfrak{a}}_{k}.
+  \end{equation}
+\end{corollary}
+
+Theorem \ref{thm:dissymk} and the consequent equation \eqref{eq:dissymkreform} allow us to reframe enumerative questions about generic $k$-trees in terms of questions about $k$-trees rooted in various ways.
+However, the rich internal symmetries of large cliques obstruct direct analysis of these rooted structures.
+We need to break these symmetries to proceed.
+
 \section{Coherently-oriented $k$-trees}
 \subsection{Symmetry-breaking}\label{ss:symbreak}
 In the case of the species $\specname{A} = \pointed{\mathfrak{a}}_{1}$ of trees, we may obtain a simple recursive functional equation \cite[\S 1, eq.~(9)]{bll:species}:
@@ -914,7 +986,7 @@ Note that every $k$-tree admits many coherent orientations---any one hedron of t
 We will denote by $\vec{\mathfrak{a}}_{k}$ the species of coherently-oriented $k$-trees.
 
 By shifting from the general $k$-tree setting to that of coherently-oriented $k$-trees, we break the symmetry described above.
-If we can now establish a group action on $\vec{\mathfrak{a}}_{k}$ whose orbits are generic $k$-trees, we can use the theory of quotient species to extract the generic species $\mathfrak{a}_{k}$.
+If we can now establish a group action on $\vec{\mathfrak{a}}_{k}$ whose orbits are generic $k$-trees we can use the theory of quotient species to extract the generic species $\mathfrak{a}_{k}$.
 First, however, we describe an encoding procedure which will make future work more convenient.
 
 \begin{figure}[htb]
@@ -965,55 +1037,6 @@ First, however, we describe an encoding procedure which will make future work mo
   \caption{A coherently-oriented $2$-tree}
   \label{fig:exco2tree}
 \end{figure}
-
-\subsection{The dissymmetry theorem for $k$-trees}\label{ss:dissymk}
-Studies of tree-like structures---especially those explicitly informed by the theory of species---often feature decompositions based on \emph{dissymmetry}, which allow enumerations of unrooted structures to be recharacterized in terms of rooted structures.
-For example, as seen in \cite[\S 4.1]{bll:species}, the species $\mathfrak{a}$ of trees and $\specname{A} = \pointed{\mathfrak{a}}$ of rooted trees are related by the equation
-\begin{equation*}
-  \specname{A} + \specname{E}_{2} \pbrac{\specname{A}} = \mathfrak{a} + \specname{A}^{2}
-\end{equation*}
-where the proof hinges on a recursive structural decomposition of trees.
-In this case, the species $\specname{A}$ is relatively easy to characterize explicitly, so this equation serves to characterize the species $\mathfrak{a}$, which would be difficult to do directly.
-
-A similar theorem holds for $k$-trees.
-\begin{theorem}
-  \label{thm:dissymk}
-  The species $\pointed[X]{\mathfrak{a}}_{k}$ and $\pointed[Y]{\mathfrak{a}}_{k}$ of $k$-trees rooted at hedra and fronts respectively, $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at a hedron with a designated front, and $\mathfrak{a}_{k}$ of unrooted $k$-trees are related by the equation
-  \begin{equation}
-    \label{eq:dissymk}
-    \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} = \mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}
-  \end{equation}
-  as an isomorphism of species.
-\end{theorem}
-
-\begin{proof}
-  We give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structures on the left side to $\pbrac{\mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}}$-structures on the right side.
-  Define a \emph{$k$-path} in a $k$-tree to be a non-returning sequence of consecutively adjacent hedra and fronts, and define the \emph{length} of a $k$-path to be the total number of hedra and fronts along it.
-  Note that the ends of every maximal $k$-path in a $k$-tree are fronts.
-  It is easily verified, as in \cite{kob:ktlogspace}, that every $k$-tree has a unique \emph{center} clique (either a hedron or a front) which is the midpoint of every longest $k$-path (or, equivalently, has the greatest $k$-eccentricity, defined appropriately).
-  
-  An $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some clique $c$, which is either a hedron or a front.
-  Suppose that $c$ is the center of $T$.
-  We then map $T$ to its unrooted equivalent in $\mathfrak{a}_{k}$ on the right-hand side.
-  This map is a natural bijection from its preimage, the set of $k$-trees rooted at their centers, to $\mathfrak{a}_{k}$, the set of unrooted $k$-trees.
-
-  Now suppose that the root clique $c$ of the $k$-tree $T$ is \emph{not} the center, which we denote $C$.
-  Identify the clique $c'$ which is adjacent to $c$ along the $k$-path from $c$ to $C$.
-  We then map the $k$-tree $T$ rooted at the clique $c$ to the same tree $T$ rooted at \emph{both} $c$ and its neighbor $c'$.
-  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
-
-  When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymk}.
-\end{proof}
-
-In general we will reformulate the dissymmetry theorem as follows:
-\begin{corollary}
-  \label{cor:dissymkreform}
-  For the various forms of the species $\mathfrak{a}_{k}$ as above, we have
-  \begin{equation}
-    \label{eq:dissymkreform}
-    \mathfrak{a}_{k} = \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} - \pointed[\overline{XY}]{\mathfrak{a}}_{k}.
-  \end{equation}
-\end{corollary}
 
 \subsection{Bicolored tree encoding}\label{ss:bctree}
 Although $k$-trees are graphs (and hence made up simply of edges and vertices), their structure is more conveniently described in terms of their simplicial structure of hedra and fronts.
@@ -1093,7 +1116,6 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
   \label{fig:exbctree}
 \end{figure}
 
-TODO: Make sure that $\vec{\mathfrak{a}}_{k}$ is even defined somewhere.
 \begin{theorem}\label{thm:bctreeenc}
   The map $\beta$ induces an isomorphism of species $\vec{\mathfrak{a}}_{k} \simeq \specname{CT}_{k}$.
 \end{theorem}
@@ -1123,50 +1145,42 @@ We thus will proceed in the following sections with a study of the species $\spe
 \subsection{Functional decomposition of $k$-coding trees}\label{ss:codecomp}
 TODO: Add some diagrams here.
 
-Consider a $k$-coding tree rooted at a black or white vertex.
-Every black vertex then has a cyclically-ordered set of $k+1$ white neighbors.
-However, if the black vertex is not the root, one of those white neighbors is its parent, so this cyclic order is equivalent to a linear order on the white child vertices.
-We will denote by $H_{k}$ the species of the structures that form around such non-root black vertices.
-Explicitly, an $H_{k}$-structure is a black vertex with a linearly-ordered set of $k$ white vertices, each of which may have its own set of black children and so on.
+With the encoding $\beta: \vec{\mathfrak{a}}_{k} \to \specname{CT}_{k}$, we now have direct graph-theoretic access to the attaching structure of coherently-oriented $k$-trees.
+We therefore turn our attention to the $k$-coding trees themselves to produce a recursive decomposition.
+As with $k$-trees, we will study rooted versions of the species $\specname{CT}_{k}$ of $k$-coding trees first, anticipating that they later will be useful in a dissymmetry analysis.
 
-Similarly, every white vertex has a set of black neighbors, but if the white vertex is not the root, one of those neighbors is the parent, so we can restrict to the set of black children of the white vertex.
-Note that the set of black children of a white vertex may be empty.
-We will denote by $F_{k}$ the species of structures that form around such non-root white vertices.
-Explicitly, an $F_{k}$ structure is a white vertex with a (possibly empty) set of black children, each of which has a linearly-ordered set of $k$ $F_{k}$-structures as its children and so on.
+Adopting the standard species-theoretic notation for pointing, let $\pointed[X]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at black vertices, $\pointed[Y]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at white vertices, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at edges (that is, at adjacent black-white pairs).
+By construction, a $\pointed[X]{\specname{CT}}_{k}$-structure consists of a single $X$-label and a cyclically-ordered $\pbrac{k+1}$-set of $\pointed[Y]{\specname{CT}}_{k}$-structures.
 
-It remains, of course, to consider the root vertex of a $k$-coding tree.
-If it is a black vertex, it has a cyclically-ordered set of $k+1$ white vertices as children, and each of these is the root of an $F_{k}$-structure.
-Similarly, if it is a white vertex, it has a (possibly empty) set of black vertices as children, and each of these carries an $H_{k}$-structure.
-Following our previous conventions, we will denote by $\pointed[X]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at a black vertex and by $\pointed[Y]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at a white vertex.
+Similarly, a $\pointed[Y]{\specname{CT}}_{k}$-structure essentially consists of a single $Y$-label and a (possibly empty) set of $\pointed[X]{\specname{CT}}_{k}$-structures, but with some modification.
+We do not wish to multiply-label the white vertex or attach new black children to it at this stage, so we must modify the descendant $\pointed[X]{\specname{CT}}_{k}$-structures to avoid this.
+Specifically, the structure around a black vertex which is a child of a white vertex consists of an $X$ label and a linearly-ordered $k$-set of $\pointed[Y]{\specname{CT}}_{k}$-structures.
+Thus, a $\pointed[Y]{\specname{CT}}_{k}$-structure consists of a $Y$-label and a set of pairs of an $X$ label and an $\specname{L}_{k}$-structure of $\pointed[Y]{\specname{CT}}_{k}$-structures.
+We note here for conceptual consistency that in fact $\specname{L}_{k} = \deriv{\specname{C}}_{k+1}$ for $\specname{L}$ the species of linear orders and $\specname{C}$ the species of cyclic orders and that $\deriv{\specname{E}} = \specname{E}$ for $\specname{E}$ the species of sets; readers familiar with the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species} will recognize echoes of their decomposition in these facts.
 
-Finally, consider instead a $k$-coding tree rooted at an edge (that is, at an adjacent black-white pair) from the class $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
-Deleting the root edge (leaving the vertices) breaks the tree into two pieces, one of which is an $H_{k}$-structure and the other of which is an $F_{k}$ structure.
-Moreover, the original $k$-coding tree can be reconstructed from such pieces by simply attaching the root black and white vertices by an edge.
+Finally, a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure is simply a $\pbrac{X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}}$-structure as described above (corresponding to the black vertex) combined with a $\pointed[Y]{\specname{CT}}_{k}$-structure (corresponding to the white vertex).
+For reasons that will become clear later, we note that we can combine the root white vertex into the linear order by making it last, thus representing a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure.
 
-Then:
-\begin{theorem}\label{thm:funcdecompct}
-  For the species $H_{k}$, $F_{k}$, $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as above, we have the functional relations
+The various species of rooted $k$-coding threes are therefore related by a system of functional equations:
+\begin{theorem}
+  \label{thm:funcdecompct}
+  For the (ordinary) species $\pointed[X]{\specname{CT}}_{k}$ of $X$-rooted $k$-coding trees, $\pointed[Y]{\specname{CT}}_{k}$ of $Y$-rooted $k$-coding trees, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees, we have the functional relationships
   \begin{subequations}
     \label{eq:ctfunc}
     \begin{align}
-      H_{k} &= X \cdot \specname{C}'_{k+1} \pbrac{F_{k}} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}} \label{eq:hfunc} \\
-      F_{k} &= Y \cdot \specname{E}' \pbrac{H_{k}} = Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ffunc} \\
-      \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{F_{k}} \label{eq:ctxfunc} \\
-      \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{H_{k}} \label{eq:ctyfunc} \\
-      \pointed[\overline{XY}]{\specname{CT}}_{k} &= F_{k} \cdot
-      H_{k}. \label{eq:ctxyfunc}
+      \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}} \label{eq:ctxfunc} \\
+      \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}} \label{eq:ctyfunc} \\
+      \pointed[\overline{XY}]{\specname{CT}}_{k} &= \pointed[Y]{\specname{CT}}_{k} \cdot X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}} = X \cdot \specname{L}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}} \label{eq:ctxyfunc}
     \end{align}
   \end{subequations}
-
+  as identities of ordinary species.
 \end{theorem}
 
 However, a recursive characterization of the various ordinary species of $k$-coding trees is insufficient to characterize the species of $k$-trees itself, since $k$-coding trees represent $k$-trees with coherent orientations.
-It remains, then, to apply the theory of quotient species to pass back from $k$-coding trees to generic $k$-trees.
 
 \section{Generic $k$-trees}\label{s:genkt}
-\subsection{Quotients for $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$}\label{ss:ayact}
-To remove the coherent orientation structure we have attached to our $k$-trees, we now apply the theory of quotient species.
-We first need to develop a group action under which ordinary $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees.
+To remove the additional structure of coherent orientation imposed on $k$-trees before their conversion to $k$-coding trees, we now apply the theory of $\Gamma$-species developed in \ref{s:quot}.
+We might hope to develop a group action under which ordinary $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees.
 Unfortunately:
 \begin{lemma}
   \label{lem:notransac}
@@ -1186,27 +1200,31 @@ Unfortunately:
 \end{proof}
 
 We thus cannot hope to attack the coherent orientations of $k$-trees by acting directly on the cyclic orderings of fronts.
-Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees to linearize these $\pbrac{k+1}$-cyclic orders into $k$-linear orders, for which there is a natural action of $\symgp{k}$.
-As an aside, we also note that the fact that this obstruction occurs only for $k \geq 3$ would suggest that a more straightforward course than ours would be available specifically in the case of $2$-trees.
-Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{is} a well-defined action of $\symgp{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
+Accordingly, we cannot simply apply the results of \S \ref{ss:codecomp} to compute a $\Gamma$-species $\specname{CT}_{k}$ with respect to some hypothetical action of a group $\Gamma$ whose orbits correspond to generic $k$-trees.
+Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees; with rooting, the cyclic orders around black vertices are converted into linear orders, for which there is a natural action of $\symgp{k+1}$.
+
+As an aside, we also note that the fact that the obstruction of Lemma \ref{lem:notransac} occurs only for $k \geq 3$ would suggest that a more straightforward course than ours would be available specifically in the case of $2$-trees.
+Indeed, in \cite{gessel:spec2trees}, the fact that there \emph{does} exist a well-defined action of $\symgp{2}$ on $\cyc_{\sbrac{3}}$ which simply reverses the cyclic ordering is exploited to study $2$-trees species-theoretically.
+
+\subsection{Group actions on $k$-coding trees}\label{ss:actct}
 
 We have noted previously that every labeled $k$-tree admits exactly $k!$ coherent orientations.
 Thus, there are $k!$ distinct $k$-coding trees associated to each labeled $k$-tree, which differ only in the $\specname{C}_{k+1}$-structures on their black vertices.
-Consider some non-root black vertex of a rooted $k$-coding tree.
-It is the root of an $H_{k}$-structure, and there is a linear order on its $k$ white children.
-There is a natural label-independent action of $\symgp{k}$ on the set of these linear orders under which, for example, $\sigma = \pbrac{1 2}$ switches the first and second places in an ordering.
-If we simply apply some $\sigma \in \symgp{k}$ in this manner to the root of an $H_{k}$-structure, however, the resulting $H_{k}$-structure will \emph{not} correspond to a different coherent orientation of the same underlying $k$-tree; the coherence of the ordering of the white neighbors of the root black vertex with the orderings of the descendant $H_{k}$ structures will be disturbed.
-However, as we have noted previously, there \emph{does} exist a choice of orientation for each of these descendants which is coherent with the new orientation of the root.
-We thus will need to apply some permutation to each of the descendant $H_{k}$-structures as well.
+Consider a rooted $k$-coding tree $T$ and a black vertex $v$ which is not the root vertex.
+Then one white neighbor of $v$ is the `parent' of $v$ (in the sense that lies on the path from $v$ to the root).
+We thus can convert the cyclic order on the $k+1$ white neighbors of $v$ as a linear order by choosing the parent white neighbor to be last.
+There is a natural, transitive, label-independent action of $\symgp{k+1}$ on the set of such linear orders which induces an action on the cyclic orders from which the linear orders are derived.
+If we apply the action of some $\sigma \in \symgp{k+1}$ to this linear order, however, we must also permute the cyclic orders of the descendant black vertices of $v$ in order to restore the coherency of the orientation of the component of the $k$-tree associated to $T$ corresponding to the structure descending from $v$.
 
-Fix some $H_{k}$-structure and let its root black vertex be $v$.
-Consider some black vertex $v'$ which is an immediate descendant of $v$ and suppose that the white vertex that joins them is $i$th in the linear order induced by the orientation at $v$.
-If we then apply $\sigma$ to the orientation at $v$, the white vertex between $v$ and $v'$ will thereafter be in the $\sigma \pbrac{i}$th place in the new orientation at $v$.
-The permutation $\sigma'$ which must be applied to the orientation of the descendant black vertex is precisely that induced by passing over the mirror bijection, applying $\sigma$, and then passing back.
+As noted previously, there does exist a (unique) choice of orientation for each descendant which restores orientation coherency.
+TODO: reference to where this was said?
+By linearizing the cyclic orders of the descendants as we did for the initial black vertex, we can interpret them as linear orders as well, and thus interpret the map that sends a given orientation to its post-$\sigma$ version as another permutation in $\symgp{k+1}$.
+It is clear that, for each immediate black descendant $v'$ of $v$, the permutation $\sigma'$ applied to the linear order of the white children of $v'$ will be determined by the initial permutation $\sigma$ and by the position $i$ of the white vertex joining $v$ to $v'$ in the initial linear ordering at $v$.
+In particular, this permutation $\sigma'$ is precisely that induced by passing over the mirror bijection from $v'$ to $v$, applying $\sigma$, and then passing back.
 We can express this procedure in formulaic terms:
 \begin{theorem}
   \label{thm:rhodef}
-  If a permutation $\sigma \in \symgp{k}$ is applied to the orientation of the root black vertex in an $H_{k}$-structure, the permutation which must be applied to a child black vertex which was attached to the $i$th white vertex (with respect to the linear ordering induced by the orientation) to preserve coherence is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map
+  If a permutation $\sigma \in \symgp{k+1}$ is applied to linearized orientation of a black vertex $v$ in rooted $k$-coding tree, the permutation which must be applied to the linearized orientation a child black vertex $v'$ which was attached to the $i$th white child of $v$ (with respect to the linear ordering induced by the orientation) to preserve the coherence of the associated $k$-tree is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map
   \begin{equation}
     \label{eq:rhodef}
     \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i + a} - \sigma \pbrac{i}
@@ -1214,260 +1232,202 @@ We can express this procedure in formulaic terms:
   where all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$.
 \end{theorem}
 \begin{proof}
-  Let $A$ denote the base black vertex and $B$ denote an immediate black descendant, which is attached to $A$ by the white vertex $1$, which we suppose to be in position $i$ in the linear order induced by the original orientation of $A$.
-  Let $2$ denote the white child of $B$ which is $a$th in the linear order induced by the original orientation around $B$.
-  It is mirror to the white child $3$ of $A$ which is $\pbrac{i+a}$th in the linear order induced by the original orientation around $A$.
-  After the action of $\sigma$ is applied, vertex $3$ is $\sigma \pbrac{i+a}$th in the new linear order around $A$.
-  We require that $2$ is still mirror to $3$, so we must move it to position $\sigma \pbrac{i + a} - \sigma \pbrac{i}$ when we create a new linear order around $B$.
+  Let $v$ denote the base black vertex and $v'$ denote an immediate black descendant, which is attached to $v$ by the white vertex $1$, which we suppose to be in position $i$ in the linear order induced by the original orientation of $v$.
+  Let $2$ denote the white child of $v'$ which is $a$th in the linear order induced by the original orientation around $v'$.
+  It is mirror to the white child $3$ of $v$ which is $\pbrac{i+a}$th in the linear order induced by the original orientation around $v$.
+  After the action of $\sigma$ is applied, vertex $3$ is $\sigma \pbrac{i+a}$th in the new linear order around $v$.
+  We require that $2$ is still mirror to $3$, so we must move it to position $\sigma \pbrac{i + a} - \sigma \pbrac{i}$ when we create a new linear order around $v'$.
   This completes the proof.
 \end{proof}
 This procedure is depicted in Figure \ref{fig:rhoapp}.
+
+As an aside, we note that, although the construction $\rho$ depends on $k$, in practice the value of $k$ will be fixed in any given context, so we suppress it in the notation.
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
     \SetGraphUnit{3.5}
 
-    \Vertex[style=hnode]{A}
-    \cycccwr{(A)};
+    \Vertex[style=hnode,Math=true]{v}
+    \cycccwr{(v)};
 
-    \EA[style=fnode](A){3}
-    \path (A) edge [bend right=45, thick] node [below](a3d){$i+a$} (3);
-    \path (A) edge [bend left=45, thick] node [above](a3u){$\sigma \pbrac{i+a}$} (3);
+    \EA[style=fnode](v){3}
+    \path (v) edge [bend right=45, thick] node [below](a3d){$i+a$} (3);
+    \path (v) edge [bend left=45, thick] node [above](a3u){$\sigma \pbrac{i+a}$} (3);
     \path (a3d) edge [->, dashed, thick] node [auto]{$\sigma$} (a3u);
 
-    \WE[style=fnode](A){1}
-    \path (A) edge [bend left=45, thick] node [below](a1d){$i$} (1);
-    \path (A) edge [bend right=45, thick] node [above](a1u){$\sigma \pbrac{i}$} (1);
+    \WE[style=fnode](v){1}
+    \path (v) edge [bend left=45, thick] node [below](a1d){$i$} (1);
+    \path (v) edge [bend right=45, thick] node [above](a1u){$\sigma \pbrac{i}$} (1);
     \path (a1d) edge [->, dashed, thick] node [auto]{$\sigma$} (a1u);
     
-    \WE[style=hnode](1){B}
-    \cyccwr{(B)};
-    \path (B) edge [thick] node [auto](b1){$0$} (1);
+    \WE[style=hnode, Math=true](1){v'}
+    \cyccwr{(v')};
+    \path (v') edge [thick] node [auto](b1){$0$} (1);
 
-    \WE[style=fnode](B){2}
-    \path (B) edge [bend left=45, thick] node [below](b2d){$a$} (2);
-    \path (B) edge [bend right=45, thick] node [above](b2u){$\sigma \pbrac{i+a} - \sigma \pbrac{i}$} (2);
+    \WE[style=fnode](v'){2}
+    \path (v') edge [bend left=45, thick] node [below](b2d){$a$} (2);
+    \path (v') edge [bend right=45, thick] node [above](b2u){$\sigma \pbrac{i+a} - \sigma \pbrac{i}$} (2);
     \path (b2d) edge [->, dashed, thick] node [auto]{$\rho_{i} \pbrac{\sigma}$} (b2u);
 
     \path (b2d) edge [->, dotted, thick, bend right=15] node [auto]{$\mu$} (a3d);
     \path (b2u) edge [->, dotted, thick, bend left=15] node [auto]{$\mu$} (a3u);
   \end{tikzpicture}
-  \caption[The permutation-modifying map $\rho$]{Application of a permutation $\sigma$ to an $H_{k}$-structure rooted at the black vertex $A$.
+  \caption[The permutation-modifying map $\rho$]{Application of a permutation $\sigma$ to the orientation of a non-root black vertex $v$.
     The vertices $2$ and $3$ are mirror in the original orientation (lower set of edges), as shown by the arrows $\mu$, so we must preserve this mirror relation when we apply $\sigma$.
     The permutation $\sigma$ moves $3$ from the $\pbrac{i+a}$th place to the $\sigma \pbrac{i+a}$th, so $\rho_{i} \pbrac{\sigma}$ must carry $2$ from the $a$th place to the $\pbrac{\sigma \pbrac{i+a} - \sigma \pbrac{i}}$th.}
   \label{fig:rhoapp}
 \end{figure}
 
-We can apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of the entire $H_{k}$-structure after applying $\sigma$ to the orientation of its root black vertex.
-This yields a well-defined $\symgp{k}$-action on the species $H_{k}$ which, we note, is completely label-independent and thus naturally commutes with the $\pbrac{\symgp{n} \times \symgp{kn+1}}$-action on labels, as we might hope in order to apply the theory of $\Gamma$-species.
-Moreover, the orbits of this $\symgp{k}$-action are exactly the sets of $H_{k}$-structures which are different coherent orientations of the same underlying $k$-tree structure.
-TODO: justify this claim?
+Note that, in particular, $\rho_{i} \pbrac{\sigma} \pbrac{k+1} = k+1$ for any $\sigma \in \symgp{k+1}$ and any $i$.
+Thus, the resulting permutations do not disturb the parent white vertices of descendant black vertices in their orientations, as we require.
+Therefore, the $\rho$ procedure is compatible with the tree-like structure of a rooted $k$-coding tree.
+We can thus apply the procedure in Theorem \ref{thm:rhodef} recursively to restore the coherence of all the descendant black vertices after applying $\sigma$ to the orientation of some black vertex.
+Moreover, by construction, the orbit of a given black-rooted $k$-coding tree component under the action of $\symgp{k+1}$ will include the set of all such components corresponding to the different orientations of the same underlying $k$-tree component.
 
-We also need to consider the associated action of $\symgp{k}$ on $F_{k}$-structures, but there is nothing new to be done.
-Simply applying the $\symgp{k}$-action defined previously to each of the $H_{k}$-structures that are immediate children of the root white vertex of an $F_{k}$-structure suffices to preserve coherence.
-Moreover, again, the orbits of this $\symgp{k}$-action are the sets of $F_{k}$-structures corresponding to the different coherent orientations of the same underlying $k$-tree structure.
+In cases where $\sigma$ is applied to a non-root black vertex $v$, the $\sigma \in \symgp{k+1}$ such that $\sigma \pbrac{k+1} \neq k+1$ will not be automorphisms at all, since such $\sigma$ will disturb the edge from $v$ to its parent white vertex.
+In these cases, the subgroup of $\symgp{k+1}$ isomorphic to $\symgp{k}$ containing all $\sigma$ such that $\sigma \pbrac{k+1} = k+1$ will be the group of interest, so we will at times speak instead of an $\symgp{k}$-action.
+$\symgp{k}$, understood as a subgroup of $\symgp{k+1}$ in this fashion, will act purely by isomorphisms on the orientations of non-root black vertices, and its orbits will indeed correspond to all the orientations of the associated $k$-tree structures.
+We will abuse notation somewhat by having $\rho$ act on elements of both $\symgp{k}$ and $\symgp{k+1}$, relying on context to make clear what is the ambient group.
 
-It remains to extend this action of $\symgp{k}$ to the root of a rooted $k$-coding tree.
-The action on coding trees rooted at white vertices (that is, on the species $\pointed[Y]{\specname{CT}}_{k}$) is trivial in the same sense as for $F_{k}$; to apply a permutation $\sigma$ to a $\pointed[Y]{\specname{CT}}_{k}$-structure, simply apply it to each of the $H_{k}$-structures which is a child of the root white vertex and proceed recursively.
-This gives an $\symgp{k}$-action on $\pointed[Y]{\specname{CT}}_{k}$-structures which commutes with permutations of labels, so we can take quotients.
-Moreover, we can easily pass this action to the species $\pointed[Y]{\vec{\mathfrak{a}}}_{k}$ of coherently-oriented $k$-trees rooted at fronts, and its orbits are clearly the underlying unoriented front-rooted $k$-trees of $\pointed[Y]{\mathfrak{a}}_{k}$.
-We can then conclude that:
+In light of Theorem \ref{thm:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
+In the case of a $Y$-rooted $k$-coding tree $T$, we simply declare that each $\sigma \in \symgp{k}$ acts on $T$ by acting directly on each of the black vertices immediately adjacent to the root and then applying $\rho$-derived permutations recursively to their descendants.
+Each orbit under this action then corresponds to all the coherent orientations of a single $Y$-rooted $k$-tree.
+The same $\symgp{k}$-action serves equally well for edge-rooted $k$-coding trees, where (for purposes of applying the action of some $\sigma$) we can simply ignore the black vertex in the root.
+Again, each orbit under this $\symgp{k}$-action corresponds to all the coherent orientations of a single $\overline{XY}$-rooted $k$-tree.
+
+However, if we begin with an $X$-rooted $k$-coding tree, the cyclic ordering of the white neighbors of the root black vertex has no canonical choice of linearization.
+If we make an arbitrary choice of one of the $k+1$ available linearizations, however, and thus convert to an edge-rooted $k$-coding tree, the full $\symgp{k+1}$-action defined previously can be applied directly to the root vertex.
+Moreover, the orbit under this action of some edge-rooted $k$-coding tree $T$ with a choice of linearization at the root includes all possible linearizations of all possible $X$-rooted $k$-coding trees corresponding to the different coherent orientations of a single $k$-coding tree.
+In addition, this action is compatible with the action of the subgroup $\symgp{k}$ in the previous paragraph.
+
+\subsection{$k$-trees as quotients}\label{ss:ktquot}
+Since these actions are label-independent, we may now speak of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as $\symgp{k}$-species and of $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as a $\symgp{k+1}$-species.
+Since the $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[\overline{XY}]{\specname{CT}}_{k}$ are compatible, the potential ambiguity of this overloading of names is mostly avoided.
+We will make explicit reference to $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as a $\symgp{k}$- or $\symgp{k+1}$-species whenever it is important and not completely clear from context.
+As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\specname{CT}_{k}$ to the various ordinary species forms of generic rooted $k$-trees in Theorem \ref{thm:dissymk}:
 \begin{theorem}
-  \label{thm:ayquot}
-  For $\pointed[Y]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at fronts and $\pointed[Y]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at white vertices, we have
-  \begin{equation}
-    \label{eq:ayquot}
-    \pointed[Y]{\mathfrak{a}}_{k} = \faktor{\pointed[Y]{\specname{CT}}_{k}}{\symgp{k}}
-  \end{equation}
-  for the $\symgp{k}$-action described above.
+  \label{thm:arootquot}
+  For the various rooted forms of the ordinary species $\mathfrak{a}_{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\specname{CT}_{k}$ as in Theorem \ref{thm:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
+  \begin{subequations}
+    \label{eq:arootquot}
+    \begin{align}
+      \pointed[Y]{\mathfrak{a}}_{k} &= \faktor{\pointed[Y]{\specname{CT}}_{k}}{\symgp{k}} \label{eq:ayquot} \\
+      \pointed[\overline{XY}]{\mathfrak{a}}_{k} &= \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\symgp{k}} \label{eq:axyquot} \\
+      \pointed[X]{\mathfrak{a}}_{k} &= \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\symgp{k+1}} \label{eq:axquot}
+    \end{align}
+  \end{subequations}
+where $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is an $\symgp{k}$-species in \eqref{eq:axyquot} and an $\symgp{k+1}$-species in \eqref{eq:axquot}.
 \end{theorem}
 
-Similarly, we may extend this $\symgp{k}$-action to the species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees.
-By equation \eqref{eq:ctxyfunc}, we can decompose a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure into an $F_{k}$-structure and an $H_{k}$-structure, each of which has a well-defined $\symgp{k}$-action, which we simply pass back up to $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
-By a similar argument to that above, it is clear that orbits of $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structures are in natural bijection with $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$-structures, so:
-\begin{theorem}
-  \label{thm:axyquot}
-  For $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at hedra with designated fronts, $\pointed[\overline{XY}]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at edges, and $H_{k}$ and $F_{k}$ the component species of black- and white-vertex-rooted $k$-coding tree components, we have
-  \begin{equation}
-    \label{eq:axyquot}
-    \pointed[\overline{XY}]{\mathfrak{a}}_{k} = \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\symgp{k}}  = \pbrac{\faktor{H_{k}}{\symgp{k}}} \cdot \pbrac{\faktor{F_{k}}{\symgp{k}}}.
-  \end{equation}
-  for the $\symgp{k}$-action described above.
-\end{theorem}
-
-However, an action on $k$-coding trees rooted at black vertices (that is, on the species $\pointed[X]{\specname{CT}}_{k}$) does not follow directly, since the root black vertex lacks the distinguished white child which would allow us to convert the cyclic order on its $k+1$ white children to a linear order on $k$ of those children.
-
-\subsection{Quotients for $\pointed[X]{\mathfrak{a}}_{k}$}\label{ss:axact}
-We have thus far defined $\symgp{k}$-actions on the species $H_{k}$, $F_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$, and used these to characterize the species $\pointed[Y]{\mathfrak{a}}_{k}$ and $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$.
-However, to apply Theorem \ref{thm:dissymk} to study the species $\mathfrak{a}_{k}$ itself, we need to characterize the species $\pointed[X]{\mathfrak{a}}_{k}$ as well.
-To do this, we need a result analogous to Theorem \ref{thm:ayquot} and Theorem \ref{thm:axyquot}.
-
-Each $\pointed[X]{\mathfrak{a}}_{k}$-structure (that is, hedron-rooted $k$-tree) $T$ is naturally identified with the set of $\pbrac{\pointed[X]{\vec{\mathfrak{a}}}_{k} = \pointed[X]{\specname{CT}}_{k}}$-structures that are the coherent orientations of $T$.
-However, as noted in the previous section, there is no apparent way to give this set as an orbit of an $\symgp{k}$-action on $\pointed[X]{\specname{CT}}_{k}$, since indeed there is no apparent such group action at all.
-If, however, we identify each $\pointed[X]{\specname{CT}}_{k}$-structure $T$ with the set of $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structures which are obtained by rooting at all the edges incident to the root black vertex of $T$, we have an $\symgp{k}$-action on the latter set whose orbits are $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$-structures.
-Moreover, if we write $C_{k+1}$ for the cyclic group with $k+1$ elements, there is a natural $C_{k+1}$-action on $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structures which rotates the choice of root white vertex around the root black vertex with respect to the cyclic order on those white neighbors.
-We will write $C_{k+1} = \abrac{\zeta}$ where the action of $\zeta$ is to rotate the choice of root white vertex one position forward with respect to the cyclic order on the white neighbors of the black root of an edge-rooted $k$-coding tree.
-
-These actions of $\symgp{k}$ and $C_{k+1}$ do not commute, so the combined group which acts on $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is not their direct product.
-It is straightforward to show that it is fact a semidirect product $C_{k+1} \rtimes \symgp{k}$.
-However, we will not need to use the algebraic structure, so we leave aside the details of the multiplication.
-We note, however, that the set of elements of $C_{k+1} \rtimes \symgp{k+1}$ is simply the Cartesian product, so every element $\gamma$ has an expression $\gamma = \sigma \zeta^{i}$ which acts by cyclic rotation of the white root by $i$ positions followed by application of our standard action of the permutation $\sigma$ on the resulting structure.
-
-If we treat the $\specname{C}_{k+1}$-structure on the white neighbors of the black root of a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure as an $\specname{L}_{k+1}$-structure (rather than the usual $\specname{L}_{k}$) by appending the white root to the \emph{end} of the linear order, there is a natural $\symgp{k+1}$-action on this linear order by permutations.
-Let $i_{1}: \symgp{k} \hookrightarrow \symgp{k+1}$ be the map sending each $\sigma \in \symgp{k}$ to the permutation in $\symgp{k+1}$ which acts as $\sigma$ on $\cbrac{1, \dots, k}$ and fixes $k+1$; we will usually simply denote this permutation $i_{1} \pbrac{\sigma}$ by $\sigma$ again.
-Similarly, let $i_{2}: C_{k+1} \hookrightarrow \symgp{k+1}$ be the map sending the generator $\zeta$ to the cyclic element $\pbrac{1\ 2\ \dots\ k+1}$; we will usually denote this permutation $i_{2} \pbrac{\zeta}$ by $\zeta$ as well.
-These maps are monomorphisms, and furthermore they respect the actions of $\symgp{k}$ and $C_{k+1}$ on $\specname{L}_{k+1}$; an element from $\symgp{k}$ still permutes the linear order on the non-root white neighbors of the root black vertex, while an element from $C_{k+1}$ still preserves the underlying cyclic order on the white vertices but changes which one is root.
-Thus, the pair $\zeta^{i} \in C_{k+1}$ and $\sigma \in \symgp{k}$ act on an $\specname{L}_{k+1}$-structure exactly as their image $\sigma \zeta^{i} \in \symgp{k+1}$ does.
-
-Once some pair $\pbrac{\zeta^{i}, \sigma}$ is allowed to act on the $\specname{L}_{k+1}$-structure at the root of a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure, however, we must adjust the orderings of the white children of non-root black vertices to preserve the coherence of the orientation of the associated $k$-tree.
-Permutations of the form $\rho_{j} \pbrac{\sigma}$ applied to each of the $F_{k}$-structures attached to the root black vertex will suffice once again, but now the $F_{k}$-structure which begins in position $j$ must undergo the action of $\rho_{\zeta^{i} \pbrac{j}} \pbrac{\sigma}$, since after the application of $\zeta^{i}$ it is in position $\zeta^{i} \pbrac{j}$.
-This will preserve coherence as desired.
-
-With the interaction of the actions of $C_{k+1}$ and $\symgp{k}$ on $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structures so defined, it is clear that each orbit of the combined action $C_{k+1} \rtimes \symgp{k}$ corresponds to the set of all the ways to take a given hedron-rooted $k$-tree, select a front of the root hedron, and coherently orient the result.
-Thus:
-\begin{theorem}
-  \label{thm:axquot}
-  For $\pointed[X]{\mathfrak{a}}_{k}$ the species of $k$-trees rooted at hedra and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ the species of $k$-coding trees rooted at edges, we have
-  \begin{equation}
-    \label{eq:axquot}
-    \pointed[X]{\mathfrak{a}}_{k} = \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\pbrac{C_{k+1} \rtimes \symgp{k}}}
-  \end{equation}
-  for the action of $C_{k+1} \rtimes \symgp{k}$ described above.
-\end{theorem}
-
-We now have all the pieces of the original dissymmetry Theorem \ref{thm:dissymk} save $\mathfrak{a}_{k}$ itself characterized in terms of quotients of species of rooted $k$-coding trees: $\pointed[Y]{\mathfrak{a}}_{k}$ in \ref{thm:ayquot}, $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ in \ref{thm:axyquot}, and $\pointed[X]{\mathfrak{a}}_{k}$ in \ref{thm:axquot}.
+As a result, we have explicit characterizations of all the rooted components of the original dissymmetry theorem \ref{thm:dissymk}.
 To compute the cycle indices of these components (and thus the cycle index of $\mathfrak{a}_{k}$ itself), we need only compute the cycle indices of the various rooted $\specname{CT}_{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
 
 \section{Automorphisms and cycle indices}\label{s:ktcycind}
-Corollary \ref{cor:dissymkreform} has a direct analogue in terms of cycle indices:
+\subsection{$k$-coding trees: $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$}\label{ss:ctcycind}
+Corollary \ref{cor:dissymkreform} of the dissymmetry theorem for $k$-trees has a direct analogue in terms of cycle indices:
 \begin{theorem}
   \label{thm:dissymkci}
-  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk}, we have
+  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{s:dissymk}, we have
   \begin{equation}
     \label{eq:dissymkci}
-    \gci{\symgp{k}}{\mathfrak{a}_{k}} = \gci{\symgp{k}}{\pointed[X]{\mathfrak{a}}_{k}} + \gci{\symgp{k}}{\pointed[Y]{\mathfrak{a}}_{k}} - \gci{\symgp{k}}{\pointed[\overline{XY}]{\mathfrak{a}}_{k}}.
+    \ci{\mathfrak{a}_{k}} = \ci{\pointed[X]{\mathfrak{a}}_{k}} + \ci{\pointed[Y]{\mathfrak{a}}_{k}} - \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}}.
   \end{equation}
 \end{theorem}
+
 Thus, we need to calculate the cycle indices of the three rooted forms of $\mathfrak{a}_{k}$.
-From Theorems \ref{thm:ayquot}, \ref{thm:axyquot}, and \ref{thm:axquot}, we obtain:
+From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
 \begin{theorem}
   \label{thm:aquotci}
-  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{ss:dissymk} and the various $\symgp{k}$-species and $\pbrac{C_{k+1} \rtimes \symgp{k}}$-species forms of $\specname{CT}_{k}$ as in \S \ref{s:genkt}, we have
+  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{s:dissymk} and the various $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\specname{CT}_{k}$ as in \S \ref{ss:actct}, we have
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
       \ci{\pointed[Y]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
-      \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}} \label{eq:axyquotci} \\
-      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k} \rtimes C_{k+1}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \label{eq:axquotci}
+      \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:axyquotci} \\
+      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:axquotci}
     \end{align}
   \end{subequations}
 \end{theorem}
 
-We thus need only calculate the various $\Gamma$-cycle indices for the three rooted forms of the species $\specname{CT}_{k}$ to complete our enumeration of general $k$-trees.
+We thus need only calculate the various $\Gamma$-cycle indices for the $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ to complete our enumeration of general $k$-trees.
 
-\subsection{Recursive components: $H_{k}$ and $F_{k}$}\label{ss:ktcycindrec}
-We first consider the component $\symgp{k}$-species $F_{k}$ and $H_{k}$, first defined in \S \ref{ss:codecomp}, which we saw in that section are critical to understanding $k$-coding trees.
+In Theorem \ref{thm:funcdecompct}, the functional equations for the ordinary species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ both include terms of the form $\specname{L}_{k} \circ \pointed[Y]{\specname{CT}}_{k}$.
+The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in Definition \ref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\pointed[Y]{\specname{CT}}_{k}$-structures in these recursive decompositions.
+Recall from \S \ref{s:quot} that, for two $\Gamma$-species $F$ and $G$, an element $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure (colloquially, `an $F$-structure of $G$-structures') by acting independently on the $F$-structure and each of the $G$-structures independently.
+In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant $\pointed[Y]{\specname{CT}}_{k}$-structures are \emph{not} independent---they depend on the position of the structure in the linear ordering around the parent black vertex.
+In particular, if $\sigma$ acts on some non-root black vertex, then $\rho_{i} \pbrac{\sigma}$ acts on the white vertex in the $i$th place, where in general $\rho_{i} \pbrac{\sigma} \neq \sigma$.
 
-We see in Theorem \ref{thm:funcdecompct} that $F_{k} = Y \cdot \specname{E} \pbrac{H_{k}}$ as ordinary species---that is, that an $F_{k}$-structure is composed of a $Y$-label and a set of $H_{k}$-structures.
-More specifically, an $F_{k}$-structure for which some $\sigma \in \symgp{k}$ is an automorphism is in fact still just a $Y$-labeled root and a set of $H_{k}$-structures for which that same $\sigma$ is an automorphism.
-Thus, equation \eqref{eq:ffunc} holds in $\symgp{k}$-generality, and we conclude:
-\begin{equation}
-  \label{eq:ffuncci}
-  \gci{\symgp{k}}{F_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{\ci{\specname{E}'} \circ \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}.
-\end{equation}
-
-In Theorem \ref{thm:funcdecompct}, we also have that $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$ as ordinary species.
-However, this does \emph{not} hold as an identity of $\symgp{k}$-species; an $H_{k}$-structure which for which some $\sigma \in \symgp{k}$ is an automorphism is composed of an $X$-label and a linearly-ordered set (of cardinality $k+1$) of $F_{k}$-structures, but Theorem \ref{thm:rhodef} implies that these $F_{k}$ structures must satisfy a complicated condition in terms of the $\rho_{i} \pbrac{\sigma}$'s.
+Thus, we consider automorphisms of these $\symgp{k}$-structures directly.
+First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$.
 \begin{lemma}
-  \label{lem:fkinvar}
-  Let $H$ be a structure of the species $H_{k} = X \cdot \specname{L}_{k+1} \pbrac{F_{k}}$.
-  Let $F \pbrac{i}$ be the $F_{k}$-structure in the $i$th position in the linear order.
-  Then some $\sigma \in \symgp{k}$ acts as an automorphism of $H$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$.
+  \label{lem:ctyinvar}
+  Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$.
+  Let $W_{i}$ be the $\pointed[Y]{\specname{CT}}_{k}$-structure in the $i$th position in the linear order.
+  Then some $\sigma \in \symgp{k}$ acts as an automorphism of $B$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} W_{i} \cong W_{\sigma \pbrac{i}}$.
 \end{lemma}
 
 \begin{proof}
-  The $X$-label on the black root of $H$ is not affected by the application of $\sigma$, so it imposes no conditions.
-  However, the $\specname{L}_{k+1}$-structure on the white children of the root is permuted by $\sigma$, and we apply to each of the $F \pbrac{i}$'s the action of $\rho_{i} \pbrac{\sigma}$.
-  Thus, $\sigma$ is an automorphism of $H$ if and only if the combination of applying $\sigma$ to the linear order and $\rho_{i} \pbrac{\sigma}$ to each $F_{i}$ is an automorphism.
-  Since $\sigma$ `carries' each $F_{i}$ onto $F_{\sigma \pbrac{i}}$, we must have that $\rho_{i} \pbrac{\sigma} F_{i} \cong F_{\sigma \pbrac{i}}$, as desired.
+  The $X$-label on the black root of $B$ is not affected by the application of $\sigma$, so it imposes no conditions.
+  However, the $\specname{L}_{k}$-structure on the white children of the root is permuted by $\sigma$, and we apply to each of the $W_{i}$'s the action of $\rho_{i} \pbrac{\sigma}$.
+  Thus, $\sigma$ is an automorphism of $B$ if and only if the combination of applying $\sigma$ to the linear order and $\rho_{i} \pbrac{\sigma}$ to each $W_{i}$ is an automorphism.
+  Since $\sigma$ `carries' each $W_{i}$ onto $W_{\sigma \pbrac{i}}$, we must have that $\rho_{i} \pbrac{\sigma} W_{i} \cong W_{\sigma \pbrac{i}}$, as claimed.
   That this suffices is clear.
 \end{proof}
 
-With this result, we can calculate the $\symgp{k}$-cycle index of $H_{k}$:
+Consider a structure $T$ of the $\symgp{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ and an element $\sigma \in \symgp{k}$.
+As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures.
+$\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures independently.
+For each of these component structures, by Lemma \ref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\sigma$ carries each $\pointed[Y]{\specname{CT}}_{k}$-structure to its $\rho_{i} \pbrac{\sigma}$-image.
+Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures, we must construct for each cycle of $\sigma$ a $\pointed[Y]{\specname{CT}_{k}}$-structure which is invariant under the application of \emph{all} the permutations $\rho_{i} \pbrac{\sigma}$ which will be applied to it along the cycle.
+For $c$ the chosen cycle of $\sigma$, this permutation is $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$, where the product is taken over any chosen linearization of the cyclic order of the terms in the cycle.
+Once a choice of such a $\pointed[Y]{\specname{CT}}_{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure.
+Accordingly:
 \begin{theorem}
-  \label{thm:hfuncci}
-  The $\symgp{k}$-cycle index for the species $H_{k}$ is given by
+  \label{thm:ctyfuncci}
+  The $\symgp{k}$-cycle index for the species $\pointed[Y]{\specname{CT}}_{k}$ is characterized by the recursive functional equation
   \begin{multline}
-    \label{eq:hfuncci}
-    \gci{\symgp{k}}{H_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \label{eq:ctyfuncci}
+    \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \\
+    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
   \end{multline}
-  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and where the inner product is taken over the elements $i$ of the cycle $c$ in the cyclic order starting from any element.
+  where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and the inner product is taken with respect to any choice of linearization of the cyclic order of the elements of $c$.
 \end{theorem}
 
-\begin{proof}
-  By an obvious multisort extension of Definition \ref{def:gcycind}, for each $\sigma \in \symgp{k}$ and $\gamma \in \symgp{n} \times \symgp{kn + 1}$, we wish to characterize the $H_{k}$-structures which are fixed by $\sigma \circ \gamma$.
-  For any given $\sigma \in \symgp{k}$ which induces an automorphism of a given $H_{k}$-structure $H$, there is exactly one $\gamma \in \symgp{k} \times \symgp{kn+1}$ such that $\sigma \circ \gamma$ fixes $H$---namely, the $\gamma$ which returns each of the labels of $H$ to their original places after $\sigma$ is applied.
-  Similarly, if $\sigma$ does \emph{not} induce an automorphism of $H$, there can be no such $\gamma$.
-  Define $\fix H_{k} \sbrac{\sigma}$ to be the number of $H_{k}$-structures with $n$ black vertices for which $\sigma$ induces an automorphism and let $p_{\sigma}$ denote $p_{\gamma}$ for $\gamma$ the permutation on labels which is specified by $\sigma$.
-  We then wish to calculate $\fix H_{k} \sbrac{\sigma}$ for each $\sigma \in \symgp{k}$.
-
-  As we have noted, the $X$-label on the root black vertex is unaffected by the action of every $\sigma$, so there must be a $p_{1} \sbrac{x}$ factor in the result.
-  From Lemma \ref{lem:fkinvar} it is apparent that each cycle of $\sigma$ can be considered independently.
-  Let $c = \pbrac{c_{1} c_{2} \dots c_{l}}$ be such a cycle (that is, $\sigma \pbrac{c_{i}} = c_{i+1}$, allowing that $l+1 = 1$ cyclically).
-  Let the $F_{k}$-structure at position $c_{1}$ be denoted $F$.
-  Then the $F_{k}$-structure at position $c_{2}$ must be isomorphic to $\rho_{c_{1}} \pbrac{\sigma} F$, that at position $c_{3}$ must be isomorphic to $\rho_{c_{2}} \pbrac{\sigma} \pbrac{\rho_{c_{1}} \pbrac{\sigma} F} = \pbrac{\rho_{c_{2}} \cdot \rho_{c_{1}}} \pbrac{\sigma} F$, and so on.
-  Thus, up to permutations of their labels, all the $F_{k}$ structures along $c$ are determined by $F$.
-  Moreover, since $c$ is a cycle, $F$ must come back to itself after $l$ iterations of $\sigma$.
-
-  Let $\psi = \prod_{i = 1}^{l} \rho_{c_{i}} \pbrac{\sigma}$; then $\psi$ must induce an automorphism of $F$.
-  By lemma \ref{lem:fkinvar}, this requirement suffices.
-  Therefore, with respect to the cycle $c$, we have $\fix H_{k} \sbrac{\psi}$ choices for the structure $F$, and the label permutation $\gamma$ which is induced by this isomorphism has an $l$-cycle for every $1$-cycle of $\psi$, a $2l$-cycle for every $2$-cycle of $\psi$, and so on.
-  The contribution to the cycle index is then $\fix H_{k} \sbrac{\psi} p_{\psi}^{l}$, which is exactly the term  \begin{equation*}
-    \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}
-  \end{equation*}
-  in equation \eqref{eq:hfuncci}.
-\end{proof}
-
-\subsection{Rooted components: $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$}\label{ss:ktcycindroot}
-We now consider the $\symgp{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ of $k$-coding trees rooted at white vertices and the $\pbrac{C_{k+1} \rtimes \symgp{k}}$-species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ of $k$-coding trees rooted at edges.
-As in the previous section, the action of $\sigma \in \symgp{k}$ on the $\specname{E}$-structure in equation \eqref{eq:ctyfunc} is trivial, so again species composition is the desired operation:
-\begin{equation}
-  \label{eq:ctyfuncci}
-  \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \cdot \pbrac{\ci{\specname{E}} \circ \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}.
-\end{equation}
-
-However, as seen in \S \ref{ss:axact}, the complexities of the species $H_{k}$ (as in Theorem \ref{thm:hfuncci}) return, with slight modifications:
+The situation for the $\symgp{k+1}$-species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is almost identical.
+Recall from \S \ref{ss:actct} that $\sigma \in \symgp{k+1}$ acts on a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure $T$ by applying $\sigma$ directly to the linear order on the $k+1$ white neighbors of the root black vertex and applying $\rho$-variants of $\sigma$ recursively to their descendants.
+Thus, we once again need only require that, along each cycle of $\sigma$, the successive white-vertex structures are pairwise isomorphic under the action of the appropriate $\rho_{i} \pbrac{\sigma}$.
+Thus, we again need only choose for each cycle $c \in C \pbrac{\sigma}$ a $\pointed[Y]{\specname{CT}}_{k}$-structure which is invariant under $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$.
+Accordingly:
 \begin{theorem}
   \label{thm:ctxyfuncci}
-  The $\pbrac{\symgp{k} \times C_{k+1}}$-cycle index for the species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is given by
+  The $\symgp{k+1}$-cycle index for the species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is given by
   \begin{multline}
     \label{eq:ctxyfuncci}
-    \gci{\symgp{k} \rtimes C_{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{j}} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma \zeta^{j}}} \gci{\symgp{k}}{F_{k}} \pbrac{\prod_{i \in c} \rho_{\zeta^{j} \pbrac{i}} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
+    \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  under the same conditions as Theorem \ref{thm:hfuncci}.
+  under the same conditions as Theorem \ref{thm:ctyfuncci}.
 \end{theorem}
-
-\begin{proof}
-  The proof is essentially identical to that of Theorem \ref{thm:hfuncci}.
-\end{proof}
 
 \subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
 We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
-We substitute the results of the previous two sections into equation \eqref{eq:dissymkci} to obtain:
+Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\mathfrak{a}_{k}$ in terms of the cycle indices of the rooted species $\pointed[X]{\mathfrak{a}}_{k}$, $\pointed[Y]{\mathfrak{a}}_{k}$, and $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$, $\gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
+By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} back through this sequence of functional relationships, we can conclude:
 \begin{theorem}[Cycle index for the species of $k$-trees]
-  For $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, $\gci{\symgp{k} \rtimes C_{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci}, $\gci{\symgp{k}}{H_{k}}$ as in equation \eqref{eq:hfuncci}, and $\gci{\symgp{k}}{F_{k}}$ as in equation \eqref{eq:ffuncci}, we have:
+  For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci} we have:
   \label{thm:ktreecyc}
-  \begin{multline}
-    \quad \ci{\mathfrak{a}_{k}} = \frac{1}{k! \pbrac{k+1}} \sum_{\substack{\sigma \in \symgp{k} \\ i \in \cbrac{0, 1, \dots, k}}} \gci{\symgp{k} \rtimes C_{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma, \zeta^{i}} \\
-    + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \pbrac{\gci{\symgp{k}}{F_{k}} \pbrac{\sigma} \cdot \gci{\symgp{k}}{H_{k}} \pbrac{\sigma}}. \quad
-  \end{multline}
-\end{theorem}
-TODO: Rewrite with bar notation?
+  \begin{subequations}
+    \label{eq:akci}
+    \begin{align}
+      \ci{\mathfrak{a}_{k}} &= \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:akciexplicit} \\
+      &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} + \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} - \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}. \label{eq:akciquot}
+    \end{align}
+  \end{subequations}
 
-Since the formulas for $\gci{\symgp{k}}{F_{k}}$ and $\gci{\symgp{k}}{H_{k}}$ depend on each other, this result in fact represents a recursive system of functional equations.
+\end{theorem}
+
+Since the formulas for the $\Gamma$-cycle indices of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ are recursive, equation \eqref{eq:akci} in fact represents a recursive system of functional equations.
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
 The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
 
