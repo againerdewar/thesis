@@ -1431,7 +1431,7 @@ Accordingly:
   \begin{multline}
     \label{eq:ctyfuncci}
     \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \\
-    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
+    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
   \end{multline}
   where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ and the inner product is taken with respect to any choice of linearization of the cyclic order of the elements of $c$.
 \end{theorem}
@@ -1457,6 +1457,7 @@ We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compu
 Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\mathfrak{a}_{k}$ in terms of the cycle indices of the rooted species $\pointed[X]{\mathfrak{a}}_{k}$, $\pointed[Y]{\mathfrak{a}}_{k}$, and $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$, $\gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
 By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} back through this sequence of functional relationships, we can conclude:
 \begin{theorem}[Cycle index for the species of $k$-trees]
+  \label{thm:akci}
   For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci} we have:
   \label{thm:ktreecyc}
   \begin{subequations}
@@ -1471,10 +1472,50 @@ By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} 
 
 Since the formulas for the $\Gamma$-cycle indices of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ are recursive, equation \eqref{eq:akci} in fact represents a recursive system of functional equations.
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
-The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
+However, a bit of care will allow us to reduce the computational complexity of this problem significantly.
 
 \section{Unlabeled enumeration and the generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$}
-TODO: Write this!
+Equation \eqref{eq:akci} in Theorem \ref{thm:akci} gives an explicit (albeit recursive) formula for the cycle index of the ordinary species $\mathfrak{a}_{k}$ of $k$-trees.
+The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of Theorem \ref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\mathfrak{a}_{k}}$.
+Actually computing terms of the cycle index in order to derive the coefficients of the generating function is, however, a computationally expensive process, since the cycle index is by construction a power series in two infinite sets of variables.
+The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
+
+Recall from Theorem \ref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
+\[\tilde{F} \pbrac{\gamma} \pbrac{x} = \ci{F} \sbrac{x, x^2, x^3, \dots}\]
+and that the ordinary generating function for counting unlabeled $\nicefrac{F}{\Gamma}$-structures is given by
+\[\tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.\]
+These formula admits an obvious multisort extension, but we in fact wish to count $k$-trees with respect to just one sort of label (the $X$-labels on hedra), so we will not deal with multisort here.
+Each of the two-sort cycle indices in this chapter can be converted to one-sort by substituting $y_{i} = 1$ for all $i$.
+For the rest of this section, we will deal directly with these one-sort versions of the cycle indices.
+
+We begin by considering the explicit recursive functional equations in Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci}.
+In each case, by the above, the ordinary generating function is exactly the result of substituting $p_{i} \sbrac{x} = x^{i}$ into the given formula.
+Thus, we have:
+\begin{theorem}
+  \label{thm:ctogf}
+  For $\pointed[Y]{\specname{CT}}_{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding ordinary generating functions are given by
+  \begin{align}
+    \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= E \pbrac{x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}}_{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
+    \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}}_{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}} \label{eq:ctxyogf}
+  \end{align}
+\end{theorem}
+As in Theorem \ref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
+
+Moreover, the cycle index of the species $\mathfrak{a}_{k}$, as seen in equation \eqref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
+Thus, we also have:
+\begin{theorem}
+  \label{thm:akogf}
+  For $\mathfrak{a}_{k}$ the species of $k$-trees and $\widetilde{\pointed[Y]{\specname{CT}}_{k}}$ and $\widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in Theorem \ref{thm:ctogf}, we have
+  \begin{equation}
+    \label{eq:akogf}
+    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma}.
+  \end{equation}
+\end{theorem}
+
+This direct characterization of the ordinary generating function of unlabeled $k$-trees, while still recursive, is much computationally simpler than the characterization of the full cycle index in equation \eqref{eq:akci}.
+For computation of the number of unlabeled $k$-trees, it is therefore much preferred.
+Classical methods for working with recursively-defined power series suffice to extract the coefficients quickly and efficiently.
+The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
 
 \section{Asymptotics}
 TODO: Write this!
