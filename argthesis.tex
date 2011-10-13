@@ -177,13 +177,13 @@ The cycle index of a species is then directly related to two important generatin
 \begin{theorem}\label{thm:ciegf}
   The exponential generating function $F \pbrac{x}$ of labeled $F$-structures is given by
   \begin{equation}\label{eq:ciegf}
-    F \pbrac{x} = \ci{f} \pbrac{x, 0, 0, \dots}.
+    F \pbrac{x} = \ci{f} \sbrac{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
 \begin{theorem}\label{thm:ciogf}
   The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures is given by
   \begin{equation}\label{eq:ciogf}
-    \tilde{F} \pbrac{x} = \ci{F} \pbrac{x, x^{2}, x^{3}, \dots}.
+    \tilde{F} \pbrac{x} = \ci{F} \sbrac{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
@@ -345,7 +345,7 @@ In some contexts with small $k$, we will denote our sorts with letters (saying, 
 In natural analogy to Definition \ref{def:cycind}, the formula for the cycle index of a $k$-sort species $F$ is given by
 \begin{multline}
   \label{eq:multcycinddef}
-  \ci{F} \pbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
+  \ci{F} \sbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
   \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \symgp{a_{1}, a_{2}, \dots, a_{k}}} \fix \pbrac{F \sbrac{\sigma}} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
 \end{multline}
 where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_{j} \sbrac{i}}^{\pbrac{\sigma_{i}}_{j}}$ where $\pbrac{\sigma_{i}}_{j}$ is the number of $j$-cycles of $\sigma_{i}$.
