@@ -174,20 +174,20 @@ However, as the following theorems show, both labeled and unlabeled enumeration 
 Recall that, for a given sequence $a = \pbrac{a_{1}, a_{2}, \dots}$, the \emph{ordinary generating function} of $a$ is the function $\tilde{A} \pbrac{x} = \sum_{i = 1}^{\infty} a_{i} x^{i}$ and the \emph{exponential generating function}  is the function $A \pbrac{x} = \sum_{i = 1}^{\infty} \frac{1}{i!} a_{i} x^{i}$.
 The scaling factor of $\frac{1}{n!}$ in the exponential generating function is convenient in many contexts; for example, it makes differentiation of the generating function a combinatorially-significant operation.
 The cycle index of a species is then directly related to two important generating functions:
-\begin{theorem}\label{thm:cycindlab}
+\begin{theorem}\label{thm:ciegf}
   The exponential generating function $F \pbrac{x}$ of labeled $F$-structures is given by
-  \begin{equation}\label{eq:cycindlab}
+  \begin{equation}\label{eq:ciegf}
     F \pbrac{x} = \ci{f} \pbrac{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
-\begin{theorem}\label{thm:cycindunlab}
+\begin{theorem}\label{thm:ciogf}
   The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures is given by
-  \begin{equation}\label{eq:cycindunlab}
+  \begin{equation}\label{eq:ciogf}
     \tilde{F} \pbrac{x} = \ci{F} \pbrac{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
-In essence, equation \eqref{eq:cycindlab} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while equation \eqref{eq:cycindunlab} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
+In essence, equation \eqref{eq:ciegf} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while equation \eqref{eq:ciogf} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
 In cases where the unlabeled enumeration problem is interesting, it is generally more challenging than the labeled enumeration of the same structures, since the characterization of isomorphism in a species may be nontrivial to capture in a generating function.
 If, however, we can calculate the complete cycle index for a species, both labeled and unlabeled enumerations immediately follow.
 
@@ -501,7 +501,49 @@ Thus, Lemma \ref{lem:grouporbits} implies the following:
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
 With it, we can compute explicit enumerative data for a quotient species using cycle-index information of the original $\Gamma$-species with respect to the group action, as desired.
 
-TODO: Discuss calculation of generating functions from cycle index.
+Recall from Theorems \ref{thm:ciegf} and \ref{thm:ciogf} that the exponential generating function $F \pbrac{x}$ of labeled $F$-structures and the ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures may both be computed from the cycle index $\ci{F}$ of an ordinary species $F$ by simple substitutions.
+In the $\Gamma$-species context, we may perform similar substitutions to derive analogous generating functions.
+
+\begin{theorem}
+  \label{thm:gciegf}
+  The exponential generating function $F_{\gamma} \pbrac{x}$ of labeled $\gamma$-invariant $F$-structures is
+  \begin{equation}
+    \label{eq:gciegf}
+    F_{\gamma} \pbrac{x} = \gci{\Gamma}{F} \pbrac{\gamma} \sbrac{x, 0, 0, \dots}.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}
+  \label{thm:gciogf}
+  The ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ of unlabeled $\gamma$-invariant $F$-structures is
+  \begin{equation}
+    \label{eq:gciogf}
+    \tilde{F}_{\gamma} \pbrac{x} = \gci{\Gamma}{F} \pbrac{\gamma} \sbrac{x, x^{2}, x^{3}, \dots}.
+  \end{equation}
+\end{theorem}
+Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because Definition \ref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
+
+From these results and Theorem \ref{thm:qsci}, we can the conclude:
+\begin{theorem}
+  \label{qgciegf}
+  The exponential generating function $F \pbrac{x}$ of labeled $\nicefrac{F}{\Gamma}$-structures is
+  \begin{equation}
+    \label{eq:qgciegf}
+    F \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} F_{\gamma} \pbrac{x}.
+  \end{equation}
+\end{theorem}
+
+Similarly,
+\begin{theorem}
+  \label{qgciogf}
+  The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $\nicefrac{F}{\Gamma}$-structures is
+  \begin{equation}
+    \label{eq:qgcogf}
+    \tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.
+  \end{equation}
+\end{theorem}
+
+These results also follow directly from Burnside's Lemma.
 
 Note also that all of the above extends naturally into the multisort species context.
 We will use this extensively in Chapter \ref{c:ktrees}.
