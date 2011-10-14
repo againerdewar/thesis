@@ -95,6 +95,10 @@
 \newtheorem{note}[theorem]{Note}
 \newtheorem*{note*}{Note}
 
-\input{vc}
+\usepackage{ifdraft}
+\ifdraft{%
+  \input{vc}
+  \fancyfoot[C]{\tiny\thepage \\ \tiny\texttt{git revision: \VCRevision}}
+}
 
 \endinput
