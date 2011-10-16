@@ -1499,10 +1499,9 @@ Thus, we have:
   \label{thm:ctogf}
   For $\pointed[Y]{\specname{CT}}_{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding ordinary generating functions are given by
   \begin{align}
-    \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= \tilde{\specname{E}} \pbrac{x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
-    \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}} \label{eq:ctxyogf}
+    \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
+    \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyogf}
   \end{align}
-  where $\tilde{\specname{E}} \pbrac{x} = \frac{1}{1 - x} = 1 + x + x^{2} + x^{3} + \dots$ is the ordinary generating function for sets.
 \end{theorem}
 As in Theorem \ref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
 
