@@ -1557,10 +1557,11 @@ With the tools developed in \S \ref{c:bpblocks}, we can calculate the cycle indi
 These cycle indices can then be used to enumerate both labeled and unlabeled structures of each type up to a specified number of vertices.
 We have done so here for each species for $n \leq 10$ using Maple 13; the code used is available on request from the first author.
 The resulting values appear in Table \ref{tab:bcgraphs}.
+Note that most of these sequences appear in the historical literature and on \cite{oeis}; where the latter holds, we have included a citation here.
 
 \begin{table}[htb]
   \centering
-  \caption{Enumerative data for bicolored and bipartite graphs}
+  \caption{Enumerative data for bicolored and bipartite graphs (TODO: clean up typesetting)}
   \label{tab:bcgraphs}
   \subfloat[Bicolored graphs ($\mathcal{BC}$)]{
     \label{tab:bc}
@@ -1575,7 +1576,8 @@ The resulting values appear in Table \ref{tab:bcgraphs}.
       7 & 258 & 330626 \\
       8 & 815 & 8488926 \\
       9 & 3038 & 309465602 \\
-      10 & 13804 & 16011372546
+      10 & 13804 & 16011372546 \\
+      OEIS & \cite[A049312]{oeis} & \cite[A047863]{oeis}
     \end{tabular}
   }
   \qquad
@@ -1592,10 +1594,10 @@ The resulting values appear in Table \ref{tab:bcgraphs}.
       7 & 88 & 134526 \\
       8 & 328 & 4172198 \\
       9 & 1460 & 1784499270 \\
-      10 & 7799 & 10508108222
+      10 & 7799 & 10508108222 \\
+      OEIS & & \cite[A002027]{oeis}
     \end{tabular}
   }
-  % \qquad
   \\
   \subfloat[Connected bipartite graphs ($\mathcal{CBP}$)]{
     \label{tab:cbp}
@@ -1610,7 +1612,8 @@ The resulting values appear in Table \ref{tab:bcgraphs}.
       7 & 44 & 67263 \\
       8 & 182 & 2086099 \\
       9 & 730 & 89224653 \\
-      10 & 4032 & 5254054111
+      10 & 4032 & 5254054111 \\
+      OEIS & \cite[A005142]{oeis} & \cite[A001832]{oeis}
     \end{tabular}
   }
   \qquad
@@ -1627,10 +1630,10 @@ The resulting values appear in Table \ref{tab:bcgraphs}.
       7 & 88 & 103237 \\
       8 & 303 & 2922446 \\
       9 & 1119 & 116011231 \\
-      10 & 5479 & 6433447397
+      10 & 5479 & 6433447397 \\
+      OEIS & \cite[A033995]{oeis} & \cite[A047864]{oeis}
     \end{tabular}
   }
-  % \qquad
   \\
   \subfloat[Nonseparable bipartite graphs ($\mathcal{NBP}$)]{
     \label{tab:nbp}
@@ -1645,7 +1648,8 @@ The resulting values appear in Table \ref{tab:bcgraphs}.
       7 & 8 & 6986 \\
       8 & 42 & 297619 \\
       9 & 146 & 15077658 \\
-      10 & 956 & 1120452771
+      10 & 956 & 1120452771 \\
+      OEIS & & \cite[A004100]{oeis}
     \end{tabular}
   }
 \end{table}
@@ -1672,9 +1676,12 @@ We note that both unlabeled and hedron-labeled enumerations of $k$-trees stabili
 \end{proof}
 However, thus far we have neither determined a direct method for computing these stabilization numbers nor identified a straightforward combinatorial characterization of the structures they represent.
 
+Note that several of the small-$k$ sequences appear in historical work and in \cite{oeis}.
+We have included citations to the latter where appropriate.
+
 \begin{table}[htb]
   \centering
-  \caption{Enumerative data for $k$-trees with $n$ hedra}
+  \caption{Enumerative data for $k$-trees with $n$ hedra (TODO: clean up typesetting)}
   \label{tab:ktrees}
 
   \subfloat[$k = 1$]{
@@ -1692,7 +1699,8 @@ However, thus far we have neither determined a direct method for computing these
       9 & 106 & 10000000 \\
       10 & 235 & 214358881 \\
       11 & 551 & 5159780352 \\
-      12 & 1301 & 137858491849 
+      12 & 1301 & 137858491849 \\
+      OEIS & \cite[A000055]{oeis} & \cite[A007830]{oeis}
     \end{tabular}
   }
   \qquad
@@ -1712,6 +1720,7 @@ However, thus far we have neither determined a direct method for computing these
       10 & 9368 & 18911429681 \\
       11 & 41534 & 900576330732 \\
       12 & 118942 & 47683714820313 \\
+      OEIS & \cite[A054581]{oeis} & 
     \end{tabular}
   }
   \\
@@ -1730,7 +1739,8 @@ However, thus far we have neither determined a direct method for computing these
       9 & 9003 & 2253821419 \\
       10 & 56931 & 142255685681 \\
       11 & 372973 & 10122078684587 \\
-      12 & 2506312 & 801499657982233
+      12 & 2506312 & 801499657982233 \\
+      OEIS & \cite[AA078792]{oeis} & 
     \end{tabular}
   }
   \qquad
@@ -1749,7 +1759,8 @@ However, thus far we have neither determined a direct method for computing these
       9 & 15817 & 4182296149 \\
       10 & 127194 & 342232385681 \\
       11 & 1077639 & 10122078684587 \\
-      12 & 9466983 & 801499657982233
+      12 & 9466983 & 801499657982233 \\
+      OEIS & \cite[A078793]{oeis} & 
     \end{tabular}
   }
 \end{table}
@@ -1818,7 +1829,7 @@ However, thus far we have neither determined a direct method for computing these
 
 \backmatter
 
-\bibliographystyle{amsalpha}% Bibliography
+\bibliographystyle{amsplain} %bibliography
 \bibliography{sources}
 
 % \printindex
