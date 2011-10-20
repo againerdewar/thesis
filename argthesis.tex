@@ -1534,6 +1534,36 @@ For computation of the number of unlabeled $k$-trees, it is therefore much prefe
 Classical methods for working with recursively-defined power series suffice to extract the coefficients quickly and efficiently.
 The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
 
+\section{Special-case behavior for small $k$}
+Many of the complexities of the preceding analysis apply only for $k$ sufficiently large.
+We note here some simplifications that are possible when $k$ is small.
+
+\subsection{Ordinary trees ($k = 1$)}
+When $k = 1$, an $\mathfrak{a}_{k}$-structure is merely an ordinary tree with $X$-labels on its edges and $Y$-labels on its vertices.
+There is no internal symmetry of the form that the actions of $\symgp{k}$ are intended to break.
+The actions of $\symgp{2}$ act on ordinary trees rooted at a \emph{directed} edge, with the nontrivial element $\tau \in \symgp{2}$ acting by reversing this orientation.
+The resulting decomposition from the dissymmetry theorem \ref{thm:dissymk} and the recursive functional equations of Theorem \ref{thm:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
+
+\subsection{$2$-trees}
+When $k=2$, there is a nontrivial symmetry at fronts (edges); two triangles may be joined at an edge in two distinct ways.
+The imposition of a coherent orientation on a $2$-tree by directing one of its edges breaks this symmetry; the action of $\symgp{2}$ by reversal of these orientations gives unoriented $2$-trees as its orbits.
+The defined action of $\symgp{3}$ on edge-rooted oriented triangles is simply the classical action of the dihedral group $D_{6}$ on a triangle, and its orbits are unoriented, unrooted triangles.
+We further note that $\rho_{i}$ is the trivial map on $\symgp{2}$ and that $\rho_{i} \pbrac{\sigma} = \tau$ for $\sigma \in \symgp{3}$ if and only if $\sigma$ is an odd permutation, both regardless of $i$.
+We then have that:
+\begin{subequations}
+  \label{eq:rest2trees}
+  \begin{align}
+    \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} \pbrac{e} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
+    \gci{\symgp{3}}{\pointed[\overline{XY}]{\specname{CT}}_{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} \pbrac{\rho \pbrac{\sigma}^{\abs{c}}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
+  \end{align}
+\end{subequations}
+where, by abuse of notation, we let $\rho$ represent any $\rho_{i}$.
+By the previous, the argument $\rho \pbrac{\sigma}^{\abs{c}}$ in Equation \eqref{eq:ctxyfuncci2} is $\tau$ if and only if $\sigma$ is an odd permutation and $c$ is of odd length.
+This analysis and the resulting formulas for the cycle index $\ci{\mathfrak{a}_{2}}$ are essentially equivalent to those derived in \cite{gessel:spec2trees}.
+
+\subsection{$3$-trees}
+TODO: Is there anything to be said here?
+
 \section{Asymptotics}
 TODO: Write this!
 
