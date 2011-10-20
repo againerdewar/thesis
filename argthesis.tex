@@ -249,9 +249,12 @@ Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
 
 \begin{definition}
   \label{def:speccomp}
-  For two species $F$ and $G$, define their \emph{composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
+  For two species $F$ and $G$ with $G \sbrac{\varnothing} = \varnothing$, define their \emph{composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
 \end{definition}
-In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures. This definition is, again, motivated by a correspondence with a certain operation on cycle indices:
+In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures.
+The requirement that $G \sbrac{\varnothing} = \varnothing$ --- that is, that there is no $G$-structure on an empty label set --- is essential.
+If it is lifted, an arbitrary number of $G \sbrac{\varnothing}$-structures may be added arbitrarily to any $\pbrac{F \circ G}$-structure, rendering well-defined constructions impossible.
+This definition is, again, motivated by a correspondence with a certain operation on cycle indices:
 \begin{definition}
   \label{def:cipleth}
   Let $f$ and $g$ be cycle indices. Then the \emph{plethysm} $f \circ g$ is the cycle index
