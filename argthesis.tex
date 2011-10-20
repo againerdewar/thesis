@@ -856,17 +856,28 @@ The numbers of labeled and unlabeled nonseparable bipartite graphs for $n \leq 1
 \chapter{The species of $k$-trees}\label{c:ktrees}
 \section{Introduction}\label{s:intro}
 \subsection{$k$-trees}\label{ss:ktrees}
-
+Trees and their generalizations have the literature of combinatorial graph theory throughout its history.
+The multi-dimensional generalization to so-called `$k$-trees' has proved to be particularly fertile ground for both research problems and applications.
 
 The class $\mathfrak{a}_{k}$ of $k$-trees (for $k \in \mathbf{N}$) may be defined recursively:
 \begin{definition}
   \label{def:ktree}
   The complete graph on $k$ vertices ($K_{k}$) is a $k$-tree, and any graph formed by adding a single vertex to a $k$-tree and connecting that vertex by edges to some existing $k$-clique (that is, induced $k$-complete subgraph) of that $k$-tree is a $k$-tree.
-A \emph{hedron} of a $k$-tree is a $\pbrac{k+1}$-clique and a \emph{front} is a $k$-clique.
 \end{definition}
 
-However, we will frequently instead describe $k$-trees as assemblages of hedra attached along their fronts, keeping in mind that the structure of interest is graph-theoretic and not geometric.
-The recursive addition of a single vertex and its connection by edges to an existing $k$-clique is then interpreted as the attachment of a hedron to an existing one along some front, identifying the $k$ vertices they have in common.
+The graph-theoretic notion of $k$-trees was first introduced in 1968 in \cite{harpalm:acycsimp}; vertex-labeled $k$-trees were quickly enumerated in the following year in both \cite{moon:lktrees} and \cite{beinpipp:lktrees}.
+The special case $k=2$ has been especially thoroughly studied; enumerations are available in the literature for edge- and triangle-labeled $2$-trees in \cite{palm:l2trees}, for plane $2$-trees in \cite{palmread:p2trees}, and for unlabeled $2$-trees in \cite{harpalm:acycsimp} and \cite{harpalm:graphenum}.
+In 2001, the theory of species was brought to bear on $2$-trees in \cite{gessel:spec2trees}, resulting in more explicit formulas for the enumeration of unlabeled $2$-trees.
+An extensive literature on other properties of $k$-trees and their applications has also emerged; Beineke and Pippert claim in \cite{beinpipp:multidim} that ``[t]here are now over 100 papers on various aspects of $k$-trees''.
+However, no general enumeration of unlabeled $k$-trees appears in the literature to date.
+
+To begin, we establish two definitions for substructures of $k$-trees which we will use extensively in our analysis.
+\begin{definition}
+  \label{def:hedfront}
+  A \emph{hedron} of a $k$-tree is a $\pbrac{k+1}$-clique and a \emph{front} is a $k$-clique.
+\end{definition}
+We will frequently describe $k$-trees as assemblages of hedra attached along their fronts rather than using explicit graph-theoretic descriptions in terms of edges and vertices, keeping in mind that the structure of interest is graph-theoretic and not geometric.
+The recursive addition of a single vertex and its connection by edges to an existing $k$-clique in Definition \ref{def:ktree} is then interpreted as the attachment of a hedron to an existing one along some front, identifying the $k$ vertices they have in common.
 The analogy to the recursive definition of conventional trees is clear, and in fact the class $\mathfrak{a}$ of trees may be recovered by setting $k = 1$.
 For higher $k$, the structures formed are still distinctively tree-like; for example, $2$-trees are formed by gluing triangles together along their edges without forming loops of triangles (see Figure \ref{fig:ex2tree}), while $3$-trees are formed by gluing tetrahedra together along their triangular faces without forming loops of tetrahedra.
 
