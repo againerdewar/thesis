@@ -590,6 +590,7 @@ Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{
   \gci{\Gamma}{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
 \end{equation*}
 Thus, for each $n > 0$ and each permutation $\pi \in \symgp{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
+To simplify some future calculations, we omit empty graphs and define $\specname{BC} \sbrac{\varnothing} = \varnothing$.
 We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$.
@@ -762,7 +763,7 @@ Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     \label{eq:tcibc}
-    \gci{\symgp{2}}{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n \geq 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
+    \gci{\symgp{2}}{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n > 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
   \end{equation}
 \end{theorem}
 
@@ -770,9 +771,9 @@ Therefore we conclude:
 As noted in the introduction of this section, we may pass from bicolored to bipartite graphs by taking a quotient under the color-reversing action of $\symgp{2}$ only in the connected case.
 Thus, we must pass from the species $\specname{BC}$ to the species $\specname{CBC}$ of connected bicolored graphs to continue.
 It is a standard principle of graph enumeration that a graph may be decomposed uniquely into (and thus species-theoretically identified with) the set of its connected components.
-We must, of course, require that the set structure is nonempty to ensure well-definedness.
+We must, of course, require that the component structures are nonempty to ensure well-definedness, as discussed in \S \ref{s:specalg}.
 This same relationship holds in the case of bicolored graphs.
-Thus, the species $\specname{BC}$ of bicolored graphs is the composition of the species $\specname{CBC}$ of connected bicolored graphs into the species $\specname{E}^{+} = \specname{E} - 1$ of nonempty sets:
+Thus, the species $\specname{BC}$ of nonempty bicolored graphs is the composition of the species $\specname{CBC}$ of nonempty connected bicolored graphs into the species $\specname{E}^{+} = \specname{E} - 1$ of nonempty sets:
 \begin{equation} \specname{BC} = \specname{E}^{+} \circ \specname{CBC} \label{eq:bcdecomp} \end{equation}
 
 Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\symgp{2}$-species by applying the trivial action, equation \eqref{eq:bcdecomp} holds as an identity of $\symgp{2}$-species for the color-reversing $\symgp{2}$-action described previously.
@@ -851,9 +852,6 @@ We have already calculated the cycle index for the species $\specname{CBP}$, so 
 A generating function for labeled bipartite blocks was given in \cite{harrob:bipblocks}, where their analogue of equation \eqref{eq:nbpexp} for the labeled exponential generating function for blocks comes from \cite{forduhl:combprob1}.
 However, we could locate no corresponding unlabeled enumeration in the literature.
 The numbers of labeled and unlabeled nonseparable bipartite graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:nbp}.
-
-\section{Unlabeled enumeration and the generating function $\widetilde{\specname{NBP}} \pbrac{x}$}
-TODO: Write this!
 
 \chapter{The species of $k$-trees}\label{c:ktrees}
 \section{Introduction}\label{s:intro}
