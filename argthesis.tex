@@ -1126,49 +1126,49 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
     \SetGraphUnit{1.5}
     \GraphInit[vstyle=normal]
 
-    \Vertex[style=fnode]{4}
+    \Vertex[style=ynode]{4}
 
 
-    \SOWE[style=hnode](4){B}
+    \SOWE[style=xnode](4){B}
     \cyccwr{(B)};
     \Edge(4)(B)
 
-    \WE[style=fnode](B){5}
+    \WE[style=ynode](B){5}
     \Edge(B)(5)
 
-    \SOEA[style=fnode](B){2}
+    \SOEA[style=ynode](B){2}
     \Edge(B)(2)
 
 
-    \NOWE[style=hnode](4){D}
+    \NOWE[style=xnode](4){D}
     \cyccwr{(D)};
     \Edge(4)(D)
     
-    \WE[style=fnode](D){1}
+    \WE[style=ynode](D){1}
     \Edge(D)(1)
 
-    \NOEA[style=fnode](D){6}
+    \NOEA[style=ynode](D){6}
     \Edge(D)(6)
 
 
-    \EA[style=hnode](4){C}
+    \EA[style=xnode](4){C}
     \cycccwr{(C)};
     \Edge(4)(C)
 
-    \SOEA[style=fnode](C){9}
+    \SOEA[style=ynode](C){9}
     \Edge(C)(9)
 
-    \NOEA[style=fnode](C){3}
+    \NOEA[style=ynode](C){3}
     \Edge(C)(3)
 
-    \NO[style=hnode](3){A}
+    \NO[style=xnode](3){A}
     \cyccwl{(A)};
     \Edge(3)(A)
 
-    \NOWE[style=fnode](A){8}
+    \NOWE[style=ynode](A){8}
     \Edge(A)(8)
 
-    \NOEA[style=fnode](A){7}
+    \NOEA[style=ynode](A){7}
     \Edge(A)(7)
     
   \end{tikzpicture}
@@ -1221,7 +1221,7 @@ See Figure \ref{fig:ctxconst} for an example of this construction.
     \pgfmathparse{180/\numfronts}
     \let\childshift\pgfmathresult
 
-    \node [style=hnode] (root) at (0,0) {$X$};   
+    \node [style=xnode] (root) at (0,0) {$X$};   
     \cycccwr{(root)};
 
     \draw (180/\numfronts:1) node {$\specname{C}_{\numfronts}$};
@@ -1230,7 +1230,7 @@ See Figure \ref{fig:ctxconst} for an example of this construction.
       \pgfmathparse{360*\i/\numfronts}
       \let\theta\pgfmathresult     
       
-      \node [style=fnode] (child\i) at (\theta:3) {$Y$};
+      \node [style=ynode] (child\i) at (\theta:3) {$Y$};
       \path [draw] (root) -- (child\i);
       \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
 
@@ -1266,7 +1266,7 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
     \pgfmathparse{180/\numfronts}
     \let\childshift\pgfmathresult
 
-    \node [style=hnode] (root) at (0,0) {$X$};
+    \node [style=xnode] (root) at (0,0) {$X$};
     \draw[->,postaction={decorate},decoration={markings, mark = at position 1 with {\arrow{triangle 90}}}] (root) ++(2*\childshift:1cm) arc (2*\childshift:360:1cm); %What a mess! At least it works now...
 
     \draw (root) -- ++(0:3) [dashed] node [fill=white] {$\cdots$};
@@ -1277,7 +1277,7 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
       \pgfmathparse{360*\i/\numfronts}
       \let\theta\pgfmathresult     
       
-      \node [style=fnode] (child\i) at (\theta:3) {$Y$};
+      \node [style=ynode] (child\i) at (\theta:3) {$Y$};
       \path [draw] (root) -- (child\i);
       \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
 
@@ -1379,24 +1379,24 @@ As an aside, we note that, although the construction $\rho$ depends on $k$, in p
   \begin{tikzpicture}
     \SetGraphUnit{3.5}
 
-    \Vertex[style=hnode,Math=true]{v}
+    \Vertex[style=xnode,Math=true]{v}
     \cycccwr{(v)};
 
-    \EA[style=fnode](v){3}
+    \EA[style=ynode](v){3}
     \path (v) edge [bend right=45, thick] node [below](a3d){$i+a$} (3);
     \path (v) edge [bend left=45, thick] node [above](a3u){$\sigma \pbrac{i+a}$} (3);
     \path (a3d) edge [->, dashed, thick] node [auto]{$\sigma$} (a3u);
 
-    \WE[style=fnode](v){1}
+    \WE[style=ynode](v){1}
     \path (v) edge [bend left=45, thick] node [below](a1d){$i$} (1);
     \path (v) edge [bend right=45, thick] node [above](a1u){$\sigma \pbrac{i}$} (1);
     \path (a1d) edge [->, dashed, thick] node [auto]{$\sigma$} (a1u);
     
-    \WE[style=hnode, Math=true](1){v'}
+    \WE[style=xnode, Math=true](1){v'}
     \cyccwr{(v')};
     \path (v') edge [thick] node [auto](b1){$0$} (1);
 
-    \WE[style=fnode](v'){2}
+    \WE[style=ynode](v'){2}
     \path (v') edge [bend left=45, thick] node [below](b2d){$a$} (2);
     \path (v') edge [bend right=45, thick] node [above](b2u){$\sigma \pbrac{i+a} - \sigma \pbrac{i}$} (2);
     \path (b2d) edge [->, dashed, thick] node [auto]{$\rho_{i} \pbrac{\sigma}$} (b2u);
