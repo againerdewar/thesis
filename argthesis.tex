@@ -1203,14 +1203,48 @@ Moreover, $k$-coding trees are doubly-enriched bicolored trees as in \cite[\S 3.
 We thus will proceed in the following sections with a study of the species $\specname{CT}_{k}$, anticipating that any results we obtain will be of value to our efforts to enumerate $k$-trees.
 
 \subsection{Functional decomposition of $k$-coding trees}\label{ss:codecomp}
-TODO: Add some diagrams here.
-
 With the encoding $\beta: \vec{\mathfrak{a}}_{k} \to \specname{CT}_{k}$, we now have direct graph-theoretic access to the attaching structure of coherently-oriented $k$-trees.
 We therefore turn our attention to the $k$-coding trees themselves to produce a recursive decomposition.
 As with $k$-trees, we will study rooted versions of the species $\specname{CT}_{k}$ of $k$-coding trees first, anticipating that they later will be useful in a dissymmetry analysis.
 
 Adopting the standard species-theoretic notation for pointing, let $\pointed[X]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at black vertices, $\pointed[Y]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at white vertices, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at edges (that is, at adjacent black-white pairs).
 By construction, a $\pointed[X]{\specname{CT}}_{k}$-structure consists of a single $X$-label and a cyclically-ordered $\pbrac{k+1}$-set of $\pointed[Y]{\specname{CT}}_{k}$-structures.
+See Figure \ref{fig:ctxconst} for an example of this construction.
+
+\begin{figure}[htb]
+  \centering
+  \def\kval{4}
+  \begin{tikzpicture}
+    \pgfmathparse{int(1+\kval)} %int necessary for clean captions later
+    \let\numfronts\pgfmathresult
+
+    \pgfmathparse{180/\numfronts}
+    \let\childshift\pgfmathresult
+
+    \node [style=hnode] (root) at (0,0) {$X$};   
+    \cycccwr{(root)};
+
+    \draw (180/\numfronts:1) node {$\specname{C}_{\numfronts}$};
+
+    \foreach \i in {0, ..., \kval} {
+      \pgfmathparse{360*\i/\numfronts}
+      \let\theta\pgfmathresult     
+      
+      \node [style=fnode] (child\i) at (\theta:3) {$Y$};
+      \path [draw] (root) -- (child\i);
+      \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
+
+      \draw (child\i) ++(\theta:1cm) ++(180+\theta-\childshift:2cm) arc (180+\theta-\childshift:180+\theta+\childshift:2cm);
+
+      \path [draw] (child\i) -- ++(\theta:2) node [rotate=\theta,fill=white] {$\cdots$};
+      \path [draw] (child\i) -- ++(\theta+\childshift:2);
+      \path [draw] (child\i) -- ++(\theta-\childshift:2);
+    }
+    
+  \end{tikzpicture}
+  \caption{An example $\pointed[X]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex.}
+  \label{fig:ctxconst}
+\end{figure}
 
 Similarly, a $\pointed[Y]{\specname{CT}}_{k}$-structure essentially consists of a single $Y$-label and a (possibly empty) set of $\pointed[X]{\specname{CT}}_{k}$-structures, but with some modification.
 We do not wish to multiply-label the white vertex or attach new black children to it at this stage, so we must modify the descendant $\pointed[X]{\specname{CT}}_{k}$-structures to avoid this.
@@ -1220,6 +1254,44 @@ We note here for conceptual consistency that in fact $\specname{L}_{k} = \deriv{
 
 Finally, a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure is simply a $\pbrac{X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}}$-structure as described above (corresponding to the black vertex) combined with a $\pointed[Y]{\specname{CT}}_{k}$-structure (corresponding to the white vertex).
 For reasons that will become clear later, we note that we can combine the root white vertex into the linear order by making it last, thus representing a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure.
+See Figure \ref{fig:ctxyconst} for an example of this construction.
+
+\begin{figure}[htb]
+  \centering
+  \def\kval{4}
+  \begin{tikzpicture}
+    \pgfmathparse{int(1+\kval)} %int necessary for clean captions later
+    \let\numfronts\pgfmathresult
+
+    \pgfmathparse{180/\numfronts}
+    \let\childshift\pgfmathresult
+
+    \node [style=hnode] (root) at (0,0) {$X$};
+    \draw[->,postaction={decorate},decoration={markings, mark = at position 1 with {\arrow{triangle 90}}}] (root) ++(2*\childshift:1cm) arc (2*\childshift:360:1cm); %What a mess! At least it works now...
+
+    \draw (root) -- ++(0:3) [dashed] node [fill=white] {$\cdots$};
+
+    \draw (180/\numfronts:1) node {$\specname{L}_{\numfronts}$};
+
+    \foreach \i in {1, ..., \kval} {
+      \pgfmathparse{360*\i/\numfronts}
+      \let\theta\pgfmathresult     
+      
+      \node [style=fnode] (child\i) at (\theta:3) {$Y$};
+      \path [draw] (root) -- (child\i);
+      \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
+
+      \draw (child\i) ++(\theta:1cm) ++(180+\theta-\childshift:2cm) arc (180+\theta-\childshift:180+\theta+\childshift:2cm);
+
+      \path [draw] (child\i) -- ++(\theta:2) node [rotate=\theta,fill=white] {$\cdots$};
+      \path [draw] (child\i) -- ++(\theta+\childshift:2);
+      \path [draw] (child\i) -- ++(\theta-\childshift:2);
+    }
+    
+  \end{tikzpicture}
+  \caption{An example $\pointed[\overline{XY}]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex and the dashed edge adjoining it.}
+  \label{fig:ctxyconst}
+\end{figure}
 
 The various species of rooted $k$-coding threes are therefore related by a system of functional equations:
 \begin{theorem}
