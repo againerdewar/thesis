@@ -1641,9 +1641,6 @@ TODO: Write this!
 
 \appendix
 \chapter{Computation in species theory}\label{c:comp}
-\section{Cycle indices of recursively-defined species}\label{s:comprecurs}
-TODO: Write this!
-
 \section{Cycle indices of compositional inverse species}\label{s:compinv}
 In \S \ref{s:nbp}, our results included two references to the compositional inverse $\specname{CBP}^{\bullet \abrac{-1}}$ of the species $\specname{CBP}^{\bullet}$.
 Although we have not explored computational methods in depth here, the question of how to compute the cycle index of the compositional inverse of a specified species efficiently is worth some consideration.
@@ -1665,6 +1662,9 @@ All terms of degree up to two in this approximation will be correct.
 To compute the cycle index of $\Phi$ to degree $3$, we then take this new approximation $\Phi \approx X - \Psi_{2} \pbrac{X}$ and substitute it into the first three terms of equation \eqref{eq:compinv}.
 This process can be iterated as many times as are needed; to determine all terms of degree up to $n$ correctly, we need only iterate $n$ times.
 With appropriate optimizations (in particular, truncations), this method can run very quickly on a personal computer to reasonably high degrees; we were able to compute $\ci{\specname{CBP}^{\bullet \abrac{-1}}}$ to degree sixteen in thirteen seconds.
+
+\section{Cycle indices of recursively-defined species}\label{s:comprecurs}
+TODO: Write this!
 
 \chapter{Enumerative tables}\label{c:enum}
 \section{Bicolored and bipartite graphs}\label{s:bpenum}
