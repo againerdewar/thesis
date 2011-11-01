@@ -1416,10 +1416,10 @@ This procedure is depicted in Figure \ref{fig:rhoapp}.
 
 As an aside, we note that, although the construction $\rho$ depends on $k$, the value of $k$ will be fixed in any given context, so we suppress it in the notation.
 
-In cases where $\sigma$ is applied to a non-root black vertex $v$, the $\sigma \in \symgp{k+1}$ such that $\sigma \pbrac{k+1} \neq k+1$ will not be automorphisms at all, since such $\sigma$ will disturb the edge from $v$ to its parent white vertex.
-In these cases, the subgroup of $\symgp{k+1}$ isomorphic to $\symgp{k}$ containing all $\sigma$ such that $\sigma \pbrac{k+1} = k+1$ will be the group of interest, so we will at times speak instead of an $\symgp{k}$-action.
-$\symgp{k}$, understood as a subgroup of $\symgp{k+1}$ in this fashion, will act purely by isomorphisms on the orientations of non-root black vertices, and its orbits will indeed correspond to all the orientations of the associated $k$-tree structures.
-We will abuse notation somewhat by having $\rho$ act on elements of both $\symgp{k}$ and $\symgp{k+1}$, relying on context to make clear what is the ambient group.
+Any $\sigma$ which is to be applied to a non-root black vertex $v$ must of course fix $k+1$.
+We let $\Delta: \symgp{k} \to \symgp{k+1}$ denote the obvious embedding; then the image of $\Delta$ is exactly the set of $\sigma \in \symgp{k+1}$ which fix $k+1$.
+We then have an action of $\symgp{k}$ on non-root black vertices induced by $\Delta$.
+(Equivalently, we can think of $\symgp{k}$ as the subgroup of $\symgp{k+1}$ of permutations fixing $k+1$, but the explicit notation $\Delta$ will be of use in later formulas.)
 
 In light of Theorem \ref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
 In the case of a $Y$-rooted $k$-coding tree $T$, we simply declare that each $\sigma \in \symgp{k}$ acts on $T$ by acting directly on each of the black vertices immediately adjacent to the root and then applying $\rho$-derived permutations recursively to their descendants.
