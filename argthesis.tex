@@ -1345,9 +1345,10 @@ We have noted previously that every labeled $k$-tree admits exactly $k!$ coheren
 Thus, there are $k!$ distinct $k$-coding trees associated to each labeled $k$-tree, which differ only in the $\specname{C}_{k+1}$-structures on their black vertices.
 Consider a rooted $k$-coding tree $T$ and a black vertex $v$ which is not the root vertex.
 Then one white neighbor of $v$ is the `parent' of $v$ (in the sense that lies on the path from $v$ to the root).
-We thus can convert the cyclic order on the $k+1$ white neighbors of $v$ as a linear order by choosing the parent white neighbor to be last.
+We thus can convert the cyclic order on the $k+1$ white neighbors of $v$ to a linear order by choosing the parent white neighbor to be last.
 There is a natural, transitive, label-independent action of $\symgp{k+1}$ on the set of such linear orders which induces an action on the cyclic orders from which the linear orders are derived.
-If we apply the action of some $\sigma \in \symgp{k+1}$ to this linear order, however, we must also permute the cyclic orders of the descendant black vertices of $v$ in order to restore the coherency of the orientation of the component of the $k$-tree associated to $T$ corresponding to the structure descending from $v$.
+However, only elements of $\symgp{k+1}$ which fix $k+1$ will respect the structure around the black vertex we have chosen, since its parent white vertex must remain last.
+Also, if we apply the action of some $\sigma \in \symgp{k+1}$ to this linear order, we must also permute the cyclic orders of the descendant black vertices of $v$ in order to restore the coherency of the orientation of the component of the $k$-tree associated to $T$ corresponding to the structure descending from $v$.
 
 As noted in \S \ref{ss:symbreak}, there does exist a (unique) choice of orientation for each descendant which restores orientation coherency.
 By linearizing the cyclic orders of the descendants as we did for the initial black vertex, we can interpret them as linear orders as well, and thus interpret the map that sends a given orientation to its post-$\sigma$ version as another permutation in $\symgp{k+1}$.
