@@ -1295,8 +1295,8 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
 \end{figure}
 
 The various species of rooted $k$-coding threes are therefore related by a system of functional equations:
-\begin{theorem}
-  \label{thm:funcdecompct}
+\begin{observation}
+  \label{obs:funcdecompct}
   For the (ordinary) species $\pointed[X]{\specname{CT}}_{k}$ of $X$-rooted $k$-coding trees, $\pointed[Y]{\specname{CT}}_{k}$ of $Y$-rooted $k$-coding trees, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees, we have the functional relationships
   \begin{subequations}
     \label{eq:ctfunc}
@@ -1307,7 +1307,7 @@ The various species of rooted $k$-coding threes are therefore related by a syste
     \end{align}
   \end{subequations}
   as isomorphisms of ordinary species.
-\end{theorem}
+\end{observation}
 
 However, a recursive characterization of the various ordinary species of $k$-coding trees is insufficient to characterize the species of $k$-trees itself, since $k$-coding trees represent $k$-trees with coherent orientations.
 
@@ -1422,7 +1422,7 @@ In these cases, the subgroup of $\symgp{k+1}$ isomorphic to $\symgp{k}$ containi
 $\symgp{k}$, understood as a subgroup of $\symgp{k+1}$ in this fashion, will act purely by isomorphisms on the orientations of non-root black vertices, and its orbits will indeed correspond to all the orientations of the associated $k$-tree structures.
 We will abuse notation somewhat by having $\rho$ act on elements of both $\symgp{k}$ and $\symgp{k+1}$, relying on context to make clear what is the ambient group.
 
-In light of Theorem \ref{thm:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
+In light of Theorem \ref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
 In the case of a $Y$-rooted $k$-coding tree $T$, we simply declare that each $\sigma \in \symgp{k}$ acts on $T$ by acting directly on each of the black vertices immediately adjacent to the root and then applying $\rho$-derived permutations recursively to their descendants.
 Each orbit under this action then corresponds to all the coherent orientations of a single $Y$-rooted $k$-tree.
 The same $\symgp{k}$-action serves equally well for edge-rooted $k$-coding trees, where (for purposes of applying the action of some $\sigma$) we can simply ignore the black vertex in the root.
@@ -1440,7 +1440,7 @@ We will make explicit reference to $\pointed[\overline{XY}]{\specname{CT}}_{k}$ 
 As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\specname{CT}_{k}$ to the various ordinary species forms of generic rooted $k$-trees in Theorem \ref{thm:dissymk}:
 \begin{theorem}
   \label{thm:arootquot}
-  For the various rooted forms of the ordinary species $\mathfrak{a}_{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\specname{CT}_{k}$ as in Theorem \ref{thm:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
+  For the various rooted forms of the ordinary species $\mathfrak{a}_{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\specname{CT}_{k}$ as in Theorem \ref{obs:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
   \begin{subequations}
     \label{eq:arootquot}
     \begin{align}
@@ -1484,7 +1484,7 @@ From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
 
 We thus need only calculate the various $\Gamma$-cycle indices for the $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ to complete our enumeration of general $k$-trees.
 
-In Theorem \ref{thm:funcdecompct}, the functional equations for the ordinary species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ both include terms of the form $\specname{L}_{k} \circ \pointed[Y]{\specname{CT}}_{k}$.
+In Theorem \ref{obs:funcdecompct}, the functional equations for the ordinary species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ both include terms of the form $\specname{L}_{k} \circ \pointed[Y]{\specname{CT}}_{k}$.
 The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in Definition \ref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\pointed[Y]{\specname{CT}}_{k}$-structures in these recursive decompositions.
 Recall from \S \ref{s:quot} that, for two $\Gamma$-species $F$ and $G$, an element $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure (colloquially, `an $F$-structure of $G$-structures') by acting independently on the $F$-structure and each of the $G$-structures independently.
 In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant $\pointed[Y]{\specname{CT}}_{k}$-structures are \emph{not} independent---they depend on the position of the structure in the linear ordering around the parent black vertex.
@@ -1615,7 +1615,7 @@ We note here some simplifications that are possible when $k$ is small.
 When $k = 1$, an $\mathfrak{a}_{k}$-structure is merely an ordinary tree with $X$-labels on its edges and $Y$-labels on its vertices.
 There is no internal symmetry of the form that the actions of $\symgp{k}$ are intended to break.
 The actions of $\symgp{2}$ act on ordinary trees rooted at a \emph{directed} edge, with the nontrivial element $\tau \in \symgp{2}$ acting by reversing this orientation.
-The resulting decomposition from the dissymmetry theorem \ref{thm:dissymk} and the recursive functional equations of Theorem \ref{thm:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
+The resulting decomposition from the dissymmetry theorem \ref{thm:dissymk} and the recursive functional equations of Theorem \ref{obs:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
 
 \subsection{$2$-trees}
 When $k=2$, there is a nontrivial symmetry at fronts (edges); two triangles may be joined at an edge in two distinct ways.
