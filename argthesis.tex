@@ -1348,24 +1348,28 @@ Then one white neighbor of $v$ is the `parent' of $v$ (in the sense that lies on
 We thus can convert the cyclic order on the $k+1$ white neighbors of $v$ to a linear order by choosing the parent white neighbor to be last.
 There is a natural, transitive, label-independent action of $\symgp{k+1}$ on the set of such linear orders which induces an action on the cyclic orders from which the linear orders are derived.
 However, only elements of $\symgp{k+1}$ which fix $k+1$ will respect the structure around the black vertex we have chosen, since its parent white vertex must remain last.
-Also, if we apply the action of some $\sigma \in \symgp{k+1}$ to this linear order, we must also permute the cyclic orders of the descendant black vertices of $v$ in order to restore the coherency of the orientation of the component of the $k$-tree associated to $T$ corresponding to the structure descending from $v$.
 
-As noted in \S \ref{ss:symbreak}, there does exist a (unique) choice of orientation for each descendant which restores orientation coherency.
-By linearizing the cyclic orders of the descendants as we did for the initial black vertex, we can interpret them as linear orders as well, and thus interpret the map that sends a given orientation to its post-$\sigma$ version as another permutation in $\symgp{k+1}$.
-It is clear that, for each immediate black descendant $v'$ of $v$, the permutation $\sigma'$ applied to the linear order of the white children of $v'$ will be determined by the initial permutation $\sigma$ and by the position $i$ of the white vertex joining $v$ to $v'$ in the initial linear ordering at $v$.
-In particular, this permutation $\sigma'$ is precisely that induced by passing over the mirror bijection from $v'$ to $v$, applying $\sigma$, and then passing back.
+In addition, if we simply apply the action of some $\sigma \in \symgp{k+1}$ to the order on white neighbors of $v$, we change the coherently-oriented $k$-tree $\beta^{-1} \pbrac{T}$ to which $T$ is associated in such a way that it no longer corresponds to the same unoriented $k$-tree.
+Let $t$ denote the unoriented $k$-tree associated to $\beta^{-1} \pbrac{T}$; then there exists a coherent orientation of $t$ which agrees with orientation around $v$ induced by $\sigma$.
+The $k$-coding tree $T'$ corresponding to this new coherent orientation has the same underlying bicolored tree as $T$ but possibly different orders around its black vertices.
+If we think of the $k$-coding tree $T'$ as the image of $T$ under a global action of $\sigma$, orbits under all of $\symgp{}$ will be precisely the classes of $k$-coding trees corresponding to all coherent orientations of specified $k$-trees, allowing us to study unoriented $k$-trees as quotients.
+The orientation of $T'$ will be that obtained by applying $\sigma$ at $v$ and then recursively adjusting the other cyclic orders so that fronts which were mirror are made mirror again.
+This will ensure that the combinatorial structure of the underlying $k$-tree $t$ is preserved.
+
+Therefore, when we apply some permutation $\sigma \in \symgp{k+1}$ to the white neighbors of a black vertex $v$, we must also permute the cyclic orders of the descendant black vertices of $v$.
+In particular, the permutation $\sigma'$ which must be applied to some immediate black descendant $v'$ of $v$ is precisely the permutation on the linear order of white neighbors of $v'$ induced by passing over the mirror bijection from $v'$ to $v$, applying $\sigma$, and then passing back.
 We can express this procedure in formulaic terms:
 \begin{theorem}
   \label{thm:rhodef}
-  If a permutation $\sigma \in \symgp{k+1}$ is applied to linearized orientation of a black vertex $v$ in rooted $k$-coding tree, the permutation which must be applied to the linearized orientation a child black vertex $v'$ which was attached to the $i$th white child of $v$ (with respect to the linear ordering induced by the orientation) to preserve the coherence of the associated $k$-tree is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map
+  If a permutation $\sigma \in \symgp{k+1}$ is applied to linearized orientation of a black vertex $v$ in rooted $k$-coding tree, the permutation which must be applied to the linearized orientation a child black vertex $v'$ which was attached to the $i$th white child of $v$ (with respect to the linear ordering induced by the orientation) to preserve the mirror relation is $\rho_{i} \pbrac{\sigma}$, where $\rho_{i}$ is the map given by
   \begin{equation}
     \label{eq:rhodef}
     \rho_{i} \pbrac{\sigma}: a \mapsto \sigma \pbrac{i + a} - \sigma \pbrac{i}
   \end{equation}
-  where all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$.
+  in which all sums and differences are reduced to their representatives modulo $k+1$ in $\cbrac{1, 2, \dots, k+1}$.
 \end{theorem}
 \begin{proof}
-  Let $v$ denote the base black vertex and $v'$ denote an immediate black descendant, which is attached to $v$ by the white vertex $1$, which we suppose to be in position $i$ in the linear order induced by the original orientation of $v$.
+  Let $v'$ denote a black vertex which is attached to $v$ by the white vertex $1$, which we suppose to be in position $i$ in the linear order induced by the original orientation of $v$.
   Let $2$ denote the white child of $v'$ which is $a$th in the linear order induced by the original orientation around $v'$.
   It is mirror to the white child $3$ of $v$ which is $\pbrac{i+a}$th in the linear order induced by the original orientation around $v$.
   After the action of $\sigma$ is applied, vertex $3$ is $\sigma \pbrac{i+a}$th in the new linear order around $v$.
