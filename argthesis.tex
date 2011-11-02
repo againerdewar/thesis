@@ -1491,14 +1491,15 @@ First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\point
   \label{lem:ctyinvar}
   Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$.
   Let $W_{i}$ be the $\pointed[Y]{\specname{CT}}_{k}$-structure in the $i$th position in the linear order.
-  Then some $\sigma \in \symgp{k}$ acts as an automorphism of $B$ if and only if, for each $i \in \sbrac{k+1}$, we have $\rho_{i} \pbrac{\sigma} W_{i} \cong W_{\sigma \pbrac{i}}$.
+  Then some $\sigma \in \symgp{k}$ acts as an automorphism of $B$ if and only if, for each $i \in \sbrac{k+1}$, we have $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}} W_{i} \cong W_{\sigma \pbrac{i}}$.
 \end{lemma}
 
 \begin{proof}
-  The $X$-label on the black root of $B$ is not affected by the application of $\sigma$, so it imposes no conditions.
-  However, the $\specname{L}_{k}$-structure on the white children of the root is permuted by $\sigma$, and we apply to each of the $W_{i}$'s the action of $\rho_{i} \pbrac{\sigma}$.
-  Thus, $\sigma$ is an automorphism of $B$ if and only if the combination of applying $\sigma$ to the linear order and $\rho_{i} \pbrac{\sigma}$ to each $W_{i}$ is an automorphism.
-  Since $\sigma$ `carries' each $W_{i}$ onto $W_{\sigma \pbrac{i}}$, we must have that $\rho_{i} \pbrac{\sigma} W_{i} \cong W_{\sigma \pbrac{i}}$, as claimed.
+  Recall that the action of $\sigma \in \symgp{k}$ is in fact the action of $\Delta \sigma \in \symgp{k+1}$.
+  The $X$-label on the black root of $B$ is not affected by the application of $\Delta \sigma$, so no conditions on $\sigma$ are necessary to accommodate it.
+  However, the $\specname{L}_{k}$-structure on the white children of the root is permuted by $\Delta \sigma$, and we apply to each of the $W_{i}$'s the action of $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$.
+  Thus, $\sigma$ is an automorphism of $B$ if and only if the combination of applying $\Delta \sigma$ to the linear order and $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ to each $W_{i}$ is an automorphism.
+  Since $\sigma$ `carries' each $W_{i}$ onto $W_{\sigma \pbrac{i}}$, we must have that $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}} W_{i} \cong W_{\sigma \pbrac{i}}$, as claimed.
   That this suffices is clear.
 \end{proof}
 
