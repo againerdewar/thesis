@@ -229,13 +229,25 @@ We use the disjoint union to avoid the complexities of dealing with cases where 
 \begin{theorem}\label{thm:specsumci}
   For species $F$ and $G$, the cycle index of their sum is
   \begin{equation}
-    % \label{eq:specsumci}
-    % \ci{F + G} = \ci{F} + \ci{G}.
+    \label{eq:specsumci}
+    \ci{F + G} = \ci{F} + \ci{G}.
   \end{equation}
 \end{theorem}
 
-We note that it is not in general possible to subtract species, as can readily be seen by considering a case of two species $F$ and $G$ where $\abs{F \sbrac{A}} < \abs{G \sbrac{A}}$ for some set $A$.
-However, species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\mathbf{0}: A \mapsto \varnothing$ is an additive identity, so species with addition form an abelian monoid, which can be completed to create the abelian group of \emph{virtual species}.
+In the case that $F = G_{1} + G_{2}$, we can simply invert the equation and write $F - G_{2} = G_{1}$.
+However, we may instead wish to study the species $F - G$ without first writing $F$ as a sum.
+In the spirit of the definition of species addition, we wish to define the species subtraction $F - G$ as the species of $F$-structures that `are not' $G$-structures.
+For slightly more generality, we may apply the notions of Definition \ref{def:specmaptypes}:
+\begin{definition}
+  \label{def:specdif}
+  For two species $F$ and $G$ with a species embedding $\phi: G \to F$, define their \emph{difference with respect to $\phi$} to be the species $F \stackrel{\phi}{-} G$ given by $\pbrac{F \stackrel{\phi}{-} G} \sbrac{A} = F \sbrac{A} - \phi \pbrac{G \sbrac{A}}$.
+  When there is no ambiguity about the choice of embedding $\phi$, especially in the case that $G$ has a combinatorially natural embedding in $F$, we may instead simply write $F - G$ and call this species their \emph{difference}.
+\end{definition}
+
+For example, for $\specname{G}$ the species of graphs and $\mathfrak{a}$ the species of trees, we have that $\specname{G} - \mathfrak{a}$ is the species of graphs with cycles.
+
+We note also that species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\mathbf{0}: A \mapsto \varnothing$ is an additive identity, so species with addition form an abelian monoid.
+This can be completed to create the abelian group of \emph{virtual species}, in which the subtraction $F - G$ of arbitrary species is defined; the two definitions in fact agree where our definition applies.
 We will not delve into the details of virtual species theory here, directing the reader instead to \cite[\S 2.5]{bll:species}.
 
 \begin{definition}\label{thm:specprod}
