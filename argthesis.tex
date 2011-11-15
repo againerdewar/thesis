@@ -121,12 +121,13 @@ Accordingly, we (generally) need not concern ourselves with the details of the s
 Moreover, the permutation group $\symgp{A}$ on any given set $A$ acts by self-bijections of $A$ and induces \emph{automorphisms} of $F$-structures for a given species $F$.
 The orbits of $F$-structures on $A$ under the induced action of $\symgp{A}$ are then exactly the `unlabeled' structures of the class $F$, such as unlabeled graphs.
 
-Finally, we note that it is sometimes natural to say that two \emph{species} are in fact `the same'.
-It is not sufficient, of course, for the classes of $F$- and $G$-structures on each set $A$ to have the same cardinality; two such species could still have very different combinatorial structure.
-However, if in addition to having the same cardinality, $F \sbrac{A}$ and $G \sbrac{A}$ have the same automorphism structure for all sets $A$, it seems more reasonable to claim $F$ and $G$ are \emph{combinatorially} equivalent.
-The appropriate formalization again is most easily framed in categorical language:
-\begin{definition}\label{def:speciso}
-  Two species $F$ and $G$ are \emph{isomorphic} if there exists a natural transformation $\phi: F \to G$ which induces isomorphisms on structures; in other words, if there exists a family of bijections $\phi_{A}: F \sbrac{A} \to G \sbrac{A}$ (for all sets $A$) such that, for all bijections $\sigma: A \to B$, the following diagram commutes:
+Finally, we note that it is often natural to speak of maps between classes of combinatorial structures, and that these maps are sometimes combinatorially `natural'.
+For example, we might wish to map the species of trees into the species of general graphs by embedding; to map the species of connected bicolored graphs to the species of connected bipartite graphs by forgetting some color information; or the species of graphs to the species of sets of connected graphs by identification.
+These maps are all `natural' in the sense that they are explicitly structural and do not reference labels; thus, at least at a conceptual level, they are compatible with the motivating ideas of species.
+We can formalize this notion in the language of categories:
+\begin{definition}
+  \label{def:specmap}
+  Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association of each set $A \in \catname{Bij}$ to a set map $\phi_{A} \in \catname{Set}$ such that the following diagram commutes:
   \begin{equation*}
     \begin{tikzpicture}[every node/.style={auto}]
       \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
@@ -141,8 +142,20 @@ The appropriate formalization again is most easily framed in categorical languag
       (m-2-1) edge node {$\phi_{B}$} (m-2-2);
     \end{tikzpicture}
   \end{equation*}
+  We call the set map $\phi_{A}$ the \emph{$A$ component of $\phi$}.
+\end{definition}
+
+Such species maps may capture the idea that two species are essentially `the same' or that one `contains' or `sits inside' another.
+\begin{definition}
+  \label{def:specmaptypes}
+  Let $F$ and $G$ be species and $\phi: F \to G$ a species map between them.
+  In the case that the components $\phi_{A}$ are all bijections, we say that $\phi$ is a \emph{species isomorphism} and that $F$ and $G$ are \emph{isomorphic}.
+  In the case that the components $\phi_{A}$ are all injections, we say that $\phi$ is a \emph{species embedding} and that $F$ \emph{embeds in} $G$ (denoted $\phi: F \hookrightarrow G$).
+  Likewise, in the case that the components $\phi_{A}$ are all surjections, we say that $\phi$ is a \emph{species covering} and that $F$ \emph{covers} $G$ (denoted $\phi: F \twoheadrightarrow G$).
 \end{definition}
 In the case that $F$ and $G$ are isomorphic species, we will often simply write $F = G$, since they are combinatorially equivalent; some authors instead use $F \simeq G$, reserving the notation of equality for the much stricter case that additionally requires that $F \sbrac{A} = G \sbrac{A}$ as sets for all $A$.
+
+In the previous examples, then, we have that the species of trees embeds in the species of graphs; the species of connected bicolored graphs covers the species of connected bipartite graphs; and the species of graphs is isomorphic to the species of sets of connected graphs.
 
 \section{Cycle indices and species enumeration}\label{s:cycind}
 We now associate to the categorical theory of species an enumerative mechanism---a special power series which keeps track of all the automorphism structure of the species:
