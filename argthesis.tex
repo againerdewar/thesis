@@ -384,28 +384,29 @@ To make sense of differentiation and pointing, we need only specify a sort from 
 Making sense of the notion of composition in multisort species is highly context-dependent; we note here only that, when $F$ is a $1$-sort species and $G$ a $k$-sort species, the construction of the $k$-sort species $F \circ G$ is natural. 
 
 \section{$\Gamma$-species and quotient species}\label{s:quot}
-It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structure under the action of a group.
-If we hope to integrate this concept into the theory of species, we must at least demand that the action of a group $\Gamma$ on a species $F$ be compatible with the transport of structures in the sense that transport of structures is equivariant under the $\Gamma$-action, or, equivalently, for which the actions of $\symgp{n}$ (on labels) and $\Gamma$ on all $F$-structures commute.
-Informally, this is the requirement that $\Gamma$ acts on $F$-structures in a way that is independent of labelings.
-We incorporate such transport-compatible actions into a new definition:
+It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structures $F$ under the action of a group $\Gamma$.
+In some cases, this group action will be \emph{structural} in the sense that it commutes with permutations of labels in the species $F$, or, informally, that it is independent of the choice of labelings on each $F$-structure.
+This is exactly the condition that each $\gamma \in \Gamma$ acts by a species isomorphism $\gamma: F \to F$ in the sense of Definition \ref{def:specmaptypes}.
+We incorporate such species-compatible actions into a new definition:
 \begin{definition}
   \label{def:gspecies}
-  For $\Gamma$ a group, a $\Gamma$-species $F$ is a species $F$ together with an action of $\Gamma$ on $F$-structures which commutes with transport of structures---that is, for which the whole diagram
+  For $\Gamma$ a group, a \emph{$\Gamma$-species} $F$ is a combinatorial species $F$ together with an action of $\Gamma$ on $F$-structures by species isomorphisms.
+  Explicitly, for $F$ a $\Gamma$-species, the following diagram commutes:
   \begin{equation*}
     \begin{tikzpicture}[every node/.style={auto}]
       \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
       {
-        A & F \sbrac{A} & \gamma \cdot F \sbrac{A} \\
-        B & F \sbrac{B}  & \gamma \cdot F \sbrac{B} \\
+        A & F \sbrac{A} & F \sbrac{A} \\
+        B & F \sbrac{B}  & F \sbrac{B} \\
       };
       \path[->]
       (m-1-1) edge node[below] {$F$} (m-1-2)
       edge node {$\sigma$} (m-2-1)
-      (m-1-2) edge node[below] {$\gamma$} (m-1-3)
+      (m-1-2) edge node[below] {$\gamma_{A}$} (m-1-3)
       edge node {$F \sbrac{\sigma}$} (m-2-2)
       (m-1-3) edge node {$F \sbrac{\sigma}$} (m-2-3)
       (m-2-1) edge node {$F$} (m-2-2)
-      (m-2-2) edge node {$\gamma$} (m-2-3);
+      (m-2-2) edge node {$\gamma_{B}$} (m-2-3);
     \end{tikzpicture}
   \end{equation*}
   commutes for every $\gamma \in \Gamma$.
@@ -418,33 +419,8 @@ For such a species, of course, it is then meaningful to pass to the quotient:
   For $F$ a $\Gamma$-species, define $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of $F$-structures.
 \end{definition}
 
-Simply because $\nicefrac{F}{\Gamma}$ is a species, we have transport of a bijection $\sigma: A \to B$ to a bijection $\nicefrac{F}{\Gamma} \sbrac{\sigma}: \nicefrac{F}{\Gamma} \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{B}$. However, from the diagram above, we also have that
-\begin{equation*}
-  \begin{tikzpicture}[every node/.style={auto}]
-    \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
-    {
-      A & F \sbrac{A} & \nicefrac{F}{\Gamma} \sbrac{A} \\
-      B & F \sbrac{B}  & \nicefrac{F}{\Gamma} \sbrac{B} \\
-    };
-    \path[->]
-    (m-1-1) edge node[below] {$F$} (m-1-2)
-    edge node {$\sigma$} (m-2-1)
-    (m-1-2) edge node[below] {$\action{\Gamma}$} (m-1-3)
-    edge node {$F \sbrac{\sigma}$} (m-2-2)
-    (m-1-3) edge node {$\nicefrac{F}{\Gamma} \sbrac{\sigma}$} (m-2-3)
-    (m-2-1) edge node {$F$} (m-2-2)
-    (m-2-2) edge node {$\action{\Gamma}$} (m-2-3);
-    
-    \path[->,bend left]
-    (m-1-1) edge node {$\nicefrac{F}{\Gamma}$} (m-1-3);
-
-    \path[->,bend right]
-    (m-2-1) edge node[below] {$\nicefrac{F}{\Gamma}$} (m-2-3);
-  \end{tikzpicture}
-\end{equation*}
-commutes.
-Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a natural transformation, given that we have defined the species $F$ as a functor $F: \catname{Bij} \to \catname{Set}$.
-If instead we adopt the more common definition of a species as a functor $F: \catname{Bij} \to \catname{Bij}$, the maps denoted $\action{\Gamma}$ above are not in the target category $\catname{Bij}$, so passage to the $\Gamma$-quotient is no longer a natural transformation.
+Then, for each label set $A$, the map $\action{\Gamma} \sbrac{A}: F \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{A}$ is an injection, and the requirement that $\Gamma$ acts by natural transformations implies that $\action{\Gamma}: F \to \nicefrac{F}{\Gamma}$ is a natural transformation.
+Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a species cover in the sense of Definition \ref{def:specmaptypes}.
 
 A brief exposition of the notion of quotient species may be found in \cite[\S 3.6]{bll:species}, and a more thorough exposition (in French) in \cite{bous:species}.
 Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group.
