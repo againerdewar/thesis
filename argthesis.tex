@@ -1274,11 +1274,11 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
     \node [style=xnode] (root) at (0,0) {$X$};
     \draw[->,postaction={decorate},decoration={markings, mark = at position 1 with {\arrow{triangle 90}}}] (root) ++(2*\childshift:1cm) arc (2*\childshift:360:1cm); %What a mess! At least it works now...
 
-    \draw (root) -- ++(0:3) [dashed] node [fill=white] {$\cdots$};
+    \draw (root) -- ++(0:3) [ultra thick] node [fill=white] {};
 
     \draw (180/\numfronts:1) node {$\specname{L}_{\numfronts}$};
 
-    \foreach \i in {1, ..., \kval} {
+    \foreach \i in {0, ..., \kval} {
       \pgfmathparse{360*\i/\numfronts}
       \let\theta\pgfmathresult     
       
@@ -1294,7 +1294,7 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
     }
     
   \end{tikzpicture}
-  \caption[An example $\overline{XY}$-rooted $k$-coding tree]{An example $\pointed[\overline{XY}]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex and the dashed edge adjoining it.}
+  \caption[An example $\overline{XY}$-rooted $k$-coding tree]{An example $\pointed[\overline{XY}]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex and the thick edge adjoining it.}
   \label{fig:ctxyconst}
 \end{figure}
 
