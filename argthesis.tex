@@ -129,17 +129,17 @@ We can formalize this notion in the language of categories:
   \label{def:specmap}
   Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association of each set $A \in \catname{Bij}$ to a set map $\phi_{A} \in \catname{Set}$ such that the following diagram commutes:
   \begin{equation*}
-    \begin{tikzpicture}[every node/.style={auto}]
+    \begin{tikzpicture}[every node/.style={fill=white}]
       \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
       {
-        F \sbrac{A} & G \sbrac{A} \\
-        F \sbrac{B}  & G \sbrac{B} \\
+        F \sbrac{A} & F \sbrac{B} \\
+        G \sbrac{A}  & G \sbrac{B} \\
       };
-      \path[->]
-      (m-1-1) edge node {$\phi_{A}$} (m-1-2)
-      edge node {$F \sbrac{\sigma}$} (m-2-1)
-      (m-1-2) edge node {$G \sbrac{\sigma}$} (m-2-2)
-      (m-2-1) edge node {$\phi_{B}$} (m-2-2);
+      \path[->,font=\scriptsize]
+      (m-1-1) edge node {$\phi_{A}$} (m-2-1)
+      edge node {$F \sbrac{\sigma}$} (m-1-2)
+      (m-2-1) edge node {$G \sbrac{\sigma}$} (m-2-2)
+      (m-1-2) edge node {$\phi_{B}$} (m-2-2);
     \end{tikzpicture}
   \end{equation*}
   We call the set map $\phi_{A}$ the \emph{$A$ component of $\phi$}.
@@ -167,7 +167,7 @@ Explicitly, if $\phi$ is a species map, the diagram
          & A & B & \\
         G \sbrac{A} & & & G \sbrac{B} \\
       };
-      \path[->g,font=\scriptsize]
+      \path[->,font=\scriptsize]
       (m-1-1) edge node {$F \sbrac{\sigma}$} (m-1-4)
       edge node {$\phi_{A}$} (m-3-1)
       (m-1-4) edge node {$\phi_{B}$} (m-3-4)
