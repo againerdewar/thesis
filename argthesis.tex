@@ -1,7 +1,7 @@
-\documentclass[sectionflow,singlespace,twoside,boldmathhdr,draft]{brandiss} % Compactify for drafting (do *not* use these options for final submission!)
-% \documentclass[sectionflow,singlespace,twoside,boldmathhdr]{brandiss} % Pretty version for distribution (*not* for GSAS submission!)
-% \documentclass[online,boldmathhdr]{brandiss} % Online version (states that signature page is on file)
-% \documentclass[boldmathhdr]{brandiss} % Print version
+\documentclass[distribution,boldmathhdr,draft]{brandiss} % Compactify for drafting (do *not* use these options for final submission!)
+% \documentclass[distribution,boldmathhdr]{brandiss} % Pretty version for distribution (*not* for GSAS submission!)
+% \documentclass[online,submission,boldmathhdr]{brandiss} % Online version (states that signature page is on file)
+% \documentclass[submission,boldmathhdr]{brandiss} % Print version
 
 \usepackage{argthesis}
 
@@ -33,30 +33,28 @@
 % REQUIRED: Create the dissertation title page.
 \makedisstitle
 
-\begin{comment}
-  % REQUIRED: Create the signature page.  Add one line for each member
-  % of your dissertation committee, except for your advisor who is
-  % automatically added before the rest.
-  \begin{disssignatures}
-    \committeemember Second Member, Dept.~of Mathematics
-    \committeemember Third Member, Dept.~of Mathematics, Outside University
-  \end{disssignatures}
+% REQUIRED: Create the signature page.  Add one line for each member
+% of your dissertation committee, except for your advisor who is
+% automatically added before the rest.
+\begin{disssignatures}
+  \committeemember Second Member, Dept.~of Mathematics
+  \committeemember Third Member, Dept.~of Mathematics, Outside University
+\end{disssignatures}
 
-  \disscopyright % optional
+\disscopyright % optional
 
-  \begin{dissdedication}
-    A dedication is optional.
-  \end{dissdedication}
+\begin{dissdedication}
+  A dedication is optional.
+\end{dissdedication}
 
-  \begin{dissacknowledgments} % recommended
-    I wish to thank my advisor for her help and support.
+\begin{dissacknowledgments} % recommended
+  I wish to thank my advisor for her help and support.
 
-    I am grateful to the members of my dissertation defense committee.
-    
-    I owe thanks to the faculty, to my fellow students, and to the kind
-    and supportive staff of the Brandeis Mathematics Department.
-  \end{dissacknowledgments}
-\end{comment}
+  I am grateful to the members of my dissertation defense committee.
+  
+  I owe thanks to the faculty, to my fellow students, and to the kind
+  and supportive staff of the Brandeis Mathematics Department.
+\end{dissacknowledgments}
 
 % REQUIRED: The dissertation abstract.
 \begin{dissabstract}

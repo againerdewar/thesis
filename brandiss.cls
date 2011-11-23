@@ -16,6 +16,8 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesClass{brandiss}[2011/05/01 v1.1 Local LaTeX class]
 
+\RequirePackage{etoolbox}
+
 %**************************** Class Options  ************************
 
 %  uncompressed|compressed -> compressed or uncompressed [default] PDF.
@@ -23,46 +25,47 @@
 %  being produced.  If ``uncompressed'' is true, the PDF compression
 %  level is set to 0 just before document production begins.  And so
 %  ``compressed'' really means ``not uncompressed''.
-\newif\if@uncompressed
-\DeclareOption{uncompressed}{\@uncompressedtrue}
-\DeclareOption{compressed}{\@uncompressedfalse}
+\providetoggle{uncompressed}
+\DeclareOption{uncompressed}{\toggletrue{uncompressed}}
+\DeclareOption{compressed}{\togglefalse{uncompressed}}
 
 % sectionbreak|sectionflow -> break pages after sections or don't
 % If ''sectionbreak'' is true, add a \clearpage at the end of each section
-\newif\if@sectionbreak
-\DeclareOption{sectionbreak}{\@sectionbreaktrue}
-\DeclareOption{sectionflow}{\@sectionbreakfalse}
+\providetoggle{sectionbreak}
+\DeclareOption{sectionbreak}{\toggletrue{sectionbreak}}
+\DeclareOption{sectionflow}{\togglefalse{sectionbreak}}
 
 % singlespace|doublespace -> set spacing in relevant places
-\newif\if@dodoublespace
-\DeclareOption{singlespace}{\@dodoublespacefalse}
-\DeclareOption{doublespace}{\@dodoublespacetrue}
+\providetoggle{doublespace}
+\DeclareOption{singlespace}{\togglefalse{doublespace}}
+\DeclareOption{doublespace}{\toggletrue{doublespace}}
 
 % boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
-\newif\if@boldmathhdr
-\DeclareOption{boldmathhdr}{\@boldmathhdrtrue}
-\DeclareOption{normalmathhdr}{\@boldmathhdrfalse}
+\providetoggle{boldmathhdr}
+\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr}}
+\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr}}
 
-%  online|printed -> online or printed [default] submission.
+%  online|printed -> online or printed [default] submission
 %  Pass these options to the brandiss package.
 \DeclareOption{online}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
 \DeclareOption{printed}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
+
+%  distribution|submission -> distribution or submission [default] version
+\providetoggle{distrib}
+\DeclareOption{distribution}{\toggletrue{distrib} \PassOptionsToPackage{\CurrentOption}{brandiss}}
+\DeclareOption{submission}{\togglefalse{distrib} \PassOptionsToPackage{\CurrentOption}{brandiss}}
 
 %  Default Option: Pass all other options to the amsbook class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
 
 %  Default Setup:
-%  Use uncompressed option by default.
-\ExecuteOptions{uncompressed}
+\ExecuteOptions{uncompressed, normalmathhdr}
 
-% Use sectionbreak option by default.
-\ExecuteOptions{sectionbreak}
-
-% Use double spacing by default.
-\ExecuteOptions{doublespace}
-
-% Use normal math headers by default.
-\ExecuteOptions{normalmathhdr}
+\iftoggle{distrib}{
+  \ExecuteOptions{sectionflow, singlespace, twoside}
+}{
+  \ExecuteOptions{sectionbreak, doublespace, oneside}
+}
 
 % GSAS formatting requirements: 12 point font and one-sided printing.
 % Set up the amsbook class with these default options before option
@@ -78,7 +81,7 @@
 \LoadClass{amsbook}
 
 % Package brandiss provides front page commands.
-\RequirePackage{brandiss}[2004/05/05 v1.0 Standard LaTeX package]
+\RequirePackage{brandiss}[2004/05/05 v1.0 Local LaTeX package]
 
 % Package ifpdf provides the \ifpdf command.
 \RequirePackage{ifpdf}
@@ -97,7 +100,7 @@
 
 % GSAS formatting requirements: If a PDF document is produced, it
 % should not be compressed.
-\ifpdf\if@uncompressed\AtBeginDocument{\pdfcompresslevel=0}\fi\fi
+\ifpdf\iftoggle{uncompressed}{\AtBeginDocument{\pdfcompresslevel=0}}{}\fi
 
 % GSAS formatting requirements: The left margin is a minimum of 1.5in.
 % The top, bottom, and right margins are a minimum of 1in, except top
@@ -136,7 +139,7 @@
 % the whole document.  It also sets roman page numbering and plain
 % page style for the pages at the front of the dissertation.
 \renewcommand{\frontmatter}{%
-  \if@dodoublespace\doublespacing\fi
+  \iftoggle{doublespace}{\doublespacing}{}
   \cleardoublepage
   \pagenumbering{roman}
   \pagestyle{plain}
@@ -191,7 +194,7 @@
 
 \def\@makechapterhead#1{\global\topskip 7.5pc\relax
   \begingroup
-  \fontsize{\@xivpt}{18}\bfseries\centering\if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in chapter headings bold.
+  \fontsize{\@xivpt}{18}\bfseries\centering\iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in chapter headings bold.
     \ifnum\c@secnumdepth>\m@ne
       \leavevmode \hskip-\leftskip
       \rlap{\vbox to\z@{\vss
@@ -203,24 +206,24 @@
   \vskip\skip@ }
 \def\@makeschapterhead#1{\global\topskip 7.5pc\relax
   \begingroup
-  \fontsize{\@xivpt}{18}\bfseries\centering\if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in chapter headings bold.
+  \fontsize{\@xivpt}{18}\bfseries\centering\iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in chapter headings bold.
   #1\par \endgroup
   \skip@34\p@ \advance\skip@-\normalbaselineskip
   \vskip\skip@ }
 
-\def\section{\if@sectionbreak{\ifnum\c@section>0{\clearpage}\fi}\fi% %If sectionbreak is true, add a clearpage at the end of each section.
+\def\section{\iftoggle{sectionbreak}{\ifnum\c@section>0{\clearpage}\fi}{}% %If sectionbreak is true, add a clearpage at the end of each section.
   \@startsection{section}{1}%
   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
   {\normalfont%
     \bfseries%
     \centering%
-    \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in section headings bold.
+    \iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in section headings bold.
     }}
 \def\subsection{\@startsection{subsection}{2}%
   \normalparindent{.5\linespacing\@plus.7\linespacing}{-.5em}%
   {\normalfont%
     \bfseries%
-    \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in subsection headings bold.
+    \iftoggle{boldmathhdr}{ \expandafter \boldmath }{}% %If boldmathhdr is true, make mathematics in subsection headings bold.
   }}
 \def\subsubsection{\@startsection{subsubsection}{3}%
   \normalparindent\z@{-.5em}%

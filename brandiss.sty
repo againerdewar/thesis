@@ -18,21 +18,33 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{brandiss}[2004/05/05 v1.0 Local LaTeX package]
 
+\RequirePackage{etoolbox}
+\RequirePackage{comment}
+
 %**************************** Package Options  ************************
 
-%  online|printed -> online or printed [default] submission.
+%  online|printed -> online or printed [default] submission or distribution version
 %  The online|printed option controls the format of the signature
 %  page.  If you will submit online, use ``printed'' to format the
 %  signature page to bring to your defense, and then use ``online'' to
 %  format the signature page for the submitted dissertation.
-\newif\if@online
-\DeclareOption{online}{\@onlinetrue}
-\DeclareOption{printed}{\@onlinefalse}
+\providetoggle{online}
+\DeclareOption{online}{\toggletrue{online}}
+\DeclareOption{printed}{\togglefalse{online}}
+
+%  distribution|submission -> distribution or submission [default] version.
+%  The distribution option sets a suite of options to produce a version
+%  suited for general distribution.
+%  The default submission option instead sets the document according to
+%  GSAS submission standards.
+\providetoggle{distrib}
+\DeclareOption{distribution}{\toggletrue{distrib}}
+\DeclareOption{submission}{\togglefalse{distrib}}
 
 % boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
-\newif\if@boldmathhdr
-\DeclareOption{boldmathhdr}{\@boldmathhdrtrue}
-\DeclareOption{normalmathhdr}{\@boldmathhdrfalse}
+\providetoggle{boldmathhdr}
+\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr}}
+\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr}}
 
 %  Default Setup:
 %  Use printed option by default.
@@ -40,6 +52,9 @@
 
 %  Use normal math headings by default.
 \ExecuteOptions{normalmathhdr}
+
+%  Use submission version by default.
+\ExecuteOptions{submission}
 
 % Process the options.
 \ProcessOptions\relax
@@ -86,7 +101,7 @@
   \thispagestyle{empty} %% page number is omitted
   \begin{center}
     {\fontsize{\@xivpt}{18}\textbf{%
-      \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in title bold.
+      \iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in title bold.
       \thediss{title}}}
     \vfil
     A Dissertation
@@ -116,37 +131,39 @@
 %   \thediss{advisor}    %% advisor's name (chair),
 %   \thediss{department} %% department, and
 %   \thediss{dean}       %% dean of GSAS.
-% Options: online
-\newenvironment{disssignatures}{%
-  \if@twoside\cleardoublepage\else\clearpage\fi
-  \thispagestyle{empty} %% page number is omitted
-  \begin{flushleft}%
-    \if@online The signed version of this signature page is on file at
-    the Graduate School of Arts and Sciences at Brandeis
-    University.\\[4ex]\fi
-    This dissertation, directed and approved by \thediss{author}'s
-    committee, has been accepted and approved by the Faculty of
-    Brandeis University in partial fulfillment of the requirements for
-    the degree of:\\[5ex]
-    \begin{center}
-      \textbf{DOCTOR OF PHILOSOPHY}\\[4ex]
-    \end{center}
-    \if@online\else\vfil\fi
-    \begin{flushright}
-      \parbox{3.5in}{
-        \if@online\else\rule{3in}{.01in}\\\fi
-        \thediss{dean}, Dean\\Graduate School of Arts and Sciences}\\[2ex]
-    \end{flushright}
-    Dissertation Committee:
-    \committeemember \thediss{advisor}, Dept.~of \thediss{department}, Chair. 
-}{%
-  \end{flushleft}
+%   Options: online
+\iftoggle{distrib}{\excludecomment{disssignatures}}{ %Cheap hack to generate the signatures page only if in submission mode
+  \newenvironment{disssignatures}{%
+    \if@twoside \cleardoublepage \else \clearpage \fi
+    \thispagestyle{empty} %% page number is omitted
+    \begin{flushleft}%
+      \iftoggle{online}{ The signed version of this signature page is on file at
+        the Graduate School of Arts and Sciences at Brandeis
+        University.\\[4ex]}{}
+      This dissertation, directed and approved by \thediss{author}'s
+      committee, has been accepted and approved by the Faculty of
+      Brandeis University in partial fulfillment of the requirements for
+      the degree of:\\[5ex]
+      \begin{center}
+        \textbf{DOCTOR OF PHILOSOPHY}\\[4ex]
+      \end{center}
+      \iftoggle{online}{}{\vfil}
+      \begin{flushright}
+        \parbox{3.5in}{
+          \iftoggle{online}{}{\rule{3in}{.01in}\\}
+          \thediss{dean}, Dean\\Graduate School of Arts and Sciences}\\[2ex]
+      \end{flushright}
+      Dissertation Committee:
+      \committeemember \thediss{advisor}, Dept.~of \thediss{department}, Chair. 
+    }{%
+    \end{flushleft}
+  }
 }
 
 % The \committeemember command formats a dissertation committee entry.
 % Options: online
 \newcommand{\committeemember}{%
-  \if@online\else\vfil\rule{3in}{.01in}\fi\\
+  \iftoggle{online}{}{\vfil\rule{3in}{.01in}}\\
 }
 
 % GSAS formatting requirements: No page number on copyright page.
@@ -155,7 +172,7 @@
 %   \thediss{author}     %% author's name, and
 %   \thediss{year}.      %% graduation year.
 \newcommand{\disscopyright}{
-  \if@twoside\cleardoublepage\else\clearpage\fi
+  \if@twoside \cleardoublepage \else \clearpage \fi
   \thispagestyle{empty} %% page number is omitted
   \begin{center}
     \ \\% Provides top text for the stretch to push against.
@@ -174,7 +191,7 @@
   \begin{dissfrontpage}{Abstract}
     \begin{center}
       \textbf{%
-        \if@boldmathhdr \expandafter \boldmath \fi% %If boldmathhdr is true, make mathematics in title bold.
+        \iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in title bold.
         \thediss{title}}\\[1ex]
       \begin{singlespace}
         \noindent A dissertation presented to the Faculty of the\\
@@ -218,7 +235,7 @@
 % The \dissfrontpage environment formats the front pages.
 % Its argument is the name of the page.
 \newenvironment{dissfrontpage}[1]{%
-  \if@twoside\cleardoublepage\else\clearpage\fi
+  \if@twoside \cleardoublepage \else \clearpage \fi
   \begin{center}
     {\fontsize{\@xivpt}{18}\textbf{#1}}\\[1ex]
   \end{center}
