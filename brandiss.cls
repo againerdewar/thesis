@@ -45,27 +45,20 @@
 \DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr}}
 \DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr}}
 
-%  online|printed -> online or printed [default] submission
+%  online|printed -> online or printed submission
 %  Pass these options to the brandiss package.
 \DeclareOption{online}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
-\DeclareOption{printed}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
+\DeclareOption{printed}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{submission}}
 
-%  distribution|submission -> distribution or submission [default] version
-\providetoggle{distrib}
-\DeclareOption{distribution}{\toggletrue{distrib} \PassOptionsToPackage{\CurrentOption}{brandiss}}
-\DeclareOption{submission}{\togglefalse{distrib} \PassOptionsToPackage{\CurrentOption}{brandiss}}
+%  distribution|submission -> distribution or submission version
+\DeclareOption{distribution}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionflow,singlespace,twoside}}  %Distribution default options
+\DeclareOption{submission}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionbreak,doublespace,oneside}} %Submission default options
 
 %  Default Option: Pass all other options to the amsbook class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
 
 %  Default Setup:
-\ExecuteOptions{uncompressed, normalmathhdr}
-
-\iftoggle{distrib}{
-  \ExecuteOptions{sectionflow, singlespace, twoside}
-}{
-  \ExecuteOptions{sectionbreak, doublespace, oneside}
-}
+\ExecuteOptions{uncompressed,normalmathhdr} % Universal default options
 
 % GSAS formatting requirements: 12 point font and one-sided printing.
 % Set up the amsbook class with these default options before option
@@ -73,7 +66,7 @@
 \PassOptionsToClass{12pt,oneside}{amsbook}
 
 % Process the options.
-\ProcessOptions\relax
+\ProcessOptions*\relax
 
 %********************** Class and Package Loads  *****************
 
@@ -238,5 +231,4 @@
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
-%%% End: 
-
+%%% End:
