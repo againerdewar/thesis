@@ -58,7 +58,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
 
 %  Default Setup:
-\ExecuteOptions{uncompressed,normalmathhdr} % Universal default options
+\ExecuteOptions{uncompressed,boldmathhdr} % Universal default options
 
 % Default per GSAS formatting requirements
 \PassOptionsToClass{12pt}{amsbook}
