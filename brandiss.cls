@@ -51,8 +51,8 @@
 \DeclareOption{printed}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{submission}}
 
 %  distribution|submission -> distribution or submission version
-\DeclareOption{distribution}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionflow,singlespace,twoside}}  %Distribution default options
-\DeclareOption{submission}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionbreak,doublespace,oneside}} %Submission default options
+\DeclareOption{distribution}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionflow,singlespace} \PassOptionsToClass{twoside}{amsbook}}  %Distribution default options
+\DeclareOption{submission}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionbreak,doublespace} \PassOptionsToClass{oneside}{amsbook}} %Submission default options
 
 %  Default Option: Pass all other options to the amsbook class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
@@ -60,13 +60,11 @@
 %  Default Setup:
 \ExecuteOptions{uncompressed,normalmathhdr} % Universal default options
 
-% GSAS formatting requirements: 12 point font and one-sided printing.
-% Set up the amsbook class with these default options before option
-% processing so they can be overridden by the passed options.
-\PassOptionsToClass{12pt,oneside}{amsbook}
+% Default per GSAS formatting requirements
+\PassOptionsToClass{12pt}{amsbook}
 
 % Process the options.
-\ProcessOptions*\relax
+\ProcessOptions\relax
 
 %********************** Class and Package Loads  *****************
 
@@ -102,10 +100,10 @@
 % The margins of the first page of a chapter come from the amsbook
 % format.
 \geometry{
-  left=1.5in, right=1in, top=1in, bottom=1in,%% The margins.
+  margin=1in, inner=1.5in, %% The margins
   includeheadfoot,%% Header and footer within the margins.
   headheight=3ex,%% Make the headers larger than text and
-  headsep=30pt%% separate them from the main text.
+  headsep=5ex%% separate them from the main text.
 }
 
 % GSAS formatting requirements: The page number is consistently placed
