@@ -154,30 +154,6 @@ In the case that $F$ and $G$ are isomorphic species, we will often simply write 
 
 In the previous examples, then, we have that the species of trees embeds in the species of graphs; the species of connected bicolored graphs covers the species of connected bipartite graphs; and the species of graphs is isomorphic to the species of sets of connected graphs.
 
-We note here also that the definitions of species embedding and species covering are not strictly categorical; they are \emph{not} in general the epi- and monomorphisms in the category of species.
-Explicitly, if $\phi$ is a species map, the diagram
-\begin{equation*}
-  \begin{tikzpicture}[every node/.style={fill=white}]
-    \matrix (m) [matrix of math nodes, row sep=2em, column sep=3em]
-      {
-        F \sbrac{A} & & & F \sbrac{B} \\
-         & A & B & \\
-        G \sbrac{A} & & & G \sbrac{B} \\
-      };
-      \path[->,font=\scriptsize]
-      (m-1-1) edge node {$F \sbrac{\sigma}$} (m-1-4)
-      edge node {$\phi_{A}$} (m-3-1)
-      (m-1-4) edge node {$\phi_{B}$} (m-3-4)
-      (m-2-2) edge node {$\sigma$} (m-2-3)
-      edge node {$F$} (m-1-1)
-      edge node {$G$} (m-3-1)
-      (m-2-3) edge node {$F$} (m-1-4)
-      edge node {$G$} (m-3-4)
-      (m-3-1) edge node {$G \sbrac{\sigma}$} (m-3-4);
-  \end{tikzpicture}
-\end{equation*}
-does \emph{not} commute unless $\phi$ is a species isomorphism.
-
 \section{Cycle indices and species enumeration}\label{s:cycind}
 We now associate to the categorical theory of species an enumerative mechanism---a special power series which counts structures with respect to automorphisms:
 \begin{definition}
