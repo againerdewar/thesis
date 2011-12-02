@@ -161,7 +161,7 @@ We now associate to the categorical theory of species an enumerative mechanism--
   For a species $F$, define its \emph{cycle index series} to be the power series
   \begin{equation}
     \label{eq:cycinddef}
-    \ci{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
+    \civars{F}{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
   \end{equation}
   where $\fix \pbrac{F \sbrac{\sigma}} := \abs{\cbrac{s \in F \sbrac{A} : F \sbrac{\sigma} \pbrac{s} = s}}$, where $\sigma_{i}$ is the number of $i$-cycles of $\sigma$, and where $p_{i}$ are indeterminates.
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
@@ -175,7 +175,7 @@ For a given partition $\lambda \vdash n$, there are $n! / z_{\lambda}$ permutati
 Thus, we can instead write
 \begin{equation}
   \label{eq:cycinddefpart}
-  \ci{F} \pbrac{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}} = \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{\lambda}}{z_{\lambda}}
+  \civars{F}{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{1}^{\lambda_{1}} p_{2}^{\lambda_{2}} \dots}{z_{\lambda}} = \sum_{n \geq 0} \sum_{\lambda \vdash n} \fix \pbrac{F \sbrac{\lambda}} \frac{p_{\lambda}}{z_{\lambda}}
 \end{equation}
 for $\fix F \sbrac{\lambda} := \fix F \sbrac{\sigma}$ for some choice of a permutation $\sigma$ of cycle type $\lambda$.
 Again, we will make extensive use of the notation $p_{\lambda} = p_{\sigma}$ hereafter.
@@ -188,13 +188,13 @@ The cycle index of a species is then directly related to two important generatin
 \begin{theorem}\label{thm:ciegf}
   The exponential generating function $F \pbrac{x}$ of labeled $F$-structures is given by
   \begin{equation}\label{eq:ciegf}
-    F \pbrac{x} = \ci{f} \sbrac{x, 0, 0, \dots}.
+    F \pbrac{x} = \civars{f}{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
 \begin{theorem}\label{thm:ciogf}
   The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures is given by
   \begin{equation}\label{eq:ciogf}
-    \tilde{F} \pbrac{x} = \ci{F} \sbrac{x, x^{2}, x^{3}, \dots}.
+    \tilde{F} \pbrac{x} = \civars{F}{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
@@ -205,7 +205,7 @@ If, however, we can calculate the complete cycle index for a species, both label
 The use of $p_{i}$ for the variables instead of the more conventional $x_{i}$ alludes to the theory of symmetric functions, in which $p_{i}$ denotes the power-sum functions $p_{i} = \sum_{j} x_{j}^{i}$, which form an important basis for the ring $\Lambda$ of symmetric functions.
 When the $p_{i}$ are understood as symmetric functions rather than simply indeterminates, additional P\'{o}lya-theoretic enumerative information is exposed.
 In particular, the symmetric function in $x$-variables underlying a cycle index in $p$-variables may be said to count \emph{partially}-labeled structures of a given species, where the coefficient on a monomial $\prod x_{i}^{\alpha_{i}}$ counts structures with $\alpha_{i}$ labels of each sort $i$.
-This serves to explain why the coefficients of powers of $p_{1} = \prod_{i} x_{i}$ counts labeled structures (where the labels must all be distinct) and why the automorphism types of structures are enumerated by $\ci{f} \pbrac{x, x^{2}, x^{3}, \cdots}$, which allows clusters of labels to be the same.
+This serves to explain why the coefficients of powers of $p_{1} = \prod_{i} x_{i}$ counts labeled structures (where the labels must all be distinct) and why the automorphism types of structures are enumerated by $\civars{f}{x, x^{2}, x^{3}, \cdots}$, which allows clusters of labels to be the same.
 Another application of the theory of symmetric functions to the cycle indices of species may be found in \cite{gessel:laginvspec}.
 
 Of course, it is not always obvious how to calculate the cycle index of a species directly.
@@ -330,7 +330,7 @@ Terming this operation `differentiation' is justified by its effect on cycle ind
   For a species $F$, the cycle index of its derivative is given by
   \begin{equation}
     \label{eq:specderivci}
-    \ci{\deriv{F}} \pbrac{p_{1}, p_{2}, \dots} = \pbrac{\frac{\partial}{\partial p_{1}} \ci{F}} \pbrac{p_{1}, p_{2}, \dots}.
+    \civars{\deriv{F}}{p_{1}, p_{2}, \dots} = \frac{\partial}{\partial p_{1}} \civars{F}{p_{1}, p_{2}, \dots}.
   \end{equation}
 \end{theorem}
 We note that we cannot in general recover $\ci{F}$ from $\ci{\deriv{F}}$, since there may be terms in $\ci{F}$ which have no $p_{1}$-component (corresponding to $F$-structures which have no automorphisms with fixed points).
@@ -385,7 +385,7 @@ In some contexts with small $k$, we will denote our sorts with letters (saying, 
 In natural analogy to Definition \ref{def:cycind}, the formula for the cycle index of a $k$-sort species $F$ is given by
 \begin{multline}
   \label{eq:multcycinddef}
-  \ci{F} \sbrac{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
+  \civars{F}{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
   \sum_{\substack{n \geq 0 \\ a_{1} + a_{2} + \dots + a_{k} = n}} \frac{1}{a_{1}! a_{2}! \dots a_{k}!} \sum_{\sigma \in \symgp{a_{1}, a_{2}, \dots, a_{k}}} \fix \pbrac{F \sbrac{\sigma}} p^{\sigma_{1}}_{\sbrac{1}} p^{\sigma_{2}}_{\sbrac{2}} \dots p^{\sigma_{k}}_{\sbrac{k}}.
 \end{multline}
 where by $p^{\sigma_{i}}_{\sbrac{i}}$ we denote the product $\prod_{j} \pbrac{p_{j} \sbrac{i}}^{\pbrac{\sigma_{i}}_{j}}$ where $\pbrac{\sigma_{i}}_{j}$ is the number of $j$-cycles of $\sigma_{i}$.
@@ -443,14 +443,14 @@ As an intermediate step to the computation of the cycle index associated to this
   \label{def:gcycind}
   For a $\Gamma$-species $F$, define the $\Gamma$-cycle index $\gci{\Gamma}{F}$ as in \cite{hend:specfield}: for each $\gamma \in \Gamma$, let
   \begin{equation}
-    \gci{\Gamma}{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
+    \gcivars{\Gamma}{F}{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
   \end{equation}
   with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
 \end{definition}
 
-We will call such an object (formally a map from $\Gamma$ to the ring $\ringname{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $\gci{\Gamma}{F} \pbrac{\gamma}$ the `$\gamma$ term of $\gci{\Gamma}{F}$'.
+We will call such an object (formally a map from $\Gamma$ to the ring $\ringname{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $\gcielt{\Gamma}{F}{\gamma}$ the ``$\gamma$ term of $\gci{\Gamma}{F}$''.
 So the coefficients in the power series count the fixed points of the \emph{combined} action of a permutation and the group element $\gamma$.
-Note that, in particular, the classical (`ordinary') cycle index may be recovered as $\ci{F} = \gci{\Gamma}{F} \pbrac{e}$ for any $\Gamma$-species $F$.
+Note that, in particular, the classical (`ordinary') cycle index may be recovered as $\ci{F} = \gcielt{\Gamma}{F}{e}$ for any $\Gamma$-species $F$.
 
 The algebraic relationships between ordinary species and their cycle indices generally extend without modification to the $\Gamma$-species context, as long as appropriate allowances are made.
 The actions on cycle indices of $\Gamma$-species addition and multiplication are exactly as in the ordinary species case considered componentwise:
@@ -459,12 +459,12 @@ The actions on cycle indices of $\Gamma$-species addition and multiplication are
   For two $\Gamma$-species $F$ and $G$, the $\Gamma$-cycle index of their sum $F + G$ is given by
   \begin{equation}
     \label{eq:gspecsum}
-    \gci{\Gamma}{F + G} \pbrac{\gamma} = \gci{\Gamma}{F} \pbrac{\gamma} + \gci{\Gamma}{G} \pbrac{\gamma}
+    \gcielt{\Gamma}{F + G}{\gamma} = \gcielt{\Gamma}{F}{\gamma} + \gcielt{\Gamma}{G}{\gamma}
   \end{equation}
   and the $\Gamma$-cycle index of their product $F \cdot G$ is given by
   \begin{equation}
     \label{eq:gspecprod}
-    \gci{\Gamma}{F \cdot G} \pbrac{\gamma} = \gci{\Gamma}{F} \pbrac{\gamma} \cdot \gci{\Gamma}{G} \pbrac{\gamma}
+    \gcielt{\Gamma}{F \cdot G}{\gamma} = \gcielt{\Gamma}{F}{\gamma} \cdot \gcielt{\Gamma}{G}{\gamma}
   \end{equation}
 \end{definition}
 The action of composition, which in ordinary species corresponds to plethysm of cycle indices, can also be extended:
@@ -479,7 +479,7 @@ A formula similar to that Theorem \ref{thm:speccompci} requires a definition of 
   \label{def:gcipleth}
   For two $\Gamma$-cycle indices $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-cycle index defined by
   \begin{equation}
-    \pbrac{f \circ g} \pbrac{\gamma} = f \pbrac{\gamma} \sbrac{g \pbrac{\gamma} \sbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbrac{\gamma^{2}} \sbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots}.
+    \pbrac{f \circ g} \pbrac{\gamma} = f \pbrac{\gamma} \pbrac{g \pbrac{\gamma} \pbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbrac{\gamma^{2}} \pbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots}.
     \label{eq:gcipleth}
   \end{equation}
 \end{definition}
@@ -511,9 +511,9 @@ Thus, Lemma \ref{lem:grouporbits} implies the following:
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
     \label{eq:quotcycind}
-    \ci{F / \Gamma} = \qgci{\Gamma}{F} \defeq \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \symgp{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
+    \ci{F / \Gamma} = \qgci{\Gamma}{F} \defeq \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gcielt{\Gamma}{F}{\gamma} = \frac{1}{\abs{\Gamma}} \sum_{\substack{n \geq 0 \\ \sigma \in \symgp{n} \\ \gamma \in \Gamma}} \frac{1}{n!} \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
   \end{equation}
-  where we define $\qgci{\Gamma}{F} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gci{\Gamma}{F} \pbrac{\gamma}$ for future convenience.
+  where we define $\qgci{\Gamma}{F} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \gcielt{\Gamma}{F}{\gamma}$ for future convenience.
 \end{theorem}
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
 With it, we can compute explicit enumerative data for a quotient species using cycle-index information of the original $\Gamma$-species with respect to the group action, as desired.
@@ -526,7 +526,7 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
   The exponential generating function $F_{\gamma} \pbrac{x}$ of labeled $\gamma$-invariant $F$-structures is
   \begin{equation}
     \label{eq:gciegf}
-    F_{\gamma} \pbrac{x} = \gci{\Gamma}{F} \pbrac{\gamma} \sbrac{x, 0, 0, \dots}.
+    F_{\gamma} \pbrac{x} = \gcielt{\Gamma}{F}{\gamma} \sbrac{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
 
@@ -535,7 +535,7 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
   The ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ of unlabeled $\gamma$-invariant $F$-structures is
   \begin{equation}
     \label{eq:gciogf}
-    \tilde{F}_{\gamma} \pbrac{x} = \gci{\Gamma}{F} \pbrac{\gamma} \sbrac{x, x^{2}, x^{3}, \dots}.
+    \tilde{F}_{\gamma} \pbrac{x} = \gcielt{\Gamma}{F}{\gamma} \sbrac{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because Definition \ref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
@@ -593,12 +593,12 @@ The restrictions that vertex colorings place on automorphisms of bicolored graph
 We begin our investigation by directly computing the $\symgp{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-reversing $\symgp{2}$-action described previously.
 We will then use various methods from the species algebra of \S \ref{c:species} to pass to various other species.
 
-\subsection{Computing $\gci{\symgp{2}}{\specname{BC}} \pbrac{e}$}\label{ss:ecibc}
-We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\symgp{2}$-action will give $\gci{\symgp{2}}{\specname{BC}} \pbrac{e}$. 
+\subsection{Computing $\gcielt{\symgp{2}}{\specname{BC}}{e}$}\label{ss:ecibc}
+We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\symgp{2}$-action will give $\gcielt{\symgp{2}}{\specname{BC}}{e}$. 
 
 Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{eq:gcycinddef}:
 \begin{equation*}
-  \gci{\Gamma}{F} \pbrac{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
+  \gcielt{\Gamma}{F}{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
 \end{equation*}
 Thus, for each $n > 0$ and each permutation $\pi \in \symgp{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
 To simplify some future calculations, we omit empty graphs and define $\specname{BC} \sbrac{\varnothing} = \varnothing$.
@@ -661,7 +661,7 @@ Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     \label{eq:ecibc}
-    \gci{\symgp{2}}{\specname{BC}} \pbrac{e} = \sum_{n > 0} \sum_{\substack{\mu, \nu \\ \mu \cup \nu \vdash n}} \frac{p_{\mu \cup \nu}}{z_{\mu} z_{\nu}} \prod_{i, j} 2^{\gcd \pbrac{\mu_{i}, \nu_{j}}}
+    \gcielt{\symgp{2}}{\specname{BC}}{e} = \sum_{n > 0} \sum_{\substack{\mu, \nu \\ \mu \cup \nu \vdash n}} \frac{p_{\mu \cup \nu}}{z_{\mu} z_{\nu}} \prod_{i, j} 2^{\gcd \pbrac{\mu_{i}, \nu_{j}}}
   \end{equation}
 \end{theorem}
 
@@ -672,7 +672,7 @@ He then enumerates orbits of edges under these groups using the P\'{o}lya enumer
 This is clearly analogous to our procedure, which enumerates the orbits of edges under each specific permutation of vertices.
 The numbers of labeled and unlabeled bicolored graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:bc} and agree with those previous results.
 
-\subsection{Calculating $\gci{\symgp{2}}{\specname{BC}} \pbrac{\tau}$}\label{ss:tcibc}
+\subsection{Calculating $\gcielt{\symgp{2}}{\specname{BC}}{\tau}$}\label{ss:tcibc}
 Recall that the nontrivial element of $\tau \in \symgp{2}$ acts on bicolored graphs by reversing all colors.
 
 We again consider the cycles in the vertex set $\sbrac{n}$ induced by a permutation $\pi \in \symgp{n}$ and use the partition $\lambda$ corresponding to the cycle type of $\pi$ for bookkeeping.
@@ -774,7 +774,7 @@ Therefore we conclude:
 \begin{theorem}
   \begin{equation}
     \label{eq:tcibc}
-    \gci{\symgp{2}}{\specname{BC}} \pbrac{\tau} = \sum_{\substack{n > 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
+    \gcielt{\symgp{2}}{\specname{BC}}{\tau} = \sum_{\substack{n > 0 \\ \text{$n$ even}}} \sum_{\lambda \vdash \frac{n}{2}} 2^{l \pbrac{\lambda}} \frac{p_{2 \lambda}}{z_{2 \lambda}} \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}}
   \end{equation}
 \end{theorem}
 
@@ -815,7 +815,7 @@ Thus,
 By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
 \begin{theorem}
   \begin{equation}
-    \ci{\specname{CBP}} = \qgci{\symgp{2}}{\specname{CBC}} = \frac{1}{2} \pbrac{\gci{\symgp{2}}{\specname{CBC}} \pbrac{e} + \gci{\symgp{2}}{\specname{CBC}} \pbrac{\tau}}.
+    \ci{\specname{CBP}} = \qgci{\symgp{2}}{\specname{CBC}} = \frac{1}{2} \pbrac{\gcielt{\symgp{2}}{\specname{CBC}}{e} + \gcielt{\symgp{2}}{\specname{CBC}}{\tau}}.
   \end{equation}
 \end{theorem}
 
@@ -1481,9 +1481,9 @@ From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
-      \ci{\pointed[Y]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:ayquotci} \\
-      \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:axyquotci} \\
-      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:axquotci}
+      \ci{\pointed[Y]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} \label{eq:ayquotci} \\
+      \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:axyquotci} \\
+      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:axquotci}
     \end{align}
   \end{subequations}
 \end{theorem}
@@ -1527,8 +1527,8 @@ Accordingly:
   The $\symgp{k}$-cycle index for the species $\pointed[Y]{\specname{CT}}_{k}$ is characterized by the recursive functional equation
   \begin{multline}
     \label{eq:ctyfuncci}
-    \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{y} \\
-    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
+    \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} = p_{1} \sbrac{y} \\
+    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
   \end{multline}
   where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ (as a $k$-permutation) and the inner product is taken with respect to any choice of linearization of the cyclic order of the elements of $c$.
 \end{theorem}
@@ -1543,8 +1543,8 @@ Accordingly:
   The $\symgp{k+1}$-cycle index for the species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is given by
   \begin{multline}
     \label{eq:ctxyfuncci}
-    \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} = p_{1} \sbrac{x} \\
+    \times \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\prod_{i \in c} \rho_{i} \sbrac{\sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as Theorem \ref{thm:ctyfuncci}.
 \end{theorem}
@@ -1560,7 +1560,7 @@ By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} 
   \begin{subequations}
     \label{eq:akci}
     \begin{align}
-      \ci{\mathfrak{a}_{k}} &= \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \label{eq:akciexplicit} \\
+      \ci{\mathfrak{a}_{k}} &= \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:akciexplicit} \\
       &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} + \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} - \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}. \label{eq:akciquot}
     \end{align}
   \end{subequations}
@@ -1578,7 +1578,7 @@ Actually computing terms of the cycle index in order to derive the coefficients 
 The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
 
 Recall from Theorem \ref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
-\[\tilde{F} \pbrac{\gamma} \pbrac{x} = \ci{F} \sbrac{x, x^2, x^3, \dots}\]
+\[\tilde{F} \pbrac{\gamma} \pbrac{x} = \civars{F}{x, x^2, x^3, \dots}\]
 and that the ordinary generating function for counting unlabeled $\nicefrac{F}{\Gamma}$-structures is given by
 \[\tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.\]
 These formula admits an obvious multisort extension, but we in fact wish to count $k$-trees with respect to just one sort of label (the $X$-labels on hedra), so we will not deal with multisort here.
@@ -1634,8 +1634,8 @@ We then have that:
 \begin{subequations}
   \label{eq:rest2trees}
   \begin{align}
-    \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} \pbrac{e} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
-    \gci{\symgp{3}}{\pointed[\overline{XY}]{\specname{CT}}_{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} \pbrac{\rho \pbrac{\sigma}^{\abs{c}}} \sbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
+    \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}}{e}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
+    \gci{\symgp{3}}{\pointed[\overline{XY}]{\specname{CT}}_{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}}{\rho \pbrac{\sigma}^{\abs{c}}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
   \end{align}
 \end{subequations}
 where, by abuse of notation, we let $\rho$ represent any $\rho_{i}$.

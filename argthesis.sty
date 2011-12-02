@@ -54,8 +54,16 @@
 \newcommand*{\foreign}[1]{\emph{#1}}
 
 \newcommand*{\ci}[2][]{ \ensuremath{ Z_{#2}^{#1} } }
+\newcommand*{\civars}[3][]{ \ensuremath{ Z_{#2}^{#1} \pbrac{#3} } }
+
 \newcommand*{\gci}[3][]{ \ci[{#2} {#1}]{#3} }
+\newcommand*{\gcivars}[4][]{ \civars[{#2} {#1}]{#3}{#4} }
+\newcommand*{\gcielt}[4][]{ \ci[{#2} {#1}]{#3} \pbrac{#4} }
+\newcommand*{\gcieltvars}[5][]{ \civars[{#2} {#1}]{#3}{#4} \pbrac{#5} }
+
 \newcommand*{\qgci}[3][]{ \ensuremath{ \overline{ \gci[#1]{#2}{#3} } } }
+\newcommand*{\qgcivars}[4][]{ \qgci[#1]{#2}{#3} \pbrac{#4} }
+
 \newcommand*{\pointed}[2][]{ \ensuremath{ {#2}^{\bullet #1} } }
 \newcommand*{\deriv}[2][]{ \ensuremath{ {#2}^{\,\prime #1} } }
 
