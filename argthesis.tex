@@ -274,9 +274,7 @@ Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
   For two species $F$ and $G$ with $G \sbrac{\varnothing} = \varnothing$, define their \emph{composition} to be the species $F \circ G$ given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$.
 \end{definition}
 In other words, the composition $F \circ G$ produces the species of $F$-structures of collections of $G$-structures.
-The requirement that $G \sbrac{\varnothing} = \varnothing$ --- that is, that there is no $G$-structure on an empty label set --- is essential.
-If it is lifted, an arbitrary number of $G \sbrac{\varnothing}$-structures may be added arbitrarily to any $\pbrac{F \circ G}$-structure, rendering well-defined constructions impossible.
-This definition is, again, motivated by a correspondence with a certain operation on cycle indices:
+The definition is, again, motivated by a correspondence with a certain operation on cycle indices:
 \begin{definition}
   \label{def:cipleth}
   Let $f$ and $g$ be cycle indices. Then the \emph{plethysm} $f \circ g$ is the cycle index
@@ -298,6 +296,22 @@ This definition is inherited directly from the theory of symmetric functions in 
 \end{theorem}
 Many combinatorial structures admit natural descriptions as compositions of species.
 For example, every graph admits a unique decomposition as a (possibly empty) set of (nonempty) connected graphs, so we have the species identity $\specname{G} = \specname{E} \circ \specname{G}^{C}$ for $\specname{G}$ the species of graphs and $\specname{G}^{C}$ the species of nonempty connected graphs.
+
+Diligent readers may observe that the requirement that $G \sbrac{\varnothing} = \varnothing$ in Definition \ref{def:speccomp} is in fact logically vacuous, since the given construction would simply ignore the $\varnothing$-structures.
+However, the formula in Theorem \ref{thm:speccompci} fails to be well-defined for any $\ci{G}$ with non-zero constant term (corresponding to species $G$ with nonempty $G \sbrac{\varnothing}$) unless $\ci{Z}$ has finite degree (corresponding to species $F$ with support only in finitely many degrees).
+Consider the following example:
+\begin{example}
+  Let $\specname{E}$ denote the species of sets, $\specname{E}_{3}$ its restriction to sets with three elements, $\mathbf{1}$ the species described above (which has one empty structure), and $X$ the species of singletons (which has one order-$1$ structure).
+  If $\specname{E} \pbrac{\mathbf{1} + X}$ were well-defined, it would denote the species of `partially-labeled sets'.
+  However, for fixed cardinality $n$, there is an $\specname{E} \pbrac{\mathbf{1} + X}$-structure on $n$ labels \emph{for each nonnegative $k$}---specifically, the set $\sbrac{n}$ together with $k$ unlabeled elements.
+  Thus, there would be infinitely many structures of each cardinality for this `species', so it is not in fact a species at all.
+
+  However, the situation for $\specname{E}_{3} \pbrac{\mathbf{1} + X}$ is entirely different.
+  A structure in this species is a $3$-set, some of whose elements are labeled.
+  There are only four possible such structures: $\cbrac{*, *, *}$, $\cbrac{*, *, 1}$, $\cbrac{*, 1, 2}$, and $\cbrac{1, 2, 3}$, where $*$ denotes an unlabeled element and integers denote labeled elements.
+  Moreover, by discarding the unlabeled elements, we can clearly see that $\specname{E}_{3} \pbrac{\mathbf{1} + X} = \sum_{i = 0}^{3} \specname{E}_{i}$.
+\end{example}
+In our setting, we will not use this alternative notion of composition, so we will not develop it formally here.
 
 Several other binary operations on species are defined in the literature, including the Cartesian product $F \times G$, the functorial composition $F \square G$, and the inner plethysm $F \boxtimes G$ of \cite{travis:inpleth}.
 We will not use these here.
