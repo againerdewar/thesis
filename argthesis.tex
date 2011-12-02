@@ -243,7 +243,7 @@ For slightly more generality, we may apply the notions of Definition \ref{def:sp
 
 For example, for $\specname{G}$ the species of graphs and $\mathfrak{a}$ the species of trees, we have that $\specname{G} - \mathfrak{a}$ is the species of graphs with cycles.
 
-We note also that species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\mathbf{0}: A \mapsto \varnothing$ is an additive identity, so species with addition form an abelian monoid.
+We note also that species addition is associative and commutative (up to species isomorphism), and furthermore the empty species $\numspecname{0}: A \mapsto \varnothing$ is an additive identity, so species with addition form an abelian monoid.
 This can be completed to create the abelian group of \emph{virtual species}, in which the subtraction $F - G$ of arbitrary species is defined; the two definitions in fact agree where our definition applies.
 We will not delve into the details of virtual species theory here, directing the reader instead to \cite[\S 2.5]{bll:species}.
 
@@ -264,7 +264,7 @@ Conceptually, the species product can be used to describe species that decompose
 For example, a permutation on a set $A$ decomposes uniquely into a (possibly empty) set of fixed points and a derangement of their complement in $A$.
 Thus, $\specname{S} = \specname{E} \cdot \operatorname{Der}$ for $\specname{S}$ the species of partitions, $\specname{E}$ the species of sets, and $\operatorname{Der}$ the species of derangements.
 
-We note also that species multiplication is commutative (up to species isomorphism) and distributes over addition, so the class of species with addition and multiplication forms a commutative semiring, with the species $\mathbf{1}: \begin{cases} \varnothing \mapsto \cbrac{\varnothing} \\ A \neq \varnothing \mapsto \varnothing \end{cases}$ as a multiplicative identity; if addition is completed as previously described, the class of virtual species with addition and multiplication forms a true commutative ring.
+We note also that species multiplication is commutative (up to species isomorphism) and distributes over addition, so the class of species with addition and multiplication forms a commutative semiring, with the species $\numspecname{1}: \begin{cases} \varnothing \mapsto \cbrac{\varnothing} \\ A \neq \varnothing \mapsto \varnothing \end{cases}$ as a multiplicative identity; if addition is completed as previously described, the class of virtual species with addition and multiplication forms a true commutative ring.
 
 In addition, the question of which species can be decomposed as sums and products without resorting to virtual species is one of great interest; the notions of \emph{molecular} and \emph{atomic} species are directly derived from such decompositions, and represent the beginnings of the systematic study of the structure of the class of species as a whole.
 Further details on this topic are presented in \cite[\S 2.6]{bll:species}.
@@ -301,15 +301,15 @@ Diligent readers may observe that the requirement that $G \sbrac{\varnothing} = 
 However, the formula in Theorem \ref{thm:speccompci} fails to be well-defined for any $\ci{G}$ with non-zero constant term (corresponding to species $G$ with nonempty $G \sbrac{\varnothing}$) unless $\ci{F}$ has finite degree (corresponding to species $F$ with support only in finitely many degrees).
 Consider the following example:
 \begin{example}
-  Let $\specname{E}$ denote the species of sets, $\specname{E}_{3}$ its restriction to sets with three elements, $\mathbf{1}$ the species described above (which has one empty structure), and $X$ the species of singletons (which has one order-$1$ structure).
-  If $\specname{E} \pbrac{\mathbf{1} + X}$ were well-defined, it would denote the species of `partially-labeled sets'.
-  However, for fixed cardinality $n$, there is an $\specname{E} \pbrac{\mathbf{1} + X}$-structure on $n$ labels \emph{for each nonnegative $k$}---specifically, the set $\sbrac{n}$ together with $k$ unlabeled elements.
+  Let $\specname{E}$ denote the species of sets, $\specname{E}_{3}$ its restriction to sets with three elements, $\numspecname{1}$ the species described above (which has one empty structure), and $X$ the species of singletons (which has one order-$1$ structure).
+  If $\specname{E} \pbrac{\numspecname{1} + X}$ were well-defined, it would denote the species of `partially-labeled sets'.
+  However, for fixed cardinality $n$, there is an $\specname{E} \pbrac{\numspecname{1} + X}$-structure on $n$ labels \emph{for each nonnegative $k$}---specifically, the set $\sbrac{n}$ together with $k$ unlabeled elements.
   Thus, there would be infinitely many structures of each cardinality for this `species', so it is not in fact a species at all.
 
-  However, the situation for $\specname{E}_{3} \pbrac{\mathbf{1} + X}$ is entirely different.
+  However, the situation for $\specname{E}_{3} \pbrac{\numspecname{1} + X}$ is entirely different.
   A structure in this species is a $3$-set, some of whose elements are labeled.
   There are only four possible such structures: $\cbrac{*, *, *}$, $\cbrac{*, *, 1}$, $\cbrac{*, 1, 2}$, and $\cbrac{1, 2, 3}$, where $*$ denotes an unlabeled element and integers denote labeled elements.
-  Moreover, by discarding the unlabeled elements, we can clearly see that $\specname{E}_{3} \pbrac{\mathbf{1} + X} = \sum_{i = 0}^{3} \specname{E}_{i}$.
+  Moreover, by discarding the unlabeled elements, we can clearly see that $\specname{E}_{3} \pbrac{\numspecname{1} + X} = \sum_{i = 0}^{3} \specname{E}_{i}$.
 \end{example}
 In our setting, we will not use this alternative notion of composition, so we will not develop it formally here.
 
