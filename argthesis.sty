@@ -69,6 +69,21 @@
 
 \newcommand*{\symgp}[1]{ \ensuremath{ \mathfrak{S}_{#1} } }
 
+\newcommand*{\ct}[2][]{\ensuremath{\specname{CT}_{#2}^{#1}}}
+\newcommand*{\ctx}[1]{\ct[\bullet X]{#1}}
+\newcommand*{\cty}[1]{\ct[\bullet Y]{#1}}
+\newcommand*{\ctxy}[1]{\ct[\bullet \overline{XY}]{#1}}
+
+\newcommand*{\kt}[2][]{\ensuremath{\mathfrak{a}_{#2}^{#1}}}
+\newcommand*{\ktx}[1]{\kt[\bullet X]{#1}}
+\newcommand*{\kty}[1]{\kt[\bullet Y]{#1}}
+\newcommand*{\ktxy}[1]{\kt[\bullet \overline{XY}]{#1}}
+
+\newcommand*{\ktco}[2][]{\vec{\mathfrak{a}}_{#2}^{#1}}
+\newcommand*{\ktcox}[1]{\ktco[\bullet X]{#1}}
+\newcommand*{\ktcoy}[1]{\ktco[\bullet Y]{#1}}
+\newcommand*{\ktcoxy}[1]{\ktco[\bullet \overline{XY}]{#1}}
+
 \newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
                      \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
                      =} % Thanks to Hendrik Vogt on tex.stackexchange

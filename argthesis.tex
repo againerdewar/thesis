@@ -870,7 +870,7 @@ The numbers of labeled and unlabeled nonseparable bipartite graphs for $n \leq 1
 Trees and their generalizations have played an important role in the literature of combinatorial graph theory throughout its history.
 The multi-dimensional generalization to so-called `$k$-trees' has proved to be particularly fertile ground for both research problems and applications.
 
-The class $\mathfrak{a}_{k}$ of $k$-trees (for $k \in \ringname{N}$) may be defined recursively:
+The class $\kt{k}$ of $k$-trees (for $k \in \ringname{N}$) may be defined recursively:
 \begin{definition}
   \label{def:ktree}
   The complete graph on $k$ vertices ($K_{k}$) is a $k$-tree, and any graph formed by adding a single vertex to a $k$-tree and connecting that vertex by edges to some existing $k$-clique (that is, induced $k$-complete subgraph) of that $k$-tree is a $k$-tree.
@@ -924,7 +924,7 @@ For higher $k$, the structures formed are still distinctively tree-like; for exa
 
 In graph-theoretic contexts, it is conventional to label graphs on their vertices and possibly their edges.
 However, for our purposes, it will be more convenient to label hedra and fronts.
-Throughout, we will treat the species $\mathfrak{a}_{k}$ of $k$-trees as a two-sort species, with $X$-labels on the hedra and $Y$-labels on their fronts; in diagrams, we will generally use capital letters for the hedron-labels and positive integers for the front-labels (see Figure \ref{fig:exlab2tree}).
+Throughout, we will treat the species $\kt{k}$ of $k$-trees as a two-sort species, with $X$-labels on the hedra and $Y$-labels on their fronts; in diagrams, we will generally use capital letters for the hedron-labels and positive integers for the front-labels (see Figure \ref{fig:exlab2tree}).
 
 \begin{figure}[htb]
   \centering
@@ -979,29 +979,29 @@ In this case, the species $\specname{A}$ is relatively easy to characterize expl
 A similar theorem holds for $k$-trees.
 \begin{theorem}
   \label{thm:dissymk}
-  The species $\pointed[X]{\mathfrak{a}}_{k}$ and $\pointed[Y]{\mathfrak{a}}_{k}$ of $k$-trees rooted at hedra and fronts respectively, $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at a hedron with a designated front, and $\mathfrak{a}_{k}$ of unrooted $k$-trees are related by the equation
+  The species $\ktx{k}$ and $\kty{k}$ of $k$-trees rooted at hedra and fronts respectively, $\ctxy{k}$ of $k$-trees rooted at a hedron with a designated front, and $\kt{k}$ of unrooted $k$-trees are related by the equation
   \begin{equation}
     \label{eq:dissymk}
-    \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} = \mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}
+    \ktx{k} + \kty{k} = \kt{k} + \ctxy{k}
   \end{equation}
   as an isomorphism of species.
 \end{theorem}
 
 \begin{proof}
-  We give a bijective, natural map from $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structures on the left side to $\pbrac{\mathfrak{a}_{k} + \pointed[\overline{XY}]{\mathfrak{a}}_{k}}$-structures on the right side.
+  We give a bijective, natural map from $\pbrac{\ktx{k} + \kty{k}}$-structures on the left side to $\pbrac{\kt{k} + \ctxy{k}}$-structures on the right side.
   Define a \emph{$k$-path} in a $k$-tree to be a non-self-intersecting sequence of consecutively adjacent hedra and fronts, and define the \emph{length} of a $k$-path to be the total number of hedra and fronts along it.
   Note that the ends of every maximal $k$-path in a $k$-tree are fronts.
   It is easily verified, as in \cite{kob:ktlogspace}, that every $k$-tree has a unique \emph{center} clique (either a hedron or a front) which is the midpoint of every longest $k$-path (or, equivalently, has the greatest $k$-eccentricity, defined appropriately).
   
-  An $\pbrac{\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some clique $c$, which is either a hedron or a front.
+  An $\pbrac{\ktx{k} + \kty{k}}$-structure on the left-hand side of the equation is a $k$-tree $T$ rooted at some clique $c$, which is either a hedron or a front.
   Suppose that $c$ is the center of $T$.
-  We then map $T$ to its unrooted equivalent in $\mathfrak{a}_{k}$ on the right-hand side.
-  This map is a natural bijection from its preimage, the set of $k$-trees rooted at their centers, to $\mathfrak{a}_{k}$, the set of unrooted $k$-trees.
+  We then map $T$ to its unrooted equivalent in $\kt{k}$ on the right-hand side.
+  This map is a natural bijection from its preimage, the set of $k$-trees rooted at their centers, to $\kt{k}$, the set of unrooted $k$-trees.
 
   Now suppose that the root clique $c$ of the $k$-tree $T$ is \emph{not} the center, which we denote $C$.
   Identify the clique $c'$ which is adjacent to $c$ along the $k$-path from $c$ to $C$.
   We then map the $k$-tree $T$ rooted at the clique $c$ to the same tree $T$ rooted at \emph{both} $c$ and its neighbor $c'$.
-  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
+  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\ctxy{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
 
   When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymk}.
 \end{proof}
@@ -1009,16 +1009,16 @@ A similar theorem holds for $k$-trees.
 In general we will reformulate the dissymmetry theorem as follows:
 \begin{corollary}
   \label{cor:dissymkreform}
-  For the various forms of the species $\mathfrak{a}_{k}$ as above, we have
+  For the various forms of the species $\kt{k}$ as above, we have
   \begin{equation}
     \label{eq:dissymkreform}
-    \mathfrak{a}_{k} = \pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k} - \pointed[\overline{XY}]{\mathfrak{a}}_{k}.
+    \kt{k} = \ktx{k} + \kty{k} - \ctxy{k}.
   \end{equation}
   as an isomorphism of ordinary species.
 \end{corollary}
 
 The species subtraction is of course defined, since this is just an algebraic manipulation of equation \eqref{eq:dissymk}.
-However, we note that, in the sense of Definition \ref{def:specdif}, since the species $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$ embeds in the species $\pointed[X]{\mathfrak{a}}_{k} + \pointed[Y]{\mathfrak{a}}_{k}$ by the centering map in the proof of Theorem \ref{thm:dissymk}.
+However, we note that, in the sense of Definition \ref{def:specdif}, since the species $\ctxy{k}$ embeds in the species $\ktx{k} + \kty{k}$ by the centering map in the proof of Theorem \ref{thm:dissymk}.
 
 Theorem \ref{thm:dissymk} and the consequent equation \eqref{eq:dissymkreform} allow us to reframe enumerative questions about generic $k$-trees in terms of questions about $k$-trees rooted in various ways.
 However, the rich internal symmetries of large cliques obstruct direct analysis of these rooted structures.
@@ -1026,7 +1026,7 @@ We need to break these symmetries to proceed.
 
 \section{Coherently-oriented $k$-trees}
 \subsection{Symmetry-breaking}\label{ss:symbreak}
-In the case of the species $\specname{A} = \pointed{\mathfrak{a}}_{1}$ of trees, we may obtain a simple recursive functional equation \cite[\S 1, eq.~(9)]{bll:species}:
+In the case of the species $\specname{A} = \pointed{\kt{1}}$ of trees, we may obtain a simple recursive functional equation \cite[\S 1, eq.~(9)]{bll:species}:
 \begin{equation}
   \label{eq:rtrees}
   \specname{A} = X \cdot \specname{E} \pbrac{\specname{A}}.
@@ -1057,10 +1057,10 @@ We will break this symmetry by adding additional structure which we can later re
 \end{definition}
 See Figure \ref{fig:exco2tree} for an example.
 Note that every $k$-tree admits many coherent orientations---any one hedron of the $k$-tree may be oriented freely, and a unique orientation of the whole $k$-tree will result from each choice of such an orientation of one hedron.
-We will denote by $\vec{\mathfrak{a}}_{k}$ the species of coherently-oriented $k$-trees.
+We will denote by $\ktco{k}$ the species of coherently-oriented $k$-trees.
 
 By shifting from the general $k$-tree setting to that of coherently-oriented $k$-trees, we break the symmetry described above.
-If we can now establish a group action on $\vec{\mathfrak{a}}_{k}$ whose orbits are generic $k$-trees we can use the theory of quotient species to extract the generic species $\mathfrak{a}_{k}$.
+If we can now establish a group action on $\ktco{k}$ whose orbits are generic $k$-trees we can use the theory of quotient species to extract the generic species $\kt{k}$.
 First, however, we describe an encoding procedure which will make future work more convenient.
 
 \begin{figure}[htb]
@@ -1119,9 +1119,9 @@ We thus pass from coherently-oriented $k$-trees to a surrogate structure which e
 
 A $\pbrac{\specname{C}_{k+1}, \specname{E}}$-enriched bicolored tree is a bicolored tree each black vertex of which carries a $\specname{C}_{k+1}$-structure (that is, a cyclic ordering on $k+1$ elements) on its white neighbors.
 (The $\specname{E}$-structure on the black neighbors of each white vertex is already implicit in the bicolored tree itself.)
-For later convenience, we will sometimes call such objects \emph{$k$-coding trees}, and we will denote by $\specname{CT}_{k}$ the species of such $k$-coding trees.
+For later convenience, we will sometimes call such objects \emph{$k$-coding trees}, and we will denote by $\ct{k}$ the species of such $k$-coding trees.
 
-We now define a map $\beta: \vec{\mathfrak{a}}_{k} \sbrac{n} \to \specname{CT}_{k} \sbrac{n}$.
+We now define a map $\beta: \ktco{k} \sbrac{n} \to \ct{k} \sbrac{n}$.
 For a given coherently-oriented $k$-tree $T$ with $n$ hedra:
 \begin{itemize}
   \item For every hedron of $T$ construct a black vertex and for every front a white vertex, assigning labels appropriately.
@@ -1191,38 +1191,38 @@ Note that, for clarity, we have rendered the black vertices (corresponding to he
 \end{figure}
 
 \begin{theorem}\label{thm:bctreeenc}
-  The map $\beta$ induces an isomorphism of species $\vec{\mathfrak{a}}_{k} \simeq \specname{CT}_{k}$.
+  The map $\beta$ induces an isomorphism of species $\ktco{k} \simeq \ct{k}$.
 \end{theorem}
 
 \begin{proof}
   It is clear that $\beta$ sends each coherently-oriented $k$-tree to a unique $k$-coding tree, and that this map commutes with permutations on the label sets (and thus is categorically natural).
-  To show that $\beta$ induces a species isomorphism, then, we need only show that $\beta$ is a surjection onto $\specname{CT}_{k} \sbrac{n}$ for each $n$.
+  To show that $\beta$ induces a species isomorphism, then, we need only show that $\beta$ is a surjection onto $\ct{k} \sbrac{n}$ for each $n$.
   Throughout, we will say `$F$ and $G$ have contact of order $n$' when the restrictions $F_{n}$ and $G_{n}$ of the species $F$ and $G$ to label sets of cardinality at most $n$ are naturally isomorphic.
   
   First, note that there are exactly $k!$ coherently-oriented $k$-trees with one hedron---one for each cyclic ordering of the $k+1$ front labels.
   There are also $k!$ coding trees with one black vertex, and the encoding $\beta$ is clearly a natural bijection between these two sets.
-  Thus, the species $\vec{\mathfrak{a}}_{k}$ of coherently-oriented $k$-trees and $\specname{CT}_{k}$ of $k$-coding trees 
+  Thus, the species $\ktco{k}$ of coherently-oriented $k$-trees and $\ct{k}$ of $k$-coding trees 
 
-  Now, by way of induction, suppose $\vec{\mathfrak{a}}_{k}$ and $\specname{CT}_{k}$ have contact of order $n \geq 1$.
+  Now, by way of induction, suppose $\ktco{k}$ and $\ct{k}$ have contact of order $n \geq 1$.
   Let $C$ be a $k$-coding tree with $n+1$ black vertices.
   Then let $C_{1}$ and $C_{2}$ be two distinct sub-$k$-coding trees of $C$, each obtained from $C$ by removing one black node which has only one white neighbor which is not a leaf.
   Then, by hypothesis, there exist coherently-oriented $k$-trees $T_{1}$ and $T_{2}$ with $n$ hedra such that $\beta \pbrac{T_{1}} = C_{1}$ and $\beta \pbrac{T_{2}} = C_{2}$.
   Moreover, $\beta \pbrac{T_{1} \cap T_{2}} = \beta \pbrac{T_{1}} \cap \beta \pbrac{T_{2}}$, and this $k$-coding tree has $n-1$ black vertices, so $T_{1} \cap T_{2}$ has $n-1$ hedra.
   Thus, $T = T_{1} \cup T_{2}$ is a coherently-oriented $k$-tree with $n+1$ black hedra, and $\beta \pbrac{T} = C$ as desired.
-  Thus, $\beta^{-1} \pbrac{\beta \pbrac{T_{1}} \cup \beta \pbrac{T_{2}}} = T_{1} \cup T_{2} = T$, and hence $\vec{\mathfrak{a}}_{k}$ and $\specname{CT}_{k}$ have contact of order $n+1$.
+  Thus, $\beta^{-1} \pbrac{\beta \pbrac{T_{1}} \cup \beta \pbrac{T_{2}}} = T_{1} \cup T_{2} = T$, and hence $\ktco{k}$ and $\ct{k}$ have contact of order $n+1$.
 \end{proof}
 
-Thus, $\vec{\mathfrak{a}}_{k}$ and $\specname{CT}_{k}$ are isomorphic as species; however, $k$-coding trees are much simpler than coherently-oriented $k$-trees as graphs.
+Thus, $\ktco{k}$ and $\ct{k}$ are isomorphic as species; however, $k$-coding trees are much simpler than coherently-oriented $k$-trees as graphs.
 Moreover, $k$-coding trees are doubly-enriched bicolored trees as in \cite[\S 3.2]{bll:species}, for which the authors of that text develop a system of functional equations which fully characterizes the cycle index of such a species.
-We thus will proceed in the following sections with a study of the species $\specname{CT}_{k}$, then lift our results to the $k$-tree context.
+We thus will proceed in the following sections with a study of the species $\ct{k}$, then lift our results to the $k$-tree context.
 
 \subsection{Functional decomposition of $k$-coding trees}\label{ss:codecomp}
-With the encoding $\beta: \vec{\mathfrak{a}}_{k} \to \specname{CT}_{k}$, we now have direct graph-theoretic access to the attaching structure of coherently-oriented $k$-trees.
+With the encoding $\beta: \ktco{k} \to \ct{k}$, we now have direct graph-theoretic access to the attaching structure of coherently-oriented $k$-trees.
 We therefore turn our attention to the $k$-coding trees themselves to produce a recursive decomposition.
-As with $k$-trees, we will study rooted versions of the species $\specname{CT}_{k}$ of $k$-coding trees first, then use dissymmetry to apply the results to unrooted enumeration.
+As with $k$-trees, we will study rooted versions of the species $\ct{k}$ of $k$-coding trees first, then use dissymmetry to apply the results to unrooted enumeration.
 
-Let $\pointed[X]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at black vertices, $\pointed[Y]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at white vertices, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ denote the species of $k$-coding trees rooted at edges (that is, at adjacent black-white pairs).
-By construction, a $\pointed[X]{\specname{CT}}_{k}$-structure consists of a single $X$-label and a cyclically-ordered $\pbrac{k+1}$-set of $\pointed[Y]{\specname{CT}}_{k}$-structures.
+Let $\ctx{k}$ denote the species of $k$-coding trees rooted at black vertices, $\cty{k}$ denote the species of $k$-coding trees rooted at white vertices, and $\ctxy{k}$ denote the species of $k$-coding trees rooted at edges (that is, at adjacent black-white pairs).
+By construction, a $\ctx{k}$-structure consists of a single $X$-label and a cyclically-ordered $\pbrac{k+1}$-set of $\cty{k}$-structures.
 See Figure \ref{fig:ctxconst} for an example of this construction.
 
 \begin{figure}[htb]
@@ -1246,7 +1246,7 @@ See Figure \ref{fig:ctxconst} for an example of this construction.
       
       \node [style=ynode] (child\i) at (\theta:3) {$Y$};
       \path [draw] (root) -- (child\i);
-      \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
+      \draw (child\i) ++(\theta+90:1) node {$\cty{\kval}$};
 
       \draw (child\i) ++(\theta:1cm) ++(180+\theta-\childshift:2cm) arc (180+\theta-\childshift:180+\theta+\childshift:2cm);
 
@@ -1256,18 +1256,18 @@ See Figure \ref{fig:ctxconst} for an example of this construction.
     }
     
   \end{tikzpicture}
-  \caption[An example $X$-rooted $k$-coding tree]{An example $\pointed[X]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex.}
+  \caption[An example $X$-rooted $k$-coding tree]{An example $\ctx{\kval}$-structure, rooted at the $X$-vertex.}
   \label{fig:ctxconst}
 \end{figure}
 
-Similarly, a $\pointed[Y]{\specname{CT}}_{k}$-structure essentially consists of a single $Y$-label and a (possibly empty) set of $\pointed[X]{\specname{CT}}_{k}$-structures, but with some modification.
-Every white neighbor of the black root of a $\pointed[X]{\specname{CT}}_{k}$-structure is labeled in the construction above, but the white parent of a $\pointed[X]{\specname{CT}}_{k}$-structure in this recursive decomposition is already labeled.
-Thus, the structure around a black vertex which is a child of a white vertex consists of an $X$ label and a linearly-ordered $k$-set of $\pointed[Y]{\specname{CT}}_{k}$-structures.
-Thus, a $\pointed[Y]{\specname{CT}}_{k}$-structure consists of a $Y$-label and a set of pairs of an $X$ label and an $\specname{L}_{k}$-structure of $\pointed[Y]{\specname{CT}}_{k}$-structures.
+Similarly, a $\cty{k}$-structure essentially consists of a single $Y$-label and a (possibly empty) set of $\ctx{k}$-structures, but with some modification.
+Every white neighbor of the black root of a $\ctx{k}$-structure is labeled in the construction above, but the white parent of a $\ctx{k}$-structure in this recursive decomposition is already labeled.
+Thus, the structure around a black vertex which is a child of a white vertex consists of an $X$ label and a linearly-ordered $k$-set of $\cty{k}$-structures.
+Thus, a $\cty{k}$-structure consists of a $Y$-label and a set of pairs of an $X$ label and an $\specname{L}_{k}$-structure of $\cty{k}$-structures.
 We note here for conceptual consistency that in fact $\specname{L}_{k} = \deriv{\specname{C}}_{k+1}$ for $\specname{L}$ the species of linear orders and $\specname{C}$ the species of cyclic orders and that $\deriv{\specname{E}} = \specname{E}$ for $\specname{E}$ the species of sets; readers familiar with the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species} will recognize echoes of their decomposition in these facts.
 
-Finally, a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure is simply an $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure as described above (corresponding to the black vertex) together with a $\pointed[Y]{\specname{CT}}_{k}$-structure (corresponding to the white vertex).
-For reasons that will become clear later, we note that we can incorporate the root white vertex into the linear order by making it last, thus representing a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure.
+Finally, a $\ctxy{k}$-structure is simply an $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structure as described above (corresponding to the black vertex) together with a $\cty{k}$-structure (corresponding to the white vertex).
+For reasons that will become clear later, we note that we can incorporate the root white vertex into the linear order by making it last, thus representing a $\ctxy{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbrac{\cty{k}}$-structure.
 See Figure \ref{fig:ctxyconst} for an example of this construction.
 
 \begin{figure}[htb]
@@ -1293,7 +1293,7 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
       
       \node [style=ynode] (child\i) at (\theta:3) {$Y$};
       \path [draw] (root) -- (child\i);
-      \draw (child\i) ++(\theta+90:1) node {$\pointed[Y]{\specname{CT}}_{\kval}$};
+      \draw (child\i) ++(\theta+90:1) node {$\cty{\kval}$};
 
       \draw (child\i) ++(\theta:1cm) ++(180+\theta-\childshift:2cm) arc (180+\theta-\childshift:180+\theta+\childshift:2cm);
 
@@ -1303,20 +1303,20 @@ See Figure \ref{fig:ctxyconst} for an example of this construction.
     }
     
   \end{tikzpicture}
-  \caption[An example $\overline{XY}$-rooted $k$-coding tree]{An example $\pointed[\overline{XY}]{\specname{CT}}_{\kval}$-structure, rooted at the $X$-vertex and the thick edge adjoining it.}
+  \caption[An example $\overline{XY}$-rooted $k$-coding tree]{An example $\ctxy{\kval}$-structure, rooted at the $X$-vertex and the thick edge adjoining it.}
   \label{fig:ctxyconst}
 \end{figure}
 
 The various species of rooted $k$-coding trees are therefore related by a system of functional equations:
 \begin{observation}
   \label{obs:funcdecompct}
-  For the (ordinary) species $\pointed[X]{\specname{CT}}_{k}$ of $X$-rooted $k$-coding trees, $\pointed[Y]{\specname{CT}}_{k}$ of $Y$-rooted $k$-coding trees, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ of edge-rooted $k$-coding trees, we have the functional relationships
+  For the (ordinary) species $\ctx{k}$ of $X$-rooted $k$-coding trees, $\cty{k}$ of $Y$-rooted $k$-coding trees, and $\ctxy{k}$ of edge-rooted $k$-coding trees, we have the functional relationships
   \begin{subequations}
     \label{eq:ctfunc}
     \begin{align}
-      \pointed[X]{\specname{CT}}_{k} &= X \cdot \specname{C}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}} \label{eq:ctxfunc} \\
-      \pointed[Y]{\specname{CT}}_{k} &= Y \cdot \specname{E} \pbrac{X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}} \label{eq:ctyfunc} \\
-      \pointed[\overline{XY}]{\specname{CT}}_{k} &= \pointed[Y]{\specname{CT}}_{k} \cdot X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}} = X \cdot \specname{L}_{k+1} \pbrac{\pointed[Y]{\specname{CT}}_{k}} \label{eq:ctxyfunc}
+      \ctx{k} &= X \cdot \specname{C}_{k+1} \pbrac{\cty{k}} \label{eq:ctxfunc} \\
+      \cty{k} &= Y \cdot \specname{E} \pbrac{X \cdot \specname{L}_{k} \pbrac{\cty{k}}} \label{eq:ctyfunc} \\
+      \ctxy{k} &= \cty{k} \cdot X \cdot \specname{L}_{k} \pbrac{\cty{k}} = X \cdot \specname{L}_{k+1} \pbrac{\cty{k}} \label{eq:ctxyfunc}
     \end{align}
   \end{subequations}
   as isomorphisms of ordinary species.
@@ -1347,7 +1347,7 @@ Unfortunately:
 \end{proof}
 
 We thus cannot hope to attack the coherent orientations of $k$-trees by acting directly on the cyclic orderings of fronts.
-Accordingly, we cannot simply apply the results of \S \ref{ss:codecomp} to compute a $\Gamma$-species $\specname{CT}_{k}$ with respect to some hypothetical action of a group $\Gamma$ whose orbits correspond to generic $k$-trees.
+Accordingly, we cannot simply apply the results of \S \ref{ss:codecomp} to compute a $\Gamma$-species $\ct{k}$ with respect to some hypothetical action of a group $\Gamma$ whose orbits correspond to generic $k$-trees.
 Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees; with rooting, the cyclic orders around black vertices are converted into linear orders, for which there is a natural action of $\symgp{k+1}$.
 
 \subsection{Group actions on $k$-coding trees}\label{ss:actct}
@@ -1432,7 +1432,7 @@ We let $\Delta: \symgp{k} \to \symgp{k+1}$ denote the obvious embedding; then th
 We then have an action of $\symgp{k}$ on non-root black vertices induced by $\Delta$.
 (Equivalently, we can think of $\symgp{k}$ as the subgroup of $\symgp{k+1}$ of permutations fixing $k+1$, but the explicit notation $\Delta$ will be of use in later formulas.)
 
-In light of Observation \ref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[X]{\specname{CT}}_{k}$, $\pointed[Y]{\specname{CT}}_{k}$, and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ whose orbits correspond to the various coherent orientations of single underlying rooted $k$-trees.
+In light of Observation \ref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\ctx{k}$, $\cty{k}$, and $\ctxy{k}$ whose orbits correspond to the various coherent orientations of single underlying rooted $k$-trees.
 In the case of a $Y$-rooted $k$-coding tree $T$, if we declare that $\sigma \in \symgp{k}$ acts on $T$ by acting directly (as $\Delta \pbrac{\sigma}$) on each of the black vertices immediately adjacent to the root and then applying $\rho$-derived permutations recursively to their descendants, orbits behave as expected.
 The same $\symgp{k}$-action serves equally well for edge-rooted $k$-coding trees, where (for purposes of applying the action of some $\sigma$) we can simply ignore the black vertex in the root.
 
@@ -1441,67 +1441,67 @@ If we make an arbitrary choice of one of the $k+1$ available linearizations, and
 The orbit under this action of some edge-rooted $k$-coding tree $T$ with a choice of linearization at the root then includes all possible linearizations of the root orders of all possible $X$-rooted $k$-coding trees corresponding to the different coherent orientations of a single $k$-coding tree.
 
 \subsection{$k$-trees as quotients}\label{ss:ktquot}
-Since these actions are label-independent, we may now treat $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as $\symgp{k}$-species and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as an $\symgp{k+1}$-species.
-The $\symgp{k}$- and $\symgp{k+1}$-actions on $\pointed[\overline{XY}]{\specname{CT}}_{k}$ are compatible, but we will make explicit reference to $\pointed[\overline{XY}]{\specname{CT}}_{k}$ as a $\symgp{k}$- or $\symgp{k+1}$-species whenever it is important and not completely clear from context which we mean.
-As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\specname{CT}_{k}$ to the various ordinary species forms of generic rooted $k$-trees in Theorem \ref{thm:dissymk}:
+Since these actions are label-independent, we may now treat $\cty{k}$ and $\ctxy{k}$ as $\symgp{k}$-species and $\ctxy{k}$ as an $\symgp{k+1}$-species.
+The $\symgp{k}$- and $\symgp{k+1}$-actions on $\ctxy{k}$ are compatible, but we will make explicit reference to $\ctxy{k}$ as a $\symgp{k}$- or $\symgp{k+1}$-species whenever it is important and not completely clear from context which we mean.
+As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\ct{k}$ to the various ordinary species forms of generic rooted $k$-trees in Theorem \ref{thm:dissymk}:
 \begin{theorem}
   \label{thm:arootquot}
-  For the various rooted forms of the ordinary species $\mathfrak{a}_{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\specname{CT}_{k}$ as in Observation \ref{obs:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
+  For the various rooted forms of the ordinary species $\kt{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\ct{k}$ as in Observation \ref{obs:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
   \begin{subequations}
     \label{eq:arootquot}
     \begin{align}
-      \pointed[Y]{\mathfrak{a}}_{k} &= \faktor{\pointed[Y]{\specname{CT}}_{k}}{\symgp{k}} \label{eq:ayquot} \\
-      \pointed[\overline{XY}]{\mathfrak{a}}_{k} &= \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\symgp{k}} \label{eq:axyquot} \\
-      \pointed[X]{\mathfrak{a}}_{k} &= \faktor{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\symgp{k+1}} \label{eq:axquot}
+      \kty{k} &= \faktor{\cty{k}}{\symgp{k}} \label{eq:ayquot} \\
+      \ctxy{k} &= \faktor{\ctxy{k}}{\symgp{k}} \label{eq:axyquot} \\
+      \ktx{k} &= \faktor{\ctxy{k}}{\symgp{k+1}} \label{eq:axquot}
     \end{align}
   \end{subequations}
-  as isomorphisms of ordinary species, where $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is an $\symgp{k}$-species in \eqref{eq:axyquot} and an $\symgp{k+1}$-species in \eqref{eq:axquot}.
+  as isomorphisms of ordinary species, where $\ctxy{k}$ is an $\symgp{k}$-species in \eqref{eq:axyquot} and an $\symgp{k+1}$-species in \eqref{eq:axquot}.
 \end{theorem}
 
 As a result, we have explicit characterizations of all the rooted components of the original dissymmetry theorem \ref{thm:dissymk}.
-To compute the cycle indices of these components (and thus the cycle index of $\mathfrak{a}_{k}$ itself), we need only compute the cycle indices of the various rooted $\specname{CT}_{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
+To compute the cycle indices of these components (and thus the cycle index of $\kt{k}$ itself), we need only compute the cycle indices of the various rooted $\ct{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
 
 \section{Automorphisms and cycle indices}\label{s:ktcycind}
-\subsection{$k$-coding trees: $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$}\label{ss:ctcycind}
+\subsection{$k$-coding trees: $\cty{k}$ and $\ctxy{k}$}\label{ss:ctcycind}
 Corollary \ref{cor:dissymkreform} of the dissymmetry theorem for $k$-trees has a direct analogue in terms of cycle indices:
 \begin{theorem}
   \label{thm:dissymkci}
-  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{s:dissymk}, we have
+  For the various forms of the species $\kt{k}$ as in \S \ref{s:dissymk}, we have
   \begin{equation}
     \label{eq:dissymkci}
-    \ci{\mathfrak{a}_{k}} = \ci{\pointed[X]{\mathfrak{a}}_{k}} + \ci{\pointed[Y]{\mathfrak{a}}_{k}} - \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}}.
+    \ci{\kt{k}} = \ci{\ktx{k}} + \ci{\kty{k}} - \ci{\ctxy{k}}.
   \end{equation}
 \end{theorem}
 
-Thus, we need to calculate the cycle indices of the three rooted forms of $\mathfrak{a}_{k}$.
+Thus, we need to calculate the cycle indices of the three rooted forms of $\kt{k}$.
 From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
 \begin{theorem}
   \label{thm:aquotci}
-  For the various forms of the species $\mathfrak{a}_{k}$ as in \S \ref{s:dissymk} and the various $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\specname{CT}_{k}$ as in \S \ref{ss:actct}, we have
+  For the various forms of the species $\kt{k}$ as in \S \ref{s:dissymk} and the various $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\ct{k}$ as in \S \ref{ss:actct}, we have
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
-      \ci{\pointed[Y]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} \label{eq:ayquotci} \\
-      \ci{\pointed[\overline{XY}]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:axyquotci} \\
-      \ci{\pointed[X]{\mathfrak{a}}_{k}} &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}_{k}}} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:axquotci}
+      \ci{\kty{k}} &= \qgci{\symgp{k}}{\cty{k}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\cty{k}}{\sigma} \label{eq:ayquotci} \\
+      \ci{\ctxy{k}} &= \qgci{\symgp{k}}{\ctxy{k}} = \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\ctxy{k}}{\sigma} \label{eq:axyquotci} \\
+      \ci{\ktx{k}} &= \qgci{\symgp{k+1}}{\ctxy{k}} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\ctxy{k}}{\sigma} \label{eq:axquotci}
     \end{align}
   \end{subequations}
 \end{theorem}
 
-We thus need only calculate the various $\Gamma$-cycle indices for the $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ to complete our enumeration of general $k$-trees.
+We thus need only calculate the various $\Gamma$-cycle indices for the $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\cty{k}$ and $\ctxy{k}$ to complete our enumeration of general $k$-trees.
 
-In Observation \ref{obs:funcdecompct}, the functional equations for the ordinary species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ both include terms of the form $\specname{L}_{k} \circ \pointed[Y]{\specname{CT}}_{k}$.
-The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in Definition \ref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\pointed[Y]{\specname{CT}}_{k}$-structures in these recursive decompositions.
+In Observation \ref{obs:funcdecompct}, the functional equations for the ordinary species $\cty{k}$ and $\ctxy{k}$ both include terms of the form $\specname{L}_{k} \circ \cty{k}$.
+The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in Definition \ref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\cty{k}$-structures in these recursive decompositions.
 Recall from \S \ref{s:quot} that, for two $\Gamma$-species $F$ and $G$, an element $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure (colloquially, `an $F$-structure of $G$-structures') by acting on the $F$-structure and on each of the $G$-structures independently.
-In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant $\pointed[Y]{\specname{CT}}_{k}$-structures are \emph{not} independent---they depend on the position of the structure in the linear ordering around the parent black vertex.
+In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant $\cty{k}$-structures are \emph{not} independent---they depend on the position of the structure in the linear ordering around the parent black vertex.
 In particular, if $\sigma$ acts on some non-root black vertex, then $\rho_{i} \pbrac{\sigma}$ acts on the white vertex in the $i$th place, where in general $\rho_{i} \pbrac{\sigma} \neq \sigma$.
 
 Thus, we consider automorphisms of these $\symgp{k}$-structures directly.
-First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$.
+First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$.
 \begin{lemma}
   \label{lem:ctyinvar}
-  Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$.
-  Let $W_{i}$ be the $\pointed[Y]{\specname{CT}}_{k}$-structure in the $i$th position in the linear order.
+  Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$.
+  Let $W_{i}$ be the $\cty{k}$-structure in the $i$th position in the linear order.
   Then some $\sigma \in \symgp{k}$ acts as an automorphism of $B$ if and only if, for each $i \in \sbrac{k+1}$, we have $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}} W_{i} \cong W_{\sigma \pbrac{i}}$.
 \end{lemma}
 
@@ -1514,66 +1514,66 @@ First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\point
   That this suffices is clear.
 \end{proof}
 
-Consider a structure $T$ of the $\symgp{k}$-species $\pointed[Y]{\specname{CT}}_{k}$ and an element $\sigma \in \symgp{k}$.
-As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures.
-The permutation $\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures independently.
-For each of these component structures, by Lemma \ref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\Delta \sigma$ carries each $\pointed[Y]{\specname{CT}}_{k}$-structure to its $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$-image.
-Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structures, we must construct for each cycle of $\sigma$ a $\pointed[Y]{\specname{CT}_{k}}$-structure which is invariant under the application of \emph{all} the permutations $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ which will be applied to it along the cycle.
+Consider a structure $T$ of the $\symgp{k}$-species $\cty{k}$ and an element $\sigma \in \symgp{k}$.
+As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures.
+The permutation $\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures independently.
+For each of these component structures, by Lemma \ref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\Delta \sigma$ carries each $\cty{k}$-structure to its $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$-image.
+Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures, we must construct for each cycle of $\sigma$ a $\cty{k}$-structure which is invariant under the application of \emph{all} the permutations $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ which will be applied to it along the cycle.
 For $c$ the chosen cycle of $\sigma$, this permutation is $\Delta^{-1} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}$, where the product is taken over any chosen linearization of the cyclic order of the terms in the cycle.
-Once a choice of such a $\pointed[Y]{\specname{CT}}_{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\pointed[Y]{\specname{CT}}_{k}}$-structure.
+Once a choice of such a $\cty{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structure.
 Accordingly:
 \begin{theorem}
   \label{thm:ctyfuncci}
-  The $\symgp{k}$-cycle index for the species $\pointed[Y]{\specname{CT}}_{k}$ is characterized by the recursive functional equation
+  The $\symgp{k}$-cycle index for the species $\cty{k}$ is characterized by the recursive functional equation
   \begin{multline}
     \label{eq:ctyfuncci}
-    \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} = p_{1} \sbrac{y} \\
-    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
+    \gcielt{\symgp{k}}{\cty{k}}{\sigma} = p_{1} \sbrac{y} \\
+    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\cty{k}}{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
   \end{multline}
   where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ (as a $k$-permutation) and the inner product is taken with respect to any choice of linearization of the cyclic order of the elements of $c$.
 \end{theorem}
 
-The situation for the $\symgp{k+1}$-species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is almost identical.
-Recall from \S \ref{ss:actct} that $\sigma \in \symgp{k+1}$ acts on a $\pointed[\overline{XY}]{\specname{CT}}_{k}$-structure $T$ by applying $\sigma$ directly to the linear order on the $k+1$ white neighbors of the root black vertex and applying $\rho$-variants of $\sigma$ recursively to their descendants.
+The situation for the $\symgp{k+1}$-species $\ctxy{k}$ is almost identical.
+Recall from \S \ref{ss:actct} that $\sigma \in \symgp{k+1}$ acts on a $\ctxy{k}$-structure $T$ by applying $\sigma$ directly to the linear order on the $k+1$ white neighbors of the root black vertex and applying $\rho$-variants of $\sigma$ recursively to their descendants.
 Thus, we once again need only require that, along each cycle of $\sigma$, the successive white-vertex structures are pairwise isomorphic under the action of the appropriate $\rho_{i} \pbrac{\sigma}$.
-Thus, we again need only choose for each cycle $c \in C \pbrac{\sigma}$ a $\pointed[Y]{\specname{CT}}_{k}$-structure which is invariant under $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$.
+Thus, we again need only choose for each cycle $c \in C \pbrac{\sigma}$ a $\cty{k}$-structure which is invariant under $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$.
 Accordingly:
 \begin{theorem}
   \label{thm:ctxyfuncci}
-  The $\symgp{k+1}$-cycle index for the species $\pointed[\overline{XY}]{\specname{CT}}_{k}$ is given by
+  The $\symgp{k+1}$-cycle index for the species $\ctxy{k}$ is given by
   \begin{multline}
     \label{eq:ctxyfuncci}
-    \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\prod_{i \in c} \rho_{i} \sbrac{\sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \gcielt{\symgp{k+1}}{\ctxy{k}}{\sigma} = p_{1} \sbrac{x} \\
+    \times \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\cty{k}}{\prod_{i \in c} \rho_{i} \sbrac{\sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as Theorem \ref{thm:ctyfuncci}.
 \end{theorem}
 
-\subsection{$k$-trees: $\mathfrak{a}_{k}$}\label{ss:ktcycind}
-We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\mathfrak{a}_{k}$ of general $k$-trees.
-Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\mathfrak{a}_{k}$ in terms of the cycle indices of the rooted species $\pointed[X]{\mathfrak{a}}_{k}$, $\pointed[Y]{\mathfrak{a}}_{k}$, and $\pointed[\overline{XY}]{\mathfrak{a}}_{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$, $\gci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
+\subsection{$k$-trees: $\kt{k}$}\label{ss:ktcycind}
+We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\kt{k}$ of general $k$-trees.
+Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\kt{k}$ in terms of the cycle indices of the rooted species $\ktx{k}$, $\kty{k}$, and $\ctxy{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\cty{k}}$, $\gci{\symgp{k}}{\ctxy{k}}$, and $\gci{\symgp{k+1}}{\ctxy{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
 By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} back through this sequence of functional relationships, we can conclude:
 \begin{theorem}[Cycle index for the species of $k$-trees]
   \label{thm:akci}
-  For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in equation \eqref{eq:ctxyfuncci} we have:
+  For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\cty{k}}$ as in equation \eqref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\ctxy{k}}$ as in equation \eqref{eq:ctxyfuncci} we have:
   \label{thm:ktreecyc}
   \begin{subequations}
     \label{eq:akci}
     \begin{align}
-      \ci{\mathfrak{a}_{k}} &= \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}}{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}{\sigma} \label{eq:akciexplicit} \\
-      &= \qgci{\symgp{k+1}}{\pointed[\overline{XY}]{\specname{CT}}_{k}} + \qgci{\symgp{k}}{\pointed[Y]{\specname{CT}}_{k}} - \qgci{\symgp{k}}{\pointed[\overline{XY}]{\specname{CT}}_{k}}. \label{eq:akciquot}
+      \ci{\kt{k}} &= \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \gcielt{\symgp{k+1}}{\ctxy{k}}{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\cty{k}}{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \gcielt{\symgp{k}}{\ctxy{k}}{\sigma} \label{eq:akciexplicit} \\
+      &= \qgci{\symgp{k+1}}{\ctxy{k}} + \qgci{\symgp{k}}{\cty{k}} - \qgci{\symgp{k}}{\ctxy{k}}. \label{eq:akciquot}
     \end{align}
   \end{subequations}
 
 \end{theorem}
 
-Since the formulas for the $\Gamma$-cycle indices of $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ are recursive, equation \eqref{eq:akci} in fact represents a recursive system of functional equations.
+Since the formulas for the $\Gamma$-cycle indices of $\cty{k}$ and $\ctxy{k}$ are recursive, equation \eqref{eq:akci} in fact represents a recursive system of functional equations.
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
 However, a bit of care will allow us to reduce the computational complexity of this problem significantly.
 
 \section{Unlabeled enumeration and the generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$}
-Equation \eqref{eq:akci} in Theorem \ref{thm:akci} gives a recursive formula for the cycle index of the ordinary species $\mathfrak{a}_{k}$ of $k$-trees.
-The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of Theorem \ref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\mathfrak{a}_{k}}$.
+Equation \eqref{eq:akci} in Theorem \ref{thm:akci} gives a recursive formula for the cycle index of the ordinary species $\kt{k}$ of $k$-trees.
+The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of Theorem \ref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\kt{k}}$.
 Actually computing terms of the cycle index in order to derive the coefficients of the generating function is, however, a computationally expensive process, since the cycle index is by construction a power series in two infinite sets of variables.
 The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
 
@@ -1590,23 +1590,23 @@ In each case, by the above, the ordinary generating function is exactly the resu
 Thus, we have:
 \begin{theorem}
   \label{thm:ctogf}
-  For $\pointed[Y]{\specname{CT}}_{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\pointed[\overline{XY}]{\specname{CT}}_{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding $\Gamma$-ordinary generating functions are given by
+  For $\cty{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\ctxy{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding $\Gamma$-ordinary generating functions are given by
   \begin{align}
-    \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
-    \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyogf}
+    \widetilde{\cty{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\cty{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
+    \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\cty{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyogf}
   \end{align}
-  where $\widetilde{\pointed[Y]{\specname{CT}}_{k}}$ is a $\symgp{k}$-generating function and $\widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ is a $\symgp{k+1}$-generating function.
+  where $\widetilde{\cty{k}}$ is a $\symgp{k}$-generating function and $\widetilde{\ctxy{k}}$ is a $\symgp{k+1}$-generating function.
 \end{theorem}
 As in Theorem \ref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
 
-Moreover, the cycle index of the species $\mathfrak{a}_{k}$, as seen in equation \eqref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\pointed[Y]{\specname{CT}}_{k}$ and $\pointed[\overline{XY}]{\specname{CT}}_{k}$.
+Moreover, the cycle index of the species $\kt{k}$, as seen in equation \eqref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\cty{k}$ and $\ctxy{k}$.
 Thus, we also have:
 \begin{theorem}
   \label{thm:akogf}
-  For $\mathfrak{a}_{k}$ the species of $k$-trees and $\widetilde{\pointed[Y]{\specname{CT}}_{k}}$ and $\widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}}$ as in Theorem \ref{thm:ctogf}, we have
+  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{thm:ctogf}, we have
   \begin{equation}
     \label{eq:akogf}
-    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\pointed[Y]{\specname{CT}}_{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\pointed[\overline{XY}]{\specname{CT}}_{k}} \pbrac{\sigma}.
+    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma}.
   \end{equation}
 \end{theorem}
 
@@ -1620,7 +1620,7 @@ Many of the complexities of the preceding analysis apply only for $k$ sufficient
 We note here some simplifications that are possible when $k$ is small.
 
 \subsection{Ordinary trees ($k = 1$)}
-When $k = 1$, an $\mathfrak{a}_{k}$-structure is merely an ordinary tree with $X$-labels on its edges and $Y$-labels on its vertices.
+When $k = 1$, an $\kt{k}$-structure is merely an ordinary tree with $X$-labels on its edges and $Y$-labels on its vertices.
 There is no internal symmetry of the form that the actions of $\symgp{k}$ are intended to break.
 The actions of $\symgp{2}$ act on ordinary trees rooted at a \emph{directed} edge, with the nontrivial element $\tau \in \symgp{2}$ acting by reversing this orientation.
 The resulting decomposition from the dissymmetry theorem \ref{thm:dissymk} and the recursive functional equations of Observation \ref{obs:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
@@ -1634,13 +1634,13 @@ We then have that:
 \begin{subequations}
   \label{eq:rest2trees}
   \begin{align}
-    \gci{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}}{e}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
-    \gci{\symgp{3}}{\pointed[\overline{XY}]{\specname{CT}}_{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\pointed[Y]{\specname{CT}}_{2}}{\rho \pbrac{\sigma}^{\abs{c}}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
+    \gci{\symgp{2}}{\cty{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\cty{2}}{e}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
+    \gci{\symgp{3}}{\ctxy{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\cty{2}}{\rho \pbrac{\sigma}^{\abs{c}}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
   \end{align}
 \end{subequations}
 where, by abuse of notation, we let $\rho$ represent any $\rho_{i}$.
 By the previous, the argument $\rho \pbrac{\sigma}^{\abs{c}}$ in Equation \eqref{eq:ctxyfuncci2} is $\tau$ if and only if $\sigma$ is an odd permutation and $c$ is of odd length.
-This analysis and the resulting formulas for the cycle index $\ci{\mathfrak{a}_{2}}$ are essentially equivalent to those derived in \cite{gessel:spec2trees}.
+This analysis and the resulting formulas for the cycle index $\ci{\kt{2}}$ are essentially equivalent to those derived in \cite{gessel:spec2trees}.
 
 \subsection{$3$-trees}
 TODO: Is there anything to be said here?
@@ -1779,7 +1779,7 @@ Note that most of these sequences appear in the historical literature and on \ci
 \end{table}
 
 \section{$k$-trees}\label{s:ktenum}
-With the recursive functional equations for cycle indices of \S \ref{s:ktcycind}, we can calculate the explicit cycle index for the species $\mathfrak{a}_{k}$ to any finite degree we choose using computational methods; this cycle index can then be used to enumerate both unlabeled and labeled (at fronts, hedra, or both) $k$-trees up to a specified number $n$ of hedra (or, equivalently, $kn + 1$ fronts).
+With the recursive functional equations for cycle indices of \S \ref{s:ktcycind}, we can calculate the explicit cycle index for the species $\kt{k}$ to any finite degree we choose using computational methods; this cycle index can then be used to enumerate both unlabeled and labeled (at fronts, hedra, or both) $k$-trees up to a specified number $n$ of hedra (or, equivalently, $kn + 1$ fronts).
 We have done so here for $k \leq 7$ and $n \leq 12$ using Maple 13 and a few minutes of computation time on a modern desktop computer; the code used is available from the first author on request.
 The resulting values appear in Table \ref{tab:ktrees}.
 
@@ -1789,7 +1789,7 @@ We note that both unlabeled and hedron-labeled enumerations of $k$-trees stabili
   For $k \geq n + 2$, the numbers of unlabeled and hedron-labeled $k$-trees are independent of $k$.
 \end{theorem}
 \begin{proof}
-  We show that the species $\mathfrak{a}_{k}$ and $\mathfrak{a}_{k+1}$ have contact up to order $k+2$ by explicitly constructing a natural bijection.
+  We show that the species $\kt{k}$ and $\kt{k+1}$ have contact up to order $k+2$ by explicitly constructing a natural bijection.
   We note that in a $\pbrac{k+1}$-tree with no more than $k+2$ hedra, there will exist at least one vertex which is common to \emph{all} hedra.
   For any $k$-tree with no more than $k+2$ hedra, we can construct a $\pbrac{k+1}$-tree with the same number of hedra by adding a single vertex and connecting it by edges to every existing vertex; we can then pass labels up from the $\pbrac{k+1}$-cliques which are the hedra of the $k$-tree to the $\pbrac{k+2}$-cliques which now sit over them.
   The resulting graph will be a $\pbrac{k+1}$-tree whose $\pbrac{k+1}$-tree hedra are adjacent exactly when the $k$-tree hedra they came from were adjacent.
