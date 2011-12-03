@@ -979,16 +979,16 @@ In this case, the species $\specname{A}$ is relatively easy to characterize expl
 A similar theorem holds for $k$-trees.
 \begin{theorem}
   \label{thm:dissymk}
-  The species $\ktx{k}$ and $\kty{k}$ of $k$-trees rooted at hedra and fronts respectively, $\ctxy{k}$ of $k$-trees rooted at a hedron with a designated front, and $\kt{k}$ of unrooted $k$-trees are related by the equation
+  The species $\ktx{k}$ and $\kty{k}$ of $k$-trees rooted at hedra and fronts respectively, $\ktxy{k}$ of $k$-trees rooted at a hedron with a designated front, and $\kt{k}$ of unrooted $k$-trees are related by the equation
   \begin{equation}
     \label{eq:dissymk}
-    \ktx{k} + \kty{k} = \kt{k} + \ctxy{k}
+    \ktx{k} + \kty{k} = \kt{k} + \ktxy{k}
   \end{equation}
   as an isomorphism of species.
 \end{theorem}
 
 \begin{proof}
-  We give a bijective, natural map from $\pbrac{\ktx{k} + \kty{k}}$-structures on the left side to $\pbrac{\kt{k} + \ctxy{k}}$-structures on the right side.
+  We give a bijective, natural map from $\pbrac{\ktx{k} + \kty{k}}$-structures on the left side to $\pbrac{\kt{k} + \ktxy{k}}$-structures on the right side.
   Define a \emph{$k$-path} in a $k$-tree to be a non-self-intersecting sequence of consecutively adjacent hedra and fronts, and define the \emph{length} of a $k$-path to be the total number of hedra and fronts along it.
   Note that the ends of every maximal $k$-path in a $k$-tree are fronts.
   It is easily verified, as in \cite{kob:ktlogspace}, that every $k$-tree has a unique \emph{center} clique (either a hedron or a front) which is the midpoint of every longest $k$-path (or, equivalently, has the greatest $k$-eccentricity, defined appropriately).
@@ -1001,7 +1001,7 @@ A similar theorem holds for $k$-trees.
   Now suppose that the root clique $c$ of the $k$-tree $T$ is \emph{not} the center, which we denote $C$.
   Identify the clique $c'$ which is adjacent to $c$ along the $k$-path from $c$ to $C$.
   We then map the $k$-tree $T$ rooted at the clique $c$ to the same tree $T$ rooted at \emph{both} $c$ and its neighbor $c'$.
-  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\ctxy{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
+  This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\ktxy{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
 
   When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymk}.
 \end{proof}
@@ -1012,13 +1012,13 @@ In general we will reformulate the dissymmetry theorem as follows:
   For the various forms of the species $\kt{k}$ as above, we have
   \begin{equation}
     \label{eq:dissymkreform}
-    \kt{k} = \ktx{k} + \kty{k} - \ctxy{k}.
+    \kt{k} = \ktx{k} + \kty{k} - \ktxy{k}.
   \end{equation}
   as an isomorphism of ordinary species.
 \end{corollary}
 
 The species subtraction is of course defined, since this is just an algebraic manipulation of equation \eqref{eq:dissymk}.
-However, we note that, in the sense of Definition \ref{def:specdif}, since the species $\ctxy{k}$ embeds in the species $\ktx{k} + \kty{k}$ by the centering map in the proof of Theorem \ref{thm:dissymk}.
+However, we note that, in the sense of Definition \ref{def:specdif}, since the species $\ktxy{k}$ embeds in the species $\ktx{k} + \kty{k}$ by the centering map in the proof of Theorem \ref{thm:dissymk}.
 
 Theorem \ref{thm:dissymk} and the consequent equation \eqref{eq:dissymkreform} allow us to reframe enumerative questions about generic $k$-trees in terms of questions about $k$-trees rooted in various ways.
 However, the rich internal symmetries of large cliques obstruct direct analysis of these rooted structures.
