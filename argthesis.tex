@@ -1575,7 +1575,7 @@ Since the formulas for the $\Gamma$-cycle indices of $\cty{k}$ and $\ctxy{k}$ ar
 Computational methods, as discussed in \S \ref{s:comprecurs}, can yield explicit enumerative results.
 However, a bit of care will allow us to reduce the computational complexity of this problem significantly.
 
-\section{Unlabeled enumeration and the generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$}
+\section{Unlabeled enumeration and the generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$}\label{ss:ktunlenum}
 Equation \eqref{eq:akci} in Theorem \ref{thm:akci} gives a recursive formula for the cycle index of the ordinary species $\kt{k}$ of $k$-trees.
 The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of Theorem \ref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\kt{k}}$.
 Actually computing terms of the cycle index in order to derive the coefficients of the generating function is, however, a computationally expensive process, since the cycle index is by construction a power series in two infinite sets of variables.
@@ -1954,6 +1954,14 @@ We have included citations to the latter where appropriate.
     \end{tabular}
   }
 \end{table}
+
+\chapter{Code listing}\label{c:code}
+\section{$k$-trees}\label{s:ktcode}
+The explicit calculation of numbers of unlabeled $k$-trees with $n$ hedra for $k \leq 8$ and $n \leq 30$ was performed using the Python-based symbolic algebra system Sage 1.7.4 \cite{sage} and a desktop computer.
+The methods used are derived directly from \S \ref{ss:ktunlenum}.
+The code used to do so follows.
+
+\lstinputlisting[caption=Sage code to compute numbers of $k$-trees, label=lst:ktcode, language=Python]{ktrees.py}
 
 \backmatter
 
