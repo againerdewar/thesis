@@ -29,8 +29,7 @@ def Delta(sigma):
     outgroup = SymmetricGroup(deg+1)
     return outgroup(sigma)
 
-# Permutation.cycle_tuples() doesn't include 1-cycles, but we need them for
-# cycle index calculations, so we define a new map
+# Permutation.cycle_tuples() doesn't include 1-cycles, but we need them for cycle index calculations, so we define a new map
 @cached_function
 def perm_cycles(sigma):
         cycles = sigma.cycle_tuples()
@@ -47,8 +46,7 @@ def perm_cycles(sigma):
         cycles += [(i,) for i in values]
         return cycles
 
-# Compute the generating function for unlabeled Y-rooted k-trees fixed
-# by a given sigma.
+# Compute the generating function for unlabeled Y-rooted k-trees fixed by a given sigma.
 # Note that sigma should be in S(k)
 @cached_function
 def unlY(sigma, n):
@@ -69,8 +67,7 @@ def unlY(sigma, n):
 
         return sum(x**i/i * descendant_pseries(sigma**i).subs({x:x**i}) for i in xrange(1, n+1)).exp(n+1)
 
-# Compute the generating function for unlabeled XY-rooted k-trees fixed
-# by a given sigma.
+# Compute the generating function for unlabeled XY-rooted k-trees fixed by a given sigma.
 # Note that sigma should be in S(k+1)
 @cached_function
 def unlXY(sigma, n):
@@ -89,14 +86,12 @@ def unlXY(sigma, n):
         cycles = perm_cycles(sigma)
         return (x * prod(ystretcher(c) for c in cycles)).add_bigoh(n+1)
 
-# Compute the generating functions for unlabeled X-, Y-, and XY-rooted
-# k-trees using quotients
+# Compute the generating functions for unlabeled X-, Y-, and XY-rooted k-trees using quotients
 ax = lambda k, n: 1/factorial(k+1) * sum(unlXY(sigma, n) for sigma in SymmetricGroup(k+1))
 ay = lambda k, n: 1/factorial(k) * sum(unlY(sigma, n) for sigma in SymmetricGroup(k))
 axy = lambda k, n: 1/factorial(k) * sum(unlXY(Delta(sigma), n) for sigma in SymmetricGroup(k))
 
-# Compute the generating function for unlabeled un-rooted k-trees using
-# the dissymmetry theorem
+# Compute the generating function for unlabeled un-rooted k-trees using the dissymmetry theorem
 a = lambda k, n: ax(k, n) + ay(k, n) - axy(k, n)
 
 # Print the result
