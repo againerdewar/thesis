@@ -2103,13 +2103,19 @@ We have included citations to the latter where appropriate.
 \end{table}
 
 \chapter{Code listing}\label{c:code}
+Our results in chapters \ref{c:bpblocks} and \ref{c:ktrees} provide a framework for enumerating bipartite blocks and general $k$-trees.
+However, there is significant work to be done adapting the theory into practical algorithms for computing the actual numbers of such structures.
+Using the computer algebra system Sage 1.7.4 \cite{sage}, we have implemented some algorithms to do exactly this.
+
 \section{Bipartite blocks}\label{s:bpbcode}
+The functional equation \eqref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
+Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows.
+
 \lstinputlisting[caption=Sage code to compute numbers of bipartite blocks, label=lst:ktcode, language=Python]{python/bpblocks.py}
 
 \section{$k$-trees}\label{s:ktcode}
-The explicit calculation of numbers of unlabeled $k$-trees with $n$ hedra for $k \leq 8$ and $n \leq 30$ was performed using the Python-based symbolic algebra system Sage 1.7.4 \cite{sage} and a desktop computer.
-The methods used are derived directly from \S \ref{ss:ktunlenum}.
-The code used to do so follows.
+The recursive functional equations \eqref{eq:ctyogf}, \eqref{eq:ctxyogf}, and \eqref{eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
+Python/Sage code to compute the coefficients of this generating function explicitly follows.
 
 \lstinputlisting[caption=Sage code to compute numbers of $k$-trees, label=lst:ktcode, language=Python]{python/ktrees.py}
 
