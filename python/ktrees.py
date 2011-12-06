@@ -18,7 +18,6 @@ x = psr.gen()
 def rho(sigma, i):
     pgroup = sigma.parent()
     deg = pgroup.degree()
-    sigmainv = sigma.inverse()
     shiftmod = lambda k: mod(k-1, deg).lift() + 1
     result_list = [shiftmod( sigma(shiftmod(i+a)) - sigma(shiftmod(i)) ) for a in xrange(1, deg)]
     return SymmetricGroup(deg-1)(result_list)
