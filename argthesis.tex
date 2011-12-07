@@ -1553,6 +1553,31 @@ Accordingly:
   under the same conditions as Theorem \ref{thm:ctyfuncci}.
 \end{theorem}
 
+Terms of the form $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$ appear in equations \eqref{eq:ctyfuncci} and \eqref{eq:ctxyfuncci}.
+For the simplification of calculations, we note here a two useful results about these products.
+
+First, we observe that certain $\rho$-maps preserve cycle structure:
+\begin{lemma}
+  \label{lem:rhofp}
+  Let $\sigma \in \symgp{k}$ be a permutation of which $i \in \sbrac{k}$ is a fixed point and let $\lambda$ be the map sending each permutation in $\symgp{k}$ to its cycle type as a partition of $k$.
+  Then $\lambda \pbrac{\rho_{i} \pbrac{\sigma}} = \lambda \pbrac{\sigma}$.
+\end{lemma}
+\begin{proof}
+  Suppose $i + a \in \sbrac{k}$ is in an $l$-cycle of $\sigma$.
+  Then
+  \begin{align*}
+    \pbrac{\rho_{i} \pbrac{\sigma}}^{j} \pbrac{a} =& \pbrac{\rho_{i} \pbrac{\sigma}}^{j - 1} \pbrac{\sigma \pbrac{i + a} - \sigma \pbrac{i}} \\
+    =& \pbrac{\rho_{i} \pbrac{\sigma}}^{j - 2} \pbrac{\sigma \pbrac{i + \sigma \pbrac{i + a} - \sigma \pbrac{i}} - \sigma \pbrac{i}} \\
+    =& \pbrac{\rho_{i} \pbrac{\sigma}}^{j - 2} \pbrac{\sigma^{2} \pbrac{i + a} - \sigma^{2} \pbrac{i}} \\
+    &\vdots \\
+    =& \sigma^{j} \pbrac{i + a} - \sigma^{j} \pbrac{i}
+  \end{align*}
+  But the values of $\pbrac{\rho_{i} \pbrac{\sigma}}^{j} \pbrac{a} = \sigma^{j} \pbrac{i + a} - \sigma^{j} \pbrac{i}$ are all distinct for $j \leq l$, since $i + a$ is in an $l$-cycle and $i$ is a fixed point of $\sigma$.
+  Furthermore, $\pbrac{\rho_{i} \pbrac{\sigma}}^{l} \pbrac{a} = \sigma^{l} \pbrac{i + a} = i+a$.
+  Thus, $a$ is in an $l$-cycle of $\rho_{i} \pbrac{\sigma}$.
+  This establishes a length-preserving bijection between cycles of $\rho_{i} \pbrac{\sigma}$ and cycles of $\sigma$, so their cycle types are equal.
+\end{proof}
+
 \subsection{$k$-trees: $\kt{k}$}\label{ss:ktcycind}
 We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\kt{k}$ of general $k$-trees.
 Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\kt{k}$ in terms of the cycle indices of the rooted species $\ktx{k}$, $\kty{k}$, and $\ctxy{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\cty{k}}$, $\gci{\symgp{k}}{\ctxy{k}}$, and $\gci{\symgp{k+1}}{\ctxy{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
