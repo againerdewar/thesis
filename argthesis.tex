@@ -1680,106 +1680,29 @@ With appropriate optimizations (in particular, truncations), this method can run
 TODO: Write this!
 
 \chapter{Enumerative tables}\label{c:enum}
-\section{Bicolored and bipartite graphs}\label{s:bpenum}
-With the tools developed in \S \ref{c:bpblocks}, we can calculate the cycle indices of the species $\mathcal{BC}$, $\mathcal{BP}$, and their nonseparable variants to any degree we choose using computational methods.
-These cycle indices can then be used to enumerate both labeled and unlabeled structures of each type up to a specified number of vertices.
-We have done so here for each species for $n \leq 10$ using Maple 13; the code used is available on request from the first author.
-The resulting values appear in Table \ref{tab:bcgraphs}.
-Note that most of these sequences appear in the historical literature and on \cite{oeis}; where the latter holds, we have included a citation here.
+\section{Bipartite blocks}\label{s:bpenum}
+With the tools developed in \S \ref{c:bpblocks}, we can calculate the cycle indices of the species $\mathcal{NBP}$ of nonseparable bipartite graphs to any finite degree we choose using computational methods.
+This result can then be used to enumerate unlabeled bipartite blocks.
+We have done so here using Sage 1.7.4 \cite{sage} and code listed in \S \ref{s:bpbcode}.
+The resulting values appear in Table \ref{tab:bpblocks}.
 
 \begin{table}[htb]
   \centering
-  \caption{Enumerative data for bicolored and bipartite graphs (TODO: clean up typesetting)}
-  \label{tab:bcgraphs}
-  \subfloat[Bicolored graphs ($\mathcal{BC}$)]{
-    \label{tab:bc}
-    \begin{tabular}{r | r r}
-      $n$ & Unlabeled & Labeled \\ \hline
-      1 & 2 & 2 \\
-      2 & 4 & 6 \\
-      3 & 8 & 26 \\
-      4 & 17 & 162 \\
-      5 & 38 & 1442 \\
-      6 & 94 & 18306 \\
-      7 & 258 & 330626 \\
-      8 & 815 & 8488926 \\
-      9 & 3038 & 309465602 \\
-      10 & 13804 & 16011372546 \\
-      OEIS & \cite[A049312]{oeis} & \cite[A047863]{oeis}
-    \end{tabular}
-  }
-  \qquad
-  \subfloat[Connected bicolored graphs ($\mathcal{CBC}$)]{
-    \label{tab:cbc}
-    \begin{tabular}{r | r r}
-      $n$ & Unlabeled & Labeled \\ \hline
-      1 & 2 & 2 \\
-      2 & 1 & 2 \\
-      3 & 2 & 6 \\
-      4 & 4 & 38 \\
-      5 & 10 & 390 \\
-      6 & 27 & 6062 \\
-      7 & 88 & 134526 \\
-      8 & 328 & 4172198 \\
-      9 & 1460 & 1784499270 \\
-      10 & 7799 & 10508108222 \\
-      OEIS & & \cite[A002027]{oeis}
-    \end{tabular}
-  }
-  \\
-  \subfloat[Connected bipartite graphs ($\mathcal{CBP}$)]{
-    \label{tab:cbp}
-    \begin{tabular}{r | r r}
-      $n$ & Unlabeled & Labeled \\ \hline
-      1 & 1 & 1 \\
-      2 & 1 & 1 \\
-      3 & 1 & 3 \\
-      4 & 3 & 19 \\
-      5 & 5 & 195 \\
-      6 & 17 & 3031 \\
-      7 & 44 & 67263 \\
-      8 & 182 & 2086099 \\
-      9 & 730 & 89224653 \\
-      10 & 4032 & 5254054111 \\
-      OEIS & \cite[A005142]{oeis} & \cite[A001832]{oeis}
-    \end{tabular}
-  }
-  \qquad
-  \subfloat[Bipartite graphs ($\mathcal{BP}$)]{
-    \label{tab:bp}
-    \begin{tabular}{r | r r}
-      $n$ & Unlabeled & Labeled \\ \hline
-      1 & 1 & 1 \\
-      2 & 2 & 2 \\
-      3 & 3 & 7 \\
-      4 & 7 & 41 \\
-      5 & 13 & 376 \\
-      6 & 35 & 5177 \\
-      7 & 88 & 103237 \\
-      8 & 303 & 2922446 \\
-      9 & 1119 & 116011231 \\
-      10 & 5479 & 6433447397 \\
-      OEIS & \cite[A033995]{oeis} & \cite[A047864]{oeis}
-    \end{tabular}
-  }
-  \\
-  \subfloat[Nonseparable bipartite graphs ($\mathcal{NBP}$)]{
-    \label{tab:nbp}
-    \begin{tabular}{r | r r}
-      $n$ & Unlabeled & Labeled \\ \hline
-      1 & 1 & 1 \\
-      2 & 1 & 1 \\
-      3 & 0 & 0 \\
-      4 & 1 & 3 \\
-      5 & 1 & 10 \\
-      6 & 5 & 355 \\
-      7 & 8 & 6986 \\
-      8 & 42 & 297619 \\
-      9 & 146 & 15077658 \\
-      10 & 956 & 1120452771 \\
-      OEIS & & \cite[A004100]{oeis}
-    \end{tabular}
-  }
+  \caption{Enumerative data for unlabeled bipartite blocks with $n$ hedra}
+  \label{tab:bpblocks}
+  \begin{tabular}{r | r r}
+    $n$ & Unlabeled \\\hline
+    1 & 1 \\
+    2 & 1 \\
+    3 & 0 \\
+    4 & 1 \\
+    5 & 1 \\
+    6 & 5 \\
+    7 & 8 \\
+    8 & 42 \\
+    9 & 146 \\
+    10 & 956
+  \end{tabular}
 \end{table}
 
 \section{$k$-trees}\label{s:ktenum}
