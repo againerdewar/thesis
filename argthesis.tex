@@ -1784,7 +1784,7 @@ Note that most of these sequences appear in the historical literature and on \ci
 
 \section{$k$-trees}\label{s:ktenum}
 With the recursive functional equations for cycle indices of \S \ref{s:ktcycind}, we can calculate the explicit cycle index for the species $\kt{k}$ to any finite degree we choose using computational methods; this cycle index can then be used to enumerate both unlabeled and labeled (at fronts, hedra, or both) $k$-trees up to a specified number $n$ of hedra (or, equivalently, $kn + 1$ fronts).
-We have done so here for $k \leq 8$ and $n \leq 30$ using Sage 1.7.4 \cite{sage} using code available in \S \ref{s:ktcode}.
+We have done so here for $k \leq 7$ and $n \leq 30$ using Sage 1.7.4 \cite{sage} using code available in \S \ref{s:ktcode}.
 The resulting values appear in Table \ref{tab:ktrees}.
 
 We note that both unlabeled and hedron-labeled enumerations of $k$-trees stabilize:
@@ -2090,14 +2090,6 @@ We have included citations to the latter where appropriate.
       28 & 406103563562864890670029228 \\
       29 & 7142350290468621849814034057 \\
       30 & 126034923903699365819345698783
-    \end{tabular}
-  }
-  \quad
-  \subfloat[$k = 8$]{
-    \label{tab:8trees}
-    \begin{tabular}{r | r}
-      $n$ & Unlabeled $k$-trees \\ \hline
-
     \end{tabular}
   }
 \end{table}
