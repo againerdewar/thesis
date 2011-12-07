@@ -1599,6 +1599,13 @@ But then we note that the products in the above theorems are in fact permutation
   But $c_{1}$ is a fixed point of $\sigma^{\abs{c}}$, so by the result of Lemma \ref{lem:rhofp}, this has the same cycle structure as $\sigma^{\abs{c}}$, which in turn is determined by $\lambda \pbrac{\sigma}$ and $\abs{c}$ as desired.
 \end{proof}
 
+From this and the fact that the terms of $X$-degree $1$ in all $\gci{\cty{k}}{\symgp{k}}$ and $\gci{\ctxy{k}}{\symgp{k+1}}$ are equal (to $p_{1} \sbrac{x} p_{1} \sbrac{y}^{k+1}$), we can conclude that:
+\begin{theorem}
+  \label{thm:ctciclassfunc}
+  $\gcielt{\cty{k}}{\symgp{k}}{\sigma}$ and $\gcielt{\ctxy{k}}{\symgp{k+1}}{\sigma}$ are class functions of $\sigma$ (that is, they are constant over permutations of fixed cycle type).
+\end{theorem}
+
+This will simply computational enumeration of $k$-trees significantly, since the number of partitions of $k$ grows exponentially while the number of permutations of $\sbrac{k}$ grows factorially.
 
 \subsection{$k$-trees: $\kt{k}$}\label{ss:ktcycind}
 We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\kt{k}$ of general $k$-trees.
