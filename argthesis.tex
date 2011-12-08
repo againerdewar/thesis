@@ -2065,6 +2065,44 @@ However, thus far we have neither determined a direct method for computing these
       28 & 406103563562864890670029228 \\
       29 & 7142350290468621849814034057 \\
       30 & 126034923903699365819345698783
+    \end{tabular}   
+  }
+  \quad
+  \subfloat{$k = 8$}{
+    \label{tab:8trees}
+    \begin{tabular}{r | r}
+      $n$ & Unlabeled $k$-trees \\ \hline
+      0 & 1 \\
+      1 & 1 \\
+      2 & 1 \\
+      3 & 2 \\
+      4 & 5 \\
+      5 & 15 \\
+      6 & 64 \\
+      7 & 342 \\
+      8 & 2344 \\
+      9 & 19137 \\
+      10 & 181204 \\
+      11 & 1926782 \\
+      12 & 22638677 \\
+      13 & 289742922 \\
+      14 & 3996857019 \\
+      15 & 58854922207 \\
+      16 & 916955507587 \\
+      17 & 14988769972628 \\
+      18 & 255067524402905 \\
+      19 & 4487202163529135 \\
+      20 & 81112295567987808 \\
+      21 & 1498874117898285574 \\
+      22 & 28195965395340358096 \\
+      23 & 538126404726276758908 \\
+      24 & 10391826059632904271057 \\
+      25 & 202624626664206041379718 \\
+      26 & 3982593421723767068438772 \\
+      27 & 78804180647706388187446055 \\
+      28 & 1568191570016583843925943321 \\
+      29 & 31359266621157738864915907470 \\
+      30 & 629755261439815181073415721542
     \end{tabular}
   }
 \end{table}
@@ -2077,12 +2115,13 @@ Using the computer algebra system Sage 1.7.4 \cite{sage}, we have implemented so
 \section{Bipartite blocks}\label{s:bpbcode}
 The functional equation \eqref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
 Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows.
-
 \lstinputlisting[caption=Sage code to compute numbers of bipartite blocks, label=lst:ktcode, language=Python]{python/bpblocks.py}
 
 \section{$k$-trees}\label{s:ktcode}
 The recursive functional equations \eqref{eq:ctyogf}, \eqref{eq:ctxyogf}, and \eqref{eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
 Python/Sage code to compute the coefficients of this generating function explicitly follows.
+This code uses the class-function optimization of Theorem \ref{thm:ctciclassfunc} extensively; as a result, it is able to compute the number of $k$-trees on up to $n$ hedra quickly even for relatively large $k$ and $n$.
+For example, the first thirty terms of the generating function for $8$-trees in Table \ref{tab:8trees} were computed on a modern desktop-class computer in approximately one minute.
 
 \lstinputlisting[caption=Sage code to compute numbers of $k$-trees, label=lst:ktcode, language=Python]{python/ktrees.py}
 
