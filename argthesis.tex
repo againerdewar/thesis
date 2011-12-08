@@ -2201,7 +2201,12 @@ However, thus far we have neither determined a direct method for computing these
 \chapter{Code listing}\label{c:code}
 Our results in chapters \ref{c:bpblocks} and \ref{c:ktrees} provide a framework for enumerating bipartite blocks and general $k$-trees.
 However, there is significant work to be done adapting the theory into practical algorithms for computing the actual numbers of such structures.
-Using the computer algebra system Sage 1.7.4 \cite{sage}, we have implemented some algorithms to do exactly this.
+Using the computer algebra system Sage 1.7.4 \cite{sage}, we have done exactly this.
+In each case, the script listed may be run with Sage by invoking
+\begin{verbatim}
+sage --python scriptname.py args
+\end{verbatim}
+on a computer with a functioning Sage installation.
 
 \section{Bipartite blocks}\label{s:bpbcode}
 The functional equation \eqref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
