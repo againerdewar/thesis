@@ -2067,7 +2067,12 @@ However, thus far we have neither determined a direct method for computing these
       30 & 126034923903699365819345698783
     \end{tabular}   
   }
-  \quad
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \ContinuedFloat
+  \caption*{Enumerative data for $k$-trees with $n$ hedra, continued}
   \subfloat{$k = 8$}{
     \label{tab:8trees}
     \begin{tabular}{r | r}
@@ -2107,6 +2112,92 @@ However, thus far we have neither determined a direct method for computing these
   }
 \end{table}
 
+\begin{table}[htb]
+  \centering
+  \ContinuedFloat
+  \caption*{Enumerative data for $k$-trees with $n$ hedra, continued}
+  \subfloat{$k = 9$}{
+    \label{tab:9trees}
+    \begin{tabular}{r | r}
+      $n$ & Unlabeled $k$-trees \\ \hline
+      0 & 1 \\
+      1 & 1 \\
+      2 & 1 \\
+      3 & 2 \\
+      4 & 5 \\
+      5 & 15 \\
+      6 & 64 \\
+      7 & 342 \\
+      8 & 2344 \\
+      9 & 19137 \\
+      10 & 181204 \\
+      11 & 1927017 \\
+      12 & 22652254 \\
+      13 & 290351000 \\
+      14 & 4019973352 \\
+      15 & 59642496465 \\
+      16 & 941751344429 \\
+      17 & 15724551551655 \\
+      18 & 275926445572426 \\
+      19 & 5057692869843759 \\
+      20 & 96275031338911591 \\
+      21 & 1892687812366295682 \\
+      22 & 38234411627616084843 \\
+      23 & 790120238796588845615 \\
+      24 & 16638524087850961727575 \\
+      25 & 355878246778832856290372 \\
+      26 & 7710423952280397990026132 \\
+      27 & 168843592748278228259801752 \\
+      28 & 3730285520855433827693340329 \\
+      29 & 83027821492843727307516904184 \\
+      30 & 1859625249087075723295908757282
+    \end{tabular}
+  }
+\end{table}
+
+\begin{table}[htb]
+  \centering
+  \ContinuedFloat
+  \caption*{Enumerative data for $k$-trees with $n$ hedra, continued}
+  \subfloat{$k = 10$}{
+    \label{tab:10trees}
+    \begin{tabular}{r | r}
+      $n$ & Unlabeled $k$-trees \\ \hline
+      0 & 1 \\
+      1 & 1 \\
+      2 & 1 \\
+      3 & 2 \\
+      4 & 5 \\
+      5 & 15 \\
+      6 & 64 \\
+      7 & 342 \\
+      8 & 2344 \\
+      9 & 19137 \\
+      10 & 181204 \\
+      11 & 1927017 \\
+      12 & 22652805 \\
+      13 & 290391147 \\
+      14 & 4022154893 \\
+      15 & 59741455314 \\
+      16 & 945737514583 \\
+      17 & 15871943695637 \\
+      18 & 281035862707569 \\
+      19 & 5226147900656616 \\
+      20 & 101612006684523937 \\
+      21 & 2056425123910104429 \\
+      22 & 43127730369661586804 \\
+      23 & 933229734601789336024 \\
+      24 & 20749443766669472108394 \\
+      25 & 472211306357077710523863 \\
+      26 & 10961384502758318928846970 \\
+      27 & 258737420965101611169934566 \\
+      28 & 6193917223279376307682721853 \\
+      29 & 150039339181032274342778699887 \\
+      30 & 3670778410024403632885217999313
+    \end{tabular}
+  }
+\end{table}
+
 \chapter{Code listing}\label{c:code}
 Our results in chapters \ref{c:bpblocks} and \ref{c:ktrees} provide a framework for enumerating bipartite blocks and general $k$-trees.
 However, there is significant work to be done adapting the theory into practical algorithms for computing the actual numbers of such structures.
@@ -2121,7 +2212,7 @@ Python/Sage code to compute the coefficients of the ordinary generating function
 The recursive functional equations \eqref{eq:ctyogf}, \eqref{eq:ctxyogf}, and \eqref{eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
 Python/Sage code to compute the coefficients of this generating function explicitly follows.
 This code uses the class-function optimization of Theorem \ref{thm:ctciclassfunc} extensively; as a result, it is able to compute the number of $k$-trees on up to $n$ hedra quickly even for relatively large $k$ and $n$.
-For example, the first thirty terms of the generating function for $8$-trees in Table \ref{tab:8trees} were computed on a modern desktop-class computer in approximately one minute.
+For example, the first thirty terms of the generating function for $8$-trees in Table \ref{tab:8trees} were computed on a modern desktop-class computer in approximately two minutes.
 
 \lstinputlisting[caption=Sage code to compute numbers of $k$-trees, label=lst:ktcode, language=Python]{python/ktrees.py}
 
