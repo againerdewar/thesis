@@ -42,8 +42,8 @@
 
 % boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
 \providetoggle{boldmathhdr}
-\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr}}
-\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr}}
+\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr} \PassOptionsToPackage{\CurrentOption}{brandiss}}
+\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr} \PassOptionsToPackage{\CurrentOption}{brandiss}}
 
 %  online|printed -> online or printed submission
 %  Pass these options to the brandiss package.
