@@ -2195,22 +2195,34 @@ However, there is significant work to be done adapting the theory into practical
 Using the computer algebra system Sage 1.7.4 \cite{sage}, we have done exactly this.
 In each case, the script listed may be run with Sage by invoking
 \begin{verbatim}
-sage --python scriptname.py args
+> sage --python scriptname.py args
 \end{verbatim}
 on a computer with a functioning Sage installation.
 
 \section{Bipartite blocks}\label{s:bpbcode}
 The functional equation \eqref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
 Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows.
-\lstinputlisting[caption=Sage code to compute numbers of bipartite blocks, label=lst:ktcode, language=Python]{python/bpblocks.py}
+Specifically, the generating function may be computed to degree $n$ by invoking
+\begin{verbatim}
+> sage --python bpblocks.py n
+\end{verbatim}
+on a computer with a functioning Sage installation.
+
+\lstinputlisting[caption=Sage code to compute numbers of bipartite blocks (\texttt{bpblocks.py}), label=lst:ktcode, language=Python]{python/bpblocks.py}
 
 \section{$k$-trees}\label{s:ktcode}
 The recursive functional equations \eqref{eq:ctyogf}, \eqref{eq:ctxyogf}, and \eqref{eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
 Python/Sage code to compute the coefficients of this generating function explicitly follows.
+Specifically, the generating function for unlabeled $k$-trees may be computed to degree $n$ by invoking
+\begin{verbatim}
+> sage --python ktrees.py k n
+\end{verbatim}
+on a computer with a functioning Sage installation.
+
 This code uses the class-function optimization of Theorem \ref{thm:ctciclassfunc} extensively; as a result, it is able to compute the number of $k$-trees on up to $n$ hedra quickly even for relatively large $k$ and $n$.
 For example, the first thirty terms of the generating function for $8$-trees in Table \ref{tab:8trees} were computed on a modern desktop-class computer in approximately two minutes.
 
-\lstinputlisting[caption=Sage code to compute numbers of $k$-trees, label=lst:ktcode, language=Python]{python/ktrees.py}
+\lstinputlisting[caption=Sage code to compute numbers of $k$-trees (\texttt{ktrees.py}), label=lst:ktcode, language=Python]{python/ktrees.py}
 
 \backmatter
 
