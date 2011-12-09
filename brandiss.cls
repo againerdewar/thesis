@@ -225,8 +225,3 @@
 \def\subparagraph{\@startsection{subparagraph}{5}%
   \z@\z@{-\fontdimen2\font}%
   \normalfont}
-
-%%% Local Variables: 
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
