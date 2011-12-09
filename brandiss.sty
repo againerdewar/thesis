@@ -95,6 +95,7 @@
 %   \thediss{year}.      %% graduation year.
 \newcommand{\makedisstitle}{
   \cleardoublepage
+  \pdfbookmark{Title page}{title}
   \thispagestyle{empty} %% page number is omitted
   \begin{center}
     {\fontsize{\@xivpt}{18}\textbf{%
@@ -132,6 +133,7 @@
 \iftoggle{distrib}{\excludecomment{disssignatures}}{ %Cheap hack to generate the signatures page only if in submission mode
   \newenvironment{disssignatures}{%
     \if@twoside \cleardoublepage \else \clearpage \fi
+    \pdfbookmark{Signatures page}{sigpage}
     \thispagestyle{empty} %% page number is omitted
     \begin{flushleft}%
       \iftoggle{online}{ The signed version of this signature page is on file at
@@ -170,6 +172,7 @@
 %   \thediss{year}.      %% graduation year.
 \newcommand{\disscopyright}{
   \if@twoside \cleardoublepage \else \clearpage \fi
+  \pdfbookmark{Copyright page}{copypage}
   \thispagestyle{empty} %% page number is omitted
   \begin{center}
     \ \\% Provides top text for the stretch to push against.
@@ -187,6 +190,7 @@
 \newenvironment{dissabstract}{%
   \begin{dissfrontpage}{Abstract}
     \begin{center}
+      \pdfbookmark{Abstract}{abstract}
       \textbf{%
         \iftoggle{boldmathhdr}{ \expandafter \boldmath}{}% %If boldmathhdr is true, make mathematics in title bold.
         \thediss{title}}\\[1ex]
@@ -207,6 +211,7 @@
 \newenvironment{dissdedication}{%
   \begin{dissfrontpage}{Dedication}
   \begin{center}
+  \pdfbookmark{Dedication}{dedication}
 }
 {
   \end{center}
@@ -216,6 +221,7 @@
 % The \dissacknowledgements environment formats the ackknowledgements page.
 \newenvironment{dissacknowledgments}{%
   \begin{dissfrontpage}{Acknowledgments}
+  \pdfbookmark{Acknowledgments}{acknol}
 }
 {
   \end{dissfrontpage}
@@ -224,6 +230,7 @@
 % The \disspreface environment formats the preface page.
 \newenvironment{disspreface}{%
   \begin{dissfrontpage}{Preface}
+  \pdfbookmark{Preface}{preface}
 }
 {
   \end{dissfrontpage}
