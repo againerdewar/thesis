@@ -1647,27 +1647,56 @@ We begin by considering the explicit recursive functional equations in Theorems 
 In each case, by the above, the ordinary generating function is exactly the result of substituting $p_{i} \sbrac{x} = x^{i}$ into the given formula.
 Thus, we have:
 \begin{theorem}
-  \label{thm:ctogf}
+  \label{thm:ctrhoogf}
   For $\cty{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\ctxy{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding $\Gamma$-ordinary generating functions are given by
-  \begin{align}
-    \widetilde{\cty{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\cty{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyogf} \\
-    \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\cty{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyogf}
-  \end{align}
+  \begin{subequations}
+    \label{eq:ctrhoogf}
+    \begin{align}
+      \widetilde{\cty{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\cty{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyrhoogf} \\
+      \intertext{and}
+      \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\cty{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyrhoogf}
+    \end{align}
+  \end{subequations}
   where $\widetilde{\cty{k}}$ is a $\symgp{k}$-generating function and $\widetilde{\ctxy{k}}$ is a $\symgp{k+1}$-generating function.
 \end{theorem}
+
+However, as a consequence of Theorem \ref{thm:ctciclassfunc}, we can simplify these expressions significantly:
+\begin{corollary}
+  \label{cor:ctogf}
+  For $\cty{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\ctxy{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding $\Gamma$-ordinary generating functions are given by
+  \begin{subequations}
+    \label{eq:ctogf}
+    \begin{align}
+      \widetilde{\cty{k}} \pbrac{\lambda} \pbrac{x} &= \exp \pbrac{\sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{i \in \lambda^{n}} \widetilde{\cty{k}} \pbrac{\lambda^{i}} \pbrac{x^{i}}} \label{eq:ctyogf} \\
+      \intertext{and}
+      \widetilde{\ctxy{k}} \pbrac{\lambda} \pbrac{x} &= x \cdot \prod_{i \in \lambda} \widetilde{\cty{k}} \pbrac{\lambda^{i}} \pbrac{x^{i}} \label{eq:ctxyogf}
+    \end{align}
+  \end{subequations}
+  where $\lambda^{i}$ denotes the $i$th `partition power' of $\lambda$ --- that is, if $\sigma$ is any permutation of cycle type $\lambda$, then $\lambda^{i}$ denotes the cycle type of $\sigma^{i}$ --- and where $f \pbrac{\lambda} \pbrac{x}$ denotes the value of $f \pbrac{\sigma} \pbrac{x}$ for every $\sigma$ of cycle type $\lambda$.
+\end{corollary}
+
 As in Theorem \ref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
 Also, as an immediate consequence of Theorem \ref{thm:ctciclassfunc}, we have that $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ are class functions of $\sigma$, so we can restrict our computational attention to cycle-distinct permutations.
 
 Moreover, the cycle index of the species $\kt{k}$, as seen in equation \eqref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\cty{k}$ and $\ctxy{k}$.
 Thus, we also have:
 \begin{theorem}
-  \label{thm:akogf}
-  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{thm:ctogf}, we have
+  \label{thm:akrhoogf}
+  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{thm:ctrhoogf}, we have
   \begin{equation}
-    \label{eq:akogf}
-    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma}.
+    \label{eq:akrhoogf}
+    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{x} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma}.\pbrac{x}.
   \end{equation}
 \end{theorem}
+
+Again, as a consequence of Theorem \ref{thm:ctciclassfunc} by way of Corollary \ref{cor:ctogf}, we can instead write
+\begin{corollary}
+  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{cor:ctogf}, we have
+  \begin{equation}
+    \label{eq:akogf}
+    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \sum_{\lambda \vdash k+1} \frac{1}{z_{\lambda}} \widetilde{\ctxy{k}} \pbrac{\lambda} \pbrac{x} + \sum_{\lambda \vdash k} \frac{1}{z_{\lambda}} \widetilde{\cty{k}} \pbrac{\lambda} \pbrac{x} - \sum_{\lambda \vdash k} \frac{1}{z_{\lambda}} \widetilde{\ctxy{k}} \pbrac{\lambda \cup \cbrac{1}} \pbrac{x}.
+  \end{equation}
+\end{corollary}
 
 This direct characterization of the ordinary generating function of unlabeled $k$-trees, while still recursive, is much computationally simpler than the characterization of the full cycle index in equation \eqref{eq:akci}.
 For computation of the number of unlabeled $k$-trees, it is therefore much preferred.
