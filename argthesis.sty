@@ -58,9 +58,15 @@
 \newcommand*{\vbrac}[1]{\ensuremath{\left\vert {#1} \right\vert}}
 \newcommand*{\abrac}[1]{\ensuremath{\left\langle {#1} \right\rangle}}
 \newcommand*{\dabrac}[1]{\ensuremath{\abrac{\abrac{#1}}}}
+
 \newcommand*{\pbrac}[1]{\ensuremath{\left( {#1} \right)}}
+\newcommand*{\pbracs}[2][big]{\csuse{#1l}{(} {#2} \csuse{#1r}{)}}
+
 \newcommand*{\sbrac}[1]{\ensuremath{\left[ {#1} \right]}}
+\newcommand*{\sbracs}[2][big]{\csuse{#1l}{[} {#2} \csuse{#1r}{]}}
+
 \newcommand*{\cbrac}[1]{\ensuremath{\left\{ {#1} \right\}}}
+\newcommand*{\cbracs}[2][big]{\csuse{#1l}{\{} {#2} \csuse{#1r}{\}}}
 
 \newcommand*{\specname}[1]{\ensuremath{\mathscr{#1}}}
 \newcommand*{\numspecname}[1]{\ensuremath{\mathbf{#1}}}
