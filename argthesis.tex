@@ -1266,8 +1266,8 @@ Thus, the structure around a black vertex which is a child of a white vertex con
 Thus, a $\cty{k}$-structure consists of a $Y$-label and a set of pairs of an $X$ label and an $\specname{L}_{k}$-structure of $\cty{k}$-structures.
 We note here for conceptual consistency that in fact $\specname{L}_{k} = \deriv{\specname{C}}_{k+1}$ for $\specname{L}$ the species of linear orders and $\specname{C}$ the species of cyclic orders and that $\deriv{\specname{E}} = \specname{E}$ for $\specname{E}$ the species of sets; readers familiar with the $R, S$-enriched bicolored trees of \cite[\S 3.2]{bll:species} will recognize echoes of their decomposition in these facts.
 
-Finally, a $\ctxy{k}$-structure is simply an $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structure as described above (corresponding to the black vertex) together with a $\cty{k}$-structure (corresponding to the white vertex).
-For reasons that will become clear later, we note that we can incorporate the root white vertex into the linear order by making it last, thus representing a $\ctxy{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbrac{\cty{k}}$-structure.
+Finally, a $\ctxy{k}$-structure is simply an $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structure as described above (corresponding to the black vertex) together with a $\cty{k}$-structure (corresponding to the white vertex).
+For reasons that will become clear later, we note that we can incorporate the root white vertex into the linear order by making it last, thus representing a $\ctxy{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbracs[big]{\cty{k}}$-structure.
 See Figure \ref{fig:ctxyconst} for an example of this construction.
 
 \begin{figure}[htb]
@@ -1314,9 +1314,9 @@ The various species of rooted $k$-coding trees are therefore related by a system
   \begin{subequations}
     \label{eq:ctfunc}
     \begin{align}
-      \ctx{k} &= X \cdot \specname{C}_{k+1} \pbrac{\cty{k}} \label{eq:ctxfunc} \\
-      \cty{k} &= Y \cdot \specname{E} \pbrac{X \cdot \specname{L}_{k} \pbrac{\cty{k}}} \label{eq:ctyfunc} \\
-      \ctxy{k} &= \cty{k} \cdot X \cdot \specname{L}_{k} \pbrac{\cty{k}} = X \cdot \specname{L}_{k+1} \pbrac{\cty{k}} \label{eq:ctxyfunc}
+      \ctx{k} &= X \cdot \specname{C}_{k+1} \pbracs[big]{\cty{k}} \label{eq:ctxfunc} \\
+      \cty{k} &= Y \cdot \specname{E} \pbrac{X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}} \label{eq:ctyfunc} \\
+      \ctxy{k} &= \cty{k} \cdot X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}} = X \cdot \specname{L}_{k+1} \pbracs[big]{\cty{k}} \label{eq:ctxyfunc}
     \end{align}
   \end{subequations}
   as isomorphisms of ordinary species.
@@ -1497,10 +1497,10 @@ In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant
 In particular, if $\sigma$ acts on some non-root black vertex, then $\rho_{i} \pbrac{\sigma}$ acts on the white vertex in the $i$th place, where in general $\rho_{i} \pbrac{\sigma} \neq \sigma$.
 
 Thus, we consider automorphisms of these $\symgp{k}$-structures directly.
-First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$.
+First, we consider the component species $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$.
 \begin{lemma}
   \label{lem:ctyinvar}
-  Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$.
+  Let $B$ be a structure of the species $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$.
   Let $W_{i}$ be the $\cty{k}$-structure in the $i$th position in the linear order.
   Then some $\sigma \in \symgp{k}$ acts as an automorphism of $B$ if and only if, for each $i \in \sbrac{k+1}$, we have $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}} W_{i} \cong W_{\sigma \pbrac{i}}$.
 \end{lemma}
@@ -1515,12 +1515,12 @@ First, we consider the component species $X \cdot \specname{L}_{k} \pbrac{\cty{k
 \end{proof}
 
 Consider a structure $T$ of the $\symgp{k}$-species $\cty{k}$ and an element $\sigma \in \symgp{k}$.
-As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures.
-The permutation $\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures independently.
+As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures.
+The permutation $\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures independently.
 For each of these component structures, by Lemma \ref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\Delta \sigma$ carries each $\cty{k}$-structure to its $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$-image.
-Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structures, we must construct for each cycle of $\sigma$ a $\cty{k}$-structure which is invariant under the application of \emph{all} the permutations $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ which will be applied to it along the cycle.
+Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures, we must construct for each cycle of $\sigma$ a $\cty{k}$-structure which is invariant under the application of \emph{all} the permutations $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ which will be applied to it along the cycle.
 For $c$ the chosen cycle of $\sigma$, this permutation is $\Delta^{-1} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}$, where the product is taken over any chosen linearization of the cyclic order of the terms in the cycle.
-Once a choice of such a $\cty{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbrac{\cty{k}}$-structure.
+Once a choice of such a $\cty{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structure.
 Accordingly:
 \begin{theorem}
   \label{thm:ctyfuncci}
@@ -1528,7 +1528,7 @@ Accordingly:
   \begin{multline}
     \label{eq:ctyfuncci}
     \gcielt{\symgp{k}}{\cty{k}}{\sigma} = p_{1} \sbrac{y} \\
-    \times Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\cty{k}}{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
+    \times Z_{\specname{E}} \circ \pbracs[Big]{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\cty{k}} \pbracs[Big]{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}} \pbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}}.
   \end{multline}
   where $C \pbrac{\sigma}$ denotes the set of cycles of $\sigma$ (as a $k$-permutation) and the inner product is taken with respect to any choice of linearization of the cyclic order of the elements of $c$.
 \end{theorem}
@@ -1544,7 +1544,7 @@ Accordingly:
   \begin{multline}
     \label{eq:ctxyfuncci}
     \gcielt{\symgp{k+1}}{\ctxy{k}}{\sigma} = p_{1} \sbrac{x} \\
-    \times \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{k}}{\cty{k}}{\prod_{i \in c} \rho_{i} \sbrac{\sigma}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
+    \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\cty{k}} \pbracs[Big]{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \pbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
   under the same conditions as Theorem \ref{thm:ctyfuncci}.
 \end{theorem}
@@ -1632,7 +1632,7 @@ Actually computing terms of the cycle index in order to derive the coefficients 
 The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
 
 Recall from Theorem \ref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
-\[\tilde{F} \pbrac{\gamma} \pbrac{x} = \civars{F}{x, x^2, x^3, \dots}\]
+\[\tilde{F} \pbracs[big]{\gamma} \pbrac{x} = \civars{F}{x, x^2, x^3, \dots}\]
 and that the ordinary generating function for counting unlabeled $\nicefrac{F}{\Gamma}$-structures is given by
 \[\tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.\]
 These formula admits an obvious multisort extension, but we in fact wish to count $k$-trees with respect to just one sort of label (the $X$-labels on hedra), so we will not deal with multisort here.
@@ -1648,9 +1648,9 @@ Thus, we have:
   \begin{subequations}
     \label{eq:ctrhoogf}
     \begin{align}
-      \widetilde{\cty{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbrac{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\cty{k}} \pbrac{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyrhoogf} \\
+      \widetilde{\cty{k}} \pbrac{\sigma} \pbrac{x} &= \exp \pbracs[Big]{ \sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{c \in C \pbrac{\sigma^{n}}} \widetilde{\cty{k}} \pbracs[Big]{\Delta^{-1} \prod_{i \in c} \rho_{i} \pbracs[big]{\Delta \sigma^{n}}} \pbrac{x^{\abs{c}}}} \label{eq:ctyrhoogf} \\
       \intertext{and}
-      \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\cty{k}} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbrac{x^{\abs{c}}}. \label{eq:ctxyrhoogf}
+      \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} &= x \cdot \prod_{c \in C \pbrac{\sigma}} \widetilde{\cty{k}} \pbracs[Big]{\prod_{i \in c} \rho_{i} \pbrac{\sigma}} \pbracs[big]{x^{\abs{c}}}. \label{eq:ctxyrhoogf}
     \end{align}
   \end{subequations}
   where $\widetilde{\cty{k}}$ is a $\symgp{k}$-generating function and $\widetilde{\ctxy{k}}$ is a $\symgp{k+1}$-generating function.
@@ -1663,9 +1663,9 @@ However, as a consequence of Theorem \ref{thm:ctciclassfunc}, we can simplify th
   \begin{subequations}
     \label{eq:ctogf}
     \begin{align}
-      \widetilde{\cty{k}} \pbrac{\lambda} \pbrac{x} &= \exp \pbrac{\sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{i \in \lambda^{n}} \widetilde{\cty{k}} \pbrac{\lambda^{i}} \pbrac{x^{i}}} \label{eq:ctyogf} \\
+      \widetilde{\cty{k}} \pbrac{\lambda} \pbrac{x} &= \exp \pbracs[Big]{\sum_{n \geq 1} \frac{x^{n}}{n} \cdot \prod_{i \in \lambda^{n}} \widetilde{\cty{k}} \pbracs[big]{\lambda^{i}} \pbracs[big]{x^{i}}} \label{eq:ctyogf} \\
       \intertext{and}
-      \widetilde{\ctxy{k}} \pbrac{\lambda} \pbrac{x} &= x \cdot \prod_{i \in \lambda} \widetilde{\cty{k}} \pbrac{\lambda^{i}} \pbrac{x^{i}} \label{eq:ctxyogf}
+      \widetilde{\ctxy{k}} \pbrac{\lambda} \pbrac{x} &= x \cdot \prod_{i \in \lambda} \widetilde{\cty{k}} \pbracs[big]{\lambda^{i}} \pbracs[big]{x^{i}} \label{eq:ctxyogf}
     \end{align}
   \end{subequations}
   where $\lambda^{i}$ denotes the $i$th `partition power' of $\lambda$ --- that is, if $\sigma$ is any permutation of cycle type $\lambda$, then $\lambda^{i}$ denotes the cycle type of $\sigma^{i}$ --- and where $f \pbrac{\lambda} \pbrac{x}$ denotes the value of $f \pbrac{\sigma} \pbrac{x}$ for every $\sigma$ of cycle type $\lambda$.
@@ -1681,7 +1681,7 @@ Thus, we also have:
   For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{thm:ctrhoogf}, we have
   \begin{equation}
     \label{eq:akrhoogf}
-    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{x} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma}.\pbrac{x}.
+    \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{x} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x}.
   \end{equation}
 \end{theorem}
 
@@ -1718,8 +1718,8 @@ We then have that:
 \begin{subequations}
   \label{eq:rest2trees}
   \begin{align}
-    \gci{\symgp{2}}{\cty{2}} &= p_{1} \sbrac{y} \cdot Z_{\specname{E}} \circ \pbrac{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\cty{2}}{e}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
-    \gci{\symgp{3}}{\ctxy{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\cty{2}}{\rho \pbrac{\sigma}^{\abs{c}}}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
+    \gci{\symgp{2}}{\cty{2}} &= p_{1} \sbrac{y} \cdot \gci{\specname{E}} \circ \pbracs[Big]{p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gcieltvars{\symgp{2}}{\cty{2}}{e}{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}} \label{eq:ctyfuncci2} \\
+    \gci{\symgp{3}}{\ctxy{2}} &= p_{1} \sbrac{x} \cdot \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{2}}{\cty{2}} \pbracs[big]{\rho \pbrac{\sigma}^{\abs{c}}} \pbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots; p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}. \label{eq:ctxyfuncci2}
   \end{align}
 \end{subequations}
 where, by abuse of notation, we let $\rho$ represent any $\rho_{i}$.
