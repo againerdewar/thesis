@@ -9,6 +9,7 @@ assert len(args) == 3
 kval = int(args[1])
 nval = int(args[2])
 
+##MATH BEGINS HERE
 # Set up a ring of formal power series
 psr = PowerSeriesRing(QQ, 'x')
 x = psr.gen()

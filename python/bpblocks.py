@@ -8,6 +8,7 @@ assert len(args) == 2
 
 nval = int(args[1])
 
+##MATH BEGINS HERE
 # Set up a ring of symmetric functions
 p = SymmetricFunctionAlgebra(QQ, basis="power")
 x = PowerSeriesRing(QQ, 'x').gen()
