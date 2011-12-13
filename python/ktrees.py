@@ -20,12 +20,8 @@ def unlY(mu, n):
     if n <= 0:
         return psr(1)
     else:
-        def ystretcher(c, part):
-            return unlY(Partition(partition_power(part, c)), floor((n-1)/c)).subs({x:x**c})
-            
-        def descendant_pseries(part):
-            return prod(ystretcher(c, part) for c in part)
-            
+        ystretcher = lambda c, part: unlY(Partition(partition_power(part, c)), floor((n-1)/c)).subs({x:x**c})
+        descendant_pseries = lambda part: prod(ystretcher(c, part) for c in part)
         return sum(x**i/i * descendant_pseries(partition_power(mu, i)).subs({x:x**i}) for i in xrange(1, n+1)).exp(n+1)
 
 # Compute the generating function for unlabeled XY-rooted k-trees fixed by permutations of a given cycle type mu.
