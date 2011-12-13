@@ -194,7 +194,7 @@ The cycle index of a species is then directly related to two important generatin
 \begin{theorem}\label{thm:ciogf}
   The ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures is given by
   \begin{equation}\label{eq:ciogf}
-    \tilde{F} \pbrac{x} = \civars{F}{x, x^{2}, x^{3}, \dots}.
+    \tilde{F} \pbrac{x} = \ci{F} \pbracs[big]{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
@@ -218,7 +218,7 @@ In particular, for species $F$ and $G$, we will define species $F + G$, $F \cdot
 In what follows, we will not say explicitly what the effects of a given species operation are on bijections when those effects are obvious (as is usually the case).
 
 \begin{definition}\label{def:specsum}
-  For two species $F$ and $G$, define their \emph{sum} to be the species $F + G$ given by $\pbrac{F + G} \sbrac{A} = F \sbrac{A} \sqcup G \sbrac{A}$ (where $\sqcup$ denotes disjoint set union).
+  For two species $F$ and $G$, define their \emph{sum} to be the species $F + G$ given by $\pbracs[big]{F + G} \sbrac{A} = F \sbrac{A} \sqcup G \sbrac{A}$ (where $\sqcup$ denotes disjoint set union).
 \end{definition}
 In other words, an $\pbrac{F + G}$-structure is an $F$-structure \emph{or} a $G$-structure.
 We use the disjoint union to avoid the complexities of dealing with cases where $F \sbrac{A}$ and $G \sbrac{A}$ overlap as sets.
@@ -280,9 +280,9 @@ The definition is, again, motivated by a correspondence with a certain operation
   Let $f$ and $g$ be cycle indices. Then the \emph{plethysm} $f \circ g$ is the cycle index
   \begin{equation}
     \label{eq:cipleth}
-    f \circ g = f \sbrac{g \sbrac{p_{1}, p_{2}, p_{3}, \dots}, g \sbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots},
+    f \circ g = f \pbrac{g \pbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots},
   \end{equation}
-  where $f \sbrac{a, b, \dots}$ denotes the cycle index $f$ with $a$ substituted for $p_{1}$, $b$ substituted for $p_{2}$, and so on.
+  where $f \pbrac{a, b, \dots}$ denotes the cycle index $f$ with $a$ substituted for $p_{1}$, $b$ substituted for $p_{2}$, and so on.
 \end{definition}
 This definition is inherited directly from the theory of symmetric functions in infinitely many variables, where our $p_{i}$ are basis elements, as previously discussed. This operation on cycle indices then corresponds exactly to species composition:
 \begin{theorem}
@@ -479,7 +479,7 @@ A formula similar to that Theorem \ref{thm:speccompci} requires a definition of 
   \label{def:gcipleth}
   For two $\Gamma$-cycle indices $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-cycle index defined by
   \begin{equation}
-    \pbrac{f \circ g} \pbrac{\gamma} = f \pbrac{\gamma} \pbrac{g \pbrac{\gamma} \pbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbrac{\gamma^{2}} \pbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots}.
+    \pbrac{f \circ g} \pbrac{\gamma} = f \pbrac{\gamma} \pbrac{g \pbrac{\gamma} \pbrac{p_{1}, p_{2}, p_{3}, \dots}, g \pbracs[big]{\gamma^{2}} \pbrac{p_{2}, p_{4}, p_{6}, \dots}, \dots}.
     \label{eq:gcipleth}
   \end{equation}
 \end{definition}
@@ -526,7 +526,7 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
   The exponential generating function $F_{\gamma} \pbrac{x}$ of labeled $\gamma$-invariant $F$-structures is
   \begin{equation}
     \label{eq:gciegf}
-    F_{\gamma} \pbrac{x} = \gcielt{\Gamma}{F}{\gamma} \sbrac{x, 0, 0, \dots}.
+    F_{\gamma} \pbrac{x} = \gcieltvars{\Gamma}{F}{\gamma}{x, 0, 0, \dots}.
   \end{equation}
 \end{theorem}
 
@@ -535,7 +535,7 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
   The ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ of unlabeled $\gamma$-invariant $F$-structures is
   \begin{equation}
     \label{eq:gciogf}
-    \tilde{F}_{\gamma} \pbrac{x} = \gcielt{\Gamma}{F}{\gamma} \sbrac{x, x^{2}, x^{3}, \dots}.
+    \tilde{F}_{\gamma} \pbrac{x} = \gcieltvars{\Gamma}{F}{\gamma}{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
 Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because Definition \ref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
