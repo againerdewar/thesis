@@ -26,7 +26,7 @@ def unlY(mu, n):
         def descendant_pseries(part):
             return prod(ystretcher(c, part) for c in part)
             
-        return sum(x**i/i * descendant_pseries(partition_power(mu, i)).subs({x:x**i}) for i in xrange(1, n+1)).exp(n+1) #Exponentiator as per Gessel et al
+        return sum(x**i/i * descendant_pseries(partition_power(mu, i)).subs({x:x**i}) for i in xrange(1, n+1)).exp(n+1)
 
 # Compute the generating function for unlabeled XY-rooted k-trees fixed by permutations of a given cycle type mu.
 # Note that mu should partition k+1
