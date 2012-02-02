@@ -18,7 +18,7 @@ Zx = p[1]
 
 Z2 = SymmetricGroup(2)
 e = Z2.identity()
-t = Z2.an_element()
+t = Z2.gen() #The non-identity element
 
 # Utility function for composing a generating function into a cycle index
 def gf_pleth(f, gf):
@@ -42,16 +42,16 @@ def labeled(f):
 # Compute a plethystic inverse of the symmetric function f to degree n
 def plethystic_inverse(f, n):
         parent = f.parent()
-        
+
         fstripped = f - f.restrict_degree(1, exact=True)
-        
+
         improver = lambda F, i: Zx - fstripped.restrict_degree(i, exact=False).plethysm(F).restrict_degree(i, exact=False)
-        
+
         finv = Zx
-        
+
         for i in xrange(2, n+1):
             finv = improver(finv, i)
-        
+
         return finv
 
 # Utility function to compute the pointing of a cycle index
@@ -110,9 +110,9 @@ def Znbp_ogf( n ):
     Zcbp_ci = Zcbp(n)
     Zcbp_dotinv_ogf = unlabeled(plethystic_inverse(pointed(Zcbp_ci), n))
     Zcbp_comp_ogf = gf_pleth(Zcbp_ci, Zcbp_dotinv_ogf).add_bigoh(n+1)
-    
+
     Znbp_prime_ogf = gf_pleth(Zcon(n), (x/Zcbp_dotinv_ogf - 1).add_bigoh(n+1)).add_bigoh(n) + 1
-    
+
     return Zcbp_comp_ogf + x * Znbp_prime_ogf - x
 
 # Print the result
