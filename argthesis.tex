@@ -107,7 +107,7 @@ The language of category theory will allow us capture this behavior succinctly y
 A species functor $F$ simply associates to each set $A$ another set $F \sbrac{A}$ of its $F$-structures; for example, for $\specname{S}$ the species of permutations, we associate to some set $A$ the set $\specname{S} \sbrac{A} = \operatorname{Bij} \pbrac{A}$ of self-bijections (that is, permutations as maps) of $A$.
 
 Since the image of a bijection under such a functor is a necessarily itself a bijection, many authors instead simply define a species as a functor $F: \catname{Bij} \to \catname{Bij}$.
-Our motivation for using this definition instead will become clear in \S \ref{s:quot}.
+Our motivation for using this definition instead will become clear in \cref{s:quot}.
 
 Note that, having defined the species $F$ to be a functor, we have the following properties:
 \begin{itemize}
@@ -198,7 +198,7 @@ The cycle index of a species is then directly related to two important generatin
   \end{equation}
 \end{theorem}
 Proofs of both theorems are found in \cite[\S 1.2]{bll:species}.
-In essence, equation \eqref{eq:ciegf} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while equation \eqref{eq:ciogf} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
+In essence, \cref{eq:ciegf} counts each labeled structure exactly once (as a fixed point of the trivial automorphism on $\sbrac{n}$) with a factor of $1/n!$, while \cref{eq:ciogf} simply counts orbits \foreign{\`{a} la} Burnside's Lemma.
 In cases where the unlabeled enumeration problem is interesting, it is generally more challenging than the labeled enumeration of the same structures, since the characterization of isomorphism in a species may be nontrivial to capture in a generating function.
 If, however, we can calculate the complete cycle index for a species, both labeled and unlabeled enumerations immediately follow.
 
@@ -234,7 +234,7 @@ We use the disjoint union to avoid the complexities of dealing with cases where 
 In the case that $F = G_{1} + G_{2}$, we can simply invert the equation and write $F - G_{2} = G_{1}$.
 However, we may instead wish to study the species $F - G$ without first writing $F$ as a sum.
 In the spirit of the definition of species addition, we wish to define the species subtraction $F - G$ as the species of $F$-structures that `are not' $G$-structures.
-For slightly more generality, we may apply the notions of Definition \ref{def:specmaptypes}:
+For slightly more generality, we may apply the notions of \cref{def:specmaptypes}:
 \begin{definition}
   \label{def:specdif}
   For two species $F$ and $G$ with a species embedding $\phi: G \to F$, define their \emph{difference with respect to $\phi$} to be the species $F \stackrel{\phi}{-} G$ given by $\pbrac{F \stackrel{\phi}{-} G} \sbrac{A} = F \sbrac{A} - \phi \pbrac{G \sbrac{A}}$.
@@ -292,13 +292,13 @@ This definition is inherited directly from the theory of symmetric functions in 
     \label{eq:speccompci}
     \ci{F \circ G} = \ci{F} \circ \ci{G}
   \end{equation}
-  where $\circ$ in the right-hand side is as in equation \eqref{eq:cipleth}.
+  where $\circ$ in the right-hand side is as in \cref{eq:cipleth}.
 \end{theorem}
 Many combinatorial structures admit natural descriptions as compositions of species.
 For example, every graph admits a unique decomposition as a (possibly empty) set of (nonempty) connected graphs, so we have the species identity $\specname{G} = \specname{E} \circ \specname{G}^{C}$ for $\specname{G}$ the species of graphs and $\specname{G}^{C}$ the species of nonempty connected graphs.
 
-Diligent readers may observe that the requirement that $G \sbrac{\varnothing} = \varnothing$ in Definition \ref{def:speccomp} is in fact logically vacuous, since the given construction would simply ignore the $\varnothing$-structures.
-However, the formula in Theorem \ref{thm:speccompci} fails to be well-defined for any $\ci{G}$ with non-zero constant term (corresponding to species $G$ with nonempty $G \sbrac{\varnothing}$) unless $\ci{F}$ has finite degree (corresponding to species $F$ with support only in finitely many degrees).
+Diligent readers may observe that the requirement that $G \sbrac{\varnothing} = \varnothing$ in \cref{def:speccomp} is in fact logically vacuous, since the given construction would simply ignore the $\varnothing$-structures.
+However, the formula in \cref{thm:speccompci} fails to be well-defined for any $\ci{G}$ with non-zero constant term (corresponding to species $G$ with nonempty $G \sbrac{\varnothing}$) unless $\ci{F}$ has finite degree (corresponding to species $F$ with support only in finitely many degrees).
 Consider the following example:
 \begin{example}
   Let $\specname{E}$ denote the species of sets, $\specname{E}_{3}$ its restriction to sets with three elements, $\numspecname{1}$ the species described above (which has one empty structure), and $X$ the species of singletons (which has one order-$1$ structure).
@@ -343,7 +343,7 @@ Finally, we introduce a variant of the species derivative which allows us to \em
 \end{definition}
 In other words, an $\pointed{F} \sbrac{A}$-structure is an $F \sbrac{A}$-structure with a distinguished element taken from the set $A$ (as opposed to $\deriv{F}$, where the distinguished element is new).
 Thus, species pointing is appropriate for cases such as those of rooted trees: for $\mathfrak{a}$ the species of trees and $\specname{A}$ the species of rooted trees, we have $\specname{A} = \pointed{\mathfrak{a}}$.
-Equation \eqref{eq:specderivci} leads directly to the following:
+\cref{eq:specderivci} leads directly to the following:
 \begin{theorem}
   \label{thm:specpointci}
   For a species $F$, the cycle index of its corresponding pointed species is given by
@@ -355,11 +355,11 @@ Equation \eqref{eq:specderivci} leads directly to the following:
 Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{\deriv{F}}$.
 
 \section{Multisort species}\label{s:mult}
-A species $F$ as defined in \ref{def:species} is a functor $F: \catname{Bij} \to \catname{Set}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
+A species $F$ as defined in \cref{def:species} is a functor $F: \catname{Bij} \to \catname{Set}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
 The tool-set so produced is adequate to describe many classes of combinatorial structures.
 However, there is one particular structure type which it cannot effectively capture: the notion of distinct \emph{sorts} of elements within a structure.
 Perhaps the most natural example of this is the case of $k$-colored graphs, where every vertex has one of $k$ colors with the requirement that no pair of adjacent vertices shares a color.
-Automorphisms of such a graph must preserve the colorings of the vertices, which is not a natural restriction to impose in the calculation of the classical cycle index in equation \eqref{eq:cycinddef}.
+Automorphisms of such a graph must preserve the colorings of the vertices, which is not a natural restriction to impose in the calculation of the classical cycle index in \cref{eq:cycinddef}.
 We thus incorporate the notion of sorts directly into a new definition:
 \begin{definition} 
   \label{def:multiset}
@@ -382,7 +382,7 @@ Just as in the theory of ordinary species, to each multisort species is associat
 To keep track of the multiple sorts of labels, however, we require multiple sets of indeterminates.
 Where in ordinary cycle indices we simply used $p_{i}$ for the $i$th indeterminate, we now use $p_{i} \sbrac{j}$ for the $i$th indeterminate of the $j$th sort.
 In some contexts with small $k$, we will denote our sorts with letters (saying, for example, that we have `$X$ labels' and `$Y$ labels'), in which case we will write $p_{i} \sbrac{x}$, $p_{i} \sbrac{y}$, and so forth.
-In natural analogy to Definition \ref{def:cycind}, the formula for the cycle index of a $k$-sort species $F$ is given by
+In natural analogy to \cref{def:cycind}, the formula for the cycle index of a $k$-sort species $F$ is given by
 \begin{multline}
   \label{eq:multcycinddef}
   \civars{F}{p_{1} \sbrac{1}, p_{2} \sbrac{1}, \dots; p_{1} \sbrac{2}, p_{2} \sbrac{2}, \dots; \dots; p_{1} \sbrac{k}, p_{2} \sbrac{k}, \dots} = \\
@@ -397,7 +397,7 @@ Making sense of the notion of composition in multisort species is highly context
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structures $F$ under the action of a group $\Gamma$.
 In some cases, this group action will be \emph{structural} in the sense that it commutes with permutations of labels in the species $F$, or, informally, that it is independent of the choice of labelings on each $F$-structure.
-This is exactly the condition that each $\gamma \in \Gamma$ acts by a species isomorphism $\gamma: F \to F$ in the sense of Definition \ref{def:specmaptypes}.
+This is exactly the condition that each $\gamma \in \Gamma$ acts by a species isomorphism $\gamma: F \to F$ in the sense of \cref{def:specmaptypes}.
 We incorporate such species-compatible actions into a new definition:
 \begin{definition}
   \label{def:gspecies}
@@ -432,7 +432,7 @@ For such a species, of course, it is then meaningful to pass to the quotient:
 
 For each label set $A$, let $\quomap{\Gamma} \sbrac{A}: F \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{A}$ denote the map sending each $F$-structure over $A$ to its quotient $\nicefrac{F}{\Gamma}$-structure over $A$.
 Then $\quomap{\Gamma} \sbrac{A}$ is an injection for each $A$, and the requirement that $\Gamma$ acts by natural transformations implies that the induced functor map $\quomap{\Gamma}: F \to \nicefrac{F}{\Gamma}$ is a natural transformation.
-Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a species cover in the sense of Definition \ref{def:specmaptypes}.
+Thus, the passage from $F$ to $\nicefrac{F}{\Gamma}$ is a species cover in the sense of \cref{def:specmaptypes}.
 
 A brief exposition of the notion of quotient species may be found in \cite[\S 3.6]{bll:species}, and a more thorough exposition (in French) in \cite{bous:species}.
 Our motivation, of course, is that combinatorial structures of a given class are often `naturally' identified with orbits of structures of another, larger class under the action of some group.
@@ -445,7 +445,7 @@ As an intermediate step to the computation of the cycle index associated to this
   \begin{equation}
     \gcivars{\Gamma}{F}{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma} \label{eq:gcycinddef}
   \end{equation}
-  with $p_{\sigma}$ as in equation \eqref{eq:cycinddef}.
+  with $p_{\sigma}$ as in \cref{eq:cycinddef}.
 \end{definition}
 
 We will call such an object (formally a map from $\Gamma$ to the ring $\ringname{Q} \sbrac{\sbrac{p_{1}, p_{2}, \dots}}$ of symmetric functions with rational coefficients in the $p$-basis) a \emph{$\Gamma$-cycle index} even when it is not explicitly the $\Gamma$-cycle index of a $\Gamma$-species, and we will sometimes call $\gcielt{\Gamma}{F}{\gamma}$ the ``$\gamma$ term of $\gci{\Gamma}{F}$''.
@@ -472,9 +472,9 @@ The action of composition, which in ordinary species corresponds to plethysm of 
   \label{def:gspeccomp}
   For two $\Gamma$-species $F$ and $G$, define their \emph{composition} to be the $\Gamma$-species $F \circ G$ with structures given by $\pbrac{F \circ G} \sbrac{A} = \prod_{\pi \in P \pbrac{A}} \pbrac{F \sbrac{\pi} \times \prod_{B \in \pi} G \sbrac{B}}$ where $P \pbrac{A}$ is the set of partitions of $A$ and where $\gamma \in \Gamma$ acts on a $\pbrac{F \circ G}$-structure by acting on the $F$-structure and the $G$-structures independently.
 \end{definition}
-The requirement in Definition \ref{def:gspecies} that the action of $\Gamma$ commutes with transport implies that this is well-defined.
+The requirement in \cref{def:gspecies} that the action of $\Gamma$ commutes with transport implies that this is well-defined.
 Informally, for $\Gamma$-species $F$ and $G$, we have defined the composition $F \circ G$ to be the $\Gamma$-species of $F$-structures of $G$-structures, where $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure by acting independently on the $F$-structure and each of its associated $G$-structures.
-A formula similar to that Theorem \ref{thm:speccompci} requires a definition of the plethysm of $\Gamma$-symmetric functions, here taken from \cite[\S 3]{hend:specfield}:
+A formula similar to that \cref{thm:speccompci} requires a definition of the plethysm of $\Gamma$-symmetric functions, here taken from \cite[\S 3]{hend:specfield}:
 \begin{definition}
   \label{def:gcipleth}
   For two $\Gamma$-cycle indices $f$ and $g$, their \emph{plethysm} $f \circ g$ is a $\Gamma$-cycle index defined by
@@ -504,9 +504,9 @@ Since we intend to enumerate orbits under a group action, we apply a generalizat
   If $\Gamma$ and $\Delta$ are finite groups and $S$ a set with a $\pbrac{\Gamma \times \Delta}$-action, for any $\delta \in \Delta$ the number of $\Gamma$-orbits fixed by $\delta$ is $\frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \fix \pbrac{\gamma, \delta}$.
 \end{lemma}
 
-Recall from equation \eqref{eq:cycinddef} that, to compute the cycle index of a species, we need to enumerate the fixed points of each $\sigma \in \symgp{n}$.
+Recall from \cref{eq:cycinddef} that, to compute the cycle index of a species, we need to enumerate the fixed points of each $\sigma \in \symgp{n}$.
 However, to do this in the quotient species $\nicefrac{F}{\Gamma}$ is by definition to count the fixed $\Gamma$-orbits of $\sigma$ in $F$ under commuting actions of $\symgp{n}$ and $\Gamma$ (that is, under an $\pbrac{\symgp{n} \times \Gamma}$-action).
-Thus, Lemma \ref{lem:grouporbits} implies the following:
+Thus, \cref{lem:grouporbits} implies the following:
 \begin{theorem}\label{thm:qsci}
   For a $\Gamma$-species $F$, the ordinary cycle index of the quotient species $\nicefrac{F}{\Gamma}$ is given by 
   \begin{equation}
@@ -518,7 +518,7 @@ Thus, Lemma \ref{lem:grouporbits} implies the following:
 Note that this same result on cycle indices is implicit in \cite[\S 2.2.3]{bous:species}.
 With it, we can compute explicit enumerative data for a quotient species using cycle-index information of the original $\Gamma$-species with respect to the group action, as desired.
 
-Recall from Theorems \ref{thm:ciegf} and \ref{thm:ciogf} that the exponential generating function $F \pbrac{x}$ of labeled $F$-structures and the ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures may both be computed from the cycle index $\ci{F}$ of an ordinary species $F$ by simple substitutions.
+Recall from \cref{thm:ciegf,thm:ciogf} that the exponential generating function $F \pbrac{x}$ of labeled $F$-structures and the ordinary generating function $\tilde{F} \pbrac{x}$ of unlabeled $F$-structures may both be computed from the cycle index $\ci{F}$ of an ordinary species $F$ by simple substitutions.
 In the $\Gamma$-species context, we may perform similar substitutions to derive analogous generating functions.
 
 \begin{theorem}
@@ -538,9 +538,9 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
     \tilde{F}_{\gamma} \pbrac{x} = \gcieltvars{\Gamma}{F}{\gamma}{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
-Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because Definition \ref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
+Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because \cref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
 
-From these results and Theorem \ref{thm:qsci}, we can the conclude:
+From these results and \cref{thm:qsci}, we can the conclude:
 \begin{theorem}
   \label{qgciegf}
   The exponential generating function $F \pbrac{x}$ of labeled $\nicefrac{F}{\Gamma}$-structures is
@@ -563,7 +563,7 @@ Similarly,
 These results also follow directly from Burnside's Lemma.
 
 Note also that all of the above extends naturally into the multisort species context.
-We will use this extensively in Chapter \ref{c:ktrees}.
+We will use this extensively in \cref{c:ktrees}.
 It also extends naturally to weighted contexts, but we will not apply this extension here.
 
 \chapter{The species of bipartite blocks}\label{c:bpblocks}
@@ -584,25 +584,25 @@ Throughout this chapter, we denote by $\specname{BC}$ the species of bicolored g
 The prefix $\specname{C}$ will indicate the connected analogue of such a species.
 
 The motivating graph-theoretic observation is that each \emph{connected} bipartite graph may be identified with exactly two bicolored graphs which are color-dual; in other words, a connected bipartite graph is (by definition or by easy exercise, depending on your approach) an orbit of connected bicolored graphs under the action of $\symgp{2}$ where the nontrivial element $\tau$ reverses all vertex colors.
-We will hereafter treat all the various species of bicolored graphs as $\symgp{2}$-species with respect to this action and use the theory developed in \S \ref{s:quot} to pass to bipartite graphs.
+We will hereafter treat all the various species of bicolored graphs as $\symgp{2}$-species with respect to this action and use the theory developed in \cref{s:quot} to pass to bipartite graphs.
 
-Although the theory of multisort species presented in \S \ref{s:mult} is in general well-suited to the study of colored graphs, we will not need it here.
+Although the theory of multisort species presented in \cref{s:mult} is in general well-suited to the study of colored graphs, we will not need it here.
 The restrictions that vertex colorings place on automorphisms of bicolored graphs are simple enough that we can deal with them directly.
 
 \section{Bicolored graphs}\label{s:bcgraph}
 We begin our investigation by directly computing the $\symgp{2}$-cycle index for the species $\specname{BC}$ of bicolored graphs with the color-reversing $\symgp{2}$-action described previously.
-We will then use various methods from the species algebra of \S \ref{c:species} to pass to various other species.
+We will then use various methods from the species algebra of \cref{c:species} to pass to various other species.
 
 \subsection{Computing $\gcielt{\symgp{2}}{\specname{BC}}{e}$}\label{ss:ecibc}
 We construct the cycle index for the species $\specname{BC}$ of bicolored graphs in the classical way, which in light of our $\symgp{2}$-action will give $\gcielt{\symgp{2}}{\specname{BC}}{e}$. 
 
-Recall the formula for the cycle index of a $\Gamma$-species in equation \eqref{eq:gcycinddef}:
+Recall the formula for the cycle index of a $\Gamma$-species in \cref{eq:gcycinddef}:
 \begin{equation*}
   \gcielt{\Gamma}{F}{\gamma} = \sum_{n \geq 0} \frac{1}{n!} \sum_{\sigma \in \symgp{n}} \fix \pbrac{\gamma \cdot F \sbrac{\sigma}} p_{\sigma}.
 \end{equation*}
 Thus, for each $n > 0$ and each permutation $\pi \in \symgp{n}$, we must count bicolored graphs on $\sbrac{n}$ for which $\pi$ is a color-preserving automorphism.
 To simplify some future calculations, we omit empty graphs and define $\specname{BC} \sbrac{\varnothing} = \varnothing$.
-We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in equation \eqref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
+We note that the \emph{number} of such graphs in fact depends only on the cycle type $\lambda \vdash n$ of the permutation $\pi$, so we can use the cycle index formula in \cref{eq:cycinddefpart} interpreted as a $\Gamma$-cycle index identity.
 
 Fix some $n \geq 0$ and let $\lambda \vdash n$.
 We wish to count bicolored graphs for which a chosen permutation $\pi$ of cycle type $\lambda$ is a color-preserving automorphism.
@@ -612,7 +612,7 @@ Moreover, every bicolored graph for which $\pi$ is an automorphism may be constr
 Therefore, we direct our attention first to counting these edge orbits for a fixed coloring; we will then count colorings with respect to these results to get our total cycle index.
 
 Consider an edge connecting two cycles of lengths $m$ and $n$; the length of its orbit under the permutation is $\lcm \pbrac{m, n}$, so the number of such orbits of edges between these two cycles is $mn / \lcm \pbrac{m, n} = \gcd \pbrac{m, n}$.
-For an example in the case $m = 4, n = 2$, see Figure \ref{fig:exbcecycle}.
+For an example in the case $m = 4, n = 2$, see \cref{fig:exbcecycle}.
 The number of orbits for a fixed coloring is then $\sum \gcd \pbrac{m, n}$ where the sum is over the multiset of all cycle lengths $m$ of white cycles and $n$ of black cycles in the permutation $\pi$.
 We may then construct any possible graph fixed by our permutation by making a choice of a subset of these cycles to fill with edges, so the total number of such graphs is $\prod 2^{\gcd \pbrac{m, n}}$ for a fixed coloring.
 
@@ -684,11 +684,11 @@ Moreover, all graphs for which $\pi$ is a color-reversing automorphism and with 
 Consider a cycle of length $2n$; we hereafter describe such a cycle as having \emph{semilength} $n$.
 There are exactly $n^{2}$ possible white-black edges in such a cycle.
 If $n$ is odd, diametrically opposed vertices have opposite colors, so we can have an edge of length $l = n$ (in the sense of connecting two vertices which are $l$ steps apart in the cycle), and in such a case the orbit length is exactly $n$ and there is exactly one orbit.
-See Figure \ref{fig:exbctincycd} for an example of this case.
+See \cref{fig:exbctincycd} for an example of this case.
 However, if $n$ is odd but $l \neq n$, the orbit length is $2n$, so the number of such orbits is $\frac{n^{2} - n}{2n}$.
 Hence, the total number of orbits for $n$ odd is $\frac{n^2 + n}{2n} = \ceil{\frac{n}{2}}$.
 Similarly, if $n$ is even, all orbits are of length $2n$, so the total number of orbits is $\frac{n^{2}}{2n} = \frac{n}{2} = \ceil{\frac{n}{2}}$ also.
-See Figure \ref{fig:exbctincyce} for an example of each of these cases.
+See \cref{fig:exbctincyce} for an example of each of these cases.
 
 \begin{figure}[htb]
   \centering
@@ -762,7 +762,7 @@ Hence, the total number of orbits is $2mn / \pbrac{2 \lcm \pbrac{m, n}} = \gcd \
 \end{figure}
 
 All together, then, the number of orbits for a fixed coloring of a permutation of cycle type $2 \lambda$ (denoting the partition obtained by doubling every part of $\lambda$) is $\sum_{i} \ceil{\frac{\lambda_{i}}{2}} + \sum_{i < j} \gcd \pbrac{\lambda_{i}, \lambda_{j}}$.
-All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving automorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \S \ref{ss:ecibc}.
+All valid bicolored graphs for a fixed coloring for which $\pi$ is a color-preserving automorphism may be obtained uniquely by making some choice of a subset of this collection of orbits, just as in \cref{ss:ecibc}.
 Thus, the total number of possible graphs for a given vertex coloring is
 \begin{equation*}
   \prod_{i} 2^{\ceil{\frac{\lambda_{i}}{2}}} \prod_{i < j} 2^{\gcd \pbrac{\lambda_{i}, \lambda_{j}}},
@@ -781,14 +781,14 @@ Therefore we conclude:
 As noted in the introduction of this section, we may pass from bicolored to bipartite graphs by taking a quotient under the color-reversing action of $\symgp{2}$ only in the connected case.
 Thus, we must pass from the species $\specname{BC}$ to the species $\specname{CBC}$ of connected bicolored graphs to continue.
 It is a standard principle of graph enumeration that a graph may be decomposed uniquely into (and thus species-theoretically identified with) the set of its connected components.
-We must, of course, require that the component structures are nonempty to ensure well-definedness, as discussed in \S \ref{s:specalg}.
+We must, of course, require that the component structures are nonempty to ensure well-definedness, as discussed in \cref{s:specalg}.
 This same relationship holds in the case of bicolored graphs.
 Thus, the species $\specname{BC}$ of nonempty bicolored graphs is the composition of the species $\specname{CBC}$ of nonempty connected bicolored graphs into the species $\specname{E}^{+} = \specname{E} - 1$ of nonempty sets:
 \begin{equation} \specname{BC} = \specname{E}^{+} \circ \specname{CBC} \label{eq:bcdecomp} \end{equation}
 
-Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\symgp{2}$-species by applying the trivial action, equation \eqref{eq:bcdecomp} holds as an identity of $\symgp{2}$-species for the color-reversing $\symgp{2}$-action described previously.
+Reversing the colors of a bicolored graph is done simply by reversing the colors of each of its connected components independently; thus, once we trivially extend the species $\specname{E}^{+}$ to an $\symgp{2}$-species by applying the trivial action, \cref{eq:bcdecomp} holds as an identity of $\symgp{2}$-species for the color-reversing $\symgp{2}$-action described previously.
 
-To use the decomposition in equation \eqref{eq:bcdecomp} to derive the $\symgp{2}$-cycle index for $\specname{CBC}$, we must invert the $\symgp{2}$-species composition into $\specname{E}^{+}$.
+To use the decomposition in \cref{eq:bcdecomp} to derive the $\symgp{2}$-cycle index for $\specname{CBC}$, we must invert the $\symgp{2}$-species composition into $\specname{E}^{+}$.
 In the context of the theory of virtual species, this is possible; we write $\con := \pbrac{\specname{E} - 1}^{\abrac{-1}}$ to denote this virtual species.
 We can derive from \cite[\S 2.5, eq.~(58c)]{bll:species} that its cycle index is
 \begin{equation}
@@ -796,9 +796,9 @@ We can derive from \cite[\S 2.5, eq.~(58c)]{bll:species} that its cycle index is
   \ci{\con} = \sum_{k \geq 1} \frac{\mu \pbrac{k}}{k} \log \pbrac{1 + p_{k}}
 \end{equation}
 where $\mu$ is the M\"{o}bius function.
-We can then rewrite equation \eqref{eq:bcdecomp} as
+We can then rewrite \cref{eq:bcdecomp} as
 \[\specname{CBC} = \con \circ \specname{BC}\]
-It then follows immediately from Theorem \ref{thm:gspeccompci} that
+It then follows immediately from \cref{thm:gspeccompci} that
 \begin{theorem}
   \begin{equation} \gci{\symgp{2}}{\specname{CBC}} = \ci{\con} \circ \gci{\symgp{2}}{\specname{BC}} \label{eq:zcbcdecomp} \end{equation}
 \end{theorem}
@@ -809,14 +809,14 @@ Thus,
 \begin{equation*}
   \specname{CBP} = \faktor{\specname{CBC}}{\symgp{2}}.
 \end{equation*}
-By application of Theorem \ref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
+By application of \cref{thm:qsci}, we can then directly compute the cycle index of $\specname{CBP}$ in terms of previous results:
 \begin{theorem}
   \begin{equation}
     \ci{\specname{CBP}} = \qgci{\symgp{2}}{\specname{CBC}} = \frac{1}{2} \pbrac{\gcielt{\symgp{2}}{\specname{CBC}}{e} + \gcielt{\symgp{2}}{\specname{CBC}}{\tau}}.
   \end{equation}
 \end{theorem}
 
-Finally, to reach a result for the general bipartite case, we return to the graph-theoretic composition relationship previously considered in \S \ref{s:cbc}:
+Finally, to reach a result for the general bipartite case, we return to the graph-theoretic composition relationship previously considered in \cref{s:cbc}:
 \begin{equation*}
   \specname{BP} = \specname{E} \circ \specname{CBP}.
 \end{equation*}
@@ -856,9 +856,9 @@ From \cite[eq.~4.2.27]{bll:species} we obtain
 \end{theorem}
 We have already calculated the cycle index for the species $\specname{CBP}$, so the calculation of the cycle index of $\specname{NBP}$ is now simply a matter of algebraic expansion.
 
-A generating function for labeled bipartite blocks was given in \cite{harrob:bipblocks}, where their analogue of equation \eqref{eq:nbpexp} for the labeled exponential generating function for blocks comes from \cite{forduhl:combprob1}.
+A generating function for labeled bipartite blocks was given in \cite{harrob:bipblocks}, where their analogue of \cref{eq:nbpexp} for the labeled exponential generating function for blocks comes from \cite{forduhl:combprob1}.
 However, we could locate no corresponding unlabeled enumeration in the literature.
-The numbers of labeled and unlabeled nonseparable bipartite graphs for $n \leq 10$ as calculated using our method are given in Table \ref{tab:bpblocks}.
+The numbers of labeled and unlabeled nonseparable bipartite graphs for $n \leq 10$ as calculated using our method are given in \cref{tab:bpblocks}.
 
 \chapter{The species of $k$-trees}\label{c:ktrees}
 \section{Introduction}\label{s:intro}
@@ -884,9 +884,9 @@ To begin, we establish two definitions for substructures of $k$-trees which we w
   A \emph{hedron} of a $k$-tree is a $\pbrac{k+1}$-clique and a \emph{front} is a $k$-clique.
 \end{definition}
 We will frequently describe $k$-trees as assemblages of hedra attached along their fronts rather than using explicit graph-theoretic descriptions in terms of edges and vertices, keeping in mind that the structure of interest is graph-theoretic and not geometric.
-The recursive addition of a single vertex and its connection by edges to an existing $k$-clique in Definition \ref{def:ktree} is then interpreted as the attachment of a hedron to an existing one along some front, identifying the $k$ vertices they have in common.
+The recursive addition of a single vertex and its connection by edges to an existing $k$-clique in \cref{def:ktree} is then interpreted as the attachment of a hedron to an existing one along some front, identifying the $k$ vertices they have in common.
 The analogy to the recursive definition of conventional trees is clear, and in fact the class $\mathfrak{a}$ of trees may be recovered by setting $k = 1$.
-For higher $k$, the structures formed are still distinctively tree-like; for example, $2$-trees are formed by gluing triangles together along their edges without forming loops of triangles (see Figure \ref{fig:ex2tree}), while $3$-trees are formed by gluing tetrahedra together along their triangular faces without forming loops of tetrahedra.
+For higher $k$, the structures formed are still distinctively tree-like; for example, $2$-trees are formed by gluing triangles together along their edges without forming loops of triangles (see \cref{fig:ex2tree}), while $3$-trees are formed by gluing tetrahedra together along their triangular faces without forming loops of tetrahedra.
 
 \begin{figure}[htb]
   \centering
@@ -920,7 +920,7 @@ For higher $k$, the structures formed are still distinctively tree-like; for exa
 
 In graph-theoretic contexts, it is conventional to label graphs on their vertices and possibly their edges.
 However, for our purposes, it will be more convenient to label hedra and fronts.
-Throughout, we will treat the species $\kt{k}$ of $k$-trees as a two-sort species, with $X$-labels on the hedra and $Y$-labels on their fronts; in diagrams, we will generally use capital letters for the hedron-labels and positive integers for the front-labels (see Figure \ref{fig:exlab2tree}).
+Throughout, we will treat the species $\kt{k}$ of $k$-trees as a two-sort species, with $X$-labels on the hedra and $Y$-labels on their fronts; in diagrams, we will generally use capital letters for the hedron-labels and positive integers for the front-labels (see \cref{fig:exlab2tree}).
 
 \begin{figure}[htb]
   \centering
@@ -999,7 +999,7 @@ A similar theorem holds for $k$-trees.
   We then map the $k$-tree $T$ rooted at the clique $c$ to the same tree $T$ rooted at \emph{both} $c$ and its neighbor $c'$.
   This map is also a natural bijection, in this case from the set of $k$-trees rooted at vertices which are \emph{not} their centers to the set $\ktxy{k}$ of $k$-trees rooted at an adjacent hedron-front pair.
 
-  When combined, these maps give the desired isomorphism of species in equation \eqref{eq:dissymk}.
+  When combined, these maps give the desired isomorphism of species in \cref{eq:dissymk}.
 \end{proof}
 
 In general we will reformulate the dissymmetry theorem as follows:
@@ -1013,9 +1013,9 @@ In general we will reformulate the dissymmetry theorem as follows:
   as an isomorphism of ordinary species.
 \end{corollary}
 
-This species subtraction is well-defined in the sense of Definition \ref{def:specdif}, since the species $\ktxy{k}$ embeds in the species $\ktx{k} + \kty{k}$ by the centering map described in the proof of Theorem \ref{thm:dissymk}.
+This species subtraction is well-defined in the sense of \cref{def:specdif}, since the species $\ktxy{k}$ embeds in the species $\ktx{k} + \kty{k}$ by the centering map described in the proof of \cref{thm:dissymk}.
 
-Theorem \ref{thm:dissymk} and the consequent equation \eqref{eq:dissymkreform} allow us to reframe enumerative questions about generic $k$-trees in terms of questions about $k$-trees rooted in various ways.
+\Cref{thm:dissymk} and the consequent \cref{eq:dissymkreform} allow us to reframe enumerative questions about generic $k$-trees in terms of questions about $k$-trees rooted in various ways.
 However, the rich internal symmetries of large cliques obstruct direct analysis of these rooted structures.
 We need to break these symmetries to proceed.
 
@@ -1055,7 +1055,7 @@ We will break this symmetry by adding additional structure which we can later re
   If two oriented hedra share a front, their orientations are \emph{compatible} if they correspond under the mirror bijection.
   Then an orientation of a $k$-tree is \emph{coherent} if every pair of adjacent hedra is compatibly-oriented.
 \end{definition}
-See Figure \ref{fig:exco2tree} for an example.
+See \cref{fig:exco2tree} for an example.
 Note that every $k$-tree admits many coherent orientations---any one hedron of the $k$-tree may be oriented freely, and a unique orientation of the whole $k$-tree will result from each choice of such an orientation of one hedron.
 We will denote by $\ktco{k}$ the species of coherently-oriented $k$-trees.
 
@@ -1131,7 +1131,7 @@ For a given coherently-oriented $k$-tree $T$ with $n$ hedra:
 The resulting object $\beta \pbrac{T}$ is clearly a $k$-coding tree with $n$ black vertices.
 
 We can recover a $T$ from $\beta \pbrac{T}$ by following the reverse procedure.
-For an example, see Figure \ref{fig:exbctree}, which shows the $2$-coding tree associated to the coherently-oriented $2$-tree of Figure \ref{fig:exco2tree}.
+For an example, see \cref{fig:exbctree}, which shows the $2$-coding tree associated to the coherently-oriented $2$-tree of \cref{fig:exco2tree}.
 Note that, for clarity, we have rendered the black vertices (corresponding to hedra) with squares.
 
 \begin{figure}[htb]
@@ -1223,7 +1223,7 @@ As with $k$-trees, we will study rooted versions of the species $\ct{k}$ of $k$-
 
 Let $\ctx{k}$ denote the species of $k$-coding trees rooted at black vertices, $\cty{k}$ denote the species of $k$-coding trees rooted at white vertices, and $\ctxy{k}$ denote the species of $k$-coding trees rooted at edges (that is, at adjacent black-white pairs).
 By construction, a $\ctx{k}$-structure consists of a single $X$-label and a cyclically-ordered $\pbrac{k+1}$-set of $\cty{k}$-structures.
-See Figure \ref{fig:ctxconst} for an example of this construction.
+See \cref{fig:ctxconst} for an example of this construction.
 
 \begin{figure}[htb]
   \centering
@@ -1268,7 +1268,7 @@ We note here for conceptual consistency that in fact $\specname{L}_{k} = \deriv{
 
 Finally, a $\ctxy{k}$-structure is simply an $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structure as described above (corresponding to the black vertex) together with a $\cty{k}$-structure (corresponding to the white vertex).
 For reasons that will become clear later, we note that we can incorporate the root white vertex into the linear order by making it last, thus representing a $\ctxy{k}$-structure instead as an $X \cdot \specname{L}_{k+1} \pbracs[big]{\cty{k}}$-structure.
-See Figure \ref{fig:ctxyconst} for an example of this construction.
+See \cref{fig:ctxyconst} for an example of this construction.
 
 \begin{figure}[htb]
   \centering
@@ -1325,7 +1325,7 @@ The various species of rooted $k$-coding trees are therefore related by a system
 However, a recursive characterization of the various ordinary species of $k$-coding trees is insufficient to characterize the species of $k$-trees itself, since $k$-coding trees represent $k$-trees with coherent orientations.
 
 \section{Generic $k$-trees}\label{s:genkt}
-To remove the additional structure of coherent orientation imposed on $k$-trees before their conversion to $k$-coding trees, we now apply the theory of $\Gamma$-species developed in \ref{s:quot}.
+To remove the additional structure of coherent orientation imposed on $k$-trees before their conversion to $k$-coding trees, we now apply the theory of $\Gamma$-species developed in \cref{s:quot}.
 In \cite{gessel:spec2trees}, the orientation-reversing action of $\symgp{2}$ on $\cyc_{\sbrac{3}}$ is exploited to study $2$-trees species-theoretically.
 We might hope to develop an analogous group action under which general $k$-trees are naturally identified with orbits of coherently-oriented $k$-trees under an action of $\symgp{k}$.
 Unfortunately:
@@ -1347,7 +1347,7 @@ Unfortunately:
 \end{proof}
 
 We thus cannot hope to attack the coherent orientations of $k$-trees by acting directly on the cyclic orderings of fronts.
-Accordingly, we cannot simply apply the results of \S \ref{ss:codecomp} to compute a $\Gamma$-species $\ct{k}$ with respect to some hypothetical action of a group $\Gamma$ whose orbits correspond to generic $k$-trees.
+Accordingly, we cannot simply apply the results of \cref{ss:codecomp} to compute a $\Gamma$-species $\ct{k}$ with respect to some hypothetical action of a group $\Gamma$ whose orbits correspond to generic $k$-trees.
 Instead, we will use the additional structure on \emph{rooted} coherently-oriented $k$-trees; with rooting, the cyclic orders around black vertices are converted into linear orders, for which there is a natural action of $\symgp{k+1}$.
 
 \subsection{Group actions on $k$-coding trees}\label{ss:actct}
@@ -1387,7 +1387,7 @@ We can express this procedure in formulaic terms:
   We require that $2$ is still mirror to $3$, so we must move it to position $\sigma \pbrac{i + a} - \sigma \pbrac{i}$ when we create a new linear order around $v'$.
   This completes the proof.
 \end{proof}
-This procedure is depicted in Figure \ref{fig:rhoapp}.
+This procedure is depicted in \cref{fig:rhoapp}.
 
 \begin{figure}[htbp]
   \centering
@@ -1432,7 +1432,7 @@ We let $\Delta: \symgp{k} \to \symgp{k+1}$ denote the obvious embedding; then th
 We then have an action of $\symgp{k}$ on non-root black vertices induced by $\Delta$.
 (Equivalently, we can think of $\symgp{k}$ as the subgroup of $\symgp{k+1}$ of permutations fixing $k+1$, but the explicit notation $\Delta$ will be of use in later formulas.)
 
-In light of Observation \ref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\ctx{k}$, $\cty{k}$, and $\ctxy{k}$ whose orbits correspond to the various coherent orientations of single underlying rooted $k$-trees.
+In light of \cref{obs:funcdecompct}, we now wish to adapt these ideas into explicit $\symgp{k}$- and $\symgp{k+1}$-actions on $\ctx{k}$, $\cty{k}$, and $\ctxy{k}$ whose orbits correspond to the various coherent orientations of single underlying rooted $k$-trees.
 In the case of a $Y$-rooted $k$-coding tree $T$, if we declare that $\sigma \in \symgp{k}$ acts on $T$ by acting directly (as $\Delta \pbrac{\sigma}$) on each of the black vertices immediately adjacent to the root and then applying $\rho$-derived permutations recursively to their descendants, orbits behave as expected.
 The same $\symgp{k}$-action serves equally well for edge-rooted $k$-coding trees, where (for purposes of applying the action of some $\sigma$) we can simply ignore the black vertex in the root.
 
@@ -1443,10 +1443,10 @@ The orbit under this action of some edge-rooted $k$-coding tree $T$ with a choic
 \subsection{$k$-trees as quotients}\label{ss:ktquot}
 Since these actions are label-independent, we may now treat $\cty{k}$ and $\ctxy{k}$ as $\symgp{k}$-species and $\ctxy{k}$ as an $\symgp{k+1}$-species.
 The $\symgp{k}$- and $\symgp{k+1}$-actions on $\ctxy{k}$ are compatible, but we will make explicit reference to $\ctxy{k}$ as a $\symgp{k}$- or $\symgp{k+1}$-species whenever it is important and not completely clear from context which we mean.
-As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\ct{k}$ to the various ordinary species forms of generic rooted $k$-trees in Theorem \ref{thm:dissymk}:
+As a result of the above results, we can then relate the rooted $\Gamma$-species forms of $\ct{k}$ to the various ordinary species forms of generic rooted $k$-trees in \cref{thm:dissymk}:
 \begin{theorem}
   \label{thm:arootquot}
-  For the various rooted forms of the ordinary species $\kt{k}$ as in Theorem \ref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\ct{k}$ as in Observation \ref{obs:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
+  For the various rooted forms of the ordinary species $\kt{k}$ as in \cref{thm:dissymk} and the various rooted $\Gamma$-species forms of $\ct{k}$ as in \cref{obs:funcdecompct} as $\symgp{k}$- and $\symgp{k+1}$-species, we have
   \begin{subequations}
     \label{eq:arootquot}
     \begin{align}
@@ -1455,18 +1455,18 @@ As a result of the above results, we can then relate the rooted $\Gamma$-species
       \ktx{k} &= \faktor{\ctxy{k}}{\symgp{k+1}} \label{eq:axquot}
     \end{align}
   \end{subequations}
-  as isomorphisms of ordinary species, where $\ctxy{k}$ is an $\symgp{k}$-species in \eqref{eq:axyquot} and an $\symgp{k+1}$-species in \eqref{eq:axquot}.
+  as isomorphisms of ordinary species, where $\ctxy{k}$ is an $\symgp{k}$-species in \cref{eq:axyquot} and an $\symgp{k+1}$-species in \cref{eq:axquot}.
 \end{theorem}
 
-As a result, we have explicit characterizations of all the rooted components of the original dissymmetry theorem \ref{thm:dissymk}.
-To compute the cycle indices of these components (and thus the cycle index of $\kt{k}$ itself), we need only compute the cycle indices of the various rooted $\ct{k}$ species, which we will do using a combination of the functional equations \eqref{eq:ctfunc} and explicit consideration of automorphisms.
+As a result, we have explicit characterizations of all the rooted components of the original dissymmetry theorem, \cref{thm:dissymk}.
+To compute the cycle indices of these components (and thus the cycle index of $\kt{k}$ itself), we need only compute the cycle indices of the various rooted $\ct{k}$ species, which we will do using a combination of the functional equations in \cref{eq:ctfunc} and explicit consideration of automorphisms.
 
 \section{Automorphisms and cycle indices}\label{s:ktcycind}
 \subsection{$k$-coding trees: $\cty{k}$ and $\ctxy{k}$}\label{ss:ctcycind}
-Corollary \ref{cor:dissymkreform} of the dissymmetry theorem for $k$-trees has a direct analogue in terms of cycle indices:
+\Cref{cor:dissymkreform} of the dissymmetry theorem for $k$-trees has a direct analogue in terms of cycle indices:
 \begin{theorem}
   \label{thm:dissymkci}
-  For the various forms of the species $\kt{k}$ as in \S \ref{s:dissymk}, we have
+  For the various forms of the species $\kt{k}$ as in \cref{s:dissymk}, we have
   \begin{equation}
     \label{eq:dissymkci}
     \ci{\kt{k}} = \ci{\ktx{k}} + \ci{\kty{k}} - \ci{\ctxy{k}}.
@@ -1474,10 +1474,10 @@ Corollary \ref{cor:dissymkreform} of the dissymmetry theorem for $k$-trees has a
 \end{theorem}
 
 Thus, we need to calculate the cycle indices of the three rooted forms of $\kt{k}$.
-From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
+From \cref{thm:arootquot} and by \cref{thm:qsci} we obtain:
 \begin{theorem}
   \label{thm:aquotci}
-  For the various forms of the species $\kt{k}$ as in \S \ref{s:dissymk} and the various $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\ct{k}$ as in \S \ref{ss:actct}, we have
+  For the various forms of the species $\kt{k}$ as in \cref{s:dissymk} and the various $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\ct{k}$ as in \cref{ss:actct}, we have
   \begin{subequations}
     \label{eq:aquotci}
     \begin{align}
@@ -1490,9 +1490,9 @@ From Theorem \ref{thm:arootquot} and by Theorem \ref{thm:qsci} we obtain:
 
 We thus need only calculate the various $\Gamma$-cycle indices for the $\symgp{k}$-species and $\symgp{k+1}$-species forms of $\cty{k}$ and $\ctxy{k}$ to complete our enumeration of general $k$-trees.
 
-In Observation \ref{obs:funcdecompct}, the functional equations for the ordinary species $\cty{k}$ and $\ctxy{k}$ both include terms of the form $\specname{L}_{k} \circ \cty{k}$.
-The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in Definition \ref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\cty{k}$-structures in these recursive decompositions.
-Recall from \S \ref{s:quot} that, for two $\Gamma$-species $F$ and $G$, an element $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure (colloquially, `an $F$-structure of $G$-structures') by acting on the $F$-structure and on each of the $G$-structures independently.
+In \cref{obs:funcdecompct}, the functional equations for the ordinary species $\cty{k}$ and $\ctxy{k}$ both include terms of the form $\specname{L}_{k} \circ \cty{k}$.
+The plethysm of ordinary species does have a generalization to $\Gamma$-species, as given in \cref{def:gspeccomp}, but it does not correctly describe the manner in which $\symgp{k}$ acts on linear orders of $\cty{k}$-structures in these recursive decompositions.
+Recall from \cref{s:quot} that, for two $\Gamma$-species $F$ and $G$, an element $\gamma \in \Gamma$ acts on an $\pbrac{F \circ G}$-structure (colloquially, `an $F$-structure of $G$-structures') by acting on the $F$-structure and on each of the $G$-structures independently.
 In our action of $\symgp{k}$, however, the actions of $\sigma$ on the descendant $\cty{k}$-structures are \emph{not} independent---they depend on the position of the structure in the linear ordering around the parent black vertex.
 In particular, if $\sigma$ acts on some non-root black vertex, then $\rho_{i} \pbrac{\sigma}$ acts on the white vertex in the $i$th place, where in general $\rho_{i} \pbrac{\sigma} \neq \sigma$.
 
@@ -1515,9 +1515,9 @@ First, we consider the component species $X \cdot \specname{L}_{k} \pbracs[big]{
 \end{proof}
 
 Consider a structure $T$ of the $\symgp{k}$-species $\cty{k}$ and an element $\sigma \in \symgp{k}$.
-As discussed in \S \ref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures.
+As discussed in \cref{ss:codecomp}, $T$ is composed of a $Y$-label and a set of $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures.
 The permutation $\sigma$ acts trivially on $Y$ and $\specname{E}$ and acts on each of the component $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures independently.
-For each of these component structures, by Lemma \ref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\Delta \sigma$ carries each $\cty{k}$-structure to its $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$-image.
+For each of these component structures, by \cref{lem:ctyinvar}, we have that $\sigma$ is an automorphism if and only if $\Delta \sigma$ carries each $\cty{k}$-structure to its $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$-image.
 Thus, when constructing $\sigma$-invariant $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structures, we must construct for each cycle of $\sigma$ a $\cty{k}$-structure which is invariant under the application of \emph{all} the permutations $\Delta^{-1} \pbrac{\rho_{i} \pbrac{\Delta \sigma}}$ which will be applied to it along the cycle.
 For $c$ the chosen cycle of $\sigma$, this permutation is $\Delta^{-1} \pbrac{\prod_{i \in c} \rho_{i} \pbrac{\Delta \sigma}}$, where the product is taken over any chosen linearization of the cyclic order of the terms in the cycle.
 Once a choice of such a $\cty{k}$-structure for each cycle of $\sigma$ is made, we can simply insert the structures into the $\specname{L}_{k}$-structure to build the desired $\sigma$-invariant $X \cdot \specname{L}_{k} \pbracs[big]{\cty{k}}$-structure.
@@ -1534,7 +1534,7 @@ Accordingly:
 \end{theorem}
 
 The situation for the $\symgp{k+1}$-species $\ctxy{k}$ is almost identical.
-Recall from \S \ref{ss:actct} that $\sigma \in \symgp{k+1}$ acts on a $\ctxy{k}$-structure $T$ by applying $\sigma$ directly to the linear order on the $k+1$ white neighbors of the root black vertex and applying $\rho$-variants of $\sigma$ recursively to their descendants.
+Recall from \cref{ss:actct} that $\sigma \in \symgp{k+1}$ acts on a $\ctxy{k}$-structure $T$ by applying $\sigma$ directly to the linear order on the $k+1$ white neighbors of the root black vertex and applying $\rho$-variants of $\sigma$ recursively to their descendants.
 Thus, we once again need only require that, along each cycle of $\sigma$, the successive white-vertex structures are pairwise isomorphic under the action of the appropriate $\rho_{i} \pbrac{\sigma}$.
 Thus, we again need only choose for each cycle $c \in C \pbrac{\sigma}$ a $\cty{k}$-structure which is invariant under $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$.
 Accordingly:
@@ -1546,10 +1546,10 @@ Accordingly:
     \gcielt{\symgp{k+1}}{\ctxy{k}}{\sigma} = p_{1} \sbrac{x} \\
     \times \prod_{c \in C \pbrac{\sigma}} \gci{\symgp{k}}{\cty{k}} \pbracs[Big]{\prod_{i \in c} \rho_{i} \sbrac{\sigma}} \pbrac{p_{\abs{c}} \sbrac{x}, p_{2 \abs{c}} \sbrac{x}, \dots, p_{\abs{c}} \sbrac{y}, p_{2 \abs{c}} \sbrac{y}, \dots}.
   \end{multline}
-  under the same conditions as Theorem \ref{thm:ctyfuncci}.
+  under the same conditions as \cref{thm:ctyfuncci}.
 \end{theorem}
 
-Terms of the form $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$ appear in equations \eqref{eq:ctyfuncci} and \eqref{eq:ctxyfuncci}.
+Terms of the form $\prod_{i \in c} \rho_{i} \pbrac{\sigma}$ appear in \cref{eq:ctyfuncci,eq:ctxyfuncci}.
 For the simplification of calculations, we note here a two useful results about these products.
 
 First, we observe that certain $\rho$-maps preserve cycle structure:
@@ -1592,7 +1592,7 @@ But then we note that the products in the above theorems are in fact permutation
   =& a \mapsto \sigma^{\abs{c}} \pbrac{c_{1} + a} - \sigma^{\abs{c}} \pbrac{c_{1}} \\
   =& \rho_{c_{1}} \pbrac{\sigma^{\abs{c}}}.
   \end{align*}
-  But $c_{1}$ is a fixed point of $\sigma^{\abs{c}}$, so by the result of Lemma \ref{lem:rhofp}, this has the same cycle structure as $\sigma^{\abs{c}}$, which in turn is determined by $\lambda \pbrac{\sigma}$ and $\abs{c}$ as desired.
+  But $c_{1}$ is a fixed point of $\sigma^{\abs{c}}$, so by the result of \cref{lem:rhofp}, this has the same cycle structure as $\sigma^{\abs{c}}$, which in turn is determined by $\lambda \pbrac{\sigma}$ and $\abs{c}$ as desired.
 \end{proof}
 
 From this and the fact that the terms of $X$-degree $1$ in all $\gci{\cty{k}}{\symgp{k}}$ and $\gci{\ctxy{k}}{\symgp{k+1}}$ are equal (to $p_{1} \sbrac{x} p_{1} \sbrac{y}^{k+1}$), we can conclude that:
@@ -1604,12 +1604,12 @@ From this and the fact that the terms of $X$-degree $1$ in all $\gci{\cty{k}}{\s
 This will simply computational enumeration of $k$-trees significantly, since the number of partitions of $k$ grows exponentially while the number of permutations of $\sbrac{k}$ grows factorially.
 
 \subsection{$k$-trees: $\kt{k}$}\label{ss:ktcycind}
-We now have all the pieces in hand to apply Theorem \ref{thm:dissymkci} to compute the cycle index of the species $\kt{k}$ of general $k$-trees.
-Equation \eqref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\kt{k}$ in terms of the cycle indices of the rooted species $\ktx{k}$, $\kty{k}$, and $\ctxy{k}$; Theorem \ref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\cty{k}}$, $\gci{\symgp{k}}{\ctxy{k}}$, and $\gci{\symgp{k+1}}{\ctxy{k}}$; and, finally, Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
-By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} back through this sequence of functional relationships, we can conclude:
+We now have all the pieces in hand to apply \cref{thm:dissymkci} to compute the cycle index of the species $\kt{k}$ of general $k$-trees.
+\Cref{eq:dissymkci} characterizes the cycle index of the generic $k$-tree species $\kt{k}$ in terms of the cycle indices of the rooted species $\ktx{k}$, $\kty{k}$, and $\ctxy{k}$; \cref{thm:arootquot} gives the cycle indices of these three rooted species in terms of the $\Gamma$-cycle indices $\gci{\symgp{k}}{\cty{k}}$, $\gci{\symgp{k}}{\ctxy{k}}$, and $\gci{\symgp{k+1}}{\ctxy{k}}$; and, finally, \cref{thm:ctyfuncci,thm:ctxyfuncci} give these $\Gamma$-cycle indices explicitly.
+By tracing the formulas in \cref{eq:ctyfuncci,eq:ctxyfuncci} back through this sequence of functional relationships, we can conclude:
 \begin{theorem}[Cycle index for the species of $k$-trees]
   \label{thm:akci}
-  For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\cty{k}}$ as in equation \eqref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\ctxy{k}}$ as in equation \eqref{eq:ctxyfuncci} we have:
+  For $\specname{a}_{k}$ the species of general $k$-trees, $\gci{\symgp{k}}{\cty{k}}$ as in \cref{eq:ctyfuncci}, and $\gci{\symgp{k+1}}{\ctxy{k}}$ as in \cref{eq:ctxyfuncci} we have:
   \label{thm:ktreecyc}
   \begin{subequations}
     \label{eq:akci}
@@ -1621,17 +1621,17 @@ By tracing the formulas in equations \ref{eq:ctyfuncci} and \ref{eq:ctxyfuncci} 
 
 \end{theorem}
 
-Since the formulas for the $\Gamma$-cycle indices of $\cty{k}$ and $\ctxy{k}$ are recursive, equation \eqref{eq:akci} in fact represents a recursive system of functional equations.
+Since the formulas for the $\Gamma$-cycle indices of $\cty{k}$ and $\ctxy{k}$ are recursive, \cref{eq:akci} in fact represents a recursive system of functional equations.
 Computational methods can yield explicit enumerative results.
 However, a bit of care will allow us to reduce the computational complexity of this problem significantly.
 
 \section{Unlabeled enumeration and the generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$}\label{ss:ktunlenum}
-Equation \eqref{eq:akci} in Theorem \ref{thm:akci} gives a recursive formula for the cycle index of the ordinary species $\kt{k}$ of $k$-trees.
-The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of Theorem \ref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\kt{k}}$.
+\Cref{eq:akci} in \cref{thm:akci} gives a recursive formula for the cycle index of the ordinary species $\kt{k}$ of $k$-trees.
+The number of unlabeled $k$-trees with $n$ hedra is historically an open problem, but by application of \cref{thm:ciogf} the ordinary generating function counting such structures can be extracted from the cycle index $\ci{\kt{k}}$.
 Actually computing terms of the cycle index in order to derive the coefficients of the generating function is, however, a computationally expensive process, since the cycle index is by construction a power series in two infinite sets of variables.
 The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
 
-Recall from Theorem \ref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
+Recall from \cref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
 \[\tilde{F} \pbracs[big]{\gamma} \pbrac{x} = \civars{F}{x, x^2, x^3, \dots}\]
 and that the ordinary generating function for counting unlabeled $\nicefrac{F}{\Gamma}$-structures is given by
 \[\tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.\]
@@ -1639,7 +1639,7 @@ These formula admits an obvious multisort extension, but we in fact wish to coun
 Each of the two-sort cycle indices in this chapter can be converted to one-sort by substituting $y_{i} = 1$ for all $i$.
 For the rest of this section, we will deal directly with these one-sort versions of the cycle indices.
 
-We begin by considering the explicit recursive functional equations in Theorems \ref{thm:ctyfuncci} and \ref{thm:ctxyfuncci}.
+We begin by considering the explicit recursive functional equations in \cref{thm:ctyfuncci,thm:ctxyfuncci}.
 In each case, by the above, the ordinary generating function is exactly the result of substituting $p_{i} \sbrac{x} = x^{i}$ into the given formula.
 Thus, we have:
 \begin{theorem}
@@ -1656,7 +1656,7 @@ Thus, we have:
   where $\widetilde{\cty{k}}$ is a $\symgp{k}$-generating function and $\widetilde{\ctxy{k}}$ is a $\symgp{k+1}$-generating function.
 \end{theorem}
 
-However, as a consequence of Theorem \ref{thm:ctciclassfunc}, we can simplify these expressions significantly:
+However, as a consequence of \cref{thm:ctciclassfunc}, we can simplify these expressions significantly:
 \begin{corollary}
   \label{cor:ctogf}
   For $\cty{k}$ the $\symgp{k}$-species of $Y$-rooted $k$-coding trees and $\ctxy{k}$ the $\symgp{k+1}$-species of edge-rooted $k$-coding trees, the corresponding $\Gamma$-ordinary generating functions are given by
@@ -1671,33 +1671,33 @@ However, as a consequence of Theorem \ref{thm:ctciclassfunc}, we can simplify th
   where $\lambda^{i}$ denotes the $i$th `partition power' of $\lambda$ --- that is, if $\sigma$ is any permutation of cycle type $\lambda$, then $\lambda^{i}$ denotes the cycle type of $\sigma^{i}$ --- and where $f \pbrac{\lambda} \pbrac{x}$ denotes the value of $f \pbrac{\sigma} \pbrac{x}$ for every $\sigma$ of cycle type $\lambda$.
 \end{corollary}
 
-As in Theorem \ref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
-Also, as an immediate consequence of Theorem \ref{thm:ctciclassfunc}, we have that $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ are class functions of $\sigma$, so we can restrict our computational attention to cycle-distinct permutations.
+As in \cref{thm:ctyfuncci}, we have recursively-defined functional equations, but these are recursions of power series in a single variable, so computing their terms is much less computationally expensive.
+Also, as an immediate consequence of \cref{thm:ctciclassfunc}, we have that $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ are class functions of $\sigma$, so we can restrict our computational attention to cycle-distinct permutations.
 
-Moreover, the cycle index of the species $\kt{k}$, as seen in equation \eqref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\cty{k}$ and $\ctxy{k}$.
+Moreover, the cycle index of the species $\kt{k}$, as seen in \cref{eq:akci}, is given simply in terms of quotients of the cycle indices of the two $\Gamma$-species $\cty{k}$ and $\ctxy{k}$.
 Thus, we also have:
 \begin{theorem}
   \label{thm:akrhoogf}
-  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{thm:ctrhoogf}, we have
+  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in \cref{thm:ctrhoogf}, we have
   \begin{equation}
     \label{eq:akrhoogf}
     \tilde{\mathfrak{a}}_{k} \pbrac{x} = \frac{1}{\pbrac{k+1}!} \sum_{\sigma \in \symgp{k+1}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x} + \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\cty{k}} \pbrac{x} \pbrac{\sigma} - \frac{1}{k!} \sum_{\sigma \in \symgp{k}} \widetilde{\ctxy{k}} \pbrac{\sigma} \pbrac{x}.
   \end{equation}
 \end{theorem}
 
-Again, as a consequence of Theorem \ref{thm:ctciclassfunc} by way of Corollary \ref{cor:ctogf}, we can instead write
+Again, as a consequence of \cref{thm:ctciclassfunc} by way of \cref{cor:ctogf}, we can instead write
 \begin{corollary}
-  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in Theorem \ref{cor:ctogf}, we have
+  For $\kt{k}$ the species of $k$-trees and $\widetilde{\cty{k}}$ and $\widetilde{\ctxy{k}}$ as in \cref{cor:ctogf}, we have
   \begin{equation}
     \label{eq:akogf}
     \tilde{\mathfrak{a}}_{k} \pbrac{x} = \sum_{\lambda \vdash k+1} \frac{1}{z_{\lambda}} \widetilde{\ctxy{k}} \pbrac{\lambda} \pbrac{x} + \sum_{\lambda \vdash k} \frac{1}{z_{\lambda}} \widetilde{\cty{k}} \pbrac{\lambda} \pbrac{x} - \sum_{\lambda \vdash k} \frac{1}{z_{\lambda}} \widetilde{\ctxy{k}} \pbrac{\lambda \cup \cbrac{1}} \pbrac{x}.
   \end{equation}
 \end{corollary}
 
-This direct characterization of the ordinary generating function of unlabeled $k$-trees, while still recursive, is much computationally simpler than the characterization of the full cycle index in equation \eqref{eq:akci}.
+This direct characterization of the ordinary generating function of unlabeled $k$-trees, while still recursive, is much computationally simpler than the characterization of the full cycle index in \cref{eq:akci}.
 For computation of the number of unlabeled $k$-trees, it is therefore much preferred.
 Classical methods for working with recursively-defined power series suffice to extract the coefficients quickly and efficiently.
-The results of some such explicit calculations are presented in \S \ref{s:ktenum}.
+The results of some such explicit calculations are presented in \cref{s:ktenum}.
 
 \section{Special-case behavior for small $k$}
 Many of the complexities of the preceding analysis apply only for $k$ sufficiently large.
@@ -1707,7 +1707,7 @@ We note here some simplifications that are possible when $k$ is small.
 When $k = 1$, an $\kt{k}$-structure is merely an ordinary tree with $X$-labels on its edges and $Y$-labels on its vertices.
 There is no internal symmetry of the form that the actions of $\symgp{k}$ are intended to break.
 The actions of $\symgp{2}$ act on ordinary trees rooted at a \emph{directed} edge, with the nontrivial element $\tau \in \symgp{2}$ acting by reversing this orientation.
-The resulting decomposition from the dissymmetry theorem \ref{thm:dissymk} and the recursive functional equations of Observation \ref{obs:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
+The resulting decomposition from the dissymmetry theorem in \cref{thm:dissymk} and the recursive functional equations of \cref{obs:funcdecompct} then clearly reduce to the classical dissymmetry analysis of ordinary trees.
 
 \subsection{$2$-trees}
 When $k=2$, there is a nontrivial symmetry at fronts (edges); two triangles may be joined at an edge in two distinct ways.
@@ -1723,13 +1723,13 @@ We then have that:
   \end{align}
 \end{subequations}
 where, by abuse of notation, we let $\rho$ represent any $\rho_{i}$.
-By the previous, the argument $\rho \pbrac{\sigma}^{\abs{c}}$ in Equation \eqref{eq:ctxyfuncci2} is $\tau$ if and only if $\sigma$ is an odd permutation and $c$ is of odd length.
+By the previous, the argument $\rho \pbrac{\sigma}^{\abs{c}}$ in \cref{eq:ctxyfuncci2} is $\tau$ if and only if $\sigma$ is an odd permutation and $c$ is of odd length.
 This analysis and the resulting formulas for the cycle index $\ci{\kt{2}}$ are essentially equivalent to those derived in \cite{gessel:spec2trees}.
 
 \appendix
 \chapter{Computation in species theory}\label{c:comp}
 \section{Cycle indices of compositional inverse species}\label{s:compinv}
-In \S \ref{s:nbp}, our results included two references to the compositional inverse $\specname{CBP}^{\bullet \abrac{-1}}$ of the species $\specname{CBP}^{\bullet}$.
+In \cref{s:nbp}, our results included two references to the compositional inverse $\specname{CBP}^{\bullet \abrac{-1}}$ of the species $\specname{CBP}^{\bullet}$.
 Although we have not explored computational methods in depth here, the question of how to compute the cycle index of the compositional inverse of a specified species efficiently is worth some consideration.
 Several methods are available, including one developed in \cite[4.2.19]{bll:species} as part of the proof that arbitrary species have compositional inverses, but our preferred method is one of iterated substitution.
 
@@ -1744,18 +1744,18 @@ also. Thus
   \Phi = X - \Psi_{2} \pbrac{\Phi} - \Psi_{3} \pbrac{\Phi} - \dots.
 \end{equation}
 This recursive equation is the key to our computational method.
-To compute the cycle index of $\Phi$ to degree $2$, we begin with the approximation $\Phi \approx X$ and then substitute it into the first two terms of equation \eqref{eq:compinv}: $\Phi \approx X - \Psi_{2} \pbrac{X}$ and thus $\ci{\Phi} \approx \ci{X} - \ci{\Psi_{2}} \circ \ci{X}$.
+To compute the cycle index of $\Phi$ to degree $2$, we begin with the approximation $\Phi \approx X$ and then substitute it into the first two terms of \cref{eq:compinv}: $\Phi \approx X - \Psi_{2} \pbrac{X}$ and thus $\ci{\Phi} \approx \ci{X} - \ci{\Psi_{2}} \circ \ci{X}$.
 All terms of degree up to two in this approximation will be correct.
-To compute the cycle index of $\Phi$ to degree $3$, we then take this new approximation $\Phi \approx X - \Psi_{2} \pbrac{X}$ and substitute it into the first three terms of equation \eqref{eq:compinv}.
+To compute the cycle index of $\Phi$ to degree $3$, we then take this new approximation $\Phi \approx X - \Psi_{2} \pbrac{X}$ and substitute it into the first three terms of \cref{eq:compinv}.
 This process can be iterated as many times as are needed; to determine all terms of degree up to $n$ correctly, we need only iterate $n$ times.
 With appropriate optimizations (in particular, truncations), this method can run very quickly on a personal computer to reasonably high degrees; we were able to compute $\ci{\specname{CBP}^{\bullet \abrac{-1}}}$ to degree sixteen in thirteen seconds.
 
 \chapter{Enumerative tables}\label{c:enum}
 \section{Bipartite blocks}\label{s:bpenum}
-With the tools developed in \S \ref{c:bpblocks}, we can calculate the cycle indices of the species $\mathcal{NBP}$ of nonseparable bipartite graphs to any finite degree we choose using computational methods.
+With the tools developed in \cref{c:bpblocks}, we can calculate the cycle indices of the species $\mathcal{NBP}$ of nonseparable bipartite graphs to any finite degree we choose using computational methods.
 This result can then be used to enumerate unlabeled bipartite blocks.
-We have done so here using Sage 1.7.4 \cite{sage} and code listed in \S \ref{s:bpbcode}.
-The resulting values appear in Table \ref{tab:bpblocks}.
+We have done so here using Sage 1.7.4 \cite{sage} and code listed in \cref{s:bpbcode}.
+The resulting values appear in \cref{tab:bpblocks}.
 
 \begin{table}[htb]
   \centering
@@ -1777,9 +1777,9 @@ The resulting values appear in Table \ref{tab:bpblocks}.
 \end{table}
 
 \section{$k$-trees}\label{s:ktenum}
-With the recursive functional equations for cycle indices of \S \ref{s:ktcycind}, we can calculate the explicit cycle index for the species $\kt{k}$ to any finite degree we choose using computational methods; this cycle index can then be used to enumerate both unlabeled and labeled (at fronts, hedra, or both) $k$-trees up to a specified number $n$ of hedra (or, equivalently, $kn + 1$ fronts).
-We have done so here for $k \leq 7$ and $n \leq 30$ using Sage 1.7.4 \cite{sage} using code available in \S \ref{s:ktcode}.
-The resulting values appear in Table \ref{tab:ktrees}.
+With the recursive functional equations for cycle indices of \cref{s:ktcycind}, we can calculate the explicit cycle index for the species $\kt{k}$ to any finite degree we choose using computational methods; this cycle index can then be used to enumerate both unlabeled and labeled (at fronts, hedra, or both) $k$-trees up to a specified number $n$ of hedra (or, equivalently, $kn + 1$ fronts).
+We have done so here for $k \leq 7$ and $n \leq 30$ using Sage 1.7.4 \cite{sage} using code available in \cref{s:ktcode}.
+The resulting values appear in \cref{tab:ktrees}.
 
 We note that both unlabeled and hedron-labeled enumerations of $k$-trees stabilize:
 \begin{theorem}
@@ -2215,7 +2215,7 @@ However, thus far we have neither determined a direct method for computing these
 \end{table}
 
 \chapter{Code listing}\label{c:code}
-Our results in chapters \ref{c:bpblocks} and \ref{c:ktrees} provide a framework for enumerating bipartite blocks and general $k$-trees.
+Our results in \cref{c:bpblocks,c:ktrees} provide a framework for enumerating bipartite blocks and general $k$-trees.
 However, there is significant work to be done adapting the theory into practical algorithms for computing the actual numbers of such structures.
 Using the computer algebra system Sage 1.7.4 \cite{sage}, we have done exactly this.
 In each case, the script listed may be run with Sage by invoking
@@ -2226,7 +2226,7 @@ on a computer with a functioning Sage installation.
 Alternatively, each code snippet may be executed in the Sage `notebook' interface starting at the comment ``\texttt{MATH BEGINS HERE}''; in this case, the final \texttt{print\dots} invocation should be replaced with one specifying the desired parameters.
 
 \section{Bipartite blocks}\label{s:bpbcode}
-The functional equation \eqref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
+The functional \cref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
 Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows.
 Specifically, the generating function may be computed to degree $n$ by invoking
 \begin{verbatim}
@@ -2237,7 +2237,7 @@ on a computer with a functioning Sage installation.
 \lstinputlisting[caption=Sage code to compute numbers of bipartite blocks (\texttt{bpblocks.py}), label=lst:ktcode, language=Python]{python/bpblocks.py}
 
 \section{$k$-trees}\label{s:ktcode}
-The recursive functional equations \eqref{eq:ctyogf}, \eqref{eq:ctxyogf}, and \eqref{eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
+The recursive functional equations in \cref{eq:ctyogf,eq:ctxyogf,eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
 Python/Sage code to compute the coefficients of this generating function explicitly follows.
 Specifically, the generating function for unlabeled $k$-trees may be computed to degree $n$ by invoking
 \begin{verbatim}
@@ -2245,8 +2245,8 @@ Specifically, the generating function for unlabeled $k$-trees may be computed to
 \end{verbatim}
 on a computer with a functioning Sage installation.
 
-This code uses the class-function optimization of Theorem \ref{thm:ctciclassfunc} extensively; as a result, it is able to compute the number of $k$-trees on up to $n$ hedra quickly even for relatively large $k$ and $n$.
-For example, the first thirty terms of the generating function for $8$-trees in Table \ref{tab:8trees} were computed on a modern desktop-class computer in approximately two minutes.
+This code uses the class-function optimization of \cref{thm:ctciclassfunc} extensively; as a result, it is able to compute the number of $k$-trees on up to $n$ hedra quickly even for relatively large $k$ and $n$.
+For example, the first thirty terms of the generating function for $8$-trees in \cref{tab:8trees} were computed on a modern desktop-class computer in approximately two minutes.
 
 \lstinputlisting[caption=Sage code to compute numbers of $k$-trees (\texttt{ktrees.py}), label=lst:ktcode, language=Python]{python/ktrees.py}
 
