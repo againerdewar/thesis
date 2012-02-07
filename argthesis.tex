@@ -1584,10 +1584,10 @@ But then we note that the products in the above theorems are in fact permutation
   Let $c = \pbrac{c_{1}, c_{2}, \dots, c_{\abs{c}}}$.
   First, we calculate:
   \begin{align*}
-    \prod_{i = 1}^{\abs{c}} \rho_{c_{i}} \pbrac{\sigma} =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{2} \pbrac{\sigma} \circ \rho_{1} \pbrac{\sigma} \\
-  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{2} \pbrac{\sigma} \pbrac{a \mapsto \sigma \pbrac{c_{1} + a} - \sigma \pbrac{c_{1}}} \\
-  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{3} \pbrac{\sigma} \pbrac{a \mapsto \sigma \pbrac{c_{2} + \sigma \pbrac{c_{1} + a} - \sigma \pbrac{c_{1}}} - \sigma \pbrac{c_{2}}} \\
-  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{3} \pbrac{\sigma} \pbrac{a \mapsto \sigma^{2} \pbrac{c_{1} + a} - \sigma^{2} \pbrac{c_{1}}} \\
+    \prod_{i = 1}^{\abs{c}} \rho_{c_{i}} \pbrac{\sigma} =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{c_{2}} \pbrac{\sigma} \circ \rho_{c_{1}} \pbrac{\sigma} \\
+  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{c_{2}} \pbrac{\sigma} \pbrac{a \mapsto \sigma \pbrac{c_{1} + a} - \sigma \pbrac{c_{1}}} \\
+  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{c_{3}} \pbrac{\sigma} \pbrac{a \mapsto \sigma \pbrac{c_{2} + \sigma \pbrac{c_{1} + a} - \sigma \pbrac{c_{1}}} - \sigma \pbrac{c_{2}}} \\
+  =& \rho_{c_{\abs{c}}} \pbrac{\sigma} \circ \dots \circ \rho_{c_{3}} \pbrac{\sigma} \pbrac{a \mapsto \sigma^{2} \pbrac{c_{1} + a} - \sigma^{2} \pbrac{c_{1}}} \\
   &\vdots \\
   =& a \mapsto \sigma^{\abs{c}} \pbrac{c_{1} + a} - \sigma^{\abs{c}} \pbrac{c_{1}} \\
   =& \rho_{c_{1}} \pbrac{\sigma^{\abs{c}}}.
