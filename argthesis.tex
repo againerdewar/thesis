@@ -165,10 +165,11 @@ We now associate to the categorical theory of species an enumerative mechanism--
     \civars{F}{p_{1}, p_{2}, \dots} := \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots \big) = \sum_{n \geq 0} \frac{1}{n!} \big( \sum_{\sigma \in \symgp{n}} \fix \pbrac{F \sbrac{\sigma}} p_{\sigma} \big)
   \end{equation}
   where $\fix \pbrac{F \sbrac{\sigma}} := \abs{\cbrac{s \in F \sbrac{A} : F \sbrac{\sigma} \pbrac{s} = s}}$, where $\sigma_{i}$ is the number of $i$-cycles of $\sigma$, and where $p_{i}$ are indeterminates.
+  (That is, $\fix \pbrac{F \sbrac{\sigma}}$ is the \emph{number} of $F$-structures fixed under the action of the transport of $\sigma$.)
   We will make extensive use of the compressed notation $p_{\sigma} = p_{1}^{\sigma_{1}} p_{2}^{\sigma_{2}} \dots$ hereafter.
 \end{definition}
 
-In fact, $\fix \pbrac{F \sbrac{\sigma}}$ is a class function\footnote{That is, the value of $\fix \pbrac{F \sbrac{\sigma}}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \symgp{n}$.
+In fact, by functorality, $\fix \pbrac{F \sbrac{\sigma}}$ is a class function\footnote{That is, the value of $\fix \pbrac{F \sbrac{\sigma}}$ will be constant on conjugacy classes of permutations, which we note are exactly the sets of permutations of fixed cycle type.} on permutations $\sigma \in \symgp{n}$.
 Accordingly, we can instead consider all permutations of a given cycle type at once.
 It is a classical theorem that conjugacy classes of permutations in $\symgp{n}$ are indexed by partitions $\lambda \vdash n$, which are defined as multisets of natural numbers whose sum is $n$.
 In particular, conjugacy classes are determined by their cycle type, the multiset of the lengths of the cycles, which may clearly be identified bijectively with partitions of $n$.
