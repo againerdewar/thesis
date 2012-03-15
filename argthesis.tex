@@ -502,8 +502,17 @@ Making sense of the notion of composition in multisort species is highly context
 \section{$\Gamma$-species and quotient species}\label{s:quot}
 It is frequently the case that interesting combinatorial problems admit elegant descriptions in terms of quotients of a class of structures $F$ under the action of a group $\Gamma$.
 In some cases, this group action will be \emph{structural} in the sense that it commutes with permutations of labels in the species $F$, or, informally, that it is independent of the choice of labelings on each $F$-structure.
-This is exactly the condition that each $\gamma \in \Gamma$ acts by a species isomorphism $\gamma: F \to F$ in the sense of \cref{def:specmaptypes}.
-We incorporate such species-compatible actions into a new definition:
+
+\begin{example}
+  \label{ex:graphcomp}
+  Let $\specname{G}$ denote the species of simple graphs.
+  Let the group $\symgp{2}$ act on such graphs by letting the identity act trivially and letting the non-trivial element $\pmt{(12)}$ send each graph to its complement (that is, by replacing each edge with a non-edge and each non-edge with an edge).
+  This `complementation action' is structural in the sense described previously.
+\end{example}
+
+We note that a group action is structural is exactly the condition that each $\gamma \in \Gamma$ acts by a species isomorphism $\gamma: F \to F$ in the sense of \cref{def:specmaptypes}.
+
+We now incorporate such species-compatible actions into a new definition:
 \begin{definition}
   \label{def:gspecies}
   For $\Gamma$ a group, a \emph{$\Gamma$-species} $F$ is a combinatorial species $F$ together with an action of $\Gamma$ on $F$-structures by species isomorphisms.
@@ -529,11 +538,21 @@ We incorporate such species-compatible actions into a new definition:
   (Note that commutativity of the left square is required for $F$ to be a species at all.)
 \end{definition}
 
-For such a species, of course, it is then meaningful to pass to the quotient:
+$\specname{G}$ is then a $\symgp{2}$-species with the action described in \cref{ex:graphcomp}.
+
+For such a $\Gamma$-species, of course, it is then meaningful to pass to the quotient under the action by $\Gamma$:
 \begin{definition}
   \label{def:qspecies}
   For $F$ a $\Gamma$-species, define $\nicefrac{F}{\Gamma}$, the \emph{quotient species} of $F$ under the action of $\Gamma$, to be the species of $\Gamma$-orbits of $F$-structures.
 \end{definition}
+
+\begin{example}
+  \label{ex:graphcompquot}
+  Consider $\specname{G}$ as a $\symgp{2}$-species in light of the action defined in \cref{ex:graphcomp}.
+  The structures of the quotient species $\nicefrac{\specname{G}}{\symgp{2}}$ are then pairs of complementary graphs.
+  We may choose to interpret each such pair as representing a $2$-partition of the set of vertex pairs of the complete graph (that is, of edges of the complete graph).
+  More natural examples of quotient structures will present themselves in later chapters.
+\end{example}
 
 For each label set $A$, let $\quomap{\Gamma} \sbrac{A}: F \sbrac{A} \to \nicefrac{F}{\Gamma} \sbrac{A}$ denote the map sending each $F$-structure over $A$ to its quotient $\nicefrac{F}{\Gamma}$-structure over $A$.
 Then $\quomap{\Gamma} \sbrac{A}$ is an injection for each $A$, and the requirement that $\Gamma$ acts by natural transformations implies that the induced functor map $\quomap{\Gamma}: F \to \nicefrac{F}{\Gamma}$ is a natural transformation.
@@ -643,6 +662,9 @@ In the $\Gamma$-species context, we may perform similar substitutions to derive 
     \tilde{F}_{\gamma} \pbrac{x} = \gcieltvars{\Gamma}{F}{\gamma}{x, x^{2}, x^{3}, \dots}.
   \end{equation}
 \end{theorem}
+
+These theorems follow directly from \cref{eq:ciegf,eq:ciogf}, thinking of $F_{\gamma} \pbrac{x}$ and $\widetilde{F_{\gamma} \pbrac{x}}$ as enumerating the combinatorial class of $F$-structures which are invariant under $\gamma$.
+
 Note that the notion of `unlabeled $\gamma$-invariant $F$-structures' is always well-defined precisely because \cref{def:gspecies} requires that the action of $\Gamma$ commutes with transport of structures.
 
 From these results and \cref{thm:qsci}, we can the conclude:
@@ -664,8 +686,6 @@ Similarly,
     \tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.
   \end{equation}
 \end{theorem}
-
-These results also follow directly from Burnside's Lemma.
 
 Note also that all of the above extends naturally into the multisort species context.
 We will use this extensively in \cref{c:ktrees}.
