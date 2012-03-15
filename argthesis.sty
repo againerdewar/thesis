@@ -27,6 +27,8 @@
 
 \usepackage[inline]{showlabels}
 
+\usepackage{permute}
+
 \usepackage{tikz}
 \usepackage{tkz-graph,tkz-berge}
 \usetikzlibrary{calc,decorations.markings,shapes,positioning,matrix,arrows}
@@ -41,6 +43,7 @@
 \newcommand*{\cycccwr}[2][.65cm]{\draw[decoration={markings, mark=at position 0 with {\arrow{triangle 90}}}, postaction={decorate}] #2 circle (#1)}
 
 \tikzstyle{every picture}+=[
+  graphnode/.style={fill=white,shape=circle,draw},
   xnode/.style={fill=black!20,shape=rectangle,draw},
   ynode/.style={fill=white,shape=circle,draw},
   fnodewide/.style={fill=white,shape=ellipse,draw},
