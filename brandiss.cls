@@ -58,7 +58,17 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
 
 %  Default Setup:
-\ExecuteOptions{uncompressed,boldmathhdr} % Universal default options
+%  Use printed option by default.
+\ExecuteOptions{printed}
+
+%  Use submission version by default.
+\ExecuteOptions{submission}
+
+%  Do not compress PDF
+\ExecuteOptions{uncompressed}
+
+%  Use boldface math in headers
+\ExecuteOptions{boldmathhdr} % Universal default options
 
 % Default per GSAS formatting requirements
 \PassOptionsToClass{12pt}{amsbook}
