@@ -5,6 +5,7 @@
 \usepackage{units,faktor}
 \usepackage{subfig}
 \usepackage{comment}
+\usepackage{ifdraft}
 
 \usepackage[capitalize]{cleveref}
 \crefname{lstlisting}{listing}{listings}
@@ -28,7 +29,7 @@
 \usepackage{tgcursor}
 \usepackage{upquote}
 
-\usepackage[inline]{showlabels}
+\ifdraft{\usepackage[inline]{showlabels}}
 
 \usepackage{permute}
 
@@ -154,7 +155,6 @@
 \newtheorem{note}[theorem]{Note}
 \newtheorem*{note*}{Note}
 
-\usepackage{ifdraft}
 \ifdraft{%
   \input{vc}
   \fancyfoot[C]{\tiny\thepage \\ \tiny\texttt{git revision: \VCRevision}}
