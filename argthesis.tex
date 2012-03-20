@@ -2357,18 +2357,18 @@ Alternatively, each code snippet may be executed in the Sage `notebook' interfac
 
 \section{Bipartite blocks}\label{s:bpbcode}
 The functional \cref{eq:nbpexp} characterizes the cycle index of the species $\specname{NBP}$ of bipartite blocks.
-Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows.
+Python/Sage code to compute the coefficients of the ordinary generating function $\widetilde{\specname{NBP}} \pbrac{x}$ of unlabeled bipartite blocks explicitly follows in \cref{lst:bpcode}.
 Specifically, the generating function may be computed to degree $n$ by invoking
 \begin{verbatim}
 > sage --python bpblocks.py n
 \end{verbatim}
 on a computer with a functioning Sage installation.
 
-\lstinputlisting[caption=Sage code to compute numbers of bipartite blocks (\texttt{bpblocks.py}), label=lst:ktcode, language=Python]{python/bpblocks.py}
+\lstinputlisting[caption=Sage code to compute numbers of bipartite blocks (\texttt{bpblocks.py}), label=lst:bpcode, language=Python]{python/bpblocks.py}
 
 \section{$k$-trees}\label{s:ktcode}
 The recursive functional equations in \cref{eq:ctyogf,eq:ctxyogf,eq:akogf} characterize the ordinary generating function $\tilde{\mathfrak{a}}_{k} \pbrac{x}$ for unlabeled general $k$-trees.
-Python/Sage code to compute the coefficients of this generating function explicitly follows.
+Python/Sage code to compute the coefficients of this generating function explicitly follows in \cref{lst:ktcode}.
 Specifically, the generating function for unlabeled $k$-trees may be computed to degree $n$ by invoking
 \begin{verbatim}
 > sage --python ktrees.py k n
