@@ -469,19 +469,19 @@ Perhaps the most natural example of this is the case of $k$-colored graphs, wher
 Automorphisms of such a graph must preserve the colorings of the vertices, which is not a natural restriction to impose in the calculation of the classical cycle index in \cref{eq:cycinddef}.
 We thus incorporate the notion of sorts directly into a new definition:
 \begin{definition} 
-  \label{def:multiset}
-  For a fixed integer $k \geq 1$, define a \emph{$k$-multiset} to be an ordered $k$-tuple of sets.
-  Say that a $k$-multiset is \emph{finite} if each component set is finite; in that case, its \emph{$k$-multicardinality} is the ordered tuple of its components' set cardinalities.
-  Further, define a \emph{$k$-multifunction} to be an ordered $k$-tuple of set functions which acts componentwise on $k$-multisets.
-  For two $k$-multisets $U$ and $V$, a $k$-multifunction $\sigma$ is a \emph{$k$-multibijection} if each component is a set bijection.
-  For $k$-multisets of multicardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\symgp{c_{1}, c_{2}, \dots, c_{k}} = \symgp{c_{1}} \times \symgp{c_{2}} \times \dots \times \symgp{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-multibijections from a $k$-multiset to itself.
-  Finally, denote by $\catname{Bij}^{k}$ the category of finite $k$-multisets with $k$-multibijections.
+  \label{def:ksortset}
+  For a fixed integer $k \geq 1$, define a \emph{$k$-sort set} to be an ordered $k$-tuple of sets.
+  Say that a $k$-sort set is \emph{finite} if each component set is finite; in that case, its \emph{$k$-sort cardinality} is the ordered tuple of its components' set cardinalities.
+  Further, define a \emph{$k$-sort function} to be an ordered $k$-tuple of set functions which acts componentwise on $k$-sort sets.
+  For two $k$-sort sets $U$ and $V$, a $k$-sort function $\sigma$ is a \emph{$k$-sort bijection} if each component is a set bijection.
+  For $k$-sort sets of cardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\symgp{c_{1}, c_{2}, \dots, c_{k}} = \symgp{c_{1}} \times \symgp{c_{2}} \times \dots \times \symgp{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-sort bijections from a $k$-sort set to itself.
+  Finally, denote by $\catname{Bij}^{k}$ the category of finite $k$-sort sets with $k$-sort bijections.
 \end{definition}
 
-We can then define an extension of species to the context of multisets:
+We can then define an extension of species to the context of $k$-sort sets:
 \begin{definition}
   \label{def:multisort}
-  A \emph{$k$-sort species} $F$ is a functor $F: \catname{Bij}^{k} \to \catname{Bij}$ which associates to each $k$-multiset $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each bijective $k$-multifunction $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
+  A \emph{$k$-sort species} $F$ is a functor $F: \catname{Bij}^{k} \to \catname{Bij}$ which associates to each $k$-sort set $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each $k$-sort bijection $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
 \end{definition}
 Functorality once again imposes naturality conditions on these associations.
 
