@@ -105,8 +105,8 @@ A full, pedagogical exposition of the theory of species is available in \cite{bl
 To begin, we wish to formalize the notion of a `construction' of a structure of some given class from a set of `labels', such as the construction of a graph from its vertex set or or that of a linear order from its elements.
 The language of category theory will allow us capture this behavior succinctly yet with full generality:
 \begin{definition}\label{def:species}
-  Let $\catname{Bij}$ be the category of finite sets with bijections and $\catname{Set}$ be the category of finite sets with set maps.
-  Then a \emph{species} is a functor $F: \catname{Bij} \to \catname{Set}$.
+  Let $\catname{FinBij}$ be the category of finite sets with bijections and $\catname{FinSet}$ be the category of finite sets with set maps.
+  Then a \emph{species} is a functor $F: \catname{FinBij} \to \catname{FinSet}$.
   For a set $A$ and a species $F$, an element of $F \sbrac{A}$ is an \emph{$F$-structure on $A$}.
   Moreover, for a species $F$ and a bijection $\phi: A \to B$, the bijection $F \sbrac{\phi}: F \sbrac{A} \to F \sbrac{B}$ is the \emph{$F$-transport of $\phi$}.
 \end{definition}
@@ -208,7 +208,7 @@ This association of label set $A$ to the set $F \sbrac{A}$ of all $F$-structures
     \end{equation*}
 \end{example}
 
-Since the image of a bijection under such a functor is necessarily itself a bijection, many authors instead simply define a species as a functor $F: \catname{Bij} \to \catname{Bij}$.
+Since the image of a bijection under such a functor is necessarily itself a bijection, many authors instead simply define a species as a functor $F: \catname{FinBij} \to \catname{FinBij}$.
 Our motivation for using this definition instead will become clear in \cref{s:quot}.
 
 Note that, having defined the species $F$ to be a functor, we have the following properties:
@@ -226,7 +226,7 @@ These maps are all `natural' in the sense that they are explicitly structural an
 We can formalize this notion in the language of categories:
 \begin{definition}
   \label{def:specmap}
-  Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association of each set $A \in \catname{Bij}$ to a set map $\phi_{A} \in \catname{Set}$ such that the following diagram commutes:
+  Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association of each set $A \in \catname{FinBij}$ to a set map $\phi_{A} \in \catname{FinSet}$ such that the following diagram commutes:
   \begin{equation*}
     \begin{tikzpicture}[every node/.style={fill=white}]
       \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
@@ -469,7 +469,7 @@ Thus, species pointing is appropriate for cases such as those of rooted trees: f
 Note that, again, we cannot in general recover $\ci{F}$ from $\ci{\pointed{F}}$, for the same reasons as in the case of $\ci{\deriv{F}}$.
 
 \section{Multisort species}\label{s:mult}
-A species $F$ as defined in \cref{def:species} is a functor $F: \catname{Bij} \to \catname{Set}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
+A species $F$ as defined in \cref{def:species} is a functor $F: \catname{FinBij} \to \catname{FinSet}$; an $F$-structure in $F \sbrac{A}$ takes its labels from the set $A$.
 The tool-set so produced is adequate to describe many classes of combinatorial structures.
 However, there is one particular structure type which it cannot effectively capture: the notion of distinct \emph{sorts} of elements within a structure.
 Perhaps the most natural example of this is the case of $k$-colored graphs, where every vertex has one of $k$ colors with the requirement that no pair of adjacent vertices shares a color.
@@ -482,13 +482,13 @@ We thus incorporate the notion of sorts directly into a new definition:
   Further, define a \emph{$k$-sort function} to be an ordered $k$-tuple of set functions which acts componentwise on $k$-sort sets.
   For two $k$-sort sets $U$ and $V$, a $k$-sort function $\sigma$ is a \emph{$k$-sort bijection} if each component is a set bijection.
   For $k$-sort sets of cardinality $\pbrac{c_{1}, c_{2}, \dots, c_{k}}$, denote by $\symgp{c_{1}, c_{2}, \dots, c_{k}} = \symgp{c_{1}} \times \symgp{c_{2}} \times \dots \times \symgp{c_{k}}$ the \emph{$k$-sort symmetric group}, the elements of which are in natural bijection with $k$-sort bijections from a $k$-sort set to itself.
-  Finally, denote by $\catname{Bij}^{k}$ the category of finite $k$-sort sets with $k$-sort bijections.
+  Finally, denote by $\catname{FinBij}^{k}$ the category of finite $k$-sort sets with $k$-sort bijections.
 \end{definition}
 
 We can then define an extension of species to the context of $k$-sort sets:
 \begin{definition}
   \label{def:multisort}
-  A \emph{$k$-sort species} $F$ is a functor $F: \catname{Bij}^{k} \to \catname{Bij}$ which associates to each $k$-sort set $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each $k$-sort bijection $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
+  A \emph{$k$-sort species} $F$ is a functor $F: \catname{FinBij}^{k} \to \catname{FinBij}$ which associates to each $k$-sort set $U$ a set $F \sbrac{U}$ of \emph{$k$-sort $F$-structures} and to each $k$-sort bijection $\sigma: U \to V$ a bijection $F \sbrac{\sigma}: F \sbrac{U} \to F \sbrac{V}$.
 \end{definition}
 Functorality once again imposes naturality conditions on these associations.
 
