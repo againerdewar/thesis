@@ -1768,7 +1768,7 @@ Actually computing terms of the cycle index in order to derive the coefficients 
 The computational process can be simplified significantly by taking advantage of the relatively straightforward combinatorial structure of the structural decomposition used to derive the recursive formulas for the cycle index.
 
 Recall from \cref{thm:gciogf} that, for a $\Gamma$-species $F$, the ordinary generating function $\tilde{F}_{\gamma} \pbrac{x}$ counting unlabeled $\gamma$-invariant $F$-structures is given by
-\[\tilde{F} \pbracs[big]{\gamma} \pbrac{x} = \civars{F}{x, x^2, x^3, \dots}\]
+\[\tilde{F} \pbracs[big]{\gamma} \pbrac{x} = \gcieltvars{\Gamma}{F}{\gamma}{x, x^2, x^3, \dots}\]
 and that the ordinary generating function for counting unlabeled $\nicefrac{F}{\Gamma}$-structures is given by
 \[\tilde{F} \pbrac{x} = \frac{1}{\abs{\Gamma}} \sum_{\gamma \in \Gamma} \tilde{F}_{\gamma} \pbrac{x}.\]
 These formula admits an obvious multisort extension, but we in fact wish to count $k$-trees with respect to just one sort of label (the $X$-labels on hedra), so we will not deal with multisort here.
