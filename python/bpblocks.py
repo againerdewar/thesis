@@ -99,7 +99,7 @@ def Zcbc( z2elt, n ):
         scale_part = lambda n: lambda m: m.__class__([i*n for i in m])
         pn_pleth = lambda f, n: f.map_support(scale_part(n))
         f = lambda part: prod(pn_pleth(Zbc(t^i, n), i) for i in part)
-        return p._apply_module_morphism(Zcon(n),f).restrict_degree(n, exact=False)
+        return p._apply_module_morphism(Zcon(n), f).restrict_degree(n, exact=False)
 
 # Compute the cycle index of the species CBP of connected bipartite graphs
 def Zcbp( n ):
