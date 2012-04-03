@@ -226,7 +226,7 @@ These maps are all `natural' in the sense that they are explicitly structural an
 We can formalize this notion in the language of categories:
 \begin{definition}
   \label{def:specmap}
-  Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association of each set $A \in \catname{FinBij}$ to a set map $\phi_{A} \in \catname{FinSet}$ such that the following diagram commutes:
+  Let $F$ and $G$ be species. A \emph{species map} $\phi$ is a natural transformation $\phi: F \to G$ --- that is, an association to each set $A \in \catname{FinBij}$ of a set map $\phi_{A} \in \catname{FinSet}$ such that the following diagram commutes:
   \begin{equation*}
     \begin{tikzpicture}[every node/.style={fill=white}]
       \matrix (m) [matrix of math nodes, row sep=4em, column sep=4em]
@@ -241,7 +241,7 @@ We can formalize this notion in the language of categories:
       (m-1-2) edge node {$\phi_{B}$} (m-2-2);
     \end{tikzpicture}
   \end{equation*}
-  We call the set map $\phi_{A}$ the \emph{$A$ component of $\phi$}.
+  We call the set map $\phi_{A}$ the \emph{$A$ component of $\phi$} or the \emph{component of $\phi$ at $A$}.
 \end{definition}
 
 Such species maps may capture the idea that two species are essentially `the same' or that one `contains' or `sits inside' another.
