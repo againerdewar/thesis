@@ -32,27 +32,38 @@
 % sectionbreak|sectionflow -> break pages after sections or don't
 % If ''sectionbreak'' is true, add a \clearpage at the end of each section
 \providetoggle{sectionbreak}
-\DeclareOption{sectionbreak}{\toggletrue{sectionbreak}}
-\DeclareOption{sectionflow}{\togglefalse{sectionbreak}}
+\providetoggle{breakingset}
+\DeclareOption{sectionbreak}{\toggletrue{sectionbreak} \toggletrue{breakingset}}
+\DeclareOption{sectionflow}{\togglefalse{sectionbreak} \toggletrue{breakingset}}
 
 % singlespace|doublespace -> set spacing in relevant places
 \providetoggle{doublespace}
-\DeclareOption{singlespace}{\togglefalse{doublespace}}
-\DeclareOption{doublespace}{\toggletrue{doublespace}}
+\providetoggle{spacingset}
+\DeclareOption{singlespace}{\togglefalse{doublespace} \toggletrue{spacingset}}
+\DeclareOption{doublespace}{\toggletrue{doublespace} \toggletrue{spacingset}}
 
 % boldmathhdr|normalmathhdr -> use bold math fonts in headers or don't
 \providetoggle{boldmathhdr}
-\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr} \PassOptionsToPackage{\CurrentOption}{brandiss}}
-\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr} \PassOptionsToPackage{\CurrentOption}{brandiss}}
+\DeclareOption{boldmathhdr}{\toggletrue{boldmathhdr}}
+\DeclareOption{normalmathhdr}{\togglefalse{boldmathhdr}}
 
-%  online|printed -> online or printed submission
-%  Pass these options to the brandiss package.
-\DeclareOption{online}{\PassOptionsToPackage{\CurrentOption}{brandiss}}
-\DeclareOption{printed}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{submission}}
+% online|printed -> online or printed submission
+% Pass these options to the brandiss package.
+\providetoggle{online}
+\DeclareOption{online}{\toggletrue{online}}
+\DeclareOption{printed}{\togglefalse{online}}
 
-%  distribution|submission -> distribution or submission version
-\DeclareOption{distribution}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionflow,singlespace} \PassOptionsToClass{twoside}{amsbook}}  %Distribution default options
-\DeclareOption{submission}{\PassOptionsToPackage{\CurrentOption}{brandiss} \ExecuteOptions{sectionbreak,doublespace} \PassOptionsToClass{oneside}{amsbook}} %Submission default options
+% distribution|submission -> distribution or submission version
+\providetoggle{distrib}
+\providetoggle{distribset}
+\DeclareOption{distribution}{\toggletrue{distrib} \toggletrue{distribset}}  %Distribution default options
+\DeclareOption{submission}{\togglefalse{distrib} \toggletrue{distribset}}  %Distribution default options
+
+% oneside|twoside -> single- or double-sided printing
+\providetoggle{twoside}
+\providetoggle{sideset}
+\DeclareOption{twoside}{\toggletrue{twoside} \toggletrue{sideset}}
+\DeclareOption{oneside}{\togglefalse{twoside} \toggletrue{sideset}}
 
 %  Default Option: Pass all other options to the amsbook class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{amsbook}}
@@ -74,7 +85,31 @@
 \PassOptionsToClass{12pt}{amsbook}
 
 % Process the options.
-\ProcessOptions\relax
+\ProcessOptions*
+
+%********************** Boolean Processing  **********************
+
+% Handle distribution/submission
+\iftoggle{distrib}{
+  \iftoggle{breakingset}{}{\togglefalse{sectionbreak}}
+  \iftoggle{spacingset}{}{\togglefalse{doublespace}}
+  \iftoggle{sideset}{}{\toggletrue{twoside}}
+  \PassOptionsToPackage{distribution}{brandiss}
+}{
+  \iftoggle{breakingset}{}{\toggletrue{sectionbreak}}
+  \iftoggle{spacingset}{}{\toggletrue{doublespace}}
+  \iftoggle{sideset}{}{\togglefalse{twoside}}
+  \PassOptionsToPackage{submission}{brandiss}
+}
+
+% Handle boldmathhdr
+\iftoggle{boldmathhdr}{\PassOptionsToPackage{boldmathhdr}{brandiss}}{\PassOptionsToPackage{normalmathhdr}{brandiss}}
+
+% Handle online/printed
+\iftoggle{online}{\PassOptionsToPackage{online}{brandiss}}{\PassOptionsToPackage{printed}{brandiss}}
+
+% Handle oneside/twoside
+\iftoggle{twoside}{\PassOptionsToClass{twoside}{amsbook}}{\PassOptionsToClass{oneside}{amsbook}}
 
 %********************** Class and Package Loads  *****************
 
